@@ -1,7 +1,7 @@
 GraphHopper Web API
 =======
 
-With [GraphHopper Web API](http://graphhopper.com/#enterprise) it is possible to get the fastest path between two or more locations. Additionally to the Open Source API it is possible to use address, not only coordinates for the location. This process is called *Geocoding*.
+With [GraphHopper Web API](http://graphhopper.com/#enterprise) it is possible to get the fastest path between two or more locations. Additionally to the Open Source API it is possible to use addresses as location, not only coordinates. This process is called *Geocoding*.
 
 
 
