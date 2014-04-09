@@ -1,4 +1,4 @@
-### Routing API
+## Routing API
 
 ![Routing Example](./img/routing-example.png)
 
@@ -10,7 +10,7 @@ An example URL looks like:
 
 `http://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
 
-### Geocoding API
+## Geocoding API
 
 ![Geocoding Example](./img/geocoding-example.png)
 
@@ -24,7 +24,7 @@ An example URL looks like:
 
 Append `&debug=true` for a formatted output.
 
-### Isochrone
+## Isochrone
 
 ![Isochrone Example](./img/isochrone-example.png)
 
@@ -38,7 +38,7 @@ An example URL looks like:
 
 Append `&debug=true` for a formatted output.
 
-### HTTP Error codes
+## HTTP Error codes
 
 HTTP error code | Reason
 :---------------|:------------
