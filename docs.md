@@ -24,7 +24,7 @@ An example URL looks like:
 
 Append `&debug=true` for a formatted output.
 
-## Isochrone
+## Isochrone API
 
 ![Isochrone Example](./img/isochrone-example.png)
 
