@@ -1,7 +1,8 @@
 ## Isochrone Web API Docs
 
 Calculating an isochrone of a coordinate (`latitude,longitude`) means to calculate
-"a line connecting points at which a vehicle arrives at the same time", see [Wikipedia](http://en.wikipedia.org/wiki/Isochrone_map).
+"a line connecting points at which a vehicle arrives at the same time", 
+see [Wikipedia](http://en.wikipedia.org/wiki/Isochrone_map).
 
 In our case the line is a polygon, the vehicle and time is configurable.
 
@@ -52,16 +53,16 @@ function getReach(lat, lng) {
     var timeLimitInSeconds = 20 * 60;
     var vehicle = "car";
     var url = "http://graphhopper.com/api/1/isochrone?"
-            + "query=" + lat + "," + lng
+            + "q=" + lat + "," + lng
             + "&time_limit=" + timeLimitInSeconds
             + "&vehicle=" + vehicle
-            + "&buckets=" + buckets
+            + "&buckets=" + buckets            
             + "&key=" + your_key;
 
     return $.ajax({
         url: url,
         type: "GET",
-        dataType: "json",
+        dataType: "jsonp",
         timeout: 5000
     }).fail(function(err) {
         console.log(err);

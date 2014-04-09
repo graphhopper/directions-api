@@ -6,17 +6,12 @@ fastest path between two or more locations. Additionally to the Open Source API 
 possible to use addresses as location, not only coordinates. This process is called *Geocoding*.
 
 
-## Documentation
+## How to Start
 
-See *subscribe* on how you get a valid license key in order to query the API.
+ 1. To use the API you need credentials, please [contact us](http://graphhopper.com/#enterprise).
+ 2. Read the documentation for the **Routing**, **Geocoding** and **Isochrone** API is available [here](./docs.md). 
 
-The documentation for the Geocoding and Routing API is available [here](./docs.md). 
-Also you can see it in action at [GraphHopper Maps](http://graphhopper.com/maps).
-
-## Subscribe
-
-To use it you need credentials, please [contact us](http://graphhopper.com/#enterprise).
-
+Also you can see routing and geocoding in action at [GraphHopper Maps](http://graphhopper.com/maps).
 
 ## Issues
 
