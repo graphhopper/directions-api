@@ -9,7 +9,7 @@ possible to use addresses as location, not only coordinates. This process is cal
 ## How to Start
 
  1. To use the API you need credentials, please [contact us](http://graphhopper.com/#enterprise).
- 2. Read the documentation for the **Routing**, **Geocoding** and **Isochrone** API. 
+ 2. Read the documentation for **Routing** and **Geocoding**, see below.
 
 Also you can see routing and geocoding in action at [GraphHopper Maps](http://graphhopper.com/maps).
 
@@ -45,6 +45,7 @@ An example URL looks like:
 
 Append `&debug=true` for a formatted output.
 
+<!--
 ## Isochrone API
 
 ![Isochrone Example](./img/isochrone-example.png)
@@ -58,6 +59,7 @@ An example URL looks like:
 `http://graphhopper.com/api/1/isochrone?q=52.511624,13.438339&time_limit=1200&vehicle=car&key=[your-key]`
 
 Append `&debug=true` for a formatted output.
+-->
 
 ## HTTP Error codes
 
