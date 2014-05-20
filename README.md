@@ -61,6 +61,20 @@ An example URL looks like:
 Append `&debug=true` for a formatted output.
 -->
 
+## Attribution
+
+The standard package requires a prominent attribution of GraphHopper. This means you have to include a link to graphhopper.com where you utilize the GraphHopper Web API. It is important to note that the user has to see this only one time (per application start or website access) but must have the possibility to click on the link.
+
+An html snippet for this is:
+
+```html
+powered by <a href="http://graphhopper.com">GraphHopper</a>
+```
+
+If you need a custom or whitelabel solution please contact us.
+
+Regardless of the package and additionally to our attribution you need to include attribution to [OpenStreetMap](http://www.openstreetmap.org/copyright/).
+
 ## HTTP Error codes
 
 HTTP error code | Reason
