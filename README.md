@@ -63,7 +63,7 @@ Append `&debug=true` for a formatted output.
 
 ## Attribution
 
-The standard package requires a prominent attribution of GraphHopper. This means you have to include a link to graphhopper.com where you utilize the GraphHopper Web API. It is important to note that the user has to see this only one time (per application start or website access) but must have the possibility to click on the link.
+The standard package requires a prominent attribution of GraphHopper. This means you have to include a link to graphhopper.com where you utilize the GraphHopper Web API. It is important to note that the user has to see this only one time e.g. per application start or website access. The user must have the possibility to click on the link e.g. including it only in a splash screen isn't appropriate where as including this in or below a search input is appropriate. For an example you can look at [GraphHopper Maps](http://graphhopper.com/maps/)
 
 An html snippet for this is:
 
@@ -71,7 +71,7 @@ An html snippet for this is:
 powered by <a href="http://graphhopper.com">GraphHopper</a>
 ```
 
-If you need a custom or whitelabel solution please contact us.
+If you need a custom or white-label solution please contact us.
 
 Regardless of the package and additionally to our attribution you need to include attribution to [OpenStreetMap](http://www.openstreetmap.org/copyright/).
 
