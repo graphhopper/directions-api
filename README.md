@@ -71,7 +71,7 @@ An html snippet for this is:
 powered by <a href="http://graphhopper.com">GraphHopper</a>
 ```
 
-For small screens it can be only the link:
+For small screens (less than 190mm diagonal) it can be only the link:
 
 ```html
 <a href="http://graphhopper.com">GraphHopper</a>
