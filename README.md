@@ -23,11 +23,11 @@ If you are not a customer or found a bug directly in the Open Source code please
 
 ![Routing Example](./img/routing-example.png)
 
-The JSON format of the hosted Web API is 100% identical to the [Routing API](https://github.com/graphhopper/graphhopper/blob/master/docs/web/api-doc.md) response format.
+The Routing API is documented [here](docs-routing,.md).
 
 The endpoint is `http://graphhopper.com/api/[version]/route`
 
-An example URL looks like:
+An example URL looks like where you need to replace the key with your own:
 
 `http://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
 
