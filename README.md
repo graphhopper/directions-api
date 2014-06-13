@@ -34,12 +34,12 @@ An example URL looks like where you need to replace the key with your own:
 
 **Coming soon** ...
 
-In the normal routing API we support multiple points, so called 'via points', which results in one route being calculated. The Multipoint API instead results in NxM routes being calculated but is a lot faster compared to NxM single request. And often only the distances and times are necessary but you are free to include the full route description.
+In the normal routing API we support multiple points, so called 'via points', which results in one route being calculated. The Multipoint API instead results in NxM routes being calculated but is a lot faster compared to NxM single requests.
 
 This makes the Multipoint API especially suited for the following usecases:
 
- * Calculating the distance matrix which one often needs before one does a route optimization e.g. a postman or pizza-woman delivering to many locations. 
- * Calculating detours with many possible points in-between and selecting the best (e.g. for ridesharing or taxi applications)
+ * Calculating the distance matrix which is needed before a route optimization e.g. a postman or pizza-woman delivers to many locations. Now one needs to know all routes between all these locations in order to optimize the resulting best route for delivering.
+ * Calculating detours with many possible points in-between and selecting the best (e.g. interesting for ridesharing or taxi applications)
  * ...
 
 ## Geocoding API
