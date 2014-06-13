@@ -30,6 +30,18 @@ An example URL looks like where you need to replace the key with your own:
 
 `http://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
 
+## Multipoint Routing API
+
+**Coming soon** ...
+
+In the normal routing API we support multiple points, so called 'via points', which results in one route being calculated. The Multipoint API instead results in NxM routes being calculated but is a lot faster compared to NxM single request. And often only the distances and times are necessary but you are free to include the full route description.
+
+This makes the Multipoint API especially suited for the following usecases:
+
+ * Calculating the distance matrix which one often needs before one does a route optimization e.g. a postman or pizza-woman delivering to many locations. 
+ * Calculating detours with many possible points in-between and selecting the best (e.g. for ridesharing or taxi applications)
+ * ...
+
 ## Geocoding API
 
 ![Geocoding Example](./img/geocoding-example.png)
