@@ -22,7 +22,7 @@ If you are not a customer or found a bug directly in the Open Source code please
 
 ![Routing Example](./img/routing-example.png)
 
-The Routing API is documented [here](docs-routing,.md).
+The Routing API is documented [here](docs-routing.md).
 
 The endpoint is `http://graphhopper.com/api/[version]/route`
 
