@@ -24,11 +24,11 @@ If you are not a customer or found a bug directly in the Open Source code please
 
 The Routing API is documented [here](docs-routing.md).
 
-The endpoint is `http://graphhopper.com/api/[version]/route`
+The endpoint is `https://graphhopper.com/api/[version]/route`
 
 An example URL looks like where you need to replace the key with your own:
 
-`http://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
+`https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
 
 ## Multipoint Routing API
 
@@ -48,11 +48,11 @@ This makes the Multipoint API especially suited for the following usecases:
 
 The Geocoding API is documented [here](./docs-geocode.md).
 
-The endpoint is `http://graphhopper.com/api/[version]/geocode`
+The endpoint is `https://graphhopper.com/api/[version]/geocode`
 
 An example URL looks like:
 
-`http://graphhopper.com/api/1/geocode?q=berlin&locale=de&key=[your-key]`
+`https://graphhopper.com/api/1/geocode?q=berlin&locale=de&key=[your-key]`
 
 Append `&debug=true` for a formatted output.
 
@@ -63,11 +63,11 @@ Append `&debug=true` for a formatted output.
 
 The Isochrone API is documented [here](./docs-isochrone.md).
 
-The endpoint is `http://graphhopper.com/api/[version]/isochrone`
+The endpoint is `https://graphhopper.com/api/[version]/isochrone`
 
 An example URL looks like:
 
-`http://graphhopper.com/api/1/isochrone?q=52.511624,13.438339&time_limit=1200&vehicle=car&key=[your-key]`
+`https://graphhopper.com/api/1/isochrone?q=52.511624,13.438339&time_limit=1200&vehicle=car&key=[your-key]`
 
 Append `&debug=true` for a formatted output.
 -->
