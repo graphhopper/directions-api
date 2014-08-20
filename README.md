@@ -1,7 +1,7 @@
-GraphHopper Web API
+GraphHopper Directions API
 =======
 
-With [GraphHopper Web API](http://graphhopper.com/#enterprise) it is possible to get the 
+With the [GraphHopper Directions API](http://graphhopper.com/#enterprise) it is possible to get the 
 fastest path between two or more locations. 
 
 
@@ -74,7 +74,7 @@ Append `&debug=true` for a formatted output.
 
 ## Attribution
 
-The standard package requires a prominent attribution of GraphHopper. This means you include a link to graphhopper.com where you utilize the GraphHopper Web API. It is important to note that the user has to see this only one time e.g. once per application start or at the first website access. The user must have the possibility and enough time to read and click on the link e.g. including it only in a short living spash screen isn't appropriate where as including this in or below a search input is appropriate. For an example you can look at [GraphHopper Maps](http://graphhopper.com/maps/)
+The standard package requires a prominent attribution of GraphHopper. This means you include a link to graphhopper.com where you utilize the GraphHopper Directions API. It is important to note that the user has to see this only one time e.g. once per application start or at the first website access. The user must have the possibility and enough time to read and click on the link e.g. including it only in a short living spash screen isn't appropriate where as including this in or below a search input is appropriate. For an example you can look at [GraphHopper Maps](http://graphhopper.com/maps/)
 
 An html snippet for this is:
 
