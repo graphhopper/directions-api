@@ -5,7 +5,7 @@ server you need to understand how to use it.
 
 ### An example
 
-An example URL looks like where you need to replace the key with your own:
+Here is an example where you need to replace the key with your own:
 
 `https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
 
