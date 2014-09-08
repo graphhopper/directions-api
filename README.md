@@ -1,7 +1,7 @@
-GraphHopper Directions API
+GraphHopper Directions API for Business 
 =======
 
-With the [GraphHopper Directions API](http://graphhopper.com/#enterprise) it is possible to get the 
+With the [ GraphHopper Directions API for Business](http://graphhopper.com/#enterprise) it is possible to get the 
 fastest path between two or more locations. 
 
 
