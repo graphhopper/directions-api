@@ -11,7 +11,7 @@ An example URL looks like where you need to replace the key with your own:
 
 ## Clients
 
-We provide Open Source code in [Java](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/java/com/graphhopper/http/WebHelper.java#L43) and [JavaScript](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/webapp/js/ghrequest.js#L139).
+We provide Open Source code in [Java](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/java/com/graphhopper/http/GraphHopperWeb.java#L55) and [JavaScript](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/webapp/js/ghrequest.js) to query our API. Have a look at [GraphHopper Maps](https://graphhopper.com/maps) for a complete example in JavaScript.
 
 ## Parameters
 
