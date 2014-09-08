@@ -9,6 +9,10 @@ An example URL looks like where you need to replace the key with your own:
 
 `https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
 
+## Clients
+
+We provide Open Source code in [Java](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/java/com/graphhopper/http/WebHelper.java#L43) and [JavaScript](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/webapp/js/ghrequest.js#L139).
+
 ## Parameters
 
 All official parameters are shown in the following table
@@ -22,7 +26,7 @@ vehicle     | car     | The vehicle for which the route should be calculated. Ot
 weighting   | fastest | Which kind of 'best' route calculation you need. Other option is 'shortest', currently not available in the WEB API.
 elevation   | false   | If `true` a third dimension - the elevation - is included in the polyline or in the GeoJson. IMPORTANT: If enabled you have to use a modified version of the decoding method or set points_encoded to `false`. See the points_encoded attribute for more details. Additionally a request can fail if the vehicle does not support elevation. See the features object for every vehicle.
 algorithm   | dijkstrabi     | The algorithm to calculate the route. Other options are dijkstra, astar and astarbi. The WEB API supports only dijkstrabi.
-points_encoded     | true    | If `false` a GeoJson array in `point` is returned. If `true` the resulting route will be encoded leading to big bandwith reduction. You'll need a special handling for the decoding of this string on the client-side. We provide Open Source code in [Java](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/java/com/graphhopper/http/WebHelper.java#L43) and [JavaScript](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/webapp/js/ghrequest.js#L139). It is especially important to use our decoding methods if you set `elevation=true`!
+points_encoded     | true    | If `false` a GeoJson array in `point` is returned. If `true` the resulting route will be encoded leading to big bandwith reduction. You'll need a special handling for the decoding of this string on the client-side, see the Java or JavaScript code above. It is especially important to use our decoding methods if you set `elevation=true`!
 debug              | false   | If true, the output will be formated.
 calc_points        | true    | If the points for the route should be calculated at all. Sometimes only the distance and time is necessary.
 type               | json    | Specifies the resulting format of the route, for json the content type will be application/json. Other possible format options: <br> jsonp you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> gpx, the content type will be application/xml
