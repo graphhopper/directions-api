@@ -1,7 +1,6 @@
-## Routing Web API Docs
+## Routing API Docs
 
-In order to communicate with your or [our](https://graphhopper.com/#enterprise) hosted GraphHopper 
-server you need to understand how to use it.
+In order to communicate with the GraphHopper Directions API for Business you need to understand how to use the routing feature.
 
 ### An example
 
