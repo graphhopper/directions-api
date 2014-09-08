@@ -1,14 +1,15 @@
 ## Routing Web API Docs
 
-In order to communicate with your or [our](http://graphhopper.com/#enterprise) hosted GraphHopper 
+In order to communicate with your or [our](https://graphhopper.com/#enterprise) hosted GraphHopper 
 server you need to understand how to use it.
 
-### A simple example
-[http://localhost:8989/route?point=45.752193%2C-0.686646&point=46.229253%2C-0.32959](http://localhost:8989/route?point=45.752193%2C-0.686646&point=46.229253%2C-0.32959)
+### An example
 
-The end point of the local instance is [http://localhost:8989](http://localhost:8989)
+The endpoint of our Business API is `https://graphhopper.com/api/[version]/route`
 
-The URL path to obtain the route is `/route`
+An example URL looks like where you need to replace the key with your own:
+
+`https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
 
 All official parameters are shown in the following table
 
