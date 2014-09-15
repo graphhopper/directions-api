@@ -34,12 +34,16 @@ An example URL looks like where you need to replace the key with your own:
 
 **Coming soon** ...
 
-In the normal routing API we support multiple points, so called 'via points', which results in one route being calculated. The Multipoint API instead results in NxM routes being calculated but is a lot faster compared to NxM single requests.
+In the normal routing API we support multiple points, so called 'via points', which results in one route being calculated. The Multipoint API instead results in NxM routes being calculated but is a lot faster compared to NxM single requests. The most simple example is a pizza delivery service, delivering e.g. 3 pizzas. To find the fastest tour consisting of ALL locations one needs a two step process:
 
-This makes the Multipoint API especially suited for the following usecases:
+ 1. Find all distances (or times) between all locations using the Multipoint API. For the 3 pizzas you'll need 6 routes: A-B, A-C, B-A, B-C, C-A and C-B. 6 routes because of "3*3-3" and the 'minus 3' comes because A-A, B-B and C-C is meaningless (distance is 0 meter).
+ 2. Optimize the **order** of the locations to find the overall best tour. E.g. test every tour "A-B-C", then "A-C-B" and so on. This is not yet integrated into the API and has to be done with a separate optimization software.
 
- * Calculating the distance matrix which is needed before a route optimization e.g. a postman or pizza-woman delivers to many locations. Now one needs to know all routes between all these locations in order to optimize the resulting best route for delivering.
+Some other use case scenarios for the Mulitpoint API:
+
+ * Logistic problems often pick up many items from and deliver them to many locations.
  * Calculating detours with many possible points in-between and selecting the best (e.g. interesting for ridesharing or taxi applications)
+ * Finding the best tour for a tourist in the need to visit as many points of interests as possible.
  * ...
 
 ## Geocoding API
