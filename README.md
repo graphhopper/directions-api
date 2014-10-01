@@ -76,6 +76,10 @@ An example URL looks like:
 Append `&debug=true` for a formatted output.
 -->
 
+## Terms
+
+In your about page or at a similar place you have to link to our <a href="https://graphhopper.com/terms.html">Terms of Services</a> as your users are agreeing to be bound by GraphHopper's Terms of Use.
+
 ## Attribution
 
 The standard package requires a prominent attribution of GraphHopper. This means you include a link to graphhopper.com where you utilize the GraphHopper Directions API. It is important to note that the user has to see this only one time e.g. once per application start or at the first website access. The user must have the possibility and enough time to read and click on the link e.g. including it only in a short living spash screen isn't appropriate where as including this in or below a search input is appropriate. For an example you can look at [GraphHopper Maps](http://graphhopper.com/maps/)
