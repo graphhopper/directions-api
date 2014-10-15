@@ -34,7 +34,7 @@ debug              | false   | If true, the output will be formated.
 
 ## Description
 
-If you need identical from and to points just use `points`.
+
 
 ## Example output for the case type=json
 
