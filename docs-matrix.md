@@ -13,7 +13,7 @@ Parameter   | Default | Description
 point       | -       | Specifiy multiple points for which the weight-, route-, time- or distance-matrix should be calculated. The order is important. Specify at least three points.
 from_point  | -       | The starting points for the routes. E.g. if you want to calculate two routes A1-B1, A2-B1, then you have two `from_point` parameters. Specify at least one.
 to_point    | -       | The destination points for the routes. Specify at least one.
-out_array   | times   | Specifies which arrays should be included in the response. Specify one or more of the following options 'weights', 'times', 'distances', 'paths'. To specify more than one array use e.g. `out_array=times&out_array=distances`
+out_array   | weights   | Specifies which arrays should be included in the response. Specify one or more of the following options 'weights', 'times', 'distances', 'paths'. To specify more than one array use e.g. `out_array=times&out_array=distances`
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot and bike
 debug              | false   | If true, the output will be formated.
 
