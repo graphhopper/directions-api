@@ -25,9 +25,9 @@ All official parameters are shown in the following table
 
 Parameter   | Default | Description
 :-----------|:--------|:-----------
-point       | -       | Specifiy multiple points for which the weight-, route-, time- or distance-matrix should be calculated. In this case the `from points` are identical to the `to points`. The order of the point parameter is important. Specify at least three points. Cannot be used with from_point or to_point.
-from_point  | -       | The starting points for the routes. E.g. if you want to calculate two routes A1-B1, A2-B1, then you have two `from_point` parameters. Specify at least one.
-to_point    | -       | The destination points for the routes. Specify at least one.
+point       | -       | Specifiy multiple points for which the weight-, route-, time- or distance-matrix should be calculated. In this case the starts are identical to the destinations. If there are N points, then NxN entries will be calculated. The order of the point parameter is important. Specify at least three points. Cannot be used with from_point or to_point.
+from_point  | -       | The starting points for the routes. E.g. if you want to calculate the three routes A->1, A->2,A->3 then you have one `from_point` parameter and three `to_point` parameters.
+to_point    | -       | The destination points for the routes.
 out_array   | weights   | Specifies which arrays should be included in the response. Specify one or more of the following options 'weights', 'times', 'distances', 'paths'. To specify more than one array use e.g. `out_array=times&out_array=distances`
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot and bike
 debug              | false   | If true, the output will be formated.
