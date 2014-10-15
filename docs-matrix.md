@@ -2,7 +2,7 @@
 
 The Matrix API calculates the well known distance-matrix for a set of locations, i.e. it calculates all the distances between every location combination. But we do not stop there, we also offer a time-, weight- or route-matrix. The weight-matrix can be used as raw input for e.g. a vehicle routing problem ([VRP](http://en.wikipedia.org/wiki/Vehicle_routing_problem)) and is more precise than a time- or distance-matrix. E.g. for bike routes the actual weight of a route (e.g. the "beauty") is what you want and not always the taken time or distance. Also the weight is currently faster to calculate. (For cars the weight-matrix is currently identical to the time-matrix)
 
-The route-matrix is only suitable for a smaller matrix or with a big matrix and a filter and gives you the complete routes to print them or let the user choose from. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://github.com/graphhopper/web-api/blob/master/docs-routing.md).
+The route-matrix is only suitable for a smaller matrix (or with a big matrix and a filter). It gives you ALL the full routes between the locations, not just the time or distance values, to print them or let the user choose from. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://github.com/graphhopper/web-api/blob/master/docs-routing.md).
 
 ## Parameters
 
