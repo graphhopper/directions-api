@@ -1,8 +1,8 @@
 ## Matrix API Docs
 
-As a start you should try the [Routing API](https://github.com/graphhopper/web-api/blob/master/docs-routing.md) first.
+The Matrix API calculates the well known distance-matrix for a set of locations, i.e. it calculates all the distances between every location combination. But we do not stop there, we also offer a time-, weight- or route-matrix. The weight-matrix can be used as raw input for e.g. a vehicle routing problem ([VRP](http://en.wikipedia.org/wiki/Vehicle_routing_problem)) and is more precise than a time- or distance-matrix. E.g. for bike routes the actual weight of a route, not always the taken time or distance is what you want.
 
-Then e.g. if you need out_array=paths you can use all the options available there.
+The route-matrix is only suitable for a smaller matrix or with a big matrix and a filter and gives you the complete routes to print them or let the user choose from. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://github.com/graphhopper/web-api/blob/master/docs-routing.md).
 
 ## Parameters
 
@@ -10,10 +10,10 @@ All official parameters are shown in the following table
 
 Parameter   | Default | Description
 :-----------|:--------|:-----------
-point       | -       | Specifiy multiple points for which the route-, time- or distance-matrx. The order is important. Specify at least three points.
+point       | -       | Specifiy multiple points for which the weight-, route-, time- or distance-matrix should be calculated. The order is important. Specify at least three points.
 from_point  | -       | The starting points for the routes. E.g. if you want to calculate two routes A1-B1, A2-B1, then you have two `from_point` parameters. Specify at least one.
 to_point    | -       | The destination points for the routes. Specify at least one.
-out_array   | times   | Specifies which arrays should be included in the response. Specify one or more of the following options 'times', 'distances', 'paths'. To specify more than one array use e.g. `out_array=times&out_array=distances`
+out_array   | times   | Specifies which arrays should be included in the response. Specify one or more of the following options 'weights', 'times', 'distances', 'paths'. To specify more than one array use e.g. `out_array=times&out_array=distances`
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot and bike
 points_encoded     | true    | If `false` a GeoJson array in `point` is returned. If `true` the resulting route will be encoded leading to big bandwith reduction. You'll need a special handling for the decoding of this string on the client-side, see the Java or JavaScript code above. It is especially important to use our decoding methods if you set `elevation=true`!
 debug              | false   | If true, the output will be formated.
