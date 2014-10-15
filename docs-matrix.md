@@ -2,7 +2,22 @@
 
 The Matrix API calculates the well known distance-matrix for a set of points, i.e. it calculates all the distances between every point combination. But we do not stop there, we also offer a time-, weight- or route-matrix. The weight-matrix can be used as raw input for e.g. a vehicle routing problem ([VRP](http://en.wikipedia.org/wiki/Vehicle_routing_problem)) and is more precise than a time- or distance-matrix. E.g. for bike routes the actual weight of a route (e.g. the "beauty") is what you want and not always the taken time or distance. Also the weight is currently faster to calculate. (For cars the weight-matrix is currently identical to the time-matrix)
 
-The route-matrix is only suitable for a smaller matrix (or with a big matrix and a filter). It gives you ALL the full routes between the points, not just the time or distance values, to print them or let the user choose from. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://github.com/graphhopper/web-api/blob/master/docs-routing.md).
+A simple illustration for a 3x3 matrix with identical points:
+
+       |Point1   | Point2 | Point3
+:------|:--------|:--------|:--------
+Point1 |0        |1->2     | 1->3
+Point2 |2->1     |0        | 2->3
+Point3 |3->1     |3->2     | 0
+
+A simple illustration for a 1x3 matrix with different start- and end-points:
+
+       |Point1   | Point2 | Point3
+:------|:--------|:--------|:--------
+PointA |A->1     |A->2     |A->3
+
+
+The matrix returning full routes is only suitable for a smaller matrix (or with a big matrix and a filter). This 'route-matrix' is useful if you know in advance that you need all the full routes and want to avoid a separate query to the Routing API. Useful e.g. for letting the user choosing from several routes. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://github.com/graphhopper/web-api/blob/master/docs-routing.md).
 
 ## Parameters
 
