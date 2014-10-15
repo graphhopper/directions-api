@@ -15,9 +15,7 @@ from_point  | -       | The starting points for the routes. E.g. if you want to 
 to_point    | -       | The destination points for the routes. Specify at least one.
 out_array   | times   | Specifies which arrays should be included in the response. Specify one or more of the following options 'weights', 'times', 'distances', 'paths'. To specify more than one array use e.g. `out_array=times&out_array=distances`
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot and bike
-points_encoded     | true    | If `false` a GeoJson array in `point` is returned. If `true` the resulting route will be encoded leading to big bandwith reduction. You'll need a special handling for the decoding of this string on the client-side, see the Java or JavaScript code above. It is especially important to use our decoding methods if you set `elevation=true`!
 debug              | false   | If true, the output will be formated.
-type               | json    | Specifies the resulting format of the route, for json the content type will be application/json. Other possible format options: <br> jsonp you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> gpx, the content type will be application/xml
 
 ## Description
 
