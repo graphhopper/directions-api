@@ -4,17 +4,17 @@ The Matrix API calculates the well known distance-matrix for a set of points, i.
 
 A simple illustration for a 3x3 matrix with identical points:
 
-       |Point1   | Point2 | Point3
-:------|:--------|:--------|:--------
-Point1 |0        |1->2     | 1->3
-Point2 |2->1     |0        | 2->3
-Point3 |3->1     |3->2     | 0
+            |to_point1|to_point2|to_point3
+:-----------|:--------|:--------|:--------
+from_point1 |0        |1->2     | 1->3
+from_point2 |2->1     |0        | 2->3
+from_point3 |3->1     |3->2     | 0
 
 A simple illustration for a 1x3 matrix with different start- and end-points:
 
-       |Point1   | Point2 | Point3
-:------|:--------|:--------|:--------
-PointA |A->1     |A->2     |A->3
+            |to_point1   | to_point2 | t_point3
+:-----------|:-----------|:----------|:--------
+from_pointA |A->1        |A->2       |A->3
 
 
 For every route 1->2, 1-3, ... or A->1,A->2,A->3 you can return only the weight, the time, the distance and even the full route. The matrix returning full routes is only suitable for a smaller matrix (or with a big matrix and a filter). This 'route-matrix' is useful if you know in advance that you need all the full routes and want to avoid a separate query to the Routing API. Useful e.g. for letting the user choosing from several routes. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://github.com/graphhopper/web-api/blob/master/docs-routing.md).
@@ -25,7 +25,7 @@ All official parameters are shown in the following table
 
 Parameter   | Default | Description
 :-----------|:--------|:-----------
-point       | -       | Specifiy multiple points for which the weight-, route-, time- or distance-matrix should be calculated. In this case the starts are identical to the destinations. If there are N points, then NxN entries will be calculated. The order of the point parameter is important. Specify at least three points. Cannot be used with from_point or to_point.
+point       | -       | Specifiy multiple points for which the weight-, route-, time- or distance-matrix should be calculated. In this case the starts are identical to the destinations. If there are N points, then NxN entries will be calculated. The order of the point parameter is important. Specify at least three points. Cannot be used with `from_point` or `to_point.`
 from_point  | -       | The starting points for the routes. E.g. if you want to calculate the three routes A->1, A->2, A->3 then you have one `from_point` parameter and three `to_point` parameters.
 to_point    | -       | The destination points for the routes.
 out_array   | weights   | Specifies which arrays should be included in the response. Specify one or more of the following options 'weights', 'times', 'distances', 'paths'. To specify more than one array use e.g. `out_array=times&out_array=distances`
