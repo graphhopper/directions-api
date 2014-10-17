@@ -178,3 +178,5 @@ HTTP error code | Reason
 500             | Internal server error. It is strongely recommended to send us the message and the link to it, as it is very likely a bug in our system.
 501             | Only a special list of vehicles is supported
 400             | Something was wrong in your request
+503             | Too few or too many points
+503             | API limit reached, you'll also get an email about this, and the header properties will give you more information: X-RateLimit-Limit (your current daily limit), X-RateLimit-Remaining (your remaining credits) and X-RateLimit-Reset (number of seconds until you have to wait).
