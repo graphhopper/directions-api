@@ -18,7 +18,7 @@ If you have problems please report them [here](https://github.com/graphhopper/we
 If you are not a customer or found a bug directly in the Open Source code please report it 
 [here](https://github.com/graphhopper/graphhopper/issues) instead.
 
-## Routing API
+## [Routing API](docs-routing.md)
 
 ![Routing Example](./img/routing-example.png)
 
@@ -48,11 +48,11 @@ Some other use case scenarios for the Matrix API:
  * Finding the best tour for a tourist in the need to visit as many points of interests as possible.
  * ...
 
-## Geocoding API
+## [Geocoding API](./docs-geocode.md)
 
 ![Geocoding Example](./img/geocoding-example.png)
 
-The Geocoding API is documented [here](./docs-geocode.md).
+The Geocoding API is not yet production grade. Please help us improve it and give us feedback! See the documentation [here](./docs-geocode.md).
 
 The endpoint is `https://graphhopper.com/api/[version]/geocode`
 
