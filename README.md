@@ -14,9 +14,7 @@ Also you can see routing and geocoding in action at [GraphHopper Maps](http://gr
 
 ## Issues
 
-If you have problems please report them [here](https://github.com/graphhopper/web-api/issues). 
-If you are not a customer or found a bug directly in the Open Source code please report it 
-[here](https://github.com/graphhopper/graphhopper/issues) instead.
+If you have problems please report them [here](https://github.com/graphhopper/web-api/issues).
 
 ## [Routing API](docs-routing.md)
 
