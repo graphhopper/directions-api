@@ -2,7 +2,7 @@ GraphHopper Directions API for Business
 =======
 
 With the [ GraphHopper Directions API for Business](http://graphhopper.com/#enterprise) it is possible to get the 
-fastest path between two or more locations. 
+fastest path(s) between two or more locations.
 
 
 ## How to Start
