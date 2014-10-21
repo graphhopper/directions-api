@@ -1,5 +1,21 @@
 ## Matrix API Docs
 
+### Introduction
+
+In the routing API we support multiple points, so called 'via points', which results in one route being calculated. The Matrix API results in NxM routes being calculated but is a lot faster compared to NxM single requests. The most simple example is a pizza delivery service, delivering e.g. 4 pizzas. To find the fastest tour consisting of ALL locations one needs a two step process:
+
+ 1. Find all distances (or times) between all locations using the Matrix API. For the 4 pizzas you'll need 4*4-4 routes: A-B, A-C, A-D, B-A, B-C, B-D, ... The routes A-A, B-B, C-C and D-D are 0 and therefor the "minus 4".
+ 2. Optimize the **order** of the locations to find the overall best tour. I.e. calculate the total time for the tour "A-B-C-D", then "A-C-B-D" and so on. This is not yet integrated into the API and has to be done with a separate optimization software, you can contact us to implement an efficient solution for you.
+
+Some other use case scenarios for the Matrix API:
+
+ * Logistic problems often pick up many items from and deliver them to many locations.
+ * Calculating detours with many possible points in-between and selecting the best (e.g. interesting for ridesharing or taxi applications)
+ * Finding the best tour for a tourist in the need to visit as many points of interests as possible.
+ * ...
+
+### Description
+
 The Matrix API calculates the well known distance-matrix for a set of points, i.e. it calculates all the distances between every point combination. But we do not stop there, we also offer a time-, weight- and route-matrix. The weight-matrix can be used as raw input for e.g. a vehicle routing problem ([VRP](http://en.wikipedia.org/wiki/Vehicle_routing_problem)) and is more precise than a time- or distance-matrix. E.g. for bike routes the actual weight of a route (e.g. the "beauty") is what you want to decide if a route is 'better' and not always the taken time or distance. Also the weight is currently faster to calculate.
 
 A simple illustration for a 3x3 matrix with identical points:
