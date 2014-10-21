@@ -7,8 +7,8 @@ fastest path between two or more locations.
 
 ## How to Start
 
- 1. To use the API you need credentials, please [contact us](http://graphhopper.com/#enterprise).
- 2. Read the documentation for **Routing** and **Geocoding**, see below.
+ 1. To use the API you need an API key, please [contact us](http://graphhopper.com/#enterprise).
+ 2. Read the documentation for the **Routing API**, the **Matrix API** and the **Geocoding API**, see below.
 
 Also you can see routing and geocoding in action at [GraphHopper Maps](http://graphhopper.com/maps).
 
