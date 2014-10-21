@@ -12,10 +12,6 @@ fastest path(s) between two or more locations.
 
 Also you can see routing and geocoding in action at [GraphHopper Maps](http://graphhopper.com/maps).
 
-## Issues
-
-If you have problems please report them [here](https://github.com/graphhopper/web-api/issues).
-
 ## [Routing API](docs-routing.md)
 
 ![Routing Example](./img/routing-example.png)
@@ -75,6 +71,11 @@ An example URL looks like:
 
 Append `&debug=true` for a formatted output.
 -->
+
+## [Issues](https://github.com/graphhopper/web-api/issues).
+
+If you have problems please report them [here](https://github.com/graphhopper/web-api/issues).
+
 
 ## Terms
 
