@@ -77,9 +77,9 @@ Append `&debug=true` for a formatted output.
 If you have problems please report them [here](https://github.com/graphhopper/web-api/issues).
 
 
-## Terms
+## [Terms of Services](https://graphhopper.com/terms.html)
 
-In your about page or at a similar place you have to link to our <a href="https://graphhopper.com/terms.html">Terms of Services</a> as your users are agreeing to be bound by GraphHopper's Terms of Use.
+Read the [terms of services](https://graphhopper.com/terms.html) carefully and make sure your user are agreeing to be bound by GraphHopper's Terms of Use too.
 
 ## Attribution
 
