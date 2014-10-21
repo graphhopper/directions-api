@@ -20,7 +20,7 @@ The Routing API is documented [here](docs-routing.md).
 
 The endpoint is `https://graphhopper.com/api/[version]/route`
 
-An example URL looks like where you need to replace the key with your own:
+An example URL looks like the following, where you need to replace the key with your own:
 
 `https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
 
@@ -30,17 +30,11 @@ An example URL looks like where you need to replace the key with your own:
 
 The Matrix API is documented [here](./docs-matrix.md)
 
-In the routing API we support multiple points, so called 'via points', which results in one route being calculated. The Matrix API results in NxM routes being calculated but is a lot faster compared to NxM single requests. The most simple example is a pizza delivery service, delivering e.g. 4 pizzas. To find the fastest tour consisting of ALL locations one needs a two step process:
+The endpoint is `https://graphhopper.com/api/[version]/matrix`
 
- 1. Find all distances (or times) between all locations using the Matrix API. For the 4 pizzas you'll need 4*4-4 routes: A-B, A-C, A-D, B-A, B-C, B-D, ... The routes A-A, B-B, C-C and D-D are 0 and therefor the "minus 4".
- 2. Optimize the **order** of the locations to find the overall best tour. I.e. calculate the total time for the tour "A-B-C-D", then "A-C-B-D" and so on. This is not yet integrated into the API and has to be done with a separate optimization software, you can contact us to implement an efficient solution for you.
+An example URL for a 3x3 matrix looks like the following:
 
-Some other use case scenarios for the Matrix API:
-
- * Logistic problems often pick up many items from and deliver them to many locations.
- * Calculating detours with many possible points in-between and selecting the best (e.g. interesting for ridesharing or taxi applications)
- * Finding the best tour for a tourist in the need to visit as many points of interests as possible.
- * ...
+`https://graphhopper.com/api/1/matrix?point=49.932707%2C11.588051&point=50.241935%2C10.747375&point=50.118817%2C11.983337&type=json&vehicle=car&debug=true&out_array=weights&out_array=times&out_array=distances&key=[your-key]`
 
 ## [Geocoding API](./docs-geocode.md)
 
