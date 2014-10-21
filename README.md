@@ -72,7 +72,7 @@ An example URL looks like:
 Append `&debug=true` for a formatted output.
 -->
 
-## [Issues](https://github.com/graphhopper/web-api/issues).
+## [Issues](https://github.com/graphhopper/web-api/issues)
 
 If you have problems please report them [here](https://github.com/graphhopper/web-api/issues).
 
