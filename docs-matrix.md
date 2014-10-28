@@ -48,7 +48,9 @@ out_array   | weights   | Specifies which arrays should be included in the respo
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot and bike
 debug       | false   | If true, the output will be formated.
 
-If you include out_array=paths the maximum number of points is currently 10.
+## Limits and Counts
+
+One Matrix requests costs `N*M/2` requests. The maximimum number of points cannot exceed a certain number depending on the package, see the pricing in our dashboard. If you include out_array=paths the maximum number of points is currently 10 regardless of the package.
 
 ## Example output for the case type=json
 
