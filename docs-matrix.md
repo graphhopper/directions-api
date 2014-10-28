@@ -48,9 +48,7 @@ out_array   | weights   | Specifies which arrays should be included in the respo
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot and bike
 debug       | false   | If true, the output will be formated.
 
-## Description
-
-
+If you include out_array=paths the maximum number of points is currently 10.
 
 ## Example output for the case type=json
 
