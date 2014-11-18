@@ -1,6 +1,6 @@
 ## Routing API Docs
 
-In order to communicate with the GraphHopper Directions API for Business you need to understand how to use the routing feature. Routing is the process of finding the 'best' path(s) between two or more points, where best depends on the vehicle and use case. With our API you have a fast and solid way to find this best path.
+The Routing API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api). Routing is the process of finding the 'best' path(s) between two or more points, where best depends on the vehicle and use case. With our API you have a fast and solid way to find this best path.
 
 ### An example
 
