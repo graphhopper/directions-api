@@ -54,6 +54,10 @@ debug       | false   | If true, the output will be formated.
 
 One Matrix requests costs `N*M/2` requests. The maximimum number of points cannot exceed a certain number depending on the package, see the pricing in our dashboard. If you include out_array=paths the maximum number of points is currently 10 regardless of the package.
 
+## Usage / Clients
+
+Currently we only have a [JavaScript client](https://github.com/graphhopper/web-api/tree/master/matrix-clients/) implemented, let us know if you need other languages!
+
 ## Example output for the case type=json
 
 Keep in mind that some attributes which are not documented here can be removed in the future - you should not rely on them! In the following example 4 points were specified and `out_array=distances&out_array=times&out_array=weights&debug=true`:
