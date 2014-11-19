@@ -24,4 +24,4 @@ All client and demo code stands under Apache License 2.0
 
 ## Screenshot
 
-![GraphHopper Matrix API screenshot](./screenshot.png)]
+![GraphHopper Matrix API screenshot](./screenshot.png)
