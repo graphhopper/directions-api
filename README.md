@@ -7,7 +7,7 @@ fastest path(s) between two or more locations.
 
 ## How to Start
 
- 1. To use the API you need an API key, please [contact us](https://graphhopper.com/#directions-api).
+ 1. To use the Directions API you need an API key, Get it [here](https://graphhopper.com/#directions-api).
  2. Read the documentation for the **Routing API**, the **Matrix API** and the **Geocoding API** below.
 
 Also you can see routing and geocoding in action at [GraphHopper Maps](http://graphhopper.com/maps).
