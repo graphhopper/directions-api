@@ -1,7 +1,7 @@
-GraphHopper Directions API for Business 
+# GraphHopper Directions API for Business 
 =======
 
-With the [ GraphHopper Directions API for Business](https://graphhopper.com/#directions-api) you get a reliable and fast routing service. Additionally to A-to-B routing with the Routing API it is possible to get all distances between all locations with our Matrix API.
+With the [ GraphHopper Directions API for Business](https://graphhopper.com/#directions-api) you get a reliable and fast routing service with world wide coverage. We offer a Routing API for A-to-B routing optionally with turn instructions and elevation data. Also it is possible to get all distances between all locations with our fast Matrix API.
 
 
 ## How to Start
