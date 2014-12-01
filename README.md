@@ -1,16 +1,16 @@
 GraphHopper Directions API for Business 
 =======
 
-With the [ GraphHopper Directions API for Business](https://graphhopper.com/#directions-api) it is possible to get the 
-fastest path(s) between two or more locations.
+With the [ GraphHopper Directions API for Business](https://graphhopper.com/#directions-api) you get a reliable and fast routing service. Additionally to A-to-B routing with the Routing API it is possible to get all distances between all locations with our Matrix API.
 
 
 ## How to Start
 
- 1. To use the Directions API you need an API key, Get it [here](https://graphhopper.com/#directions-api).
- 2. Read the documentation for the **Routing API**, the **Matrix API** and the **Geocoding API** below.
+ 1. To use the Directions API you need an API key. Get it for free [here](https://graphhopper.com/#directions-api).
+ 2. Read the documentation for the **Routing API**, the **Matrix API** and the **Geocoding API** below or try the examples in our dashboard.
+ 3. To increase your query limits for production you pay online within a few minutes via credit card or debit advice.
 
-Also you can see routing and geocoding in action at [GraphHopper Maps](https://graphhopper.com/maps).
+You can see the Routing and Geocoding API in action at [GraphHopper Maps](https://graphhopper.com/maps).
 
 ## [Routing API](docs-routing.md)
 
