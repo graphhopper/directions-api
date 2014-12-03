@@ -18,7 +18,7 @@ All official parameters are shown in the following table
 
 Parameter   | Default | Description
 :-----------|:--------|:-----------
-point       | -       | Specifiy multiple points for which the route should be calculated. The order is important. Specify at least two points.
+point       | -       | Specifiy multiple points for which the route should be calculated. The order is important. Specify at least two points. The maximum number depends on the selected package.
 locale      | en      | The locale of the result. E.g. `pt_PT` for Portuguese or `de` for German
 instructions| true    | If instruction should be calculated and returned
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot and bike
