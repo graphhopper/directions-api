@@ -3,7 +3,6 @@
  * one Routing API request costs 1 credit
  * one Geocoding API request costs 1 credit
  * one Matrix API request with N start locations and M destinations costs N*M/2 credits
- * one Batch Matrix API (not yet released) request with N start locations and M destinations costs less credits
 
 ## Can I pay on demand?
 
