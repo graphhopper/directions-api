@@ -6,7 +6,7 @@
 
 ## Can I pay on demand?
 
-Currently that is not possible.
+It is possible to pay online without delay. But paying for an increased demand is currently not possible, please [let us know](https://graphhopper.com/#contact) of your needs and we can arrange a solution.
 
 ## Do you offer discounts?
 
