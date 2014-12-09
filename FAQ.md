@@ -11,7 +11,7 @@ Currently that is not possible.
 
 ## Do you offer discounts?
 
-Yes, if you sign up for an annually contract you get a discount. Also [follow us on Twitter](https://twitter.com/graphhopper) to get the latest campaign.
+Yes, you get a discount if you sign up for an annually contract, where you pay every 3 months. Also [follow us on Twitter](https://twitter.com/graphhopper) to get the latest campaign.
 
 ## How can I cancel, upgrade or downgrad my package?
 
