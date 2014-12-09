@@ -11,6 +11,10 @@ With the [ GraphHopper Directions API for Business](https://graphhopper.com/#dir
 
 You can see the Routing and Geocoding API in action at [GraphHopper Maps](https://graphhopper.com/maps).
 
+## Problems or Questions?
+
+If you have problems or questions please see the [FAQ.md](FAQ.md) or [contact us](https://graphhopper.com/#contact).
+
 ## [Routing API](docs-routing.md)
 
 ![Routing Example](./img/routing-example.png)
