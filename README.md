@@ -39,11 +39,11 @@ An example URL for a 3x3 matrix looks like the following:
 
 `https://graphhopper.com/api/1/matrix?point=49.932707%2C11.588051&point=50.241935%2C10.747375&point=50.118817%2C11.983337&type=json&vehicle=car&debug=true&out_array=weights&out_array=times&out_array=distances&key=[your-key]`
 
-## [Geocoding API](./docs-geocode.md)
+## [Geocoding API](./docs-geocoding.md)
 
 ![Geocoding Example](./img/geocoding-example.png)
 
-The Geocoding API is not yet production grade. Please help us improve it and give us feedback! See the documentation [here](./docs-geocode.md).
+The Geocoding API is not yet production grade. Please help us improve it and give us feedback! See the documentation [here](./docs-geocoding.md).
 
 The endpoint is `https://graphhopper.com/api/[version]/geocode`
 
