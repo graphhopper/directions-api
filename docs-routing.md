@@ -30,7 +30,30 @@ calc_points        | true    | If the points for the route should be calculated 
 type               | json    | Specifies the resulting format of the route, for json the content type will be application/json. Other possible format options: <br> jsonp you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> gpx, the content type will be application/xml
 min_path_precision | 1       | Not recommended to change. Increase this number if you want to further reduce bandwith.
 
-## Example output for the case type=json
+## Output 
+
+The JSON result contains the following structure:
+
+JSON path/attribute        | Description
+:--------------------------|:------------
+info.took                  | How many ms the request took on the server, of course without network latency taken into account.
+paths                      | An array of possible paths
+paths[0].distance          | The overall distance of the route, in meter
+paths[0].time              | The overall time of the route, in ms
+paths[0].points            | The polyline encoded coordinates of the path. Order is lat,lon,elelevation as it is no geoJson!
+paths[0].points_encoded    | Is true if the points are encoded, if not paths[0].points contains the geo json of the path (then order is lon,lat,elevation), which is easier to handle but consumes more bandwidth compared to encoded version
+paths[0].bbox              | The bounding box of the route, format: <br> minLon, minLat, maxLon, maxLat
+paths[0].instructions      | Contains information about the instructions for this route. The last instruction is always the Finish instruction and takes 0ms and 0meter. Keep in mind that instructions are currently under active development and can sometimes contain misleading information, so, make sure you always show an image of the map at the same time when navigating your users!
+paths[0].instructions[0].text                 | A description what the user has to do in order to follow the route. The language depends on the locale parameter.
+paths[0].instructions[0].distance             | The distance for this instruction, in meter
+paths[0].instructions[0].time                 | The duration for this instruction, in ms
+paths[0].instructions[0].interval             | An array containing the first and the last index (relative to paths[0].points) of the points for this instruction. This is useful to know for which part of the route the instructions are valid.
+paths[0].instructions[0].sign                 | A number which specifies the sign to show e.g. for right turn etc <br>TURN_SHARP_LEFT = -3<br>TURN_LEFT = -2<br>TURN_SLIGHT_LEFT = -1<br>CONTINUE_ON_STREET = 0<br>TURN_SLIGHT_RIGHT = 1<br>TURN_RIGHT = 2<br>TURN_SHARP_RIGHT = 3<br>FINISH = 4<br>VIA_REACHED = 5
+paths[0].instructions[0].annotationText       | [optional] A text describing the instruction in more detail, e.g. like surface of the way, warnings or involved costs
+paths[0].instructions[0].annotationImportance | [optional] 0 stands for INFO, 1 for warning, 2 for costs, 3 for costs and warning
+
+
+### Example output for the case type=json
 
 Keep in mind that some attributes which are not documented here can be removed in the future - you should not rely on them!
 
@@ -104,53 +127,6 @@ Keep in mind that some attributes which are not documented here can be removed i
 }
 ```
 
-The JSON result contains the following structure:
-
-JSON path/attribute        | Description
-:--------------------------|:------------
-info.took                  | How many ms the request took on the server, of course without network latency taken into account.
-paths                      | An array of possible paths
-paths[0].distance          | The overall distance of the route, in meter
-paths[0].time              | The overall time of the route, in ms
-paths[0].points            | The polyline encoded coordinates of the path. Order is lat,lon,elelevation as it is no geoJson!
-paths[0].points_encoded    | Is true if the points are encoded, if not paths[0].points contains the geo json of the path (then order is lon,lat,elevation), which is easier to handle but consumes more bandwidth compared to encoded version
-paths[0].bbox              | The bounding box of the route, format: <br> minLon, minLat, maxLon, maxLat
-paths[0].instructions      | Contains information about the instructions for this route. The last instruction is always the Finish instruction and takes 0ms and 0meter. Keep in mind that instructions are currently under active development and can sometimes contain misleading information, so, make sure you always show an image of the map at the same time when navigating your users!
-paths[0].instructions[0].text                 | A description what the user has to do in order to follow the route. The language depends on the locale parameter.
-paths[0].instructions[0].distance             | The distance for this instruction, in meter
-paths[0].instructions[0].time                 | The duration for this instruction, in ms
-paths[0].instructions[0].interval             | An array containing the first and the last index (relative to paths[0].points) of the points for this instruction. This is useful to know for which part of the route the instructions are valid.
-paths[0].instructions[0].sign                 | A number which specifies the sign to show e.g. for right turn etc <br>TURN_SHARP_LEFT = -3<br>TURN_LEFT = -2<br>TURN_SLIGHT_LEFT = -1<br>CONTINUE_ON_STREET = 0<br>TURN_SLIGHT_RIGHT = 1<br>TURN_RIGHT = 2<br>TURN_SHARP_RIGHT = 3<br>FINISH = 4<br>VIA_REACHED = 5
-paths[0].instructions[0].annotationText       | [optional] A text describing the instruction in more detail, e.g. like surface of the way, warnings or involved costs
-paths[0].instructions[0].annotationImportance | [optional] 0 stands for INFO, 1 for warning, 2 for costs, 3 for costs and warning
-
-
-## Area information
-
-If you need to find out defails about the area or need to ping the service use '/info'
-
-[http://localhost:8989/info](http://localhost:8989/info)
-
-### Example output:
-```json
-{ "build_date":"2014-02-21T16:52",
-  "bbox":[13.072624,52.333508,13.763972,52.679616],
-  "version":"0.3",
-  "features": { "foot" : { "elevation" : true  }, 
-                "car"  : { "elevation" : false } }
-}
-```
-
-JSON path/attribute | Description
-:-------------------|:------------
-version             | The GraphHopper version
-bbox                | The maximum bounding box of the area, format: <br> minLon, minLat, maxLon, maxLat
-features            | A json object per supported vehicles with name and supported features like elevation
-build_date          | [optional] The GraphHopper build date
-import_date         | [optional] The date time at which the OSM import was done
-prepare_date        | [optional] The date time at which the preparation (contraction hierarchies) was done. If nothing was done this is empty
-supported_vehicles  | [deprecated] An array of strings for all supported vehicles
-
 ### Output if expected error(s) while routing:
 ```json
 {
@@ -180,3 +156,30 @@ HTTP error code | Reason
 429             | API limit reached, you'll also get an email about this, and the header properties will give you more information: X-RateLimit-Limit (your current daily limit), X-RateLimit-Remaining (your remaining credits) and X-RateLimit-Reset (number of seconds until you have to wait).
 500             | Internal server error. We get automatically a notification and will try to fix this fast.
 501             | Only a special list of vehicles is supported
+
+## Area information
+
+If you need to find out defails about the area or need to ping the service use '/info'
+
+[http://localhost:8989/info](http://localhost:8989/info)
+
+
+### Example output:
+```json
+{ "build_date":"2014-02-21T16:52",
+  "bbox":[13.072624,52.333508,13.763972,52.679616],
+  "version":"0.3",
+  "features": { "foot" : { "elevation" : true  }, 
+                "car"  : { "elevation" : false } }
+}
+```
+
+JSON path/attribute | Description
+:-------------------|:------------
+version             | The GraphHopper version
+bbox                | The maximum bounding box of the area, format: <br> minLon, minLat, maxLon, maxLat
+features            | A json object per supported vehicles with name and supported features like elevation
+build_date          | [optional] The GraphHopper build date
+import_date         | [optional] The date time at which the OSM import was done
+prepare_date        | [optional] The date time at which the preparation (contraction hierarchies) was done. If nothing was done this is empty
+supported_vehicles  | [deprecated] An array of strings for all supported vehicles
