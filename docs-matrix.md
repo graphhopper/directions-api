@@ -18,7 +18,7 @@ Some other use case scenarios for the Matrix API:
 
 ### Description
 
-The Matrix API calculates the well known distance-matrix for a set of points, i.e. it calculates all the distances between every point combination. But we do not stop there, we also offer a time-, weight- and route-matrix. The weight-matrix can be used as raw input for e.g. a vehicle routing problem ([VRP](http://en.wikipedia.org/wiki/Vehicle_routing_problem)) and is more precise than a time- or distance-matrix. E.g. for bike routes the actual weight of a route (e.g. the "beauty") is what you want to decide if a route is 'better' and not always the taken time or distance. Also the weight is currently faster to calculate.
+The Matrix API calculates the well known distance-matrix for a set of points, i.e. it calculates all the distances between every point combination. But we do not stop there, we also offer a time-, weight- and route-matrix. The weight-matrix can be used as raw input for e.g. a vehicle routing problem ([VRP](http://en.wikipedia.org/wiki/Vehicle_routing_problem)) and is more precise than a time- or distance-matrix. E.g. for bike routes the actual weight of a route (e.g. the "beauty") is what you want to decide if a route is 'better' and not always the taken time or distance. Also the weight alone is currently faster to calculate.
 
 A simple illustration for a 3x3 matrix with identical points:
 
@@ -80,7 +80,7 @@ JSON path/attribute        | Description
 :--------------------------|:------------
 times                      | The time matrix for the specified points in the order [[from1->to1, from1->to2, ...], [from2->to1, from2->to2, ...], ...]. The times are in seconds.
 distances                  | The distance matrix for the specified points in the same order as the time matrix. The distances are in meters.
-weights                    | The weight matrix for the specified points in the same order as the time matrix. The weights for different vehicles can have a different number but are perfectly suited as input for [Vehicle Routing Problems](http://en.wikipedia.org/wiki/Vehicle_routing_problem) as they are usually faster to calculate.
+weights                    | The weight matrix for the specified points in the same order as the time matrix. The weights for different vehicles can have a different unit but the weights array is perfectly suited as input for [Vehicle Routing Problems](http://en.wikipedia.org/wiki/Vehicle_routing_problem) as it is currently faster to calculate.
 info.took                  | The taken time in seconds
 info.copyrights            | For the FREE and STANDARD package attribution according to [our documentation](https://github.com/graphhopper/web-api/#attribution) is necessary.
 
