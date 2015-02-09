@@ -82,7 +82,7 @@ times                      | The time matrix for the specified points in the ord
 distances                  | The distance matrix for the specified points in the same order as the time matrix. The distances are in meters.
 weights                    | The weight matrix for the specified points in the same order as the time matrix. The weights for different vehicles can have a different unit but the weights array is perfectly suited as input for [Vehicle Routing Problems](http://en.wikipedia.org/wiki/Vehicle_routing_problem) as it is currently faster to calculate.
 info.took                  | The taken time in seconds
-info.copyrights            | For the FREE and STANDARD package attribution according to [our documentation](https://github.com/graphhopper/web-api/#attribution) is necessary.
+info.copyrights            | Attribution according to [our documentation](https://github.com/graphhopper/web-api/#attribution) is necessary if no white-label option included.
 
 
 ### Output if expected error(s) while creating the matrix:
