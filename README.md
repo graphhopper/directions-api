@@ -30,9 +30,11 @@ The Routing API is documented [here](docs-routing.md).
 
 The endpoint is `https://graphhopper.com/api/[version]/route`
 
-An example URL looks like the following, where you need to replace the key with your own:
+You get an example response via:
 
-`https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
+`curl "https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&debug=true&points_encoded=false&key=[YOUR_KEY]"`
+
+Where you need to replace the key with your own
 
 ## [Matrix API](./docs-matrix.md)
 
@@ -42,9 +44,9 @@ The Matrix API is documented [here](./docs-matrix.md)
 
 The endpoint is `https://graphhopper.com/api/[version]/matrix`
 
-An example URL for a 3x3 matrix looks like the following:
+You get an example response for a 3x3 matrix looks via:
 
-`https://graphhopper.com/api/1/matrix?point=49.932707%2C11.588051&point=50.241935%2C10.747375&point=50.118817%2C11.983337&type=json&vehicle=car&debug=true&out_array=weights&out_array=times&out_array=distances&key=[your-key]`
+`curl "https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&poit=48.224673%2C3.867187&vehicle=car&debug=true&key=[YOUR_KEY]"`
 
 ## [Geocoding API](./docs-geocoding.md)
 
@@ -54,9 +56,9 @@ The Geocoding API is not yet production grade. Please help us improve it and giv
 
 The endpoint is `https://graphhopper.com/api/[version]/geocode`
 
-An example URL looks like:
+You get an example response via:
 
-`https://graphhopper.com/api/1/geocode?q=berlin&locale=de&key=[your-key]`
+`curl "https://graphhopper.com/api/1/geocode?q=berlin&locale=de&debug=true&key=[YOUR_KEY]"`
 
 Append `&debug=true` for a formatted output.
 
