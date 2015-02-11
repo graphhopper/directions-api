@@ -8,9 +8,9 @@ Here is an example where you need to replace the key with your own:
 
 `https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
 
-## Clients
+## API Clients and Examples
 
-We provide Open Source code in [Java](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/java/com/graphhopper/http/GraphHopperWeb.java#L55) and [JavaScript](https://github.com/graphhopper/graphhopper/blob/d70b63660ac5200b03c38ba3406b8f93976628a6/web/src/main/webapp/js/ghrequest.js) to query our API. Have a look at [GraphHopper Maps](https://graphhopper.com/maps) for a complete example in JavaScript.
+See the [clients](../README.md) section in the main document.
 
 ## Parameters
 

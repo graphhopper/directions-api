@@ -15,6 +15,13 @@ You can see the Routing and Geocoding API in action at [GraphHopper Maps](https:
 
 If you have problems or questions please see the [FAQ.md](FAQ.md) or [contact us](https://graphhopper.com/#contact).
 
+## API Clients and Examples
+                        
+ * [JavaScript](https://github.com/graphhopper/directions-api-js-client)
+ * [Java](https://github.com/graphhopper/directions-api-java-client)
+
+Do not hesitate to share your client code with us!
+
 ## [Routing API](docs-routing.md)
 
 ![Routing Example](./img/routing-example.png)

@@ -54,9 +54,9 @@ debug       | false   | If true, the output will be formated.
 
 One Matrix requests costs `N*M/2` requests. Your requests should be under the Matrix API location limit which is calculated as (N+M)/2. This maximimum location number cannot exceed a certain number depending on the package, see the pricing in our dashboard. If you include out_array=paths the Matrix API location limit is currently 10 regardless of the package.
 
-## Usage / Clients
+## API Clients and Examples
 
-Currently we have a [JavaScript client](https://github.com/graphhopper/directions-api-js-client) implemented, let us know if you need other languages!
+See the [clients](../README.md) section in the main document.
 
 ## Example output for the case type=json
 
