@@ -2,15 +2,9 @@
 
 The Routing API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api). Routing is the process of finding the 'best' path(s) between two or more points, where best depends on the vehicle and use case. With our API you have a fast and solid way to find this best path.
 
-### An example
-
-Here is an example where you need to replace the key with your own:
-
-`https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&key=[your-key]`
-
 ## API Clients and Examples
 
-See the [clients](../README.md) section in the main document.
+See the [clients](./README.md) section in the main document.
 
 ## Parameters
 
