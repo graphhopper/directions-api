@@ -1,6 +1,10 @@
 ## Matrix API Docs
 
-The Matrix API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api).
+The Matrix API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api) and with this API you can calculate many-to-many routes a lot more efficient.
+
+## API Clients and Examples
+
+See the [clients](./README.md) section in the main document.
 
 ### Introduction
 
@@ -53,10 +57,6 @@ debug       | false   | If true, the output will be formated.
 ## Limits and Counts
 
 One Matrix requests costs `N*M/2` requests. Your requests should be under the Matrix API location limit which is calculated as (N+M)/2. This maximimum location number cannot exceed a certain number depending on the package, see the pricing in our dashboard. If you include out_array=paths the Matrix API location limit is currently 10 regardless of the package.
-
-## API Clients and Examples
-
-See the [clients](../README.md) section in the main document.
 
 ## Example output for the case type=json
 
