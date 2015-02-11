@@ -56,7 +56,7 @@ One Matrix requests costs `N*M/2` requests. Your requests should be under the Ma
 
 ## Usage / Clients
 
-Currently we only have a [JavaScript client](https://github.com/graphhopper/web-api/tree/master/matrix-clients/) implemented, let us know if you need other languages!
+Currently we have a [JavaScript client](https://github.com/graphhopper/directions-api-js-client) implemented, let us know if you need other languages!
 
 ## Example output for the case type=json
 
