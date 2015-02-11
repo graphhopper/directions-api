@@ -46,7 +46,7 @@ The endpoint is `https://graphhopper.com/api/[version]/matrix`
 
 You get an example response for a 3x3 matrix looks via:
 
-`curl "https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&poit=48.224673%2C3.867187&vehicle=car&debug=true&key=[YOUR_KEY]"`
+`curl "https://graphhopper.com/api/1/matrix?point=49.932707%2C11.588051&point=50.241935%2C10.747375&point=50.118817%2C11.983337&type=json&vehicle=car&debug=true&out_array=weights&out_array=times&out_array=distances&key=[YOUR_KEY]"`
 
 ## [Geocoding API](./docs-geocoding.md)
 
