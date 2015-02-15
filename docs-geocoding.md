@@ -1,3 +1,5 @@
+[Back to overview](./README.md#geocoding-api)
+
 ## Geocoding API
 
 Geocoding is the process to fetch a coordinate (`latitude,longitude`) for a given
