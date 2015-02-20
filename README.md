@@ -94,7 +94,7 @@ The standard package requires a prominent attribution of GraphHopper. This means
 An html snippet for this is:
 
 ```html
-powered by <a href="https://graphhopper.com/#directions-api">GraphHopper</a>
+powered by <a href="https://graphhopper.com/#directions-api">GraphHopper API</a>
 ```
 
 For small screens (less than 190mm diagonal) it can be only the link:
