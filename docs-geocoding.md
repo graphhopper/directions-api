@@ -13,6 +13,7 @@ q           | -       | Specify an address
 locale      | en      | Improve the search for the specified locale. E.g. `pt_PT` for Portuguese or `de` for German
 limit       | 10      | Specify how many results you want
 debug       | `false` | If `true`, the output will be formated.
+point       | -       | The location bias in the format 'latitude,longitude' e.g. point=45.93272,11.58803
 
 ## Example output for the case type=json
 
