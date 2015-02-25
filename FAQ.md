@@ -10,8 +10,8 @@ It is possible to pay online without delay. But paying for an increased demand i
 
 ## Do you offer discounts?
 
-Yes, you get a discount if you sign up for an annually contract, where you pay every 3 months. Also [follow us on Twitter](https://twitter.com/graphhopper) to get the latest campaign.
+Yes, you get a discount if you sign up for an annually contract. Also [follow us on Twitter](https://twitter.com/graphhopper) to get the latest campaign.
 
-## How can I cancel, upgrade or downgrad my package?
+## How to cancel, upgrade or downgrad my package?
 
-Yes, please [contact us](https://graphhopper.com/#contact)
+Please [contact us](https://graphhopper.com/#contact)
