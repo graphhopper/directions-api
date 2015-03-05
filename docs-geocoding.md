@@ -10,7 +10,7 @@ The URL path to obtain the coordinate  is `/geocode`
 Parameter   | Default | Description
 :-----------|:--------|:-----------
 q           | -       | Specify an address
-locale      | en      | Improve the search for the specified locale. E.g. `pt_PT` for Portuguese or `de` for German
+locale      | en      | Display the search results for the specified locale. Currently French (fr), English (en), German (de) and Italian (it) are supported. If the locale wasn't found the default (en) is used.
 limit       | 10      | Specify how many results you want
 debug       | `false` | If `true`, the output will be formated.
 point       | -       | The location bias in the format 'latitude,longitude' e.g. point=45.93272,11.58803
