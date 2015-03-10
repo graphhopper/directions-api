@@ -105,7 +105,7 @@ For small screens (less than 190mm diagonal) it can be only the link:
 
 If you need a custom or white-label solution please contact us.
 
-Regardless of the package and additionally to our attribution you need to include attribution to [OpenStreetMap](https://www.openstreetmap.org/copyright/).
+Additionally to our attribution you need to include attribution to [OpenStreetMap](https://www.openstreetmap.org/copyright/) e.g. in your about page.
 
 ## HTTP Error codes
 
