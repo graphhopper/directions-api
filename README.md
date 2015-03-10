@@ -89,9 +89,9 @@ Read the [terms of services](https://graphhopper.com/terms.html) carefully and m
 
 ## Attribution
 
-The standard package requires a prominent attribution of GraphHopper. This means you include a link to graphhopper.com where you utilize the GraphHopper Directions API. It is important to note that the user has to see this only one time e.g. once per application start or at the first website access. The user must have the possibility and enough time to read and click on the link e.g. including it only in a short living spash screen isn't appropriate where as including this in or below a search input is appropriate. For an example you can look at [GraphHopper Maps](https://graphhopper.com/maps/)
+All packages requires a prominent attribution of GraphHopper. This means you include a link to graphhopper.com where you utilize the GraphHopper Directions API. It is important to note that the user has to see this only one time e.g. once per application start or at the first website access. The user must have the possibility and enough time to read and click on the link e.g. including it only in a short living spash screen isn't appropriate where as including this in or below a search input is appropriate. For an example you can look at [GraphHopper Maps](https://graphhopper.com/maps/)
 
-An html snippet for this is:
+An HTML snippet for this is:
 
 ```html
 powered by <a href="https://graphhopper.com/#directions-api">GraphHopper API</a>
