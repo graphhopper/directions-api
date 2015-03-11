@@ -1,6 +1,6 @@
 ## What is one credit?
 
- * one Routing API request costs 1 credit
+ * one Routing API request costs 1 credit. Every 10 via-points will cost 1 additional credit. E.g. 11 via-points cost 2 credits
  * one Geocoding API request costs 1 credit
  * one Matrix API request with N start locations and M destinations costs N*M/2 credits
 
