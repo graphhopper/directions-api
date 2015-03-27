@@ -2,6 +2,8 @@
 
 ## What is one credit?
 
+You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#/pricing) or get more detailes of how credits are calculated here:
+
  * one Routing API request costs 1 credit. Every 10 via-points will cost 1 additional credit. E.g. 11 via-points cost 2 credits
  * one Geocoding API request costs 1 credit
  * one Matrix API request with some start locations and some destinations costs `start * destinations / 2` credits. For example you have 1 start location and 10 destinations the charged credits are `1 * 10 / 2 = 5`
