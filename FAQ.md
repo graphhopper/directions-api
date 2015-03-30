@@ -6,7 +6,7 @@ You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#
 
  * one Routing API request costs 1 credit. Every 10 via-points will cost 1 additional credit. E.g. 11 via-points cost 2 credits
  * one Geocoding API request costs 1 credit
- * one Matrix API request with some start locations and some destinations costs `start * destinations / 2` credits. For example you have 1 start location and 10 destinations the charged credits are `1 * 10 / 2 = 5`
+ * one Matrix API request with some start locations and some destinations costs `start * destinations / 4` credits. For example you have 2 start locations and 10 destinations the charged credits are `2 * 10 / 4 = 5`
 
 ## Can I pay on demand?
 
