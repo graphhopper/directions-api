@@ -36,6 +36,10 @@ You get an example response via:
 
 Where you need to replace the key with your own
 
+## Optimization API
+
+Use this API for traveling salesman or vehicle routing problems. For example for a pizza delivery service to directly optimize the order of the requested delivery points, include maximum vehicles and more. Please contact us if you want to take part as an alpha tester.
+
 ## [Matrix API](./docs-matrix.md)
 
 ![Matrix Example](./img/matrix-example.png)
@@ -62,21 +66,17 @@ You get an example response via:
 
 Append `&debug=true` for a formatted output.
 
-<!--
 ## Isochrone API
 
-![Isochrone Example](./img/isochrone-example.png)
+Use this API to calculate reachabilityp polygons for specific points. Please contact us if you want to take part as an alpha tester.
 
-The Isochrone API is documented [here](./docs-isochrone.md).
+![Isochrone Illustration](https://raw.githubusercontent.com/graphhopper/directions-api/6fd1ce50a3c86b7f03823912fafa370f14ae11ec/img/isochrone-example.png)
 
-The endpoint is `https://graphhopper.com/api/[version]/isochrone`
+## Map Matching API
 
-An example URL looks like:
+Use this API to match recorded GPS tracks with roads and associate useful information like turn instructions or speed limit, i.e. it provides a 'snap to road' functionality. Please contact us if you want to take part as an alpha tester.
 
-`https://graphhopper.com/api/1/isochrone?q=52.511624,13.438339&time_limit=1200&vehicle=car&key=[your-key]`
-
-Append `&debug=true` for a formatted output.
--->
+![Map Matching Illustration](https://karussell.files.wordpress.com/2014/07/map-matching.png?w=242)
 
 ## [Issues](https://github.com/graphhopper/web-api/issues)
 
