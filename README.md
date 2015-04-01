@@ -122,8 +122,8 @@ HTTP error code | Reason
 {
   "details": "java.lang.IllegalArgumentException",
   "message": "Cannot find point 2: 2248.224673, 3.867187",
-  "code": 400
-  "hints" : ["hint 1", "hint 2"]
+  "code": 400,
+  "hints": ["hint 1", "hint 2"]
 }
 ```
 
