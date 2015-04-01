@@ -111,19 +111,19 @@ Additionally to our attribution you need to include attribution to [OpenStreetMa
 
 HTTP error code | Reason
 :---------------|:------------
-400             | Something was wrong in your request
-400             | Too few or too many points
+400             | Something was wrong in your request. Too few or too many points. ..
 401             | Authentication necessary
 429             | API limit reached, you'll also get an email about this, and the header properties will give you more information: X-RateLimit-Limit (your current daily limit), X-RateLimit-Remaining (your remaining credits) and X-RateLimit-Reset (number of seconds until you have to wait).
 500             | Internal server error. We get automatically a notification and will try to fix this fast.
 
 
-### Output if expected error(s) while routing:
+### Output
 ```json
 {
   "details": "java.lang.IllegalArgumentException",
   "message": "Cannot find point 2: 2248.224673, 3.867187",
-  "hints" : ["hint1", "hint2"]
+  "code": 400
+  "hints" : ["hint 1", "hint 2"]
 }
 ```
 
@@ -132,6 +132,7 @@ indicate a bug in the routing engine and is expected to a certain degree if too 
 
 JSON path/attribute    | Description
 :----------------------|:------------
-info.errors            | A list of error messages
-info.errors[0].details | E.g. to see the underlying exception, if any
-info.errors[0].message | Not intended to be displayed to the user as it is currently not translated
+message                | Not intended to be displayed to the user as it is currently not translated
+code                   | The HTTP error code
+details                | E.g. to see the underlying exception, if any
+hints                  | A string list of details regarding the error message
