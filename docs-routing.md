@@ -122,6 +122,10 @@ Keep in mind that some attributes which are not documented here can be removed i
 }
 ```
 
+### Output for the case type=gpx
+
+For GPX the [1.1 schema](http://www.topografix.com/gpx/1/1/) is used, with minor extensions to include turn signs.
+
 ### HTTP Error codes
 
 See the error codes and JSON structure on the [overview page](https://github.com/graphhopper/directions-api#http-error-codes)
