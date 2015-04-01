@@ -122,35 +122,9 @@ Keep in mind that some attributes which are not documented here can be removed i
 }
 ```
 
-### Output if expected error(s) while routing:
-```json
-{
-  "info": {"errors": [{
-    "details": "java.lang.IllegalArgumentException",
-    "message": "Cannot find point 2: 2248.224673, 3.867187"
-  }]}
-}
-```
-
-Sometimes a point can be "off the road" and you'll get 'cannot find point', this normally does not
-indicate a bug in the routing engine and is expected to a certain degree if too far away.
-
-JSON path/attribute    | Description
-:----------------------|:------------
-info.errors            | A list of error messages
-info.errors[0].details | E.g. to see the underlying exception, if any
-info.errors[0].message | Not intended to be displayed to the user as it is currently not translated
-
-
 ### HTTP Error codes
 
-HTTP error code | Reason
-:---------------|:------------
-400             | Something was wrong in your request
-400             | Too few or too many points
-429             | API limit reached, you'll also get an email about this, and the header properties will give you more information: X-RateLimit-Limit (your current daily limit), X-RateLimit-Remaining (your remaining credits) and X-RateLimit-Reset (number of seconds until you have to wait).
-500             | Internal server error. We get automatically a notification and will try to fix this fast.
-501             | Only a special list of vehicles is supported
+See the error codes and JSON structure on the [overview page](https://github.com/graphhopper/directions-api#http-error-codes)
 
 ## Area information
 
@@ -163,7 +137,7 @@ If you need to find out defails about the area or need to ping the service use '
 ```json
 { "build_date":"2014-02-21T16:52",
   "bbox":[13.072624,52.333508,13.763972,52.679616],
-  "version":"0.3",
+  "version":"0.4",
   "features": { "foot" : { "elevation" : true  }, 
                 "car"  : { "elevation" : false } }
 }
