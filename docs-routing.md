@@ -128,9 +128,7 @@ See the error codes and JSON structure on the [overview page](https://github.com
 
 ## Area information
 
-If you need to find out defails about the area or need to ping the service use '/info'
-
-[http://localhost:8989/info](http://localhost:8989/info)
+If you need to find out defails about the supported features e.g. which profiles and if foot supports elevation or you need to ping the routing service then use '/api/1/route/info'
 
 
 ### Example output:
