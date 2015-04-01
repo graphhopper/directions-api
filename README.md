@@ -111,8 +111,7 @@ Additionally to our attribution you need to include attribution to [OpenStreetMa
 
 HTTP error code | Reason
 :---------------|:------------
-500             | Internal server error. It is strongely recommended to send us the message and the link to it, as it is very likely a bug in our system.
-501             | Only a special list of vehicles is supported
+500             | Internal server error. We will be automatically notified from these errors as it is very likely a bug in our system. Still you can send us an email to get notified when it is fixed.
 400             | Something was wrong in your request
 401             | Authentication necessary
 403             | Not paid or API limit reached
