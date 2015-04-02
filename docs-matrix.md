@@ -89,40 +89,7 @@ info.took                  | The taken time in seconds
 info.copyrights            | Attribution according to [our documentation](https://github.com/graphhopper/web-api/#attribution) is necessary if no white-label option included.
 
 
-### Output if expected error(s) while creating the matrix:
-```json
-{
-  "info" : {
-    "errors" : [ {
-      "message" : "Cannot find from_points: 7, 8"
-    }, {
-      "message" : "Cannot find to_points: 7, 8"
-    } ],
-    "copyrights" : [ "GraphHopper", "OpenStreetMap contributors" ],
-    "took" : 0.002572816
-  }
-}
-```
+## HTTP Error codes
 
+See more details in the (overview)[README.md#http-error-codes]
 
-JSON path/attribute    | Description
-:----------------------|:------------
-info.errors            | If one point cannot be found then GraphHopper will skip calculating and print a message ala "Cannot find from_points". Make sure to correct or remove it.
-
-### HTTP Headers
-
- * X-RateLimit-Limit: your current daily limit
- * X-RateLimit-Remaining: your remaining credits
- * X-RateLimit-Reset: number of seconds until you have to wait
- * X-RateLimit-Credits: the number of 'credits' this request costs. A normal routing requests equates to 1.
-
-### HTTP Error codes
-
-HTTP error code | Reason
-:---------------|:------------
-400 	           | Something was wrong in your request
-400             | Too few or too many points
-413             | Too many parameters in the URL, you'll have to use the JSON format and POST requests
-429             | API limit reached, you'll also get an email about this, and the header properties will give you more information, see above
-500             | Internal server error. We get automatically a notification and will try to fix this fast.
-501 	           | Only a special list of vehicles is supported
