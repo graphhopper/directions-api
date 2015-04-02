@@ -91,5 +91,5 @@ info.copyrights            | Attribution according to [our documentation](https:
 
 ## HTTP Error codes
 
-See more details in the (overview)[README.md#http-error-codes]
+See more details in the [overview](README.md#http-error-codes)
 
