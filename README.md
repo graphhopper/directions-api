@@ -68,7 +68,7 @@ Append `&debug=true` for a formatted output.
 
 ## Isochrone API
 
-Use this API to calculate reachabilityp polygons for specific points. Please contact us if you want to take part as an alpha tester.
+Use this API to calculate reachability polygons for specific points. Please contact us if you want to take part as an alpha tester.
 
 ![Isochrone Illustration](https://raw.githubusercontent.com/graphhopper/directions-api/6fd1ce50a3c86b7f03823912fafa370f14ae11ec/img/isochrone-example.png)
 
