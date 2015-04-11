@@ -6,7 +6,7 @@ You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#
 
  * one Routing API request costs 1 credit. Every 10 via-points will cost 1 additional credit. E.g. 11 via-points cost 2 credits
  * one Geocoding API request costs 1 credit
- * one Matrix API request with some start locations and some destinations costs `starts * destinations` credits if `starts+destinations < 20` for bigger matrices we use the cheaper formular `(starts + destinations) * 5`. For example you have 2 start locations and 10 destinations the charged credits are `2 * 10 = 20` or for 20 start and 20 destinations it is `(20 + 20) * 5 = 200`
+ * one Matrix API request with some start locations and some destinations costs `starts * destinations / 2` credits if `starts` or `destinations` are less than 20. For bigger matrices we use the cheaper formular `MAX_OF(starts, destinations) * 10`. For example you have 2 start locations and 10 destinations the charged credits are `2 * 10 / 2 = 10` or for 30 start and 40 destinations it is `40 * 10 = 400`
  * the costs for one Optimization API request depends on the number of vehicles and activities and is calculated as `vehicles * activities * 10`
   
 ## API credit limits
