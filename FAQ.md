@@ -8,6 +8,10 @@ You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#
  * one Geocoding API request costs 1 credit
  * one Matrix API request with some start locations and some destinations costs `starts * destinations` credits if `starts+destinations < 20` for bigger matrices we use the cheaper formular `(starts + destinations) * 5`. For example you have 2 start locations and 10 destinations the charged credits are `2 * 10 = 20` or for 20 start and 20 destinations it is `(20 + 20) * 5 = 200`
  * the costs for one Optimization API request depends on the number of vehicles and activities and is calculated as `vehicles * activities * 10`
+  
+## API credit limits
+
+The API credit limits are listed in the dashboard and depend on the selected package. The limits are also reported in the response header for every request.
 
 ## Can I pay on demand?
 
