@@ -122,9 +122,8 @@ HTTP error code | Reason
 ### Output
 ```json
 {
-  "details": "java.lang.IllegalArgumentException",
   "message": "Cannot find point 2: 2248.224673, 3.867187",
-  "code": 400
+  "hints": [{"message": "something", ...}]
 }
 ```
 
@@ -134,6 +133,4 @@ indicate a bug in the routing engine and is expected to a certain degree if too 
 JSON path/attribute    | Description
 :----------------------|:------------
 message                | Not intended to be displayed to the user as it is currently not translated
-code                   | The HTTP error code
-details                | E.g. to see the underlying exception, if any
-hints                  | A string list of details regarding the error message
+hints                  | An optional list of details regarding the error message e.g. `[{"message": "first error message in hints"}]`
