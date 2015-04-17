@@ -13,6 +13,10 @@ You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#
 
 The API credit limits are listed in the dashboard and depend on the selected package. The limits are also reported in the response header for every request.
 
+## Documentation and Demo
+
+Our documentation is available [here](https://github.com/graphhopper/directions-api/blob/master/README.md) and some demos are available for [every client](https://github.com/graphhopper/directions-api/blob/master/README.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
+
 ## Pricing
 
 You can find the detailed pricing in the dashboard. For individual requirements we offer small and big custom packages.
