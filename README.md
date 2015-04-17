@@ -45,6 +45,8 @@ For example for a pizza delivery service to directly optimize the order of the
 requested delivery points, include maximum vehicles and more. 
 Please contact us if you want to take part as an alpha tester.
 
+The Tour Optimization API is documented [here](https://graphhopper.com/vrp/documentation/)
+
 The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
 ## [Matrix API](./docs-matrix.md)
