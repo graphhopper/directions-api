@@ -36,9 +36,14 @@ You get an example response via:
 
 Where you need to replace the key with your own
 
-## Optimization API
+## Tour Optimization API
 
-Use this API for traveling salesman or vehicle routing problems. For example for a pizza delivery service to directly optimize the order of the requested delivery points, include maximum vehicles and more. Please contact us if you want to take part as an alpha tester.
+![Vehicle Routing Example](./img/vrp-example.png)
+
+Use this API for traveling salesman or vehicle routing problems. 
+For example for a pizza delivery service to directly optimize the order of the 
+requested delivery points, include maximum vehicles and more. 
+Please contact us if you want to take part as an alpha tester.
 
 ## [Matrix API](./docs-matrix.md)
 
