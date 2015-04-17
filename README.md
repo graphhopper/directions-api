@@ -49,6 +49,13 @@ The Tour Optimization API is documented [here](https://graphhopper.com/vrp/docum
 
 The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
+The Tour Optimization API works in two steps
+
+ 1. `curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]" --data @your-vrp-problem.json`
+ 2. curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"
+  
+For more details also about the format of the `your-vrp-problem.json` file please look into the documentation.
+
 ## [Matrix API](./docs-matrix.md)
 
 ![Matrix Example](./img/matrix-example.png)
