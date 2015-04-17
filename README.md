@@ -6,7 +6,7 @@ With the [ GraphHopper Directions API for Business](https://graphhopper.com/#dir
 ## How to Start
 
  1. To use the Directions API you need an API key. Get it for free [here](https://graphhopper.com/#directions-api).
- 2. Read the documentation for the **Routing API**, the **Matrix API** and the **Geocoding API** below or try the examples in our dashboard.
+ 2. Read the documentation for the **Routing API**, the **Tour Optimization API**, the **Matrix API** and the **Geocoding API** below or try the examples in our dashboard.
  3. To increase your query limits for production you pay online within a few minutes via credit card or debit advice.
 
 You can see the Routing and Geocoding API in action at [GraphHopper Maps](https://graphhopper.com/maps).
@@ -51,7 +51,7 @@ The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
 The Tour Optimization API works in two steps
 
- 1. Public your problem json:
+ 1. Publish your problem json:
     `curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]" --data @your-vrp-problem.json`
  2. Poll every 500ms until a solution is available:
     `curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"`
