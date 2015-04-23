@@ -56,7 +56,7 @@ The Tour Optimization API works in two steps
  2. Poll every 500ms until a solution is available:
     `curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"`
   
-For more details also about the format of the `your-vrp-problem.json` file please look into the documentation.
+For more details also about the format of the `your-vrp-problem.json` file you can use [an example](https://graphhopper.com/vrp/examples/tsp_lonlat_end.json) or take a look into the documentation or demo with more examples and detailed description.
 
 ## [Matrix API](./docs-matrix.md)
 
