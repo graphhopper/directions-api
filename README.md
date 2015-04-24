@@ -16,7 +16,8 @@ You can see the Routing and Geocoding API in action at [GraphHopper Maps](https:
 If you have problems or questions please see the [FAQ.md](FAQ.md) or [contact us](https://graphhopper.com/#contact).
 
 ## API Clients and Examples
-                        
+
+ * [Live Examples](https://graphhopper.com/api/1/examples/)
  * [JavaScript](https://github.com/graphhopper/directions-api-js-client)
  * [Java](https://github.com/graphhopper/directions-api-java-client)
 
@@ -36,7 +37,7 @@ You get an example response via:
 
 Where you need to replace the key with your own
 
-## [Tour Optimization API](https://graphhopper.com/vrp/documentation/)
+## [Tour Optimization API](https://graphhopper.com/api/1/vrp/documentation/)
 
 ![Vehicle Routing Example](./img/vrp-example.png)
 
@@ -45,7 +46,7 @@ For example for a pizza delivery service to directly optimize the order of the
 requested delivery points, include maximum vehicles and more. 
 Please contact us if you want to take part as an alpha tester.
 
-The Tour Optimization API is documented [here](https://graphhopper.com/vrp/documentation/)
+The Tour Optimization API is documented [here](https://graphhopper.com/api/1/vrp/documentation/)
 
 The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
@@ -56,7 +57,7 @@ The Tour Optimization API works in two steps
  2. Poll every 500ms until a solution is available:
     `curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"`
   
-For more details also about the format of the `your-vrp-problem.json` file you can use [an example](https://graphhopper.com/vrp/examples/tsp_lonlat_end.json) or take a look into the documentation or demo with more examples and detailed description.
+For more details also about the format of the `your-vrp-problem.json` file you can use one of [the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/tour-optimization-examples).
 
 ## [Matrix API](./docs-matrix.md)
 
