@@ -17,8 +17,7 @@ If you have problems or questions please see the [FAQ.md](FAQ.md) or [contact us
 
 ## API Clients and Examples
 
- * [Live Examples](https://graphhopper.com/api/1/examples/)
- * [JavaScript](https://github.com/graphhopper/directions-api-js-client)
+ * [JavaScript](https://github.com/graphhopper/directions-api-js-client) - try the [live examples](https://graphhopper.com/api/1/examples/)
  * [Java](https://github.com/graphhopper/directions-api-java-client)
 
 Do not hesitate to share your client code with us!
