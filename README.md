@@ -42,7 +42,7 @@ Where you need to replace the key with your own
 
 Use this API for traveling salesman or vehicle routing problems. 
 For example a pizza delivery service will benefit from the API to optimize the order of the 
-requested delivery points, include the available vehicles, driver skills, time windows and more. Also a tourism application for the shortest sightseeing tours are one possible use case.
+requested delivery points, include the available vehicles, driver skills, time windows and more. Also a tourism application for the shortest sightseeing tours is a possible use case.
 
 **Please contact us if you want to take part as an alpha tester.**
 
