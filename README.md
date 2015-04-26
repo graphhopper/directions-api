@@ -41,9 +41,10 @@ Where you need to replace the key with your own
 ![Vehicle Routing Example](./img/vrp-example.png)
 
 Use this API for traveling salesman or vehicle routing problems. 
-For example for a pizza delivery service to directly optimize the order of the 
-requested delivery points, include maximum vehicles and more. 
-Please contact us if you want to take part as an alpha tester.
+For example a pizza delivery service will benefit from the API to optimize the order of the 
+requested delivery points, include the available vehicles, driver skills, time windows and more. Also a tourism application for the shortest sightseeing tours are one possible use case.
+
+**Please contact us if you want to take part as an alpha tester.**
 
 The Tour Optimization API is documented [here](https://graphhopper.com/api/1/vrp/documentation/)
 
