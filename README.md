@@ -46,7 +46,7 @@ requested delivery points, include the available vehicles, driver skills, time w
 
 **Please contact us if you want to take part as an alpha tester.**
 
-The Tour Optimization API is documented [here](https://graphhopper.com/api/1/vrp/documentation/)
+The Tour Optimization API is documented [here](https://graphhopper.com/api/1/vrp/documentation/) and live examples are available [here](https://graphhopper.com/api/1/examples/#optimization).
 
 The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
