@@ -50,6 +50,8 @@ Example:
 Define your vehicle type. The capacity is optional and is used to define how many items fit into the vehicle. Use car, bike or foot as profile.
 
 Example:
+
+```json
 {
     "type_id": "vehicle_type_1",
     "profile": "car",
@@ -57,6 +59,7 @@ Example:
     "distance_dependent_costs": 0.0004,
     "time_dependent_costs": 0.008
 }
+```
 
 ### Services or Shipments
 
