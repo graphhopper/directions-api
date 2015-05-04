@@ -7,9 +7,11 @@ For example a pizza delivery service will benefit from the API to optimize the o
 include the available vehicles, driver skills, time windows and more. 
 Also a tourism application for the shortest sightseeing tours is a possible use case.
 
-### Live Example
+### Examples
 
-The fastest way to understand what it does it by [trying it out](https://graphhopper.com/api/1/examples/#optimization).
+The fastest way to understand what it does it by
+ * [trying out](https://graphhopper.com/api/1/examples/#optimization) live examples
+ * looking into [the JSON from the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/tour-optimization-examples).
 
 ## JSON Input
 
