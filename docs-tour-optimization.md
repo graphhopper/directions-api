@@ -9,8 +9,8 @@ Also a tourism application for the shortest sightseeing tours is a possible use 
 
 ### Clients
 
- * [Java]()
  * [JavaScript](https://github.com/graphhopper/directions-api-js-client/)
+ * [Java](https://github.com/karussell/directions-api-vrp-java-client/)
   
 Other clients can be relative easily created via [swagger-codegen](https://github.com/swagger-api/swagger-codegen) and the swagger specification for the Tour Optimization API which is located [here](https://graphhopper.com/api/1/vrp/swagger.json). Please [let us know](https://graphhopper.com/#contact) which further programming language or environment you need for your integration!
 
