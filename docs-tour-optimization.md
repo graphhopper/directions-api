@@ -2,10 +2,17 @@
 
 ## Tour Optimization API
 
-The Tour Optimization API is used to solve the traveling salesman or vehicle routing problem. 
-For example a pizza delivery service will benefit from the API to optimize the order of the requested delivery points, 
-include the available vehicles, driver skills, time windows and more. 
-Also a tourism application for the shortest sightseeing tours is a possible use case.
+The Tour Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
+of moving things and people. For example, every company dealing with last-mile deliveries faces a vehicle routing problem, i.e. it must find ways to
+efficiently service its customers given a variety of requirements: customer requirements (e.g. time windows), 
+the product's transport requirements (e.g. refrigerated, must be picked up first), driver skills, vehicles/capacities available etc..
+
+Even these problems are relatively easy to understand, finding reasonable solutions is way more difficult. 
+You need to calculate travel times and distances on large (road) networks, you need to formalize your vehicle routing problem and to express
+ your manifold business constraints, you need fast and efficient algorithms and quite an amount of computational power. This is where GraphHopper
+ Tour Optimization comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and GraphHopper will do the heavy work.
+ And you can focus on your location based service. To make it even easier for you, we provide you with the following clients.
+
 
 ### Clients
 
