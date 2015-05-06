@@ -9,8 +9,9 @@ the product's transport requirements (e.g. refrigerated, must be picked up first
 
 Even these problems are relatively easy to understand, finding reasonable solutions is way more difficult. 
 You need to calculate travel times and distances on large (road) networks, you need to formalize your vehicle routing problem and to express
- your manifold business constraints, you need fast and efficient algorithms and quite an amount of computational power. This is where GraphHopper
- Tour Optimization comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and GraphHopper will do the heavy work.
+ your manifold business constraints, you need fast and efficient algorithms and quite an amount of computational power.
+  
+ This is where <b>GraphHopper Tour Optimization</b> comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and GraphHopper will do the heavy work.
  And you can focus on your location based service. To make it even easier for you, we provide you with the following clients.
 
 
