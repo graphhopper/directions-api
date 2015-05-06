@@ -99,23 +99,38 @@ If you want to let the Tour Optimization decide at which customer the vehicle sh
 }
 ```
 
-
+The ```type_id``` refers to the vehicle type of your vehicle.
 
 ### Vehicle Type
 
-Define your vehicle type. The capacity is optional and is used to define how many items fit into the vehicle. Use car, bike or foot as profile.
+In the vehicle type you can specify three important features of your vehicles: profile, costs and capacity. The profile indicates whether your vehicle is actually is person moving by ```foot```, whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be car, but can also be a heavy vehicle).
+ The costs indicate transport costs. The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below.
 
-Example:
+If you want your vehicles to use roads with a single capacity dimension of maximum 100 units (e.g. 100 kilogram), specify it like this:
 
 ```json
 {
-    "type_id": "vehicle_type_1",
+    "type_id": "your-vehicle-type-id",
     "profile": "car",
-    "capacity": [5],
+    "capacity": [100],
     "distance_dependent_costs": 0.0004,
     "time_dependent_costs": 0.008
 }
 ```
+
+If you want it to have multiple capacity dimensions, e.g. weight and volume, specify it like this:
+
+```json
+{
+    "type_id": "your-vehicle-type-id",
+    "profile": "car",
+    "capacity": [100,1000],
+    "distance_dependent_costs": 0.0004,
+    "time_dependent_costs": 0.008
+}
+```
+
+
 
 ### Services or Shipments
 
