@@ -103,7 +103,7 @@ The ```type_id``` refers to the vehicle type of your vehicle.
 
 ### Vehicle Type
 
-In the vehicle type you can specify three important features of your vehicles: profile, costs and capacity. The profile indicates whether your vehicle is actually is person moving by ```foot```, whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be car, but can also be a heavy vehicle).
+In the vehicle type you can specify three important features of your vehicles: profile, costs and capacity. The profile indicates whether your vehicle is actually is person moving by ```foot```, whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be a car, but can also be a heavy vehicle).
  The costs indicate transport costs. The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below.
 
 If you want your vehicles to use roads with a single capacity dimension of maximum 100 units (e.g. 100 kilogram), specify it like this:
@@ -129,6 +129,9 @@ If you want it to have multiple capacity dimensions, e.g. weight and volume, spe
     "time_dependent_costs": 0.008
 }
 ```
+
+When it comes to the costs, you can focus on minimizing distances by setting ```time_dependent_costs: 0.0``` and ```distance_dependent_costs: 1.0```.
+However, you can also minimize some sort of generalized cost function by assigning a monetary value of time and value of distance as shown above.
 
 
 
