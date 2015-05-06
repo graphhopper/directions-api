@@ -49,7 +49,7 @@ This is JSON input you need to post to (via body):
 
 ### Vehicle
 
-Define one or more vehicle. 
+Define one or more vehicle as described below. You can specify whether your vehicle needs to come back to its home location or not.
 
 If you want your vehicle to come back to where it started, define it like this:
 
@@ -65,7 +65,7 @@ If you want your vehicle to come back to where it started, define it like this:
 }
 ```
 
-If you want your vehicle end at a specified end location which is not equal to the start location, specify it like this:
+If you want your vehicle to end at a specified end location which is not equal to the start location, specify it like this:
 
 ```json
 {
