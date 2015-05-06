@@ -7,6 +7,13 @@ For example a pizza delivery service will benefit from the API to optimize the o
 include the available vehicles, driver skills, time windows and more. 
 Also a tourism application for the shortest sightseeing tours is a possible use case.
 
+### Clients
+
+ * [Java]()
+ * [JavaScript](https://github.com/graphhopper/directions-api-js-client/)
+  
+Other clients can be relative easily created via [swagger-codegen](https://github.com/swagger-api/swagger-codegen) and the swagger specification for the Tour Optimization API which is located [here](https://graphhopper.com/api/1/vrp/swagger.json). Please [let us know](https://graphhopper.com/#contact) which further programming language or environment you need for your integration!
+
 ### Examples
 
 The fastest way to understand what it does it by
