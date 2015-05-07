@@ -31,13 +31,7 @@ The fastest way to understand the API is by looking at
 
 ## JSON Input
 
-This is JSON specification you need to post to:
-
-`
-"https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]"
-`
-
-. The general input structure is
+The general input structure is
 
 ```json
 {
@@ -48,10 +42,16 @@ This is JSON specification you need to post to:
 }
 ```
 
+This specification need to be posted to:
+
+`
+"https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]"
+`
+
 
 ### Vehicles
 
-Define one or more vehicle as described below. You can specify whether your vehicle needs to come back to its home-location or not.
+Define one or more vehicles as described below. You can specify whether your vehicle needs to come back to its home-location or not.
 
 If you want your vehicle to come back, specify it like this:
 
