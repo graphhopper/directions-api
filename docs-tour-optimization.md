@@ -25,7 +25,7 @@ Other clients can be relative easily created via [swagger-codegen](https://githu
 ### Quick Start
 
 The fastest way to understand the API is by looking at
- * [trying out](https://graphhopper.com/api/1/examples/#optimization) live examples
+ * [live examples](https://graphhopper.com/api/1/examples/#optimization)
  * [the JSON from the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/tour-optimization-examples)
  * the extensive examples described below
 
