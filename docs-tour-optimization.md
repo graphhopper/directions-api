@@ -331,14 +331,14 @@ you can skip the reference to a vehicle type. This automatically triggers a defa
 ```json
 {
     "vehicles" : [
-        {
-            "vehicle_id": "my_vehicle",
-            "start_address": {
-                "location_id": "berlin",
-                "lon": 13.406,
-                "lat": 52.537
-            }
-        }
+       {
+         "vehicle_id": "my_vehicle",
+         "start_address": {
+             "location_id": "berlin",
+             "lon": 13.406,
+             "lat": 52.537
+         }
+       }
     ],
     "services" : [
        {
