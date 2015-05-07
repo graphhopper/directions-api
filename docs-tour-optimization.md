@@ -86,7 +86,7 @@ If you want your vehicle to end at a specified end-location which is not equal t
 }
 ```
 
-If you want to let <b>GraphHopper<b> decide at which customer the vehicle should end, specify it like this (then the vehicle will end at one of your customer locations):
+If you want to let <b>GraphHopper</b> decide at which customer the vehicle should end, specify it like this (then the vehicle will end at one of your customer locations):
 
 ```json
 {
