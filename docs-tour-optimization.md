@@ -24,9 +24,10 @@ Other clients can be relative easily created via [swagger-codegen](https://githu
 
 ### Examples
 
-The fastest way to understand what it does it by
+The fastest way to understand the API is by looking at
  * [trying out](https://graphhopper.com/api/1/examples/#optimization) live examples
- * looking into [the JSON from the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/tour-optimization-examples).
+ * [the JSON from the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/tour-optimization-examples)
+ * the extensive examples described below
 
 ## JSON Input
 
@@ -99,12 +100,23 @@ If you want to let the Tour Optimization decide at which customer the vehicle sh
 }
 ```
 
-The ```type_id``` refers to the vehicle type of your vehicle.
+The ```type_id``` refers to the vehicle type of your vehicle. It is optional and only required if you need to specify your own type.
 
 ### Vehicle Type
 
-In the vehicle type you can specify three important features of your vehicles: profile, costs and capacity. The profile indicates whether your vehicle is actually is person moving by ```foot```, whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be a car, but can also be a heavy vehicle).
- The costs indicate transport costs. The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below.
+The defaul type is 
+
+```json
+{
+    "type_id": "default_type",
+    "profile": "car",
+    "capacity": [ 0 ]
+}
+```
+
+
+In the vehicle type you can specify two important features of your vehicles: profile and capacity. The profile indicates whether your vehicle is actually is person moving by ```foot```, whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be a car, but can also be a heavy vehicle).
+ The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below.
 
 If you want your vehicles to use roads with a single capacity dimension of maximum 100 units (e.g. 100 kilogram), specify it like this:
 
@@ -112,9 +124,7 @@ If you want your vehicles to use roads with a single capacity dimension of maxim
 {
     "type_id": "your-vehicle-type-id",
     "profile": "car",
-    "capacity": [100],
-    "distance_dependent_costs": 0.0004,
-    "time_dependent_costs": 0.008
+    "capacity": [100]
 }
 ```
 
@@ -124,9 +134,7 @@ If you want it to have multiple capacity dimensions, e.g. weight and volume, spe
 {
     "type_id": "your-vehicle-type-id",
     "profile": "car",
-    "capacity": [100,1000],
-    "distance_dependent_costs": 0.0004,
-    "time_dependent_costs": 0.008
+    "capacity": [100,1000]
 }
 ```
 
@@ -137,11 +145,649 @@ However, you can also minimize some sort of generalized cost function by assigni
 
 ### Services or Shipments
 
-Define your service or shipment
+The basic difference between a Service and a Shipment is that the Service involves only one location whereas the Shipment involves two location, i.e. a pickup and a delivery location.
+A service can be specified as:
 
-### Time Windows
+```json
+{
+     "id": "service-id",
+     "name": "meaningful-name", [optional]
+     "address": {
+       "location_id": "service-location-id",
+       "lon": 9.999,
+       "lat": 53.552
+     },
+     "duration": 3600000, [optional]
+     "size": [ 1 ], [optional]
+     "time-windows": [ [optional]
+        {
+            "earliest": 0,
+            "latest": 3600000
+        }
+     ]
+}
+```
 
+A shipment can be specified as:
+
+```json
+{
+    "id": "shipment-id",
+    "name": "meaningful-name", [optional]
+    "pickup": {
+        "address": {
+            "location_id": "your-pickup-location-id",
+            "lon": 12.1333333,
+            "lat": 54.0833333
+        },
+        "duration": 1000 [optional]
+        "time_windows": [ [optional]
+            {
+                "earliest": 0.0,
+                "latest": 1000.0
+            } 
+        ]
+    },
+    "delivery": {
+        "address": {
+            "location_id": "your-delivery-location-id",
+            "lon": 8.3858333,
+            "lat": 49.0047222
+        },
+        "duration": 1000 [optional]
+        "time_windows": [ [optional]
+            {
+                "earliest": 10000.0,
+                "latest": 20000.0
+            }
+        ]
+    },
+    "size": [1] [optional]
+}
+``` 
+
+Both Service and Shipment can be specified with multiple capacity dimensions as follows:
+
+```json
+"size": [1,10,150]
+```
 
 Learn more about it in the [live API docs](https://graphhopper.com/api/1/vrp/documentation/).
 
 ## JSON Output
+
+
+## Examples
+
+### Traveling Salesman
+
+Assume you want to find the fastest round trip through Germany's 5 biggest cities starting in Berlin:
+
+Berlin, lon: 13.406, lat: 52.537<br>
+Hamburg, lon: 9.999, lat: 53.552<br>
+Munich, lon: 11.570, lat: 48.145<br>
+Cologne, lon: 6.957, lat: 50.936<br>
+Frankfurt, lon: 8.670, lat: 50.109<br>
+
+First, specify your vehicle at the start location Berlin. If you do not need a special vehicle type, 
+you can skip the reference to a vehicle type. This automatically triggers a default type (```profile: car```, ```capacity: [0]```).
+
+
+```json
+{
+    "vehicles" : [
+            {
+                "vehicle_id": "my_vehicle",
+                "start_address": {
+                    "location_id": "berlin",
+                    "lon": 13.406,
+                    "lat": 52.537
+                }
+            }
+    ],
+    "services" : [
+           {
+             "id": "hamburg",
+             "name": "visit_hamburg",
+             "address": {
+               "location_id": "hamburg",
+               "lon": 9.999,
+               "lat": 53.552
+             }
+           },
+           {
+             "id": "munich",
+             "name": "visit_munich",
+             "address": {
+               "location_id": "munich",
+               "lon": 11.570,
+               "lat": 48.145
+             }
+           },
+           {
+             "id": "cologne",
+             "name": "visit_cologne",
+             "address": {
+               "location_id": "cologne",
+               "lon": 6.957,
+               "lat": 50.936
+             }
+           },
+           {
+             "id": "frankfurt",
+             "name": "visit_frankfurt",
+             "address": {
+               "location_id": "frankfurt",
+               "lon": 8.670,
+               "lat": 50.109
+             }
+           }
+    ]
+}
+```
+
+Note that the ```name``` is optional, it is just to give your visits another meaningful name.
+
+With ```curl``` you can post the problem to GraphHopper like this (or use our clients to do it or just the way you prefer):
+
+Either use a json file (thus copy the above problem into problem.json)
+
+```
+curl -H "Content-Type: application/json" --data @problem.json https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]
+```
+
+or copy the problem directly into your curl statement like this
+
+
+```
+curl -H "Content-Type: application/json" --data '{ "vehicles" : [ ...' https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]
+```
+
+GraphHopper uses a queue based approach, i.e. your problem is put in our problem queue.  
+Thus you are getting back a ```job_id``` with which you can fetch your solution like this:
+
+```
+curl https://graphhopper.com/api/1/vrp/solution/{job_id}?key=[YOUR_KEY]
+```
+
+If your job is still waiting in the queue, you get the following json:
+
+```json
+{
+  "job_id" : {job_id},
+  "status" : "waiting",
+  "waiting_time_in_queue" : 1061,
+  "processing_time" : 0,
+  "solution" : pending
+}
+```
+
+If it is being processed but not yet finished, you get:
+ 
+
+```json
+{
+  "job_id" : {job_id},
+  "status" : "processing",
+  "waiting_time_in_queue" : 1061,
+  "processing_time" : 50,
+  "solution" : pending
+}
+```
+
+If the solution is available, the response looks like this:
+
+```json
+{
+  "job_id" : "7e60b8ea-8fe8-4839-8a8e-c72948e131cb",
+  "status" : "finished",
+  "waiting_time_in_queue" : 0,
+  "processing_time" : 271,
+  "solution" : {
+    "costs" : 71118000,
+    "distance" : 1872917,
+    "time" : 71118000,
+    "no_unassigned" : 0,
+    "routes" : [ {
+      "vehicle_id" : "my_vehicle",
+      "activities" : [ {
+        "type" : "start",
+        "location_id" : "berlin",
+        "end_time" : 0
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 22066000,
+        "end_time" : 22066000
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 36986000,
+        "end_time" : 36986000
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 44195000,
+        "end_time" : 44195000
+      }, {
+        "type" : "service",
+        "id" : "hamburg",
+        "location_id" : "hamburg",
+        "arr_time" : 60057000,
+        "end_time" : 60057000
+      }, {
+        "type" : "end",
+        "location_id" : "berlin",
+        "arr_time" : 71118000
+      } ]
+    } ],
+    "unassigned" : {
+      "services" : [ ],
+      "shipments" : [ ]
+    }
+}
+```
+
+Let us assume you do not want your vehicle to come back to Berlin, but to stay in one of the other cities. Then add
+
+```json
+"return_to_depot": false
+```
+
+to your vehicle specification. This results in:
+
+```json
+{
+  "job_id" : "2ee7c97d-f108-4c92-9a11-76bdf5b10a0b",
+  "status" : "finished",
+  "waiting_time_in_queue" : 0,
+  "processing_time" : 242,
+  "solution" : {
+    "costs" : 49178000,
+    "distance" : 1289793,
+    "time" : 49178000,
+    "no_unassigned" : 0,
+    "routes" : [ {
+      "vehicle_id" : "my_vehicle",
+      "activities" : [ {
+        "type" : "start",
+        "location_id" : "berlin",
+        "end_time" : 0
+      }, {
+        "type" : "service",
+        "id" : "hamburg",
+        "location_id" : "hamburg",
+        "arr_time" : 11064000,
+        "end_time" : 11064000
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 26872000,
+        "end_time" : 26872000
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 34114000,
+        "end_time" : 34114000
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 49178000,
+        "end_time" : 49178000
+      } ]
+    } ],
+    "unassigned" : {
+      "services" : [ ],
+      "shipments" : [ ]
+    }
+  }
+}
+```
+
+Thus the vehicle does not need to return to Berlin and GraphHopper finds that it is best to end the trip in Munich.
+
+Let us assume you have good reasons to end your trip in Cologne, then add this
+
+```json
+"end_address": {
+    "location_id" : "cologne",
+    "lon": 6.957,
+    "lat": 50.936
+}
+```
+
+to your vehicle specification. This gives you the following solution:
+
+```json
+{
+  "job_id" : "8393c909-d10e-4197-80ca-d9f165e8c737",
+  "status" : "finished",
+  "waiting_time_in_queue" : 0,
+  "processing_time" : 209,
+  "solution" : {
+    "costs" : 62098000,
+    "distance" : 1640436,
+    "time" : 62098000,
+    "no_unassigned" : 0,
+    "routes" : [ {
+      "vehicle_id" : "my_vehicle",
+      "activities" : [ {
+        "type" : "start",
+        "location_id" : "berlin",
+        "end_time" : 0
+      }, {
+        "type" : "service",
+        "id" : "hamburg",
+        "location_id" : "hamburg",
+        "arr_time" : 11064000,
+        "end_time" : 11064000
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 39969000,
+        "end_time" : 39969000
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 54889000,
+        "end_time" : 54889000
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 62098000,
+        "end_time" : 62098000
+      }, {
+        "type" : "end",
+        "location_id" : "cologne",
+        "arr_time" : 62098000
+      } ]
+    } ],
+    "unassigned" : {
+      "services" : [ ],
+      "shipments" : [ ]
+    }
+  }
+}
+```
+
+Now assume that you want to combine your round trip with an important date in Frankfurt where you need to be at latest 6 hours (i.e. 5*3600*1000 = 18000000 ms) after you have started in Berlin, 
+then you need to assign an appropriate time window. This is as
+easy as adding the ```time_windows``` attribute to your visit specification:
+
+```json
+{
+    "id": "frankfurt",
+    "name": "visit_frankfurt",
+    "address": {
+        "location_id": "frankfurt",
+        "lon": 8.670,
+        "lat": 50.109
+    },
+    "time_windows" : [ 
+        {
+            "earliest": 0,
+            "latest": 21000000
+        }
+    ]
+}
+```
+
+This will force your vehicle to visit Frankfurt first and result in the following overall solution:
+
+```json
+{
+  "job_id" : "396b2f26-a323-44b4-8a66-484c6d43732f",
+  "status" : "finished",
+  "waiting_time_in_queue" : 0,
+  "processing_time" : 222,
+  "solution" : {
+    "costs" : 84274000,
+    "distance" : 2218463,
+    "time" : 84274000,
+    "no_unassigned" : 0,
+    "routes" : [ {
+      "vehicle_id" : "my_vehicle",
+      "activities" : [ {
+        "type" : "start",
+        "location_id" : "berlin",
+        "end_time" : 0
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 20809000,
+        "end_time" : 20809000
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 35873000,
+        "end_time" : 35873000
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 57351000,
+        "end_time" : 57351000
+      }, {
+        "type" : "service",
+        "id" : "hamburg",
+        "location_id" : "hamburg",
+        "arr_time" : 73213000,
+        "end_time" : 73213000
+      }, {
+        "type" : "end",
+        "location_id" : "berlin",
+        "arr_time" : 84274000
+      } ]
+    } ],
+    "unassigned" : {
+      "services" : [ ],
+      "shipments" : [ ]
+    }
+  }
+}
+```
+
+Note that when you work with time windows, infeasible problems result in unassigned services. For example, it is impossible to get from Berlin
+to Frankfurt in 4 hours by car. Thus, if the latest arrival time in Frankfurt is
+
+```json
+"time_windows" : [ 
+    {
+        "earliest": 0,
+        "latest": 14400000
+    }
+]
+```
+
+Frankfurt then definitely ends up in the unassigned service list:
+
+```json
+ "unassigned" : {
+      "services" : [ frankfurt ],
+      "shipments" : [ ]
+}
+```
+
+It is quite unrealistic that if you travel all the way from Berlin to Munich that your stay in Munich takes 0 ms. Therefore, if your visit takes
+for example 2 hours, just add a ```duration``` attribute to your Munich visit.
+
+```json
+{
+     "id": "munich",
+     "name": "visit_munich",
+     "address": {
+       "location_id": "munich",
+       "lon": 11.570,
+       "lat": 48.145
+     },
+     "duration": 7200000
+}
+```
+
+and you get
+
+```json
+{
+  "job_id" : "e527ffec-b75b-4753-ad8c-ad90f12a18ea",
+  "status" : "finished",
+  "waiting_time_in_queue" : 0,
+  "processing_time" : 196,
+  "solution" : {
+    "costs" : 84274000,
+    "distance" : 2218463,
+    "time" : 84274000,
+    "no_unassigned" : 0,
+    "routes" : [ {
+      "vehicle_id" : "my_vehicle",
+      "activities" : [ {
+        "type" : "start",
+        "location_id" : "berlin",
+        "end_time" : 0
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 20809000,
+        "end_time" : 20809000
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 35873000,
+        "end_time" : 43073000
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 64551000,
+        "end_time" : 64551000
+      }, {
+        "type" : "service",
+        "id" : "hamburg",
+        "location_id" : "hamburg",
+        "arr_time" : 80413000,
+        "end_time" : 80413000
+      }, {
+        "type" : "end",
+        "location_id" : "berlin",
+        "arr_time" : 91474000
+      } ]
+    } ],
+    "unassigned" : {
+      "services" : [ ],
+      "shipments" : [ ]
+    }
+  }
+}
+```
+
+Naturally the arrival time ```arr_time``` in Munich does not equal the end time ```end_time``` anymore.
+
+Let us now assume that you want to make this round trip a bit more exciting and challenging, 
+thus you decide to switch from boring car to bike (you will definitely
+be a hero if you manage the round trip by bike). Here, you
+cannot use the default vehicle type anymore, but you need to define your bike yourself. This requires two changes, first define 
+a vehicle type in ```vehicle_types``` and second make a reference to the specified type in your vehicle with ```type_id```:
+
+```json
+"vehicles" : [
+    {
+        "vehicle_id": "my_vehicle",
+        "start_address": {
+            "location_id": "berlin",
+            "lon": 13.406,
+            "lat": 52.537
+        },
+        "type_id": "my_bike"
+    }
+],
+"vehicle_types" : [
+    {
+        "type_id" : "my_bike",
+        "profile" : "bike",
+    }
+]
+```
+
+The solution of your bike round trip indicates that it takes you almost 6 days, but only if you are strong enough to bike without rest.
+
+```json
+{
+  "job_id" : "2ad116c9-afd4-4e4a-937e-af8cd3dcf168",
+  "status" : "finished",
+  "waiting_time_in_queue" : 0,
+  "processing_time" : 418,
+  "solution" : {
+    "costs" : 0,
+    "distance" : 2289741,
+    "time" : 508077000,
+    "no_unassigned" : 0,
+    "routes" : [ {
+      "vehicle_id" : "my_vehicle",
+      "activities" : [ {
+        "type" : "start",
+        "location_id" : "berlin",
+        "end_time" : 0
+      }, {
+        "type" : "service",
+        "id" : "hamburg",
+        "location_id" : "hamburg",
+        "arr_time" : 68786000,
+        "end_time" : 68786000
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 242591000,
+        "end_time" : 242591000
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 328544000,
+        "end_time" : 328544000
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 374362000,
+        "end_time" : 374362000
+      }, {
+        "type" : "end",
+        "location_id" : "berlin",
+        "arr_time" : 508077000
+      } ]
+    } ],
+    "unassigned" : {
+      "services" : [ ],
+      "shipments" : [ ]
+    }
+  }
+}
+``
+
+You might have numerous other requirements to the sequence of your visits. For example, you might want to visit Cologne first and Munich right after 
+you have visited Cologne. This might be enforced with time windows, however sometime you need additional business constraints. If so, contact us with your requirements.
+
+
+
+ 
+
+
+
+
+
+
+
+
