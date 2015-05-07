@@ -585,7 +585,7 @@ to your vehicle specification. This gives you the following solution:
 }
 ```
 
-Now assume that you want to combine your round trip with an important date in Frankfurt where you need to be at latest 6 hours (i.e. 5*3600*1000 = 18000000 ms) after you have started in Berlin, 
+Now assume that you want to combine your round trip with an important date in Frankfurt where you need to be at latest 6 hours after you have started in Berlin,
 then you need to assign an appropriate time window. This is as
 easy as adding the ```time_windows``` attribute to your visit specification:
 
