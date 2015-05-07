@@ -142,7 +142,7 @@ If you want it to have multiple capacity dimensions, e.g. weight and volume, spe
 
 ### Services or Shipments
 
-The basic difference between a Service and a Shipment is that the Service involves only one location whereas the Shipment involves two location, i.e. a pickup and a delivery location.
+The basic difference between a Service and a Shipment is that the Service involves only one location whereas the Shipment involves two locations, i.e. a pickup and a delivery location.
 A service can be specified as:
 
 ```json
@@ -239,7 +239,7 @@ Your job can be in three states, either your problem is still waiting in the que
 }
 ```
 
-or your job is being processed but not yet finished the you get back this:
+or your job is being processed but not yet finished then you get back this:
 
 ```json
 {
@@ -307,7 +307,7 @@ or your job is finished and a solution is available. Then you get back this:
 }
 ```
 
-As you can see you get some general indicators of your solution like ```distance``` and ```time``` which corresponds to the travelled distance and travel time,
+As you can see, you get some general indicators of your solution like ```distance``` and ```time``` which corresponds to the travelled distance and travel time,
 and you get back an array of your routes with the ```vehicle_id``` and an array of ```activities``` which should be self-explanatory.
 Finally, within ```unassigned``` you can find the services and shipments that could not be assigned to any route.
 
@@ -331,52 +331,52 @@ you can skip the reference to a vehicle type. This automatically triggers a defa
 ```json
 {
     "vehicles" : [
-            {
-                "vehicle_id": "my_vehicle",
-                "start_address": {
-                    "location_id": "berlin",
-                    "lon": 13.406,
-                    "lat": 52.537
-                }
+        {
+            "vehicle_id": "my_vehicle",
+            "start_address": {
+                "location_id": "berlin",
+                "lon": 13.406,
+                "lat": 52.537
             }
+        }
     ],
     "services" : [
-           {
-             "id": "hamburg",
-             "name": "visit_hamburg",
-             "address": {
-               "location_id": "hamburg",
-               "lon": 9.999,
-               "lat": 53.552
-             }
-           },
-           {
-             "id": "munich",
-             "name": "visit_munich",
-             "address": {
-               "location_id": "munich",
-               "lon": 11.570,
-               "lat": 48.145
-             }
-           },
-           {
-             "id": "cologne",
-             "name": "visit_cologne",
-             "address": {
-               "location_id": "cologne",
-               "lon": 6.957,
-               "lat": 50.936
-             }
-           },
-           {
-             "id": "frankfurt",
-             "name": "visit_frankfurt",
-             "address": {
-               "location_id": "frankfurt",
-               "lon": 8.670,
-               "lat": 50.109
-             }
-           }
+       {
+         "id": "hamburg",
+         "name": "visit_hamburg",
+         "address": {
+           "location_id": "hamburg",
+           "lon": 9.999,
+           "lat": 53.552
+         }
+       },
+       {
+         "id": "munich",
+         "name": "visit_munich",
+         "address": {
+           "location_id": "munich",
+           "lon": 11.570,
+           "lat": 48.145
+         }
+       },
+       {
+         "id": "cologne",
+         "name": "visit_cologne",
+         "address": {
+           "location_id": "cologne",
+           "lon": 6.957,
+           "lat": 50.936
+         }
+       },
+       {
+         "id": "frankfurt",
+         "name": "visit_frankfurt",
+         "address": {
+           "location_id": "frankfurt",
+           "lon": 8.670,
+           "lat": 50.109
+         }
+       }
     ]
 }
 ```
