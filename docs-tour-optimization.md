@@ -11,7 +11,7 @@ Even these problems are relatively easy to understand, finding reasonable soluti
 You need to calculate travel times and distances on large (road) networks, you need to formalize your vehicle routing problem and to specify
  your manifold business constraints, you need fast and efficient algorithms and quite a significant amount of computational power.
   
- This is where <b>GraphHopper Tour Optimization</b> comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and GraphHopper will do the heavy work.
+ This is where <b>GraphHopper Tour Optimization</b> comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and <b>GraphHopper</b> will do the heavy work.
  To make it even easier for you, we provide you with the following clients.
 
 
@@ -86,7 +86,7 @@ If you want your vehicle to end at a specified end-location which is not equal t
 }
 ```
 
-If you want to let the GraphHopper decide at which customer the vehicle should end, specify it like this (then the vehicle will end at one of your customer locations):
+If you want to let <b>GraphHopper<b> decide at which customer the vehicle should end, specify it like this (then the vehicle will end at one of your customer locations):
 
 ```json
 {
@@ -381,7 +381,7 @@ you can skip the reference to a vehicle type. This automatically triggers a defa
 }
 ```
 
-and post it for example with ```curl``` to GraphHopper.
+and post it for example with ```curl``` to <b>GraphHopper</b>.
 Either use a json file (thus copy the above problem into problem.json)
 
 ```
@@ -395,7 +395,7 @@ or copy the problem directly into your curl statement like this
 curl -H "Content-Type: application/json" --data '{ "vehicles" : [ ...' https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]
 ```
 
-As described above, GraphHopper responds with a ```job_id```. Use the following statement to fetch your solution:
+As described above, <b>GraphHopper</b> responds with a ```job_id```. Use the following statement to fetch your solution:
 
 ```
 curl https://graphhopper.com/api/1/vrp/solution/{job_id}?key=[YOUR_KEY]
@@ -516,7 +516,7 @@ to your vehicle specification. This results in:
 }
 ```
 
-Thus the vehicle does not need to return to Berlin and GraphHopper finds that it is best to end the trip in Munich.
+Thus the vehicle does not need to return to Berlin and <b>GraphHopper</b> finds that it is best to end the trip in Munich.
 
 Let us assume you have good reasons to end your trip in Cologne, then add this
 
