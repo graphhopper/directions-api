@@ -8,11 +8,11 @@ efficiently service its customers given a variety of requirements: customer requ
 the product's transport requirements (e.g. refrigerated, must be picked up first), driver skills, vehicles/capacities available etc..
 
 Even these problems are relatively easy to understand, finding reasonable solutions is way more difficult. 
-You need to calculate travel times and distances on large (road) networks, you need to formalize your vehicle routing problem and to express
- your manifold business constraints, you need fast and efficient algorithms and quite an amount of computational power.
+You need to calculate travel times and distances on large (road) networks, you need to formalize your vehicle routing problem and to specify
+ your manifold business constraints, you need fast and efficient algorithms and quite a significant amount of computational power.
   
  This is where <b>GraphHopper Tour Optimization</b> comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and GraphHopper will do the heavy work.
- And you can focus on your location based service. To make it even easier for you, we provide you with the following clients.
+ To make it even easier for you, we provide you with the following clients.
 
 
 ### Clients
@@ -22,7 +22,7 @@ You need to calculate travel times and distances on large (road) networks, you n
   
 Other clients can be relative easily created via [swagger-codegen](https://github.com/swagger-api/swagger-codegen) and the swagger specification for the Tour Optimization API which is located [here](https://graphhopper.com/api/1/vrp/swagger.json). Please [let us know](https://graphhopper.com/#contact) which further programming language or environment you need for your integration!
 
-### Examples
+### Quick Start
 
 The fastest way to understand the API is by looking at
  * [trying out](https://graphhopper.com/api/1/examples/#optimization) live examples
@@ -31,7 +31,7 @@ The fastest way to understand the API is by looking at
 
 ## JSON Input
 
-This is JSON input you need to post to (via body):
+This is JSON specification you need to post to:
 
 `
 "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]"
@@ -45,10 +45,11 @@ This is JSON input you need to post to (via body):
   "vehicle_types": [..],
   "services": [..],
   "shipments": [..]
+}
 ```
 
 
-### Vehicle
+### Vehicles
 
 Define one or more vehicle as described below. You can specify whether your vehicle needs to come back to its home location or not.
 
@@ -85,7 +86,7 @@ If you want your vehicle to end at a specified end location which is not equal t
 }
 ```
 
-If you want to let the Tour Optimization decide at which customer the vehicle should end, specify it like this (then the vehicle will end at one of your customer locations):
+If you want to let the GraphHopper decide at which customer the vehicle should end, specify it like this (then the vehicle will end at one of your customer locations):
 
 ```json
 {
@@ -102,7 +103,7 @@ If you want to let the Tour Optimization decide at which customer the vehicle sh
 
 The ```type_id``` refers to the vehicle type of your vehicle. It is optional and only required if you need to specify your own type.
 
-### Vehicle Type
+### Vehicle Types
 
 The defaul type is 
 
@@ -115,7 +116,8 @@ The defaul type is
 ```
 
 
-In the vehicle type you can specify two important features of your vehicles: profile and capacity. The profile indicates whether your vehicle is actually is person moving by ```foot```, whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be a car, but can also be a heavy vehicle).
+In the vehicle type you can specify two important features of your vehicles: profile and capacity. The profile indicates whether your vehicle is actually is person moving by ```foot```, 
+whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be a car, but can also be a motor bike or heavy vehicle).
  The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below.
 
 If you want your vehicles to use roads with a single capacity dimension of maximum 100 units (e.g. 100 kilogram), specify it like this:
@@ -138,11 +140,6 @@ If you want it to have multiple capacity dimensions, e.g. weight and volume, spe
 }
 ```
 
-When it comes to the costs, you can focus on minimizing distances by setting ```time_dependent_costs: 0.0``` and ```distance_dependent_costs: 1.0```.
-However, you can also minimize some sort of generalized cost function by assigning a monetary value of time and value of distance as shown above.
-
-
-
 ### Services or Shipments
 
 The basic difference between a Service and a Shipment is that the Service involves only one location whereas the Shipment involves two location, i.e. a pickup and a delivery location.
@@ -151,15 +148,15 @@ A service can be specified as:
 ```json
 {
      "id": "service-id",
-     "name": "meaningful-name", [optional]
+     "name": "meaningful-name", 
      "address": {
        "location_id": "service-location-id",
        "lon": 9.999,
        "lat": 53.552
      },
-     "duration": 3600000, [optional]
-     "size": [ 1 ], [optional]
-     "time-windows": [ [optional]
+     "duration": 3600000, 
+     "size": [ 1 ], 
+     "time-windows": [ 
         {
             "earliest": 0,
             "latest": 3600000
@@ -173,15 +170,15 @@ A shipment can be specified as:
 ```json
 {
     "id": "shipment-id",
-    "name": "meaningful-name", [optional]
+    "name": "meaningful-name", 
     "pickup": {
         "address": {
             "location_id": "your-pickup-location-id",
             "lon": 12.1333333,
             "lat": 54.0833333
         },
-        "duration": 1000 [optional]
-        "time_windows": [ [optional]
+        "duration": 1000 
+        "time_windows": [ 
             {
                 "earliest": 0.0,
                 "latest": 1000.0
@@ -194,17 +191,19 @@ A shipment can be specified as:
             "lon": 8.3858333,
             "lat": 49.0047222
         },
-        "duration": 1000 [optional]
-        "time_windows": [ [optional]
+        "duration": 1000 
+        "time_windows": [ 
             {
                 "earliest": 10000.0,
                 "latest": 20000.0
             }
         ]
     },
-    "size": [1] [optional]
+    "size": [1] 
 }
 ``` 
+
+where ```name```, ```duration```, ```time_windows``` and ```size``` are optional.
 
 Both Service and Shipment can be specified with multiple capacity dimensions as follows:
 
@@ -215,6 +214,102 @@ Both Service and Shipment can be specified with multiple capacity dimensions as 
 Learn more about it in the [live API docs](https://graphhopper.com/api/1/vrp/documentation/).
 
 ## JSON Output
+
+If you post your problem, you get back a job_id such as:
+
+```json
+{ "job_id": "7ac65787-fb99-4e02-a832-2c3010c70097" }
+```
+
+With the ```job_id``` you can fetch your solution via ```"https://graphhopper.com/api/1/vrp/solution/{job_id}?key=[YOUR_KEY]``` such as
+ 
+```
+"https://graphhopper.com/api/1/vrp/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"
+```
+ 
+Your job can be in three states, either your problem is still waiting in the queue then you get back this:
+
+```json
+{
+  "job_id" : "7ac65787-fb99-4e02-a832-2c3010c70097",
+  "status" : "waiting",
+  "waiting_time_in_queue" : 1061,
+  "processing_time" : 0,
+  "solution" : pending
+}
+```
+
+or your job is being processed but not yet finished the you get back this:
+
+```json
+{
+  "job_id" : "7ac65787-fb99-4e02-a832-2c3010c70097",
+  "status" : "processing",
+  "waiting_time_in_queue" : 1061,
+  "processing_time" : 50,
+  "solution" : pending
+}
+```
+
+or your job is finished and a solution is available. Then you get back this:
+
+```json
+{
+  "job_id" : "7ac65787-fb99-4e02-a832-2c3010c70097",
+  "status" : "finished",
+  "waiting_time_in_queue" : 0,
+  "processing_time" : 271,
+  "solution" : {
+    "costs" : 71118000,
+    "distance" : 1872917,
+    "time" : 71118000,
+    "no_unassigned" : 0,
+    "routes" : [ {
+      "vehicle_id" : "my_vehicle",
+      "activities" : [ {
+        "type" : "start",
+        "location_id" : "berlin",
+        "end_time" : 0
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 22066000,
+        "end_time" : 22066000
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 36986000,
+        "end_time" : 36986000
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 44195000,
+        "end_time" : 44195000
+      }, {
+        "type" : "service",
+        "id" : "hamburg",
+        "location_id" : "hamburg",
+        "arr_time" : 60057000,
+        "end_time" : 60057000
+      }, {
+        "type" : "end",
+        "location_id" : "berlin",
+        "arr_time" : 71118000
+      } ]
+    } ],
+    "unassigned" : {
+      "services" : [ ],
+      "shipments" : [ ]
+    }
+}
+```
+
+As you can see you get some general indicators of your solution like ```distance``` and ```time``` which corresponds to the travelled distance and travel time,
+and you get back an array of your routes with the ```vehicle_id``` and an array of ```activities``` which should be self-explanatory.
+Finally, within ```unassigned``` you can find the services and shipments that could not be assigned to any route.
 
 
 ## Examples
@@ -286,10 +381,7 @@ you can skip the reference to a vehicle type. This automatically triggers a defa
 }
 ```
 
-Note that the ```name``` is optional, it is just to give your visits another meaningful name.
-
-With ```curl``` you can post the problem to GraphHopper like this (or use our clients to do it or just the way you prefer):
-
+and post it for example with ```curl``` to GraphHopper.
 Either use a json file (thus copy the above problem into problem.json)
 
 ```
@@ -303,36 +395,10 @@ or copy the problem directly into your curl statement like this
 curl -H "Content-Type: application/json" --data '{ "vehicles" : [ ...' https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]
 ```
 
-GraphHopper uses a queue based approach, i.e. your problem is put in our problem queue.  
-Thus you are getting back a ```job_id``` with which you can fetch your solution like this:
+As described above, GraphHopper responds with a ```job_id```. Use the following statement to fetch your solution:
 
 ```
 curl https://graphhopper.com/api/1/vrp/solution/{job_id}?key=[YOUR_KEY]
-```
-
-If your job is still waiting in the queue, you get the following json:
-
-```json
-{
-  "job_id" : {job_id},
-  "status" : "waiting",
-  "waiting_time_in_queue" : 1061,
-  "processing_time" : 0,
-  "solution" : pending
-}
-```
-
-If it is being processed but not yet finished, you get:
- 
-
-```json
-{
-  "job_id" : {job_id},
-  "status" : "processing",
-  "waiting_time_in_queue" : 1061,
-  "processing_time" : 50,
-  "solution" : pending
-}
 ```
 
 If the solution is available, the response looks like this:
