@@ -38,6 +38,7 @@ Other clients can be relative easily created via [swagger-codegen](https://githu
 The fastest way to understand the API is by looking at
  * [live examples](https://graphhopper.com/api/1/examples/#optimization)
  * [the JSON from the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/tour-optimization-examples)
+ * [live API docs](https://graphhopper.com/api/1/vrp/documentation/)
  * the extensive examples described below
 
 ## JSON Input
