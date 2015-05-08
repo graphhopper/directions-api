@@ -10,7 +10,7 @@
  - [Services or Shipments](#services-or-shipments)
 - [JSON Output](#json-output)
 - [Examples](#examples)
- - [Traveling Salesman](#traveling-salesmane)
+ - [Traveling Salesman](#traveling-salesman)
  - [Vehicle Routing Problem](#vehicle-routing-problem)
 
 The Tour Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
