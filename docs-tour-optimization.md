@@ -2,6 +2,17 @@
 
 ## Tour Optimization API
 
+- [Clients](#)
+- [Quick Start](#)
+- [JSON Input](#)
+ - [Vehicles](#)
+ - [Vehicle Types](#)
+ - [Services or Shipments](#)
+- [JSON Output](#)
+- [Examples](#)
+ - [Traveling Salesman](#)
+ - [Vehicle Routing Problem](#)
+
 The Tour Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
 of moving things and people. For example, every company dealing with last-mile deliveries faces a vehicle routing problem, i.e. it must find ways to
 efficiently service its customers given a variety of requirements: customer requirements (e.g. time windows), 
