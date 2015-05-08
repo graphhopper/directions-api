@@ -90,9 +90,9 @@ If you want your vehicle to end at a specified end-location which is not equal t
         "lat": 50.977723
     },
     "end_address": {
-            "location_id": "your-end-location-id",
-            "lon": 12.028771,
-            "lat": 54.977723
+         "location_id": "your-end-location-id",
+         "lon": 12.028771,
+         "lat": 54.977723
     },
     "type_id": "your-vehicle-type-id"
 }
@@ -132,6 +132,7 @@ In the vehicle type you can specify two important features of your vehicles: pro
 whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be a car, but can also be a motor bike or heavy vehicle).
  The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below.
 
+<!-- do you mean instead of 'to use specific roads' or possibility to pickup items? Or where is this restriction taken into account - just for the location, right? -->
 If you want your vehicles to use roads with a single capacity dimension of maximum 100 units (e.g. 100 kilogram), specify it like this:
 
 ```json
@@ -189,7 +190,7 @@ A shipment can be specified as:
             "lon": 12.1333333,
             "lat": 54.0833333
         },
-        "duration": 1000 
+        "duration": 1000,
         "time_windows": [ 
             {
                 "earliest": 0.0,
@@ -203,7 +204,7 @@ A shipment can be specified as:
             "lon": 8.3858333,
             "lat": 49.0047222
         },
-        "duration": 1000 
+        "duration": 1000,
         "time_windows": [ 
             {
                 "earliest": 10000.0,
@@ -247,7 +248,7 @@ Your job can be in three states, either your problem is still waiting in the que
   "status" : "waiting",
   "waiting_time_in_queue" : 1061,
   "processing_time" : 0,
-  "solution" : pending
+  "solution" : "pending"
 }
 ```
 
@@ -259,7 +260,7 @@ or your job is being processed but not yet finished then you get back this:
   "status" : "processing",
   "waiting_time_in_queue" : 1061,
   "processing_time" : 50,
-  "solution" : pending
+  "solution" : "pending"
 }
 ```
 
