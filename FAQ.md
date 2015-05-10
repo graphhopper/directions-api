@@ -21,7 +21,7 @@ The API credit limits are listed in the dashboard and depend on the selected pac
 
 ## My credits do not reset, even after 24 hours. What is wrong?
 
-The credits are resetted after 24 hours, not on one specific 00:00 time or something. But the reset will only happen, if a new request comes in. So just ask the API or read the `X-RateLimit-Reset` header which gives you the number of seconds to wait. Also only the free package will be blocked, other packages don't have this strict policy.
+The credits are resetted after 24 hours, not on one specific 00:00 time or something. But the reset will only happen, if a new request comes in. So just ask the API or read the `X-RateLimit-Reset` header which gives you the number of seconds to wait. Also only the free package will be blocked after exceeding the limits, other packages don't have this strict policy.
 
 ## Documentation and Demo
 
