@@ -15,9 +15,13 @@ You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#
  * one Matrix API request with some start locations and some destinations costs `starts * destinations / 2` credits if `starts` or `destinations` are less than 20. For bigger matrices we use the cheaper formular `MAX_OF(starts, destinations) * 10`. For example you have 2 start locations and 10 destinations the charged credits are `2 * 10 / 2 = 10` or for 30 start and 40 destinations it is `40 * 10 = 400`
  * the costs for one Optimization API request depends on the number of vehicles and activities and is calculated as `vehicles * activities * 10`
   
-## API credit limits
+## How many credits do I have?
 
-The API credit limits are listed in the dashboard and depend on the selected package. The limits are also reported in the response header for every request.
+The API credit limits are listed in the dashboard and depend on the selected package. 
+
+## My credits do not reset, even after 24 hours. What is wrong?
+
+The credits are resetted after 24 hours, not on one specific 00:00 time or something. But the reset will only happen, if a new request comes in. So just ask the API or read the `X-RateLimit-Reset` header which gives you the number of seconds to wait. Also only the free package will be blocked, other packages don't have this strict policy.
 
 ## Documentation and Demo
 
