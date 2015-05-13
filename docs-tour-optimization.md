@@ -173,7 +173,7 @@ vehicle:
       <td>type_id</td>
       <td>string</td>
       <td></td>
-      <td>The type_id refers to the vehicle's vehicle type.<br>If it is omitted, the default type is used (see Vehicle Types)</td>
+      <td>the type_id refers to the vehicle's vehicle type.<br>if it is omitted, the default type is used (see vehicle types)</td>
     </tr>
   <tr>
     <td>start_address<br></td>
@@ -191,7 +191,7 @@ vehicle:
     <td>return_to_depot<br></td>
     <td>boolean</td>
     <td></td>
-    <td>Default value is true, i.e. the vehicle returns to its start_address.<br>If false, the optimization decides at which customer<br> location the vehicle should end</td>
+    <td>default value is true, i.e. the vehicle returns to its start_address.<br>if false, the optimization decides at which customer<br> location the vehicle should end</td>
   </tr>
   <tr>
       <td>earliest_start</td>
@@ -619,6 +619,180 @@ or your job is finished and a solution is available. Then you get back this:
 As you can see, you get some general indicators of your solution like ```distance``` and ```time``` which corresponds to the travelled distance and travel time,
 and you get back an array of your routes with the ```vehicle_id``` and an array of ```activities``` which should be self-explanatory.
 Finally, within ```unassigned``` you can find the services and shipments that could not be assigned to any route.
+
+#### Full specification
+
+output/response:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>job_id<br></td>
+    <td>(uuid) string</td>
+    <td><br></td>
+    <td>the job_id used to fetch solution<br></td>
+  </tr>
+  <tr>
+      <td>status<br></td>
+      <td>string</td>
+      <td><br></td>
+      <td>status of your job. can either be "waiting", "processing" or "finish"<br></td>
+    </tr>
+ <tr>
+       <td>waiting_time_in_queue<br></td>
+       <td>long</td>
+       <td><br></td>
+       <td>in milliseconds<br></td>
+     </tr>
+<tr>
+       <td>processing_time<br></td>
+       <td>long</td>
+       <td><br></td>
+       <td>in milliseconds<br></td>
+     </tr>
+<tr>
+       <td>solution<br></td>
+       <td>object</td>
+       <td><br></td>
+       <td>see below<br></td>
+     </tr>
+</table>
+
+solution:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>distance<br></td>
+    <td>long</td>
+    <td><br></td>
+    <td>overall distance travelled in meter<br></td>
+  </tr>
+  <tr>
+      <td>time<br></td>
+      <td>long</td>
+      <td><br></td>
+      <td>overall time travelled in seconds<br></td>
+    </tr>
+ <tr>
+       <td>no_unassigned<br></td>
+       <td>integer</td>
+       <td><br></td>
+       <td>number of unassigned services and shipments<br></td>
+     </tr>
+<tr>
+       <td>routes<br></td>
+       <td>array</td>
+       <td><br></td>
+       <td>array of routes. see below.<br></td>
+     </tr>
+<tr>
+       <td>unassigned<br></td>
+       <td>object</td>
+       <td><br></td>
+       <td>unassigned services and shipments. see spec below.<br></td>
+     </tr>
+<tr>
+</table>
+
+route:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>vehicle_id<br></td>
+    <td>string</td>
+    <td><br></td>
+    <td>id of vehicle operating the route<br></td>
+  </tr>
+  <tr>
+      <td>activities<br></td>
+      <td>array</td>
+      <td><br></td>
+      <td>array of activities. see spec below.<br></td>
+    </tr>
+<tr>
+</table>
+
+activity:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>type<br></td>
+    <td>string</td>
+    <td><br></td>
+    <td>type of activity. can either be "service", "pickupShipment" or "deliverShipment"<br></td>
+  </tr>
+  <tr>
+      <td>id<br></td>
+      <td>string</td>
+      <td><br></td>
+      <td>the reference to either the service or the shipment, i.e. corresponds to either service.id or shipment.id<br></td>
+    </tr>
+<tr>
+      <td>location_id<br></td>
+      <td>string</td>
+      <td><br></td>
+      <td>the reference to the location id of either the address of the service or the address of shipment.pickup or shipment.delivery<br></td>
+    </tr>
+<tr>
+      <td>arr_time<br></td>
+      <td>long</td>
+      <td><br></td>
+      <td>arrival time at corresponding location<br></td>
+    </tr>
+<tr>
+      <td>end_time<br></td>
+      <td>long</td>
+      <td><br></td>
+      <td>end time at corresponding location<br></td>
+    </tr>
+</table>
+
+unassigned:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>services<br></td>
+    <td>array</td>
+    <td><br></td>
+    <td>array of service.id that could not be assigned to any route,<br> e.g. [ "service1", "service2" ]<br></td>
+  </tr>
+  <tr>
+      <td>shipments<br></td>
+      <td>array</td>
+      <td><br></td>
+      <td>array of shipment.id that could not be assigned to any route,<br> e.g. [ "shipment1", "shipment2" ]<br></td>
+    </tr>
+</table>
+
 
 
 ## Examples
