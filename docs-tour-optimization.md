@@ -170,6 +170,12 @@ vehicle:
     <td><br></td>
   </tr>
   <tr>
+      <td>type_id</td>
+      <td>string</td>
+      <td></td>
+      <td>The type_id refers to the vehicle's vehicle type.<br>If it is omitted, the default type is used (see Vehicle Types)</td>
+    </tr>
+  <tr>
     <td>start_address<br></td>
     <td>object<br></td>
     <td>true<br></td>
@@ -188,11 +194,17 @@ vehicle:
     <td>Default value is true, i.e. the vehicle returns to its start_address.<br>If false, the optimization decides at which customer<br> location the vehicle should end</td>
   </tr>
   <tr>
-    <td>type_id</td>
-    <td>string</td>
-    <td></td>
-    <td>The type_id refers to the vehicle's vehicle type.<br>If it is omitted, the default type is used (see Vehicle Types)</td>
-  </tr>
+      <td>earliest_start</td>
+      <td>long</td>
+      <td></td>
+      <td>earliest start of vehicle in seconds</td>
+    </tr>
+   <tr>
+         <td>latest_end</td>
+         <td>long</td>
+         <td></td>
+         <td>latest end of vehicle in seconds, i.e. the time the vehicle need to be at its end location at latest</td>
+       </tr>
 </table>
 
 address:
@@ -494,13 +506,13 @@ time_window:
     <td>earliest<br></td>
     <td>long</td>
     <td>true<br></td>
-    <td>earliest operation start time in seconds from midnight<br></td>
+    <td>earliest operation start time in seconds<br></td>
   </tr>
   <tr>
       <td>latest<br></td>
       <td>long</td>
       <td>true<br></td>
-      <td>latest operation start time in seconds from midnight<br></td>
+      <td>latest operation start time in seconds<br></td>
     </tr>
 </table>
 
