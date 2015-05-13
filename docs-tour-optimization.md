@@ -318,12 +318,12 @@ A service can be specified as:
        "lon": 9.999,
        "lat": 53.552
      },
-     "duration": 3600000, 
+     "duration": 3600,
      "size": [ 1 ], 
      "time-windows": [ 
         {
             "earliest": 0,
-            "latest": 3600000
+            "latest": 3600
         }
      ]
 }
@@ -569,9 +569,8 @@ or your job is finished and a solution is available. Then you get back this:
   "waiting_time_in_queue" : 0,
   "processing_time" : 271,
   "solution" : {
-    "costs" : 71118000,
     "distance" : 1872917,
-    "time" : 71118000,
+    "time" : 71118,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -583,30 +582,30 @@ or your job is finished and a solution is available. Then you get back this:
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 22066000,
-        "end_time" : 22066000
+        "arr_time" : 22066,
+        "end_time" : 22066
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 36986000,
-        "end_time" : 36986000
+        "arr_time" : 36986,
+        "end_time" : 36986
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 44195000,
-        "end_time" : 44195000
+        "arr_time" : 44195,
+        "end_time" : 44195
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 60057000,
-        "end_time" : 60057000
+        "arr_time" : 60057,
+        "end_time" : 60057
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 71118000
+        "arr_time" : 71118
       } ]
     } ],
     "unassigned" : {
@@ -893,9 +892,8 @@ If the solution is available, the response looks like this:
   "waiting_time_in_queue" : 0,
   "processing_time" : 271,
   "solution" : {
-    "costs" : 71118000,
     "distance" : 1872917,
-    "time" : 71118000,
+    "time" : 71118,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -907,30 +905,30 @@ If the solution is available, the response looks like this:
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 22066000,
-        "end_time" : 22066000
+        "arr_time" : 22066,
+        "end_time" : 22066
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 36986000,
-        "end_time" : 36986000
+        "arr_time" : 36986,
+        "end_time" : 36986
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 44195000,
-        "end_time" : 44195000
+        "arr_time" : 44195,
+        "end_time" : 44195
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 60057000,
-        "end_time" : 60057000
+        "arr_time" : 60057,
+        "end_time" : 60057
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 71118000
+        "arr_time" : 71118
       } ]
     } ],
     "unassigned" : {
@@ -955,9 +953,8 @@ to your vehicle specification. This results in:
   "waiting_time_in_queue" : 0,
   "processing_time" : 242,
   "solution" : {
-    "costs" : 49178000,
     "distance" : 1289793,
-    "time" : 49178000,
+    "time" : 49178,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -969,26 +966,26 @@ to your vehicle specification. This results in:
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 11064000,
-        "end_time" : 11064000
+        "arr_time" : 11064,
+        "end_time" : 11064
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 26872000,
-        "end_time" : 26872000
+        "arr_time" : 26872,
+        "end_time" : 26872
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 34114000,
-        "end_time" : 34114000
+        "arr_time" : 34114,
+        "end_time" : 34114
       }, {
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 49178000,
-        "end_time" : 49178000
+        "arr_time" : 49178,
+        "end_time" : 49178
       } ]
     } ],
     "unassigned" : {
@@ -1020,9 +1017,8 @@ to your vehicle specification. This gives you the following solution:
   "waiting_time_in_queue" : 0,
   "processing_time" : 209,
   "solution" : {
-    "costs" : 62098000,
     "distance" : 1640436,
-    "time" : 62098000,
+    "time" : 62098,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -1034,30 +1030,30 @@ to your vehicle specification. This gives you the following solution:
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 11064000,
-        "end_time" : 11064000
+        "arr_time" : 11064,
+        "end_time" : 11064
       }, {
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 39969000,
-        "end_time" : 39969000
+        "arr_time" : 39969,
+        "end_time" : 39969
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 54889000,
-        "end_time" : 54889000
+        "arr_time" : 54889,
+        "end_time" : 54889
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 62098000,
-        "end_time" : 62098000
+        "arr_time" : 62098,
+        "end_time" : 62098
       }, {
         "type" : "end",
         "location_id" : "cologne",
-        "arr_time" : 62098000
+        "arr_time" : 62098
       } ]
     } ],
     "unassigned" : {
@@ -1084,7 +1080,7 @@ easy as adding the ```time_windows``` attribute to your visit specification:
     "time_windows" : [ 
         {
             "earliest": 0,
-            "latest": 21000000
+            "latest": 21000
         }
     ]
 }
@@ -1099,9 +1095,8 @@ This will force your vehicle to visit Frankfurt first and result in the followin
   "waiting_time_in_queue" : 0,
   "processing_time" : 222,
   "solution" : {
-    "costs" : 84274000,
     "distance" : 2218463,
-    "time" : 84274000,
+    "time" : 84274,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -1113,30 +1108,30 @@ This will force your vehicle to visit Frankfurt first and result in the followin
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 20809000,
-        "end_time" : 20809000
+        "arr_time" : 20809,
+        "end_time" : 20809
       }, {
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 35873000,
-        "end_time" : 35873000
+        "arr_time" : 35873,
+        "end_time" : 35873
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 57351000,
-        "end_time" : 57351000
+        "arr_time" : 57351,
+        "end_time" : 57351
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 73213000,
-        "end_time" : 73213000
+        "arr_time" : 73213,
+        "end_time" : 73213
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 84274000
+        "arr_time" : 84274
       } ]
     } ],
     "unassigned" : {
@@ -1154,7 +1149,7 @@ to Frankfurt in 4 hours by car. Thus, if the latest arrival time in Frankfurt is
 "time_windows" : [ 
     {
         "earliest": 0,
-        "latest": 14400000
+        "latest": 14400
     }
 ]
 ```
@@ -1168,7 +1163,7 @@ Frankfurt then definitely ends up in the unassigned service list:
 }
 ```
 
-It is quite unrealistic that if you travel all the way from Berlin to Munich that your stay in Munich takes 0 ms. Therefore, if your visit takes
+It is quite unrealistic that if you travel all the way from Berlin to Munich that your stay in Munich takes 0 seconds. Therefore, if your visit takes
 for example 2 hours, just add a ```duration``` attribute to your Munich visit.
 
 ```json
@@ -1180,7 +1175,7 @@ for example 2 hours, just add a ```duration``` attribute to your Munich visit.
        "lon": 11.570,
        "lat": 48.145
      },
-     "duration": 7200000
+     "duration": 7200
 }
 ```
 
@@ -1193,9 +1188,8 @@ and you get
   "waiting_time_in_queue" : 0,
   "processing_time" : 196,
   "solution" : {
-    "costs" : 84274000,
     "distance" : 2218463,
-    "time" : 84274000,
+    "time" : 84274,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -1207,30 +1201,30 @@ and you get
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 20809000,
-        "end_time" : 20809000
+        "arr_time" : 20809,
+        "end_time" : 20809
       }, {
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 35873000,
-        "end_time" : 43073000
+        "arr_time" : 35873,
+        "end_time" : 43073
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 64551000,
-        "end_time" : 64551000
+        "arr_time" : 64551,
+        "end_time" : 64551
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 80413000,
-        "end_time" : 80413000
+        "arr_time" : 80413,
+        "end_time" : 80413
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 91474000
+        "arr_time" : 91474
       } ]
     } ],
     "unassigned" : {
@@ -1278,9 +1272,8 @@ The solution of your bike round trip indicates that it takes you almost 6 days, 
   "waiting_time_in_queue" : 0,
   "processing_time" : 418,
   "solution" : {
-    "costs" : 0,
     "distance" : 2289741,
-    "time" : 508077000,
+    "time" : 508077,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -1292,30 +1285,30 @@ The solution of your bike round trip indicates that it takes you almost 6 days, 
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 68786000,
-        "end_time" : 68786000
+        "arr_time" : 68786,
+        "end_time" : 68786
       }, {
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 242591000,
-        "end_time" : 242591000
+        "arr_time" : 242591,
+        "end_time" : 242591
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 328544000,
-        "end_time" : 328544000
+        "arr_time" : 328544,
+        "end_time" : 328544
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 374362000,
-        "end_time" : 374362000
+        "arr_time" : 374362,
+        "end_time" : 374362
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 508077000
+        "arr_time" : 508077
       } ]
     } ],
     "unassigned" : {
