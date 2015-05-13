@@ -54,6 +54,8 @@ The general input structure is
 }
 ```
 
+Full specification: 
+
 <table>
   <tr>
     <th>Name<br></th>
@@ -150,9 +152,81 @@ If you want to let <b>GraphHopper</b> decide at which customer the vehicle shoul
 
 The ```type_id``` refers to the vehicle type of your vehicle. It is optional and only required if you need to specify your own type.
 
+#### Full specification
+
+vehicle:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>vehicle_id<br></td>
+    <td>string</td>
+    <td>true<br></td>
+    <td><br></td>
+  </tr>
+  <tr>
+    <td>start_address<br></td>
+    <td>object<br></td>
+    <td>true<br></td>
+    <td><br></td>
+  </tr>
+  <tr>
+      <td>end_address<br></td>
+      <td>object<br></td>
+      <td><br></td>
+      <td>If you omit end_address and if return_to_depot is true,<br>then the vehicle returns to its start_address.<br>Otherwise, see below.</td>
+    </tr>
+  <tr>
+    <td>return_to_depot<br></td>
+    <td>boolean</td>
+    <td></td>
+    <td>Default value is true, i.e. the vehicle returns to its start_address.<br>If false, the optimization decides at which customer<br> location the vehicle should end</td>
+  </tr>
+  <tr>
+    <td>type_id</td>
+    <td>string</td>
+    <td></td>
+    <td>The type_id refers to the vehicle's vehicle type.<br>If it is omitted, the default type is used (see Vehicle Types)</td>
+  </tr>
+</table>
+
+address:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>location_id<br></td>
+    <td>string</td>
+    <td>true<br></td>
+    <td><br></td>
+  </tr>
+  <tr>
+    <td>lon<br></td>
+    <td>double<br></td>
+    <td>true<br></td>
+    <td>longitude of address location<br></td>
+  </tr>
+  <tr>
+      <td>lat<br></td>
+      <td>double<br></td>
+      <td>true<br></td>
+      <td>latitude of address location</td>
+    </tr>
+</table>
+
 ### Vehicle Types
 
-The defaul type is 
+The default type is 
 
 ```json
 {
@@ -187,6 +261,36 @@ If you want it to have multiple capacity dimensions, e.g. weight and volume, spe
     "capacity": [100,1000]
 }
 ```
+
+#### Full specification
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>type_id<br></td>
+    <td>string</td>
+    <td>true<br></td>
+    <td><br></td>
+  </tr>
+  <tr>
+    <td>profile<br></td>
+    <td>string<br></td>
+    <td><br></td>
+    <td>default is "car". you can use either "car", "bike" or "foot".<br>it determines whether which network to use for routing the vehicle.<br></td>
+  </tr>
+  <tr>
+      <td>capacity<br></td>
+      <td>array<br></td>
+      <td><br></td>
+      <td>default is [ 0 ]. specify [ 10, 100, 30 ] for three capacity dimensions,<br>i.e. you can specify an arbitrary number of capacity dimensions.
+      <br>the values need to be of type integer</td>
+    </tr>
+</table>
 
 ### Services or Shipments
 
@@ -251,13 +355,21 @@ A shipment can be specified as:
 }
 ``` 
 
-where ```name```, ```duration```, ```time_windows``` and ```size``` are optional.
-
 Both Service and Shipment can be specified with multiple capacity dimensions as follows:
 
 ```json
 "size": [1,10,150]
 ```
+
+#### Full specification
+
+```json
+    "service" : { ... }
+```
+
+
+
+
 
 Learn more about it in the [live API docs](https://graphhopper.com/api/1/vrp/documentation/).
 
