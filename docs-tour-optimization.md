@@ -203,7 +203,7 @@ vehicle:
          <td>latest_end</td>
          <td>long</td>
          <td></td>
-         <td>latest end of vehicle in seconds, i.e. the time the vehicle need to be at its end location at latest</td>
+         <td>latest end of vehicle in seconds, i.e. the time the vehicle needs to be at its end location at latest</td>
        </tr>
 </table>
 
