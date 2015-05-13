@@ -363,9 +363,146 @@ Both Service and Shipment can be specified with multiple capacity dimensions as 
 
 #### Full specification
 
-```json
-    "service" : { ... }
-```
+service:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>id<br></td>
+    <td>string</td>
+    <td>true<br></td>
+    <td><br></td>
+  </tr>
+  <tr>
+    <td>name<br></td>
+    <td>string<br></td>
+    <td><br></td>
+    <td>meaningful name, e.g. "visit museum"<br></td>
+  </tr>
+  <tr>
+      <td>address<br></td>
+      <td>object<br></td>
+      <td>true<br></td>
+      <td></td>
+    </tr>
+   <tr>
+         <td>duration<br></td>
+         <td>long<br></td>
+         <td><br></td>
+         <td>duration of service in seconds. default is 0.</td>
+       </tr>
+    <tr>
+      <td>size<br></td>
+      <td>array<br></td>
+      <td><br></td>
+      <td>size of service. it can have multiple dimensions,<br> e.g. [ 2, 1, 40 ] to specify three dimension. default is [ 0 ]</td>
+    </tr>
+    <tr>
+      <td>time_windows<br></td>
+      <td>array<br></td>
+      <td><br></td>
+      <td>array of time_windows. currently, only one time window is supported</td>
+    </tr>
+</table>
+
+shipment:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>id<br></td>
+    <td>string</td>
+    <td>true<br></td>
+    <td><br></td>
+  </tr>
+  <tr>
+      <td>name<br></td>
+      <td>string</td>
+      <td><br></td>
+      <td>meaningful name<br></td>
+    </tr>
+ <tr>
+       <td>pickup<br></td>
+       <td>object</td>
+       <td><br></td>
+       <td>your pickup specification. see below.<br></td>
+     </tr>
+ <tr>
+        <td>delivery<br></td>
+        <td>object</td>
+        <td><br></td>
+        <td>your delivery specification. see below.<br></td>
+      </tr>
+    <tr>
+        <td>size<br></td>
+        <td>array</td>
+        <td><br></td>
+        <td>size of shipment. it can have multiple dimensions,<br> e.g. [ 2, 1, 40 ] to specify three dimension. default is [ 0 ]<br></td>
+      </tr>
+</table>
+
+pickup or delivery:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>address<br></td>
+    <td>object</td>
+    <td>true<br></td>
+    <td>see address spec above<br></td>
+  </tr>
+  <tr>
+      <td>duration<br></td>
+      <td>string</td>
+      <td><br></td>
+      <td>duration of pickup or delivery in seconds<br></td>
+    </tr>
+ <tr>
+       <td>time_windows<br></td>
+       <td>array</td>
+       <td><br></td>
+       <td>array of time windows. currently only one time window is supported. see spec above<br></td>
+     </tr>
+</table>
+
+
+time_window:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>earliest<br></td>
+    <td>long</td>
+    <td>true<br></td>
+    <td>earliest operation start time in seconds from midnight<br></td>
+  </tr>
+  <tr>
+      <td>latest<br></td>
+      <td>long</td>
+      <td>true<br></td>
+      <td>latest operation start time in seconds from midnight<br></td>
+    </tr>
+</table>
 
 
 
