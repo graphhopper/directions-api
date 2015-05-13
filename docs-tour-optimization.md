@@ -54,6 +54,41 @@ The general input structure is
 }
 ```
 
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>vehicles<br></td>
+    <td>object</td>
+    <td>true<br></td>
+    <td>array of the vehicles available<br></td>
+  </tr>
+  <tr>
+    <td>vehicle_types<br></td>
+    <td>object<br></td>
+    <td><br></td>
+    <td>array of vehicle types available<br></td>
+  </tr>
+  <tr>
+    <td>services<br></td>
+    <td>object</td>
+    <td></td>
+    <td>services involve one location<br></td>
+  </tr>
+  <tr>
+    <td>shipments</td>
+    <td>object</td>
+    <td></td>
+    <td>shipments involve two location, i.e. pickup and delivery location<br></td>
+  </tr>
+</table>
+
+
+
 This specification need to be posted to:
 
 `
