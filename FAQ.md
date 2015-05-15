@@ -17,18 +17,18 @@ The API credit limits are listed in the dashboard and depend on the selected pac
 
 The credits are resetted after 24 hours, not on one specific 00:00 time or something. But the reset will only happen, if a new request comes in. So just ask the API or read the `X-RateLimit-Reset` header which gives you the number of seconds to wait. Also only the free package will be blocked after exceeding the limits, other packages don't have this strict policy.
 
-## Documentation and Demo
+## Where can I find the documentation or some demos?
 
 Our documentation is available [here](https://github.com/graphhopper/directions-api/blob/master/README.md) and some demos are available for [every client](https://github.com/graphhopper/directions-api/blob/master/README.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
 
-## Pricing
+## Where can I find the pricing?
 
-You can find the detailed pricing in the dashboard. For individual requirements we offer small and big custom packages.
+You can find the detailed pricing in the dashboard. For individual requirements we offer custom packages. Additionally we offer support contracts and a completely self-hosted Directions API, see [here](https://graphhopper.com/#enterprise) for more details.
 
 
 ## Can I pay on demand?
 
-It is possible to pay online without delay. But paying for an increased demand is currently not possible, please [let us know](https://graphhopper.com/#contact) of your needs and we can arrange a solution.
+It is possible to pay online e.g. per month for a specific amount of credits/requests. If you exceed this you currently do not need to pay for and the requests won't be blocked but we ask you to upgrade if that happens frequently. Please [let us know](https://graphhopper.com/#contact) of your needs and we find a solution.
 
 
 ## Do you offer discounts?
