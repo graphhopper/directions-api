@@ -1,11 +1,5 @@
 [Go to overview](./README.md)
 
-## Difference between the Directions API and the Open Source GraphHopper 'Core'?
-
-The GraphHopper Directions API is a collection of routing related APIs: the Routing API, the Matrix API, the Tour Optimization API and the Geocoding API. This entire set is also available for self-hosting or via our hosted solution.
-
-The Routing API is completely open source as its based on the [open source GraphHopper 'Core'](https://github.com/graphhopper/graphhopper/). And because this is Apache Licensed you can use and even include it in commercial applications like for the Web, Desktop, Android or iOS.
-
 ## What is one credit?
 
 You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#/pricing) to easily calculate the necessary credits or get more details of how credits are calculated with the following:
@@ -31,14 +25,29 @@ Our documentation is available [here](https://github.com/graphhopper/directions-
 
 You can find the detailed pricing in the dashboard. For individual requirements we offer small and big custom packages.
 
+
 ## Can I pay on demand?
 
 It is possible to pay online without delay. But paying for an increased demand is currently not possible, please [let us know](https://graphhopper.com/#contact) of your needs and we can arrange a solution.
+
 
 ## Do you offer discounts?
 
 Yes, you get a discount if you sign up for an annually contract. Also [follow us on Twitter](https://twitter.com/graphhopper) to get the latest campaign.
 
+
 ## How to cancel, upgrade or downgrad my package?
 
 Please [contact us](https://graphhopper.com/#contact)
+
+
+## Do I need to link or mention the use of the GraphHopper Directions API
+
+Yes. And we think it is fair to make this a requirement for all packages as we need to grow for a more healthy ecosystem and also have very permissive terms otherwise, please see [here](https://github.com/graphhopper/directions-api#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option.
+
+
+## Difference between the Directions API and the Open Source GraphHopper 'Core'?
+
+The GraphHopper Directions API is a collection of routing related APIs: the Routing API, the Matrix API, the Tour Optimization API and the Geocoding API. This entire set is also available for self-hosting.
+
+The Routing API is based on the [open source GraphHopper](https://github.com/graphhopper/graphhopper/) but as this requires lots of memory for a world wide coverage we make GraphHopper easy and cost effective to use via our Directions API.
