@@ -480,7 +480,7 @@ pickup or delivery:
   </tr>
   <tr>
       <td>duration<br></td>
-      <td>string</td>
+      <td>long</td>
       <td><br></td>
       <td>duration of pickup or delivery in seconds<br></td>
     </tr>
