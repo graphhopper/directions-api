@@ -1263,17 +1263,18 @@ a vehicle type in ```vehicle_types``` and second make a reference to the specifi
 ]
 ```
 
-The solution of your bike round trip indicates that it takes you almost 6 days, but only if you are strong enough to bike without rest.
+The solution of your bike round trip indicates that it takes you more than 5 days, but only if you are strong enough to bike without rest.
 
 ```json
 {
-  "job_id" : "2ad116c9-afd4-4e4a-937e-af8cd3dcf168",
+  "job_id" : "2427f7a3-69e4-413d-bd26-475f73bb28cc",
   "status" : "finished",
   "waiting_time_in_queue" : 0,
-  "processing_time" : 418,
+  "processing_time" : 851,
   "solution" : {
-    "distance" : 2289741,
-    "time" : 508077,
+    "costs" : 442050,
+    "distance" : 1993429,
+    "time" : 442050,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -1283,32 +1284,32 @@ The solution of your bike round trip indicates that it takes you almost 6 days, 
         "end_time" : 0
       }, {
         "type" : "service",
-        "id" : "hamburg",
-        "location_id" : "hamburg",
-        "arr_time" : 68786,
-        "end_time" : 68786
-      }, {
-        "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 242591,
-        "end_time" : 242591
+        "arr_time" : 146195,
+        "end_time" : 146195
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 328544,
-        "end_time" : 328544
+        "arr_time" : 232151,
+        "end_time" : 232151
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 374362,
-        "end_time" : 374362
+        "arr_time" : 277955,
+        "end_time" : 277955
+      }, {
+        "type" : "service",
+        "id" : "hamburg",
+        "location_id" : "hamburg",
+        "arr_time" : 374553,
+        "end_time" : 374553
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 508077
+        "arr_time" : 442050
       } ]
     } ],
     "unassigned" : {
