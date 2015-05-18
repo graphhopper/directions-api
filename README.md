@@ -6,7 +6,7 @@ With the [ GraphHopper Directions API for Business](https://graphhopper.com/#dir
 ## How to Start
 
  1. To use the Directions API you need an API key. Get it for free [here](https://graphhopper.com/#directions-api).
- 2. Read the documentation for the **Routing API**, the **Tour Optimization API**, the **Matrix API** and the **Geocoding API** below or try the examples in our dashboard.
+ 2. Read the documentation for the **[Routing API](#routing-api)**, the **[Tour Optimization API](#tour-optimization-api)**, the **[Matrix API](#matrix-api)** and the **[Geocoding API](#geocoding-api)** below or try the examples in our dashboard.
  3. To increase your query limits for production you pay online within a few minutes via credit card or debit advice.
 
 You can see the Routing and Geocoding API in action at [GraphHopper Maps](https://graphhopper.com/maps).
