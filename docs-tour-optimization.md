@@ -205,6 +205,12 @@ vehicle:
          <td></td>
          <td>latest end of vehicle in seconds, i.e. the time the vehicle needs to be at its end location at latest</td>
        </tr>
+<tr>
+         <td>skills</td>
+         <td>array</td>
+         <td></td>
+         <td>array of skills, i.e. array of string (not case sensitive)</td>
+       </tr>
 </table>
 
 address:
@@ -420,6 +426,12 @@ service:
       <td><br></td>
       <td>array of time_windows. currently, only one time window is supported</td>
     </tr>
+<tr>
+         <td>required_skills</td>
+         <td>array</td>
+         <td></td>
+         <td>array of required skills, i.e. array of string (not case sensitive)</td>
+       </tr>
 </table>
 
 shipment:
@@ -461,6 +473,12 @@ shipment:
         <td><br></td>
         <td>size of shipment. it can have multiple dimensions,<br> e.g. [ 2, 1, 40 ] to specify three dimension. default is [ 0 ]<br></td>
       </tr>
+<tr>
+         <td>required_skills</td>
+         <td>array</td>
+         <td></td>
+         <td>array of required skills, i.e. array of string (not case sensitive)</td>
+       </tr>
 </table>
 
 pickup or delivery:
