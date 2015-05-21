@@ -40,9 +40,7 @@ Where you need to replace the key with your own
 
 ![Vehicle Routing Example](./img/vrp-example.png)
 
-The Tour Optimization API is documented [here](./docs-tour-optimization.md)
-
-**Please contact us if you want to take part as an alpha tester.**
+The Tour Optimization API is documented [here](./docs-tour-optimization.md). **Please note the [alpha status](https://github.com/graphhopper/directions-api/issues/6)**
 
 The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
