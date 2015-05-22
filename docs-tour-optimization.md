@@ -1346,6 +1346,124 @@ you have visited Cologne. This might be enforced with time windows, however some
 
 in progress
 
+Example json-request with Shipments
+
+```json
+{
+    "vehicles": [{
+            "vehicle_id": "vehicle1",
+            "start_address": {
+                "location_id": "gera",
+                "lon": 12.076721,
+                "lat": 50.877044
+            },
+            "type_id": "vehicle_type_1",
+            "latest_end": 150000
+        }],
+        "vehicle_types": [{
+            "type_id": "vehicle_type_1",
+            "profile": "car",
+            "capacity": [ 11 ]
+        }],
+        "shipments" : [
+        {
+            "id": "shipment1",
+            "name": "ship_fish_from_rostock_to_karlsruhe",
+            "pickup": {
+                "address": {
+                    "location_id": "rostock",
+                    "lon": 12.1333333,
+                    "lat": 54.0833333
+                }
+            },
+            "delivery": {
+                "address": {
+                    "location_id": "karlsruhe",
+                    "lon": 8.3858333,
+                    "lat": 49.0047222
+                }
+            },
+            "size": [1]
+        },
+        {
+            "id": "shipment2",
+            "name": "ship_smthbig_from_rostock_to_karlsruhe",
+            "pickup": {
+                "address": {
+                    "location_id": "rostock",
+                    "lon": 12.1333333,
+                    "lat": 54.0833333
+                }
+            },
+            "delivery": {
+                "address": {
+                    "location_id": "karlsruhe",
+                    "lon": 8.3858333,
+                    "lat": 49.0047222
+                }
+            },
+            "size": [ 10 ]
+        }
+    ]
+}
+```
+
+Corresponding response
+```json
+{
+  "job_id" : "e35c52db-0dd9-4e05-bce1-5f5cebdba1fa",
+  "status" : "finished",
+  "waiting_time_in_queue" : 0,
+  "processing_time" : 180,
+  "solution" : {
+    "costs" : 62991,
+    "distance" : 1671810,
+    "time" : 62991,
+    "no_unassigned" : 0,
+    "routes" : [ {
+      "vehicle_id" : "vehicle1",
+      "activities" : [ {
+        "type" : "start",
+        "location_id" : "gera",
+        "end_time" : 0
+      }, {
+        "type" : "pickupShipment",
+        "id" : "shipment1",
+        "location_id" : "rostock",
+        "arr_time" : 16389,
+        "end_time" : 16389
+      }, {
+        "type" : "pickupShipment",
+        "id" : "shipment2",
+        "location_id" : "rostock",
+        "arr_time" : 16389,
+        "end_time" : 16389
+      }, {
+        "type" : "deliverShipment",
+        "id" : "shipment1",
+        "location_id" : "karlsruhe",
+        "arr_time" : 46227,
+        "end_time" : 46227
+      }, {
+        "type" : "deliverShipment",
+        "id" : "shipment2",
+        "location_id" : "karlsruhe",
+        "arr_time" : 46227,
+        "end_time" : 46227
+      }, {
+        "type" : "end",
+        "location_id" : "gera",
+        "arr_time" : 62991
+      } ]
+    } ],
+    "unassigned" : {
+      "services" : [ ],
+      "shipments" : [ ]
+    }
+  }
+}
+```
+
  
 
 
