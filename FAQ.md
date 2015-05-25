@@ -1,5 +1,9 @@
 [Go to overview](./README.md)
 
+## Where can I get help?
+
+Contact us [per email](https://graphhopper.com/#contact) or use [our issue tracker](https://github.com/graphhopper/directions-api/issues).
+
 ## What is one credit?
 
 You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#/pricing) to easily calculate the necessary credits or get more details of how credits are calculated with the following:
