@@ -658,7 +658,7 @@ output/response:
       <td>status<br></td>
       <td>string</td>
       <td><br></td>
-      <td>status of your job. can either be "waiting", "processing" or "finish"<br></td>
+      <td>status of your job. can either be "waiting", "processing" or "finished"<br></td>
     </tr>
  <tr>
        <td>waiting_time_in_queue<br></td>
