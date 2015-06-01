@@ -90,7 +90,7 @@ info.copyrights            | Attribution according to [our documentation](https:
 
 ## HTTP POST request
 
-The GET request has an URL length limitation, which hurts for many locations per request. In those cases use a HTTP POST request with JSON data as input. Note, that all singular parameters are then named as their plural - e.g. point=10,11&point=20,22 will be a points array and additionally the order lon,lat will be enforced as it is done for [GeoJson](http://geojson.org/geojson-spec.html#examples):
+The GET request has an URL length limitation, which hurts for many locations per request. In those cases use a HTTP POST request with JSON data as input. Note, that all singular parameters are then named as their plural - e.g. point=10,11&point=20,22 will be a `point`**s** array and additionally the order lon,lat will be enforced as it is done for [GeoJson](http://geojson.org/geojson-spec.html#examples):
 ```json
 { "points": [[11,10], [22,20]] }
 ```
