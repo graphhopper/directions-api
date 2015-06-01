@@ -90,12 +90,12 @@ info.copyrights            | Attribution according to [our documentation](https:
 
 ## HTTP POST request
 
-The GET request has an URL length limitation, which hurts for many locations per request. In those cases use a HTTP POST request with JSON data as input. Note, that all singular parameters are then named as their plural - e.g. point=1,2&point=2,1 will be a points array:
+The GET request has an URL length limitation, which hurts for many locations per request. In those cases use a HTTP POST request with JSON data as input. Note, that all singular parameters are then named as their plural - e.g. point=10,11&point=20,22 will be a points array and additionally the order lon,lat will be enforced:
 ```json
-{ "points": ["1,2", "2,1"] }
+{ "points": [[11,10], [22,20]] }
 ```
 
-All effected parameters are: `points`, `from_points`, `to_points` and `out_arrays`.
+All effected parameters are: `points`, `from_points` and `to_points`. Also `out_array` has to be named `out_arrays` in a POST request.
 
 ## Batch Matrix API
 
