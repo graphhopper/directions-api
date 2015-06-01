@@ -106,7 +106,7 @@ The Batch Matrix API allows using matrices with more locations and works asynchr
 
 Here are some full examples via curl:
 ```bash
-$ curl -X POST -H "Content-Type: application/json" "localhost:8989/matrix/calculate" -d '{"points":[[13.29895,52.48696],[13.370876,2.489575],[13.439026,52.511206]]}'
+$ curl -X POST -H "Content-Type: application/json" "localhost:8989/matrix/calculate" -d '{"points":[[13.29895,52.48696],[13.370876,52.489575],[13.439026,52.511206]]}'
 {"job_id":"7ac65787-fb99-4e02-a832-2c3010c70097"}
 ```
 
@@ -116,7 +116,16 @@ $ curl -X GET https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a
 {"status":"waiting"}
 ```
 
-If the calculation finished it will return the full matrix JSON with `status:finished`.
+When the calculation is finished (`status:finished`) the JSON response will contain the full matrix JSON under `solution`:
+```bash
+$ curl -X GET https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key={YOUR_KEY}
+{"solution":{"weights":[[0.0,470.453,945.414],[503.793,0.0,580.871],[970.49,569.511,0.0]],"info":{"copyrights":["GraphHopper","OpenStreetMap contributors"]}},"status":"finished"}
+```
+
+If an error occured while calculation the JSON will contain directly the error message e.g.:
+```json
+{"message":"Cannot find from_points: 1","hints":[{...}]}
+```
 
 ## HTTP Error codes
 
