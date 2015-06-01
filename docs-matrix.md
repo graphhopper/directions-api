@@ -105,7 +105,7 @@ The Batch Matrix API allows using matrices with more locations and works asynchr
 
 Here are some full examples via curl:
 ```bash
-curl -X POST https://graphhopper.com/api/1/matrix/calculate/?key={YOUR_KEY} -d '{ "points": ["49.653405,11.381836", "49.567978,11.645508"] }'
+curl -X POST -H "Content-Type: application/json" https://graphhopper.com/api/1/matrix/calculate/?key={YOUR_KEY} -d '{ "points": ["49.653405,11.381836", "49.567978,11.645508"] }'
 ```
 
 Pick the returned job_id and use it in the next GET requests:
