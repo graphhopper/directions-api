@@ -106,13 +106,16 @@ The Batch Matrix API allows using matrices with more locations and works asynchr
 
 Here are some full examples via curl:
 ```bash
-curl -X POST -H "Content-Type: application/json" https://graphhopper.com/api/1/matrix/calculate/?key={YOUR_KEY} -d '{ "points": ["49.653405,11.381836", "49.567978,11.645508"] }'
+curl -X POST -H "Content-Type: application/json" "localhost:8989/matrix/calculate" -d '{"points":[[13.29895,52.48696],[13.370876,2.489575],[13.439026,52.511206]]}'
 ```
 
 Pick the returned job_id and use it in the next GET requests:
 ```bash
 curl -X GET https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key={YOUR_KEY}
+{"status":"waiting"}
 ```
+
+If the calculation finished it will return the full matrix JSON with `status:finished`.
 
 ## HTTP Error codes
 
