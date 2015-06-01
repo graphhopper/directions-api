@@ -95,7 +95,7 @@ The GET request has an URL length limitation, which hurts for many locations per
 { "points": ["1,2", "2,1"] }
 ```
 
-All effected parameters are: "points", "from_points", "to_points" and "out_arrays.
+All effected parameters are: `points`, `from_points`, `to_points` and `out_arrays`.
 
 ## Batch Matrix API
 
