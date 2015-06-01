@@ -62,7 +62,7 @@ The cost for one request depends on the number of locations and is documented [h
 
 One request should not exceed the Matrix API location limit depending on the package, see the pricing in our dashboard. If you include out_array=paths the Matrix API location limit is currently 10 regardless of the package.
 
-## Example output for the case type=json
+## Matrix API
 
 Keep in mind that some attributes which are not documented here can be removed in the future - you should not rely on them! In the following example 4 points were specified and `out_array=distances&out_array=times&out_array=weights&debug=true`:
 
@@ -88,6 +88,28 @@ weights                    | The weight matrix for the specified points in the s
 info.took                  | The taken time in seconds
 info.copyrights            | Attribution according to [our documentation](https://github.com/graphhopper/web-api/#attribution) is necessary if no white-label option included.
 
+## HTTP POST request
+
+The GET request has an URL length limitation, which hurts for many locations per request. In those cases use a HTTP POST request with JSON data as input. Note, that all singular parameters are then named as their plural - e.g. point=1,2&point=2,1 will be a points array:
+```json
+{ "points": ["1,2", "2,1"] }
+```
+
+## Batch Matrix API
+
+The Batch Matrix API allows using matrices with more locations and works asynchronously - similar to our Route Optimization API:
+ * Create a HTTP POST request against `/matrix/calculate`. This will give you the `job_id` from the response json like `{ "job_id": "7ac65787-fb99-4e02-a832-2c3010c70097" }`
+ * Poll via HTTP GET requests every second against `/matrix/solution/{job_id}`
+
+Here are some full examples via curl:
+```bash
+curl -X POST https://graphhopper.com/api/1/matrix/calculate/?key={YOUR_KEY} -d '{ "points": ["49.653405,11.381836", "49.567978,11.645508"] }'
+```
+
+Pick the returned job_id and use it in the next GET requests:
+```bash
+curl -X GET https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key={YOUR_KEY}
+```
 
 ## HTTP Error codes
 
