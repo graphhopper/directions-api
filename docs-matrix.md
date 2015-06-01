@@ -95,6 +95,8 @@ The GET request has an URL length limitation, which hurts for many locations per
 { "points": ["1,2", "2,1"] }
 ```
 
+All effected parameters are: "points", "from_points", "to_points" and "out_arrays.
+
 ## Batch Matrix API
 
 The Batch Matrix API allows using matrices with more locations and works asynchronously - similar to our Route Optimization API:
