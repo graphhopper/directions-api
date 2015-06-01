@@ -90,11 +90,11 @@ info.copyrights            | Attribution according to [our documentation](https:
 
 ## HTTP POST request
 
-The GET request has an URL length limitation, which hurts for many locations per request. In those cases use a HTTP POST request with JSON data as input. All singular parameters are then named as their plural - e.g. point=10,11&point=20,22 will be a `points` array:
+The GET request has an URL length limitation, which hurts for many locations per request. In those cases use a HTTP POST request with JSON data as input. Both request scenarios are identically except that all singular parameter names are named as their plural for a POST request. For example `point=10,11&point=20,22` will be converted to the following JSON `points` array:
 ```json
 { "points": [[11,10], [22,20]] }
 ```
-Note that also the order `[longitude,latitude]` will be enforced for a POST request similar to a [GeoJson](http://geojson.org/geojson-spec.html#examples). All effected parameters are: `points`, `from_points` and `to_points`. 
+Note that also the order changes to `[longitude,latitude]` similar to a [GeoJson](http://geojson.org/geojson-spec.html#examples). All effected parameters are: `points`, `from_points` and `to_points`. 
 
 Also `out_array` has to be named `out_arrays` in a POST request.
 
