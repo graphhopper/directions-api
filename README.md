@@ -6,7 +6,7 @@ With the [ GraphHopper Directions API for Business](https://graphhopper.com/#dir
 ## How to Start
 
  1. To use the Directions API you need an API key. Get it for free [here](https://graphhopper.com/#directions-api).
- 2. Read the documentation for the **[Routing API](#routing-api)**, the **[Tour Optimization API](#tour-optimization-api)**, the **[Matrix API](#matrix-api)** and the **[Geocoding API](#geocoding-api)** below or try the examples in our dashboard.
+ 2. Read the documentation for the **[Routing API](#routing-api)**, the **[Route Optimization API](#route-optimization-api)**, the **[Matrix API](#matrix-api)** and the **[Geocoding API](#geocoding-api)** below or try the examples in our dashboard.
  3. To increase your query limits for production you pay online within a few minutes via credit card or debit advice.
 
 You can see the Routing and Geocoding API in action at [GraphHopper Maps](https://graphhopper.com/maps).
@@ -36,22 +36,22 @@ You get an example response via:
 
 Where you need to replace the key with your own
 
-## [Tour Optimization API](./docs-tour-optimization.md)
+## [Route Optimization API](./docs-route-optimization.md)
 
 ![Vehicle Routing Example](./img/vrp-example.png)
 
-The Tour Optimization API is documented [here](./docs-tour-optimization.md). **Please note the [alpha status](https://github.com/graphhopper/directions-api/issues/6)**
+The Route Optimization API is documented [here](./docs-route-optimization.md). **Please note the [alpha status](https://github.com/graphhopper/directions-api/issues/6)**
 
 The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
-The Tour Optimization API works in two steps
+The Route Optimization API works in two steps
 
  1. Publish your problem json:
     `curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]" --data @your-vrp-problem.json`
  2. Poll every 500ms until a solution is available:
     `curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"`
   
-For more details also about the format of the `your-vrp-problem.json` file you can use one of [the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/tour-optimization-examples).
+For more details also about the format of the `your-vrp-problem.json` file you can use one of [the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/route-optimization-examples).
 
 ## [Matrix API](./docs-matrix.md)
 
