@@ -1,6 +1,6 @@
-[Back to overview](./README.md#tour-optimization-api)
+[Back to overview](./README.md#route-optimization-api)
 
-## Tour Optimization API
+## Route Optimization API
 
 - [Clients](#clients)
 - [Quick Start](#quick-start)
@@ -13,7 +13,7 @@
  - [Traveling Salesman](#traveling-salesman)
  - [Vehicle Routing Problem](#vehicle-routing-problem)
 
-The Tour Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
+The Route Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
 of moving things and people. For example, every company dealing with last-mile deliveries faces a vehicle routing problem, i.e. it must find ways to
 efficiently service its customers given a variety of requirements: customer requirements (e.g. time windows), 
 the product's transport requirements (e.g. refrigerated, must be picked up first), driver skills, vehicles/capacities available etc..
@@ -22,7 +22,7 @@ Even these problems are relatively easy to understand, finding reasonable soluti
 You need to calculate travel times and distances on large (road) networks, you need to formalize your vehicle routing problem and to specify
  your manifold business constraints, you need fast and efficient algorithms and quite a significant amount of computational power.
   
- This is where <b>GraphHopper Tour Optimization</b> comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and <b>GraphHopper</b> will do the heavy work.
+ This is where <b>GraphHopper Route Optimization</b> comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and <b>GraphHopper</b> will do the heavy work.
  To make it even easier for you, we provide you with the following clients.
 
 
@@ -31,13 +31,13 @@ You need to calculate travel times and distances on large (road) networks, you n
  * [JavaScript](https://github.com/graphhopper/directions-api-js-client/)
  * [Java](https://github.com/karussell/directions-api-vrp-java-client/)
   
-Other clients can be relative easily created via [swagger-codegen](https://github.com/swagger-api/swagger-codegen) and the swagger specification for the Tour Optimization API which is located [here](https://graphhopper.com/api/1/vrp/swagger.json). Please [let us know](https://graphhopper.com/#contact) which further programming language or environment you need for your integration!
+Other clients can be relative easily created via [swagger-codegen](https://github.com/swagger-api/swagger-codegen) and the swagger specification for the Route Optimization API which is located [here](https://graphhopper.com/api/1/vrp/swagger.json). Please [let us know](https://graphhopper.com/#contact) which further programming language or environment you need for your integration!
 
 ### Quick Start
 
 The fastest way to understand the API is by looking at
  * [live examples](https://graphhopper.com/api/1/examples/#optimization)
- * [the JSON from the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/tour-optimization-examples)
+ * [the JSON from the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/route-optimization-examples)
  * [live API docs](https://graphhopper.com/api/1/vrp/documentation/)
  * the extensive examples described below
 
