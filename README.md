@@ -81,13 +81,13 @@ Append `&debug=true` for a formatted output.
 
 ## Isochrone API
 
-Use this API to calculate reachability polygons for specific points. Please contact us if you want to take part as an alpha tester.
+Use this API to calculate reachability polygons for specific points. Please contact us for further details.
 
 ![Isochrone Illustration](https://raw.githubusercontent.com/graphhopper/directions-api/6fd1ce50a3c86b7f03823912fafa370f14ae11ec/img/isochrone-example.png)
 
 ## Map Matching API
 
-Use this API to match recorded GPS tracks with roads and associate useful information like turn instructions or speed limit, i.e. it provides a 'snap to road' functionality. Please contact us if you want to take part as an alpha tester.
+Use this API to match recorded GPS tracks with roads and associate useful information like turn instructions or speed limit, i.e. it provides a 'snap to road' functionality. Please contact us for further details.
 
 ![Map Matching Illustration](https://karussell.files.wordpress.com/2014/07/map-matching.png?w=242)
 
