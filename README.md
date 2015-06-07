@@ -102,21 +102,20 @@ Read the [terms of services](https://graphhopper.com/terms.html) carefully and m
 
 ## Attribution
 
-All packages requires a prominent attribution of GraphHopper. This means you include a link to graphhopper.com where you utilize the GraphHopper Directions API. It is important to note that the user has to see this only one time e.g. once per application start or at the first website access. The user must have the possibility and enough time to read and click on the link e.g. including it only in a short living spash screen isn't appropriate where as including this in or below a search input is appropriate. For an example you can look at [GraphHopper Maps](https://graphhopper.com/maps/)
+All packages require a prominent attribution of GraphHopper. This means you include a link to graphhopper.com in a place where you utilize the GraphHopper Directions API. It is important to note that the user has to see this only one time e.g. once per application start or at the first website access. The user must have the possibility and enough time to read and click on the link (at least 4 seconds). I.e. a short living splash screen isn't what we want, instead we ask you to place it e.g. below a search input. As a simple example have a look at [GraphHopper Maps](https://graphhopper.com/maps/)
 
 An HTML snippet for this is:
 
 ```html
-powered by <a href="https://graphhopper.com/#directions-api">GraphHopper API</a>
+Powered by <a href="https://graphhopper.com/#directions-api">GraphHopper API</a>
 ```
 
-For small screens (less than 190mm diagonal) it can be only the link:
-
+If you use the self-hosted GraphHopper Directions API please use the following snippet:
 ```html
-<a href="https://graphhopper.com/#directions-api">GraphHopper</a>
+Uses <a href="https://graphhopper.com/">GraphHopper</a>
 ```
 
-If you need a custom or white-label solution please contact us.
+For small screens (less than 190mm diagonal) it can be only the link without 'powered by' or 'uses'. If you need a custom or white-label solution please contact us.
 
 Additionally to our attribution you need to include attribution to [OpenStreetMap](https://www.openstreetmap.org/copyright/).
 
