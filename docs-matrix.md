@@ -123,19 +123,19 @@ The Batch Matrix API allows using matrices with more locations and works asynchr
 
 Here are some full examples via curl:
 ```bash
-$ curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/matrix/calculate?key={YOUR_KEY}" -d '{"points":[[13.29895,52.48696],[13.370876,52.489575],[13.439026,52.511206]]}'
+$ curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/matrix/calculate?key=[YOUR_KEY]" -d '{"points":[[13.29895,52.48696],[13.370876,52.489575],[13.439026,52.511206]]}'
 {"job_id":"7ac65787-fb99-4e02-a832-2c3010c70097"}
 ```
 
 Pick the returned job_id and use it in the next GET requests:
 ```bash
-$ curl -X GET "https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key={YOUR_KEY}"
+$ curl -X GET "https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"
 {"status":"waiting"}
 ```
 
 When the calculation is finished (`status:finished`) the JSON response will contain the full matrix JSON under `solution`:
 ```bash
-$ curl -X GET "https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key={YOUR_KEY}"
+$ curl -X GET "https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"
 {"solution":{"weights":[[0.0,470.453,945.414],[503.793,0.0,580.871],[970.49,569.511,0.0]],"info":{"copyrights":["GraphHopper","OpenStreetMap contributors"]}},"status":"finished"}
 ```
 
