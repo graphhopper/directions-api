@@ -98,6 +98,23 @@ Note that also the order changes to `[longitude,latitude]` similar to a [GeoJson
 
 Also `out_array` has to be named `out_arrays` in a POST request.
 
+curl example with a JSON as input:
+```bash
+curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/matrix?key=[YOUR_KEY]" -d '{"elevation":false,"out_arrays":["weights"],"from_points":[[-0.087891,51.534377],[-0.090637,51.467697],[-0.171833,51.521241],[-0.211487,51.473685]],"to_points":[[-0.087891,51.534377],[-0.090637,51.467697],[-0.171833,51.521241],[-0.211487,51.473685]],"vehicle":"car"}'
+```
+
+JSON response:
+```json
+{
+"weights":[
+    [0.0,886.302,605.321,1130.814],
+    [847.615,0.0,807.13,927.05],
+    [561.073,777.362,0.0,660.521],
+    [1102.726,905.626,662.717,0.0]],
+"info":{"took":0.056749515,"copyrights":["GraphHopper","OpenStreetMap contributors"]}
+}
+```
+
 ## Batch Matrix API
 
 The Batch Matrix API allows using matrices with more locations and works asynchronously - similar to our Route Optimization API:
