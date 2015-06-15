@@ -119,7 +119,7 @@ JSON response:
 
 The Batch Matrix API allows using matrices with more locations and works asynchronously - similar to our Route Optimization API:
  * Create a HTTP POST request against `/matrix/calculate` and add the key in the URL: `/matrix/calculate?key=[YOUR_KEY]`. This will give you the `job_id` from the response json like `{ "job_id": "7ac65787-fb99-4e02-a832-2c3010c70097" }`
- * Poll via HTTP GET requests every second against `/matrix/solution/{job_id}`
+ * Poll via HTTP GET requests every second against `/matrix/solution/[job_id]`
 
 Here are some full examples via curl:
 ```bash
@@ -127,7 +127,7 @@ $ curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/
 {"job_id":"7ac65787-fb99-4e02-a832-2c3010c70097"}
 ```
 
-Pick the returned job_id and use it in the next GET requests:
+Pick the returned `job_id` and use it in the next GET requests:
 ```bash
 $ curl -X GET "https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"
 {"status":"waiting"}
