@@ -548,7 +548,7 @@ If you post your problem, you get back a job_id such as:
 { "job_id": "7ac65787-fb99-4e02-a832-2c3010c70097" }
 ```
 
-With the ```job_id``` you can fetch your solution via ```"https://graphhopper.com/api/1/vrp/solution/{job_id}?key=[YOUR_KEY]``` such as
+With the ```job_id``` you can fetch your solution via ```"https://graphhopper.com/api/1/vrp/solution/[job_id]?key=[YOUR_KEY]``` such as
  
 ```
 "https://graphhopper.com/api/1/vrp/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"
@@ -898,7 +898,7 @@ curl -H "Content-Type: application/json" --data '{ "vehicles" : [ ...' https://g
 As described above, <b>GraphHopper</b> responds with a ```job_id```. Use the following statement to fetch your solution:
 
 ```
-curl https://graphhopper.com/api/1/vrp/solution/{job_id}?key=[YOUR_KEY]
+curl https://graphhopper.com/api/1/vrp/solution/[job_id]?key=[YOUR_KEY]
 ```
 
 If the solution is available, the response looks like this:
