@@ -101,7 +101,7 @@ Also `out_array` has to be named `out_arrays` in a POST request.
 ## Batch Matrix API
 
 The Batch Matrix API allows using matrices with more locations and works asynchronously - similar to our Route Optimization API:
- * Create a HTTP POST request against `/matrix/calculate`. This will give you the `job_id` from the response json like `{ "job_id": "7ac65787-fb99-4e02-a832-2c3010c70097" }`
+ * Create a HTTP POST request against `/matrix/calculate` and add the key in the URL: `/matrix/calculate?key=[YOUR_KEY]`. This will give you the `job_id` from the response json like `{ "job_id": "7ac65787-fb99-4e02-a832-2c3010c70097" }`
  * Poll via HTTP GET requests every second against `/matrix/solution/{job_id}`
 
 Here are some full examples via curl:
