@@ -110,7 +110,7 @@ An HTML snippet for this is:
 Powered by <a href="https://graphhopper.com/#directions-api">GraphHopper API</a>
 ```
 
-If you use the self-hosted GraphHopper Directions API please use the following snippet:
+If you use the on-premises option please use the following snippet:
 ```html
 Uses <a href="https://graphhopper.com/">GraphHopper</a>
 ```
