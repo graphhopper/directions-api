@@ -582,55 +582,62 @@ or your job is finished and a solution is available. Then you get back this:
 
 ```json
 {
-  "job_id" : "7ac65787-fb99-4e02-a832-2c3010c70097",
+  "job_id" : "64963b20-d358-4f26-bf79-82decae50a2d",
   "status" : "finished",
   "waiting_time_in_queue" : 0,
-  "processing_time" : 271,
+  "processing_time" : 1575,
   "solution" : {
-    "distance" : 1872917,
-    "time" : 71118,
+    "costs" : 62180,
+    "distance" : 1875953,
+    "time" : 62180,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
       "activities" : [ {
         "type" : "start",
         "location_id" : "berlin",
-        "end_time" : 0
-      }, {
-        "type" : "service",
-        "id" : "munich",
-        "location_id" : "munich",
-        "arr_time" : 22066,
-        "end_time" : 22066
-      }, {
-        "type" : "service",
-        "id" : "frankfurt",
-        "location_id" : "frankfurt",
-        "arr_time" : 36986,
-        "end_time" : 36986
-      }, {
-        "type" : "service",
-        "id" : "cologne",
-        "location_id" : "cologne",
-        "arr_time" : 44195,
-        "end_time" : 44195
+        "end_time" : 0,
+        "distance" : 0
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 60057,
-        "end_time" : 60057
+        "arr_time" : 9972,
+        "end_time" : 9972,
+        "distance" : 287064
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 23512,
+        "end_time" : 23512,
+        "distance" : 709133
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 29851,
+        "end_time" : 29851,
+        "distance" : 897614
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 43140,
+        "end_time" : 43140,
+        "distance" : 1289258
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 71118
+        "arr_time" : 62180,
+        "distance" : 1875953
       } ]
     } ],
     "unassigned" : {
       "services" : [ ],
       "shipments" : [ ]
     }
-}
+  }
 ```
 
 As you can see, you get some general indicators of your solution like ```distance``` and ```time``` which corresponds to the travelled distance and travel time,
@@ -785,6 +792,12 @@ activity:
       <td><br></td>
       <td>end time at corresponding location<br></td>
     </tr>
+<tr>
+      <td>distance<br></td>
+      <td>long</td>
+      <td><br></td>
+      <td>cumulated distance at activity<br></td>
+    </tr>
 </table>
 
 unassigned:
@@ -905,55 +918,62 @@ If the solution is available, the response looks like this:
 
 ```json
 {
-  "job_id" : "7e60b8ea-8fe8-4839-8a8e-c72948e131cb",
+  "job_id" : "64963b20-d358-4f26-bf79-82decae50a2d",
   "status" : "finished",
   "waiting_time_in_queue" : 0,
-  "processing_time" : 271,
+  "processing_time" : 1575,
   "solution" : {
-    "distance" : 1872917,
-    "time" : 71118,
+    "costs" : 62180,
+    "distance" : 1875953,
+    "time" : 62180,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
       "activities" : [ {
         "type" : "start",
         "location_id" : "berlin",
-        "end_time" : 0
-      }, {
-        "type" : "service",
-        "id" : "munich",
-        "location_id" : "munich",
-        "arr_time" : 22066,
-        "end_time" : 22066
-      }, {
-        "type" : "service",
-        "id" : "frankfurt",
-        "location_id" : "frankfurt",
-        "arr_time" : 36986,
-        "end_time" : 36986
-      }, {
-        "type" : "service",
-        "id" : "cologne",
-        "location_id" : "cologne",
-        "arr_time" : 44195,
-        "end_time" : 44195
+        "end_time" : 0,
+        "distance" : 0
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 60057,
-        "end_time" : 60057
+        "arr_time" : 9972,
+        "end_time" : 9972,
+        "distance" : 287064
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 23512,
+        "end_time" : 23512,
+        "distance" : 709133
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 29851,
+        "end_time" : 29851,
+        "distance" : 897614
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 43140,
+        "end_time" : 43140,
+        "distance" : 1289258
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 71118
+        "arr_time" : 62180,
+        "distance" : 1875953
       } ]
     } ],
     "unassigned" : {
       "services" : [ ],
       "shipments" : [ ]
     }
-}
+  }
 ```
 
 Let us assume you do not want your vehicle to come back to Berlin, but to stay in one of the other cities. Then add
@@ -966,44 +986,50 @@ to your vehicle specification. This results in:
 
 ```json
 {
-  "job_id" : "2ee7c97d-f108-4c92-9a11-76bdf5b10a0b",
+  "job_id" : "484bf1bd-a05f-43f2-ab7f-400d8b7728ee",
   "status" : "finished",
-  "waiting_time_in_queue" : 0,
-  "processing_time" : 242,
+  "waiting_time_in_queue" : 2,
+  "processing_time" : 1892,
   "solution" : {
-    "distance" : 1289793,
-    "time" : 49178,
+    "costs" : 43140,
+    "distance" : 1289258,
+    "time" : 43140,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
       "activities" : [ {
         "type" : "start",
         "location_id" : "berlin",
-        "end_time" : 0
+        "end_time" : 0,
+        "distance" : 0
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 11064,
-        "end_time" : 11064
+        "arr_time" : 9972,
+        "end_time" : 9972,
+        "distance" : 287064
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 26872,
-        "end_time" : 26872
+        "arr_time" : 23512,
+        "end_time" : 23512,
+        "distance" : 709133
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 34114,
-        "end_time" : 34114
+        "arr_time" : 29851,
+        "end_time" : 29851,
+        "distance" : 897614
       }, {
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 49178,
-        "end_time" : 49178
+        "arr_time" : 43140,
+        "end_time" : 43140,
+        "distance" : 1289258
       } ]
     } ],
     "unassigned" : {
@@ -1030,48 +1056,55 @@ to your vehicle specification. This gives you the following solution:
 
 ```json
 {
-  "job_id" : "8393c909-d10e-4197-80ca-d9f165e8c737",
+  "job_id" : "599bdae2-5606-46b4-8aa3-d3d0ad1c468c",
   "status" : "finished",
-  "waiting_time_in_queue" : 0,
-  "processing_time" : 209,
+  "waiting_time_in_queue" : 1,
+  "processing_time" : 736,
   "solution" : {
-    "distance" : 1640436,
-    "time" : 62098,
+    "costs" : 54828,
+    "distance" : 1640434,
+    "time" : 54828,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
       "activities" : [ {
         "type" : "start",
         "location_id" : "berlin",
-        "end_time" : 0
+        "end_time" : 0,
+        "distance" : 0
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 11064,
-        "end_time" : 11064
+        "arr_time" : 9972,
+        "end_time" : 9972,
+        "distance" : 287064
       }, {
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 39969,
-        "end_time" : 39969
+        "arr_time" : 35300,
+        "end_time" : 35300,
+        "distance" : 1061169
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 54889,
-        "end_time" : 54889
+        "arr_time" : 48551,
+        "end_time" : 48551,
+        "distance" : 1452248
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 62098,
-        "end_time" : 62098
+        "arr_time" : 54828,
+        "end_time" : 54828,
+        "distance" : 1640434
       }, {
         "type" : "end",
         "location_id" : "cologne",
-        "arr_time" : 62098
+        "arr_time" : 54828,
+        "distance" : 1640434
       } ]
     } ],
     "unassigned" : {
@@ -1108,48 +1141,55 @@ This will force your vehicle to visit Frankfurt first and result in the followin
 
 ```json
 {
-  "job_id" : "396b2f26-a323-44b4-8a66-484c6d43732f",
+  "job_id" : "274b1a80-396d-45f6-93c1-04a04c4a0a4f",
   "status" : "finished",
-  "waiting_time_in_queue" : 0,
-  "processing_time" : 222,
+  "waiting_time_in_queue" : 1,
+  "processing_time" : 256,
   "solution" : {
-    "distance" : 2218463,
-    "time" : 84274,
+    "costs" : 73795,
+    "distance" : 2218473,
+    "time" : 73795,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
       "activities" : [ {
         "type" : "start",
         "location_id" : "berlin",
-        "end_time" : 0
+        "end_time" : 0,
+        "distance" : 0
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
-        "arr_time" : 20809,
-        "end_time" : 20809
+        "arr_time" : 18009,
+        "end_time" : 18009,
+        "distance" : 545734
       }, {
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
-        "arr_time" : 35873,
-        "end_time" : 35873
+        "arr_time" : 31298,
+        "end_time" : 31298,
+        "distance" : 937378
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
-        "arr_time" : 57351,
-        "end_time" : 57351
+        "arr_time" : 50201,
+        "end_time" : 50201,
+        "distance" : 1509761
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 73213,
-        "end_time" : 73213
+        "arr_time" : 63764,
+        "end_time" : 63764,
+        "distance" : 1932043
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 84274
+        "arr_time" : 73795,
+        "distance" : 2218473
       } ]
     } ],
     "unassigned" : {
@@ -1201,48 +1241,55 @@ and you get
 
 ```json
 {
-  "job_id" : "e527ffec-b75b-4753-ad8c-ad90f12a18ea",
+  "job_id" : "f3abe8b8-8368-4951-b670-e315b48440d8",
   "status" : "finished",
   "waiting_time_in_queue" : 0,
-  "processing_time" : 196,
+  "processing_time" : 2715,
   "solution" : {
-    "distance" : 2218463,
-    "time" : 84274,
+    "costs" : 62180,
+    "distance" : 1875953,
+    "time" : 62180,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
       "activities" : [ {
         "type" : "start",
         "location_id" : "berlin",
-        "end_time" : 0
-      }, {
-        "type" : "service",
-        "id" : "frankfurt",
-        "location_id" : "frankfurt",
-        "arr_time" : 20809,
-        "end_time" : 20809
-      }, {
-        "type" : "service",
-        "id" : "munich",
-        "location_id" : "munich",
-        "arr_time" : 35873,
-        "end_time" : 43073
-      }, {
-        "type" : "service",
-        "id" : "cologne",
-        "location_id" : "cologne",
-        "arr_time" : 64551,
-        "end_time" : 64551
+        "end_time" : 0,
+        "distance" : 0
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 80413,
-        "end_time" : 80413
+        "arr_time" : 9972,
+        "end_time" : 9972,
+        "distance" : 287064
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 23512,
+        "end_time" : 23512,
+        "distance" : 709133
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 29851,
+        "end_time" : 29851,
+        "distance" : 897614
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 43140,
+        "end_time" : 50340,
+        "distance" : 1289258
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 91474
+        "arr_time" : 69380,
+        "distance" : 1875953
       } ]
     } ],
     "unassigned" : {
@@ -1285,49 +1332,55 @@ The solution of your bike round trip indicates that it takes you more than 5 day
 
 ```json
 {
-  "job_id" : "2427f7a3-69e4-413d-bd26-475f73bb28cc",
+  "job_id" : "80deb088-096d-43da-8374-7aeb5216c1f5",
   "status" : "finished",
   "waiting_time_in_queue" : 0,
-  "processing_time" : 851,
+  "processing_time" : 1376,
   "solution" : {
-    "costs" : 442050,
-    "distance" : 1993429,
-    "time" : 442050,
+    "costs" : 449358,
+    "distance" : 1975897,
+    "time" : 449358,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
       "activities" : [ {
         "type" : "start",
         "location_id" : "berlin",
-        "end_time" : 0
-      }, {
-        "type" : "service",
-        "id" : "munich",
-        "location_id" : "munich",
-        "arr_time" : 146195,
-        "end_time" : 146195
-      }, {
-        "type" : "service",
-        "id" : "frankfurt",
-        "location_id" : "frankfurt",
-        "arr_time" : 232151,
-        "end_time" : 232151
-      }, {
-        "type" : "service",
-        "id" : "cologne",
-        "location_id" : "cologne",
-        "arr_time" : 277955,
-        "end_time" : 277955
+        "end_time" : 0,
+        "distance" : 0
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
-        "arr_time" : 374553,
-        "end_time" : 374553
+        "arr_time" : 69222,
+        "end_time" : 69222,
+        "distance" : 317106
+      }, {
+        "type" : "service",
+        "id" : "cologne",
+        "location_id" : "cologne",
+        "arr_time" : 168965,
+        "end_time" : 168965,
+        "distance" : 764859
+      }, {
+        "type" : "service",
+        "id" : "frankfurt",
+        "location_id" : "frankfurt",
+        "arr_time" : 216860,
+        "end_time" : 216860,
+        "distance" : 955135
+      }, {
+        "type" : "service",
+        "id" : "munich",
+        "location_id" : "munich",
+        "arr_time" : 303786,
+        "end_time" : 303786,
+        "distance" : 1338567
       }, {
         "type" : "end",
         "location_id" : "berlin",
-        "arr_time" : 442050
+        "arr_time" : 449358,
+        "distance" : 1975897
       } ]
     } ],
     "unassigned" : {
