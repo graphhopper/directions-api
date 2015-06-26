@@ -585,7 +585,7 @@ or your job is finished and a solution is available. Then you get back this:
   "job_id" : "64963b20-d358-4f26-bf79-82decae50a2d",
   "status" : "finished",
   "waiting_time_in_queue" : 0,
-  "processing_time" : 1575,
+  "processing_time" : 267,
   "solution" : {
     "costs" : 62180,
     "distance" : 1875953,
@@ -921,7 +921,7 @@ If the solution is available, the response looks like this:
   "job_id" : "64963b20-d358-4f26-bf79-82decae50a2d",
   "status" : "finished",
   "waiting_time_in_queue" : 0,
-  "processing_time" : 1575,
+  "processing_time" : 267,
   "solution" : {
     "costs" : 62180,
     "distance" : 1875953,
@@ -989,7 +989,7 @@ to your vehicle specification. This results in:
   "job_id" : "484bf1bd-a05f-43f2-ab7f-400d8b7728ee",
   "status" : "finished",
   "waiting_time_in_queue" : 2,
-  "processing_time" : 1892,
+  "processing_time" : 250,
   "solution" : {
     "costs" : 43140,
     "distance" : 1289258,
@@ -1059,7 +1059,7 @@ to your vehicle specification. This gives you the following solution:
   "job_id" : "599bdae2-5606-46b4-8aa3-d3d0ad1c468c",
   "status" : "finished",
   "waiting_time_in_queue" : 1,
-  "processing_time" : 736,
+  "processing_time" : 286,
   "solution" : {
     "costs" : 54828,
     "distance" : 1640434,
@@ -1244,7 +1244,7 @@ and you get
   "job_id" : "f3abe8b8-8368-4951-b670-e315b48440d8",
   "status" : "finished",
   "waiting_time_in_queue" : 0,
-  "processing_time" : 2715,
+  "processing_time" : 267,
   "solution" : {
     "costs" : 62180,
     "distance" : 1875953,
@@ -1335,7 +1335,7 @@ The solution of your bike round trip indicates that it takes you more than 5 day
   "job_id" : "80deb088-096d-43da-8374-7aeb5216c1f5",
   "status" : "finished",
   "waiting_time_in_queue" : 0,
-  "processing_time" : 1376,
+  "processing_time" : 232,
   "solution" : {
     "costs" : 449358,
     "distance" : 1975897,
