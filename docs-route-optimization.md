@@ -1464,49 +1464,55 @@ Example json-request with Shipments
 Corresponding response
 ```json
 {
-  "job_id" : "e35c52db-0dd9-4e05-bce1-5f5cebdba1fa",
+  "job_id" : "97ac8ae8-929a-404a-8c88-aa60d09f1dea",
   "status" : "finished",
-  "waiting_time_in_queue" : 0,
-  "processing_time" : 180,
+  "waiting_time_in_queue" : 1,
+  "processing_time" : 436,
   "solution" : {
-    "costs" : 62991,
-    "distance" : 1671810,
-    "time" : 62991,
+    "costs" : 54788,
+    "distance" : 1689017,
+    "time" : 54788,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "vehicle1",
       "activities" : [ {
         "type" : "start",
         "location_id" : "gera",
-        "end_time" : 0
+        "end_time" : 0,
+        "distance" : 0
       }, {
         "type" : "pickupShipment",
         "id" : "shipment1",
         "location_id" : "rostock",
-        "arr_time" : 16389,
-        "end_time" : 16389
+        "arr_time" : 13990,
+        "end_time" : 13990,
+        "distance" : 446280
       }, {
         "type" : "pickupShipment",
         "id" : "shipment2",
         "location_id" : "rostock",
-        "arr_time" : 16389,
-        "end_time" : 16389
+        "arr_time" : 13990,
+        "end_time" : 13990,
+        "distance" : 446280
       }, {
         "type" : "deliverShipment",
         "id" : "shipment1",
         "location_id" : "karlsruhe",
-        "arr_time" : 46227,
-        "end_time" : 46227
+        "arr_time" : 40255,
+        "end_time" : 40255,
+        "distance" : 1243737
       }, {
         "type" : "deliverShipment",
         "id" : "shipment2",
         "location_id" : "karlsruhe",
-        "arr_time" : 46227,
-        "end_time" : 46227
+        "arr_time" : 40255,
+        "end_time" : 40255,
+        "distance" : 1243737
       }, {
         "type" : "end",
         "location_id" : "gera",
-        "arr_time" : 62991
+        "arr_time" : 54788,
+        "distance" : 1689017
       } ]
     } ],
     "unassigned" : {
