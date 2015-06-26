@@ -796,7 +796,7 @@ activity:
       <td>distance<br></td>
       <td>long</td>
       <td><br></td>
-      <td>cumulated distance at activity (starts with 0 at start activity)<br></td>
+      <td>cumulated distance im meter at activity (starts with 0 at start activity)<br></td>
     </tr>
 </table>
 
