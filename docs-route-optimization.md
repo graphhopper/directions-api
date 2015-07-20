@@ -43,7 +43,7 @@ The route editor in the Directions API dashboard is a helpful tool to understand
 
 ![Route Editor](./img/route-editor.png)
 
-![Route Editor With Table](./img/route-editor.png)
+![Route Editor With Table](route-editor-table.png)
 
 
 ## JSON Input
