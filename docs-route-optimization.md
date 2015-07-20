@@ -35,11 +35,16 @@ Other clients can be relative easily created via [swagger-codegen](https://githu
 
 ### Quick Start
 
-The fastest way to understand the API is by looking at
- * [live examples](https://graphhopper.com/api/1/examples/#optimization)
- * [the JSON from the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/route-optimization-examples)
- * [live API docs](https://graphhopper.com/api/1/vrp/documentation/)
- * the extensive examples described below
+The fastest way to understand the API is by looking at the [live examples](https://graphhopper.com/api/1/examples/#optimization) and playing around with the [route editor](#route-editor). Finally you should read this documentation with extensive examples described below.
+ 
+### Route Editor
+
+The route editor in the Directions API dashboard is a helpful tool to understand the JSON input and output format. [Sign up](https://graphhopper.com/#directions-api) to play around with it.
+
+![Route Editor](./img/route-editor.png)
+
+![Route Editor With Table](./img/route-editor.png)
+
 
 ## JSON Input
 
