@@ -173,7 +173,7 @@ vehicle:
       <td>type_id</td>
       <td>string</td>
       <td></td>
-      <td>the type_id refers to the vehicle's vehicle type.<br>if it is omitted, the default type is used (see vehicle types)</td>
+      <td>the type_id refers to the vehicle's vehicle type.<br>if it is omitted, the default type is used (see - [vehicle types](#vehicle-types))</td>
     </tr>
   <tr>
     <td>start_address<br></td>
@@ -280,6 +280,8 @@ If you want it to have multiple capacity dimensions, e.g. weight and volume, spe
 }
 ```
 
+The `capacity` in a vehicle type makes only sense if there is e.g. a `size` defined in a service.
+
 #### Full specification
 
 <table>
@@ -378,6 +380,8 @@ Both Service and Shipment can be specified with multiple capacity dimensions as 
 ```json
 "size": [1,10,150]
 ```
+
+The `size`-array limits the set of possible vehicles if a `capacity`-array is defined in its vehicle type. If no `size`-array is specified the default of 0 is assumed. See [vehicle types](#vehicle-types).
 
 #### Full specification
 
