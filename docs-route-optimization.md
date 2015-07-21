@@ -264,9 +264,9 @@ The default type is
 In the vehicle type you can specify three important features of your vehicles: profile, capacity and speed factor. The profile indicates whether your vehicle is actually is person moving by ```foot```, 
 whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be a car, but can also be a motor bike or heavy vehicle).
  The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below. 
- With the speed_factor you can make your vehicles slower or even faster. The default value here is 1.0 which is in line with the travel
+ With the speed factor you can make your vehicles slower or even faster. The default value here is 1.0 which is in line with the travel
  time you get from Graphhopper Routing API. However, in several cases in turned out that the resulting travel times were too optimistic. 
- To make your plan more robust against traffic conditions, you can make your vehicle way slower (e.g. speed_factor : 0.5 which is basically 
+ To make your plan more robust against traffic conditions, you can make your vehicle way slower (e.g. ```"speed_factor" : 0.5``` which is basically
  new_travel_time = raw_travel_time / 0.5).
  
  
