@@ -255,17 +255,24 @@ The default type is
 {
     "type_id": "default_type",
     "profile": "car",
-    "capacity": [ 0 ]
+    "capacity": [ 0 ],
+    "speed_factor": 1.0
 }
 ```
 
 
-In the vehicle type you can specify two important features of your vehicles: profile and capacity. The profile indicates whether your vehicle is actually is person moving by ```foot```, 
+In the vehicle type you can specify three important features of your vehicles: profile, capacity and speed factor. The profile indicates whether your vehicle is actually is person moving by ```foot```, 
 whether it is a ```bike``` or a vehicle that uses roads specified with ```car``` (even it does not need to be a car, but can also be a motor bike or heavy vehicle).
- The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below.
+ The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below. 
+ With the speed_factor you can make your vehicles slower or even faster. The default value here is 1.0 which is in line with the travel
+ time you get from Graphhopper Routing API. However, in several cases in turned out that the resulting travel times were too optimistic. 
+ To make your plan more robust against traffic conditions, you can make your vehicle way slower (e.g. speed_factor : 0.5 which is basically 
+ new_travel_time = raw_travel_time / 0.5).
+ 
+ 
 
 <!-- do you mean instead of 'to use specific roads' or possibility to pickup items? Or where is this restriction taken into account - just for the location, right? -->
-If you want your vehicles to use roads with a single capacity dimension of maximum 100 units (e.g. 100 kilogram), specify it like this:
+For example, if you want your vehicles to use roads with a single capacity dimension of maximum 100 units (e.g. 100 kilogram), specify it like this:
 
 ```json
 {
@@ -275,13 +282,14 @@ If you want your vehicles to use roads with a single capacity dimension of maxim
 }
 ```
 
-If you want it to have multiple capacity dimensions, e.g. weight and volume, specify it like this:
+If you want it to have multiple capacity dimensions, e.g. weight and volume, and to be slower then specify it like this:
 
 ```json
 {
     "type_id": "your-vehicle-type-id",
     "profile": "car",
-    "capacity": [100,1000]
+    "capacity": [100,1000],
+    "speed_factor": 0.8
 }
 ```
 
@@ -309,11 +317,11 @@ The `capacity` in a vehicle type makes only sense if there is e.g. a `size` defi
     <td>default is "car". you can use either "car", "bike" or "foot".<br>it determines whether which network to use for routing the vehicle.<br></td>
   </tr>
   <tr>
-      <td>capacity<br></td>
-      <td>array<br></td>
+      <td>speed_factor<br></td>
+      <td>double<br></td>
       <td><br></td>
-      <td>default is [ 0 ]. specify [ 10, 100, 30 ] for three capacity dimensions,<br>i.e. you can specify an arbitrary number of capacity dimensions.
-      <br>the values need to be of type integer</td>
+      <td>default is 1.0
+      <br></td>
     </tr>
 </table>
 
