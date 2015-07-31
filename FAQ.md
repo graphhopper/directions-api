@@ -6,7 +6,9 @@ Contact us [per email](https://graphhopper.com/#contact) or use [our issue track
 
 ## What is one credit?
 
-You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#/pricing) to easily calculate the necessary credits or get more details of how credits are calculated with the following:
+You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#/pricing) to roughly estimate the necessary credits per day, but note that it will give precise results only in standard cases. 
+
+If you need an better estimate contact us or read through the following steps:
 
  * one Routing API request costs 1 credit. Every 10 via-points will cost 1 additional credit. E.g. 11 via-points cost 2 credits. And if you specify `optimize=true` the credits will be multiplied by 10.
  * one Geocoding API request costs 1 credit
