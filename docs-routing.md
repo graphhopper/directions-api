@@ -32,7 +32,6 @@ The JSON result contains the following structure:
 
 JSON path/attribute        | Description
 :--------------------------|:------------
-info.took                  | How many ms the request took on the server, of course without network latency taken into account.
 paths                      | An array of possible paths
 paths[0].distance          | The overall distance of the route, in meter
 paths[0].time              | The overall time of the route, in ms
