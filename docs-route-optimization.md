@@ -343,7 +343,7 @@ A service can be specified as:
      },
      "duration": 3600,
      "size": [ 1 ], 
-     "time-windows": [ 
+     "time_windows": [ 
         {
             "earliest": 0,
             "latest": 3600
