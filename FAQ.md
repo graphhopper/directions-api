@@ -62,6 +62,6 @@ The GraphHopper Directions API is a collection of routing related APIs: the Rout
 
 The Routing API is based on the [open source GraphHopper](https://github.com/graphhopper/graphhopper/) but as this requires lots of memory for a world wide coverage we make GraphHopper easy and cost effective to use via our Directions API.
 
-## Can you host a custom GraphHopper version for us?
+## Is it possible to use a custom GraphHopper version?
 
-Yes, we host GraphHopper in all facets and you'll be able to use route optimization and the Matrix API with your custom GraphHopper version.
+Yes, we host custom and recent GraphHopper versions. This way you'll be able to use our Route Optimization API and the Matrix API with your custom GraphHopper version.
