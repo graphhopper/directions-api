@@ -1632,7 +1632,71 @@ Corresponding response
 }
 ```
 
- 
+### Relations Example
+
+Lets take the traveling salesman example above and assume we want to ensure the direct sequence of 'hamburg', 'frankfurt' and 'cologne'.
+This can be modelled as
+
+```json
+{
+    "vehicles" : [
+       {
+         "vehicle_id": "my_vehicle",
+         "start_address": {
+             "location_id": "berlin",
+             "lon": 13.406,
+             "lat": 52.537
+         }
+       }
+    ],
+    "services" : [
+       {
+         "id": "hamburg",
+         "name": "visit_hamburg",
+         "address": {
+           "location_id": "hamburg",
+           "lon": 9.999,
+           "lat": 53.552
+         }
+       },
+       {
+         "id": "munich",
+         "name": "visit_munich",
+         "address": {
+           "location_id": "munich",
+           "lon": 11.570,
+           "lat": 48.145
+         }
+       },
+       {
+         "id": "cologne",
+         "name": "visit_cologne",
+         "address": {
+           "location_id": "cologne",
+           "lon": 6.957,
+           "lat": 50.936
+         }
+       },
+       {
+         "id": "frankfurt",
+         "name": "visit_frankfurt",
+         "address": {
+           "location_id": "frankfurt",
+           "lon": 8.670,
+           "lat": 50.109
+         }
+       }
+    ],
+    "relations" : [{
+        "type":"in_direct_sequence",
+        "ids":["hamburg","frankfurt","cologne"]
+    }]
+}
+```
+
+
+
+
 
 
 
