@@ -8,6 +8,7 @@
  - [Vehicles](#vehicles)
  - [Vehicle Types](#vehicle-types)
  - [Services or Shipments](#services-or-shipments)
+ - [Relations](#relations)
 - [JSON Output](#json-output)
 - [Examples](#examples)
  - [Traveling Salesman](#traveling-salesman)
@@ -553,8 +554,87 @@ time_window:
     </tr>
 </table>
 
+### Relations
+Beyond shipments there are three additional relations, you can use to establish a relationship between services and shipments:
 
+- "in_same_route"
+- "in_sequence"
+- "in_direct_sequence"
 
+#### in_same_route
+As the name suggest, with this relation type you can enforce the specified services or shipments to be in the same route. It can be specified 
+as follows:
+
+```json
+{
+    "type": "in_same_route",
+    "ids": ["service_i_id","service_j_id"]
+}
+``` 
+
+This enforces service i to be the same route as service j.
+
+#### in_sequence
+
+The 'in_sequence' relation type enforce two or more jobs to be in sequence (implying in the same route). It can be specified as
+
+```json
+{
+    "type": "in_sequence",
+    "ids": ["service_i_id","service_j_id"]
+}
+```
+
+which means that service j need to be in the same route as service i AND it needs to occur somewhere after service i.
+
+#### in_direct_sequence
+
+This enforce n services or shipments to be in direct sequence. It can be specified as
+
+ ```json
+ {
+     "type": "in_direct_sequence",
+     "ids": ["service_i_id","service_j_id","service_k_id"]
+ }
+ ```
+ 
+which enforces service j to occur directly after service i, and service k to occur directly after j (i.e. in strong order).
+
+NOTE: If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries
+of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword 'pickup' or 'delivery'. For example, to
+ ensure that the pickup and delivery of the shipment with the id 'myShipment' are direct neighbors, you need the following specification:
+ 
+```json
+ {
+     "type": "in_direct_sequence",
+     "ids": ["myShipment_pickup","myShipment_delivery"]
+ }
+ ```
+ 
+Thus the special id of shipments is created like this: {shipmentId}_{pickup|delivery}
+
+ relation:
+
+ <table>
+   <tr>
+     <th>Name<br></th>
+     <th>Type</th>
+     <th>Required</th>
+     <th>Description</th>
+   </tr>
+   <tr>
+     <td>type<br></td>
+     <td>String</td>
+     <td>true<br></td>
+     <td>either 'in_same_route', 'in_sequence', 'in_direct_sequence'<br></td>
+   </tr>
+   <tr>
+       <td>ids<br></td>
+       <td>String</td>
+       <td>true<br></td>
+       <td>array of ids<br></td>
+     </tr>
+ </table>
 
 
 Learn more about it in the [live API docs](https://graphhopper.com/api/1/vrp/documentation/).
