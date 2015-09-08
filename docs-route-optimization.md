@@ -13,6 +13,7 @@
 - [Examples](#examples)
  - [Traveling Salesman](#traveling-salesman)
  - [Vehicle Routing Problem](#vehicle-routing-problem)
+ - [Relations](#relation-examples)
 
 The Route Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
 of moving things and people. For example, every company dealing with last-mile deliveries faces a vehicle routing problem, i.e. it must find ways to
@@ -58,7 +59,8 @@ The general input structure is
   "vehicles": [..],
   "vehicle_types": [..],
   "services": [..],
-  "shipments": [..]
+  "shipments": [..],
+  "relations": [..]
 }
 ```
 
@@ -95,6 +97,12 @@ Full specification:
     <td></td>
     <td>shipments involve two location, i.e. pickup and delivery location<br></td>
   </tr>
+  <tr>
+      <td>relations</td>
+      <td>object</td>
+      <td></td>
+      <td>relations between and among services and shipments<br></td>
+    </tr>
 </table>
 
 
@@ -613,7 +621,9 @@ of your shipments, you need to use a special ID, i.e. use your shipment id plus 
  
 Thus the special id of shipments is created like this: {shipmentId}_{pickup|delivery}
 
- relation:
+#### Full specification
+
+relation:
 
  <table>
    <tr>
@@ -626,7 +636,7 @@ Thus the special id of shipments is created like this: {shipmentId}_{pickup|deli
      <td>type<br></td>
      <td>String</td>
      <td>true<br></td>
-     <td>either 'in_same_route', 'in_sequence', 'in_direct_sequence'<br></td>
+     <td>either 'in_same_route', 'in_sequence' or 'in_direct_sequence'<br></td>
    </tr>
    <tr>
        <td>ids<br></td>
