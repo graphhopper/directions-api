@@ -562,7 +562,7 @@ Beyond shipments there are three additional relations, you can use to establish 
 - "in_direct_sequence"
 
 #### in_same_route
-As the name suggest, with this relation type you can enforce the specified services or shipments to be in the same route. It can be specified 
+As the name suggest, it enforces the specified services or shipments to be in the same route. It can be specified
 as follows:
 
 ```json
@@ -572,11 +572,11 @@ as follows:
 }
 ``` 
 
-This enforces service i to be the same route as service j.
+This enforces service i to be in the same route as service j.
 
 #### in_sequence
 
-The 'in_sequence' relation type enforce two or more jobs to be in sequence (implying in the same route). It can be specified as
+The 'in_sequence' relation type enforces n jobs to be in sequence (which implies that they need to be in the same route). It can be specified as
 
 ```json
 {
@@ -589,7 +589,7 @@ which means that service j need to be in the same route as service i AND it need
 
 #### in_direct_sequence
 
-This enforce n services or shipments to be in direct sequence. It can be specified as
+This enforces n services or shipments to be in direct sequence. It can be specified as
 
  ```json
  {
@@ -598,9 +598,9 @@ This enforce n services or shipments to be in direct sequence. It can be specifi
  }
  ```
  
-which enforces service j to occur directly after service i, and service k to occur directly after j (i.e. in strong order).
+yielding service j to occur directly after service i, and service k to occur directly after j (i.e. in strong order).
 
-NOTE: If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries
+<b>NOTE</b>: If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries
 of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword 'pickup' or 'delivery'. For example, to
  ensure that the pickup and delivery of the shipment with the id 'myShipment' are direct neighbors, you need the following specification:
  
