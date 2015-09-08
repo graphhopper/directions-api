@@ -576,7 +576,7 @@ This enforces service i to be in the same route as service j.
 
 #### in_sequence
 
-The 'in_sequence' relation type enforces n jobs to be in sequence (which implies that they need to be in the same route). It can be specified as
+The 'in_sequence' relation type enforces n jobs to be in sequence. It can be specified as
 
 ```json
 {
