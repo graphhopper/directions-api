@@ -13,7 +13,7 @@
 - [Examples](#examples)
  - [Traveling Salesman](#traveling-salesman)
  - [Vehicle Routing Problem](#vehicle-routing-problem)
- - [Relations](#relation-examples)
+ - [Relations](#relations-examples)
 
 The Route Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
 of moving things and people. For example, every company dealing with last-mile deliveries faces a vehicle routing problem, i.e. it must find ways to
