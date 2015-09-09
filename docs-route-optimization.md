@@ -563,7 +563,7 @@ time_window:
 </table>
 
 ### Relations
-Beyond shipments there are three additional relations, you can use to establish a relationship between services and shipments:
+Beyond shipments there are three additional relations you can use to establish a relationship between services and shipments:
 
 - "in_same_route"
 - "in_sequence"
