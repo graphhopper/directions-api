@@ -81,6 +81,7 @@ You get an example response via:
 
 Append `&debug=true` for a formatted output.
 
+<!--
 ## Isochrone API
 
 Use this API to calculate reachability polygons for specific points. Please contact us for further details.
@@ -93,9 +94,11 @@ Use this API to match recorded GPS tracks with roads and associate useful inform
 
 ![Map Matching Illustration](https://karussell.files.wordpress.com/2014/07/map-matching.png?w=242)
 
-## [Issues](https://github.com/graphhopper/web-api/issues)
+-->
 
-If you have problems please report them [here](https://github.com/graphhopper/web-api/issues).
+## [Public Forum](https://discuss.graphhopper.com/c/directions-api)
+
+If you have problems please report them [in our forum](https://discuss.graphhopper.com/c/directions-api).
 
 
 ## [Terms of Services](https://graphhopper.com/terms.html)
