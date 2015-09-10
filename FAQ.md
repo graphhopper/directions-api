@@ -2,7 +2,7 @@
 
 ## Where can I get help?
 
-Contact us [per email](https://graphhopper.com/#contact) or use [our issue tracker](https://github.com/graphhopper/directions-api/issues).
+Contact us [per email](https://graphhopper.com/#contact) or use [our public forum](https://discuss.graphhopper.com/c/directions-api).
 
 ## What is one credit?
 
