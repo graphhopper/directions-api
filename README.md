@@ -17,6 +17,8 @@ You can see the Routing and Geocoding API in action at [GraphHopper Maps](https:
 
 If you have problems or questions please see the [FAQ.md](FAQ.md) or [contact us](https://graphhopper.com/#contact).
 
+Or search [our public forum](https://discuss.graphhopper.com/c/directions-api).
+
 ## API Clients and Examples
 
  * [JavaScript](https://github.com/graphhopper/directions-api-js-client) - try the [live examples](https://graphhopper.com/api/1/examples/)
@@ -95,11 +97,6 @@ Use this API to match recorded GPS tracks with roads and associate useful inform
 ![Map Matching Illustration](https://karussell.files.wordpress.com/2014/07/map-matching.png?w=242)
 
 -->
-
-## [Public Forum](https://discuss.graphhopper.com/c/directions-api)
-
-If you have problems please report them [in our forum](https://discuss.graphhopper.com/c/directions-api).
-
 
 ## [Terms of Services](https://graphhopper.com/terms.html)
 
