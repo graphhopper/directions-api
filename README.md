@@ -3,7 +3,7 @@
 With the [ GraphHopper Directions API for Business](https://graphhopper.com/#directions-api) you get a reliable and fast routing service with world wide coverage. We offer A-to-B routing via the Routing API optionally with turn instructions and elevation data as well as route optimization with various constraints like time window and capacity restrictions. Also it is possible to get all distances between all locations with our fast Matrix API.
 
 The Directions API consists of the following parts:
-![parts](./img/directions-api-parts.png)
+[![parts](./img/directions-api-parts.png)](./README.md)
 
 ## How to Start
 
@@ -26,9 +26,9 @@ Do not hesitate to share your client code with us!
 
 ## [Routing API](docs-routing.md)
 
-![Routing Example](./img/routing-example.png)
+[![Routing Example](./img/routing-example.png)](./docs-routing.md)
 
-The Routing API is documented [here](docs-routing.md).
+The Routing API is documented [here](./docs-routing.md).
 
 The endpoint is `https://graphhopper.com/api/[version]/route`
 
@@ -40,7 +40,7 @@ Where you need to replace the key with your own
 
 ## [Route Optimization API](./docs-route-optimization.md)
 
-![Vehicle Routing Example](./img/vrp-example.png)
+[![Vehicle Routing Example](./img/vrp-example.png)](./docs-route-optimization.md)
 
 The Route Optimization API is documented [here](./docs-route-optimization.md). **Please note the [alpha status](https://github.com/graphhopper/directions-api/issues/6)**
 
@@ -57,7 +57,7 @@ For more details also about the format of the `your-vrp-problem.json` file you c
 
 ## [Matrix API](./docs-matrix.md)
 
-![Matrix Example](./img/matrix-example.png)
+[![Matrix Example](./img/matrix-example.png)](./docs-matrix.md)
 
 The Matrix API is documented [here](./docs-matrix.md)
 
@@ -69,7 +69,7 @@ You get an example response for a 3x3 matrix looks via:
 
 ## [Geocoding API](./docs-geocoding.md)
 
-![Geocoding Example](./img/geocoding-example.png)
+[![Geocoding Example](./img/geocoding-example.png)](./docs-geocoding.md)
 
 The Geocoding API is not yet production grade. Please help us improve it and give us feedback! See the documentation [here](./docs-geocoding.md).
 
