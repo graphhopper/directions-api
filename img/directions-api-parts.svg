@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448819"
-   height="1052.3622047"
+   width="637.79529"
+   height="283.46457"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -36,12 +36,12 @@
        inkscape:collect="always"
        xlink:href="#linearGradient3787"
        id="linearGradient3793"
-       x1="-81.620074"
+       x1="-81.620071"
        y1="218.79076"
-       x2="764.47722"
+       x2="764.47723"
        y2="218.79076"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.83290277,0,0,0.77837176,87.784773,7.7759248)" />
+       gradientTransform="matrix(0.74196626,0,0,0.69338895,64.782123,760.7935)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -51,7 +51,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="184.70124"
+     inkscape:cx="187.55838"
      inkscape:cy="634.59832"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -60,10 +60,15 @@
      inkscape:window-height="1146"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="1"
+     units="mm">
     <inkscape:grid
        type="xygrid"
-       id="grid3015" />
+       id="grid3015"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -73,113 +78,114 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(0,-768.89715)">
     <rect
-       style="fill:url(#linearGradient3793);fill-opacity:1;stroke:#000000;stroke-width:0.3083823;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:url(#linearGradient3793);fill-opacity:1;stroke:#000000;stroke-width:0.27471307;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3017"
-       width="704.39777"
-       height="305.78888"
-       x="19.962688"
-       y="25.182016"
-       ry="12.231557" />
+       width="627.49146"
+       height="272.4028"
+       x="4.3648715"
+       y="776.29919"
+       ry="10.896113" />
     <text
        xml:space="preserve"
-       style="font-size:33.31560898px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="110.86074"
-       y="84.331627"
+       style="font-size:29.67820549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="85.338661"
+       y="828.99091"
        id="text2985"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2987"
-         x="110.86074"
-         y="84.331627"
+         x="85.338661"
+         y="828.99091"
          style="font-weight:bold;-inkscape-font-specification:Sans Bold">GraphHopper Directions API</tspan><tspan
          sodipodi:role="line"
-         x="110.86074"
-         y="125.97614"
+         x="85.338661"
+         y="866.08868"
          id="tspan2989" /><tspan
          sodipodi:role="line"
-         x="110.86074"
-         y="167.62064"
+         x="85.338661"
+         y="903.1864"
          id="tspan2995" /><tspan
          sodipodi:role="line"
-         x="110.86074"
-         y="209.26515"
+         x="85.338661"
+         y="940.28418"
          id="tspan2997" /><tspan
          sodipodi:role="line"
-         x="110.86074"
-         y="250.90967"
+         x="85.338661"
+         y="977.38196"
          id="tspan2991" /><tspan
          sodipodi:role="line"
-         x="110.86074"
-         y="292.5542"
+         x="85.338661"
+         y="1014.4797"
          id="tspan2993" /></text>
     <text
        xml:space="preserve"
-       style="font-size:33.31560898px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="300"
-       y="196.36218"
+       style="font-size:29.67820549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="253.82764"
+       y="928.78986"
        id="text2999"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3001"
-         x="300"
-         y="196.36218">Geocoding API</tspan></text>
+         x="253.82764"
+         y="928.78986">Geocoding API</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:33.31560898px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="60"
-       y="292.36218"
+       style="font-size:29.67820549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="40.030899"
+       y="1014.3086"
        id="text3003"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3005"
-         x="60"
-         y="292.36218">Matrix API</tspan></text>
+         x="40.030899"
+         y="1014.3086">Matrix API</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:33.31560898px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="300"
-       y="292.36218"
+       style="font-size:29.67820549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="253.82764"
+       y="1014.3086"
        id="text3007"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3009"
-         x="300"
-         y="292.36218">Route Optimization API</tspan></text>
+         x="253.82764"
+         y="1014.3086">Route Optimization API</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:33.31560898px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="60"
-       y="196.36218"
+       style="font-size:29.67820549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="40.030899"
+       y="928.78986"
        id="text3011"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3013"
-         x="60"
-         y="196.36218">Routing API</tspan></text>
+         x="40.030899"
+         y="928.78986">Routing API</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 52.857143,116.6479 630.000007,0"
+       style="fill:none;stroke:#000000;stroke-width:0.89081979px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 33.667903,857.77885 561.216477,0"
        id="path3795"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#9e9e9e;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 53.587353,235.88285 689.77021,234.8727"
+       style="fill:none;stroke:#9e9e9e;stroke-width:0.89081979px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 34.318387,963.99571 601.04268,963.09585"
        id="path3795-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#b8b8b8;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 275.71429,158.71025 0,143.33504"
+       style="fill:none;stroke:#b8b8b8;stroke-width:0.89081979px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 232.19346,895.24882 0,127.68568"
        id="path3795-3-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
