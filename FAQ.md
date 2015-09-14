@@ -56,7 +56,7 @@ Please [contact us](https://graphhopper.com/#contact)
 Yes. And we think it is fair to make this a requirement for all packages as we need to grow for a more healthy ecosystem and also have very permissive terms otherwise, please see [here](https://github.com/graphhopper/directions-api#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option.
 
 
-## Difference between the Directions API and the Open Source GraphHopper 'Core'?
+## What is the difference between the Directions API and the Open Source GraphHopper 'Core'?
 
 The GraphHopper Directions API is a collection of routing related APIs: the Routing API, the Matrix API, the Route Optimization API and the Geocoding API. This entire set is also available for self-hosting.
 
@@ -64,6 +64,14 @@ The Routing API is based on the [open source GraphHopper](https://github.com/gra
 
 Also the hosted Routing API is very easy to use, no configuration hassle, maintenance or even buying hardware is necessary.
 
-## Is it possible to use a custom GraphHopper version?
+## What is the difference between the Route Optimization API and jsprit?
 
-Yes, we host custom and recent GraphHopper versions. This way you'll be able to use our Route Optimization API and the Matrix API with your custom GraphHopper version including custom vehicles, speed profiles etc.
+We use jsprit to implement our Route Optimization API, it is our open source vehicle route optimization project. The Route Optimization API is an efficient way to consume jsprit: properly configured for a lot of use cases, with a proper distance/time matrix calculated from GraphHopper, with a simple JSON API and more.
+
+## Is the Matrix API available as open source?
+
+No, see [graphhopper#131](https://github.com/graphhopper/graphhopper/issues/131)
+
+## Is it possible to use the GraphHopper Directions API with a custom GraphHopper or jsprit version?
+
+Yes, we host custom and recent GraphHopper and jsprit versions. This way you'll be able to use our Route Optimization API and the Matrix API with your custom GraphHopper version including custom vehicles, speed profiles etc. Or you can modify jsprit and change how the route optimization behaves.
