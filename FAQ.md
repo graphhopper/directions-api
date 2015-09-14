@@ -60,8 +60,8 @@ Yes. And we think it is fair to make this a requirement for all packages as we n
 
 The GraphHopper Directions API is a collection of routing related APIs: the Routing API, the Matrix API, the Route Optimization API and the Geocoding API. This entire set is also available for self-hosting.
 
-The Routing API is based on the [open source GraphHopper](https://github.com/graphhopper/graphhopper/) but as this requires lots of memory for a world wide coverage we make GraphHopper easy and cost effective to use via our Directions API.
+The Routing API is based on the [open source GraphHopper](https://github.com/graphhopper/graphhopper/) and is nearly 100% identical to it, e.g. currently only the optimize=true parameter is not supported in the open source package. Also hosting it requires lots of memory for a world wide coverage and with our Directions API we make GraphHopper easy and cost effective to use.
 
 ## Is it possible to use a custom GraphHopper version?
 
-Yes, we host custom and recent GraphHopper versions. This way you'll be able to use our Route Optimization API and the Matrix API with your custom GraphHopper version.
+Yes, we host custom and recent GraphHopper versions. This way you'll be able to use our Route Optimization API and the Matrix API with your custom GraphHopper version including custom vehicles, speed profiles etc.
