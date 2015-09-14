@@ -70,7 +70,7 @@ We use jsprit to implement our Route Optimization API, it is our open source veh
 
 ## Is the Matrix API available as open source?
 
-No, see [graphhopper#131](https://github.com/graphhopper/graphhopper/issues/131)
+We have released nearly all of our code as open source and strongly support a prosper community around each of our projects. But we have decided to keep the Matrix API closed source, see [graphhopper#131](https://github.com/graphhopper/graphhopper/issues/131)
 
 ## Is it possible to use the GraphHopper Directions API with a custom GraphHopper or jsprit version?
 
