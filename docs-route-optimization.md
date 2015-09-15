@@ -2,7 +2,7 @@
 
 ## Route Optimization API
 
-![Route Editor Overview](./img/route-editor2.png)
+![Route Editor Overview](./img/route-editor-overview.png)
 
 - [Clients](#clients)
 - [Quick Start](#quick-start)
