@@ -15,6 +15,7 @@
  - [Traveling Salesman](#traveling-salesman)
  - [Vehicle Routing Problem](#vehicle-routing-problem)
  - [Relations](#relations-example)
+ - [Algorithm](#algorithm-example)
 
 The Route Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
 of moving things and people. For example, every company dealing with last-mile deliveries faces a vehicle routing problem, i.e. it must find ways to
@@ -132,65 +133,6 @@ By default, the algorithm minimizes `transport_time`. If you want to switch to `
     "objective": "completion_time"
 }
 ```
-
-Example:
-
-```json
-{
-    "algorithm" : {
-        "objective" : "completion_time"
-    },
-    "vehicles" : [
-       {
-         "vehicle_id": "my_vehicle",
-         "start_address": {
-             "location_id": "berlin",
-             "lon": 13.406,
-             "lat": 52.537
-         }
-       }
-    ],
-    "services" : [
-       {
-         "id": "hamburg",
-         "name": "visit_hamburg",
-         "address": {
-           "location_id": "hamburg",
-           "lon": 9.999,
-           "lat": 53.552
-         }
-       },
-       {
-         "id": "munich",
-         "name": "visit_munich",
-         "address": {
-           "location_id": "munich",
-           "lon": 11.570,
-           "lat": 48.145
-         }
-       },
-       {
-         "id": "cologne",
-         "name": "visit_cologne",
-         "address": {
-           "location_id": "cologne",
-           "lon": 6.957,
-           "lat": 50.936
-         }
-       },
-       {
-         "id": "frankfurt",
-         "name": "visit_frankfurt",
-         "address": {
-           "location_id": "frankfurt",
-           "lon": 8.670,
-           "lat": 50.109
-         }
-       }
-    ]
-}
-```
-
 
 #### Full specification
 
@@ -1791,6 +1733,64 @@ This can be modelled as
 }
 ```
 
+### Algorithm Example
+
+
+```json
+{
+    "algorithm" : {
+        "objective" : "completion_time"
+    },
+    "vehicles" : [
+       {
+         "vehicle_id": "my_vehicle",
+         "start_address": {
+             "location_id": "berlin",
+             "lon": 13.406,
+             "lat": 52.537
+         }
+       }
+    ],
+    "services" : [
+       {
+         "id": "hamburg",
+         "name": "visit_hamburg",
+         "address": {
+           "location_id": "hamburg",
+           "lon": 9.999,
+           "lat": 53.552
+         }
+       },
+       {
+         "id": "munich",
+         "name": "visit_munich",
+         "address": {
+           "location_id": "munich",
+           "lon": 11.570,
+           "lat": 48.145
+         }
+       },
+       {
+         "id": "cologne",
+         "name": "visit_cologne",
+         "address": {
+           "location_id": "cologne",
+           "lon": 6.957,
+           "lat": 50.936
+         }
+       },
+       {
+         "id": "frankfurt",
+         "name": "visit_frankfurt",
+         "address": {
+           "location_id": "frankfurt",
+           "lon": 8.670,
+           "lat": 50.109
+         }
+       }
+    ]
+}
+```
 
 
 
