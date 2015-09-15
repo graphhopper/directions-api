@@ -2,6 +2,8 @@
 
 ## Route Optimization API
 
+![Route Editor Overview](./img/route-editor2.png)
+
 - [Clients](#clients)
 - [Quick Start](#quick-start)
 - [JSON Input](#json-input)
