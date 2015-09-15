@@ -11,7 +11,7 @@ The Directions API consists of the following parts:
  2. Read the documentation for the **[Routing API](#routing-api)**, the **[Route Optimization API](#route-optimization-api)**, the **[Matrix API](#matrix-api)** and the **[Geocoding API](#geocoding-api)** below or try the examples in our dashboard.
  3. To increase your query limits for production you pay online within a few minutes via credit card or debit advice.
 
-You can see the Routing and Geocoding API in action at [GraphHopper Maps](https://graphhopper.com/maps).
+You can see the Routing and Geocoding API in action at [GraphHopper Maps](https://graphhopper.com/maps). You can see the Route Optimization API in action in the [route editor](https://graphhopper.com/blog/2015/07/21/graphhoppers-new-route-optimization-editor/) available in the [dashboard](https://graphhopper.com/#directions-api), the route optimization uses the Matrix API under the hood.
 
 ## Problems or Questions?
 
