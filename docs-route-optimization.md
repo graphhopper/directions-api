@@ -5,6 +5,7 @@
 - [Clients](#clients)
 - [Quick Start](#quick-start)
 - [JSON Input](#json-input)
+ - [Algorithm](#algorithm)
  - [Vehicles](#vehicles)
  - [Vehicle Types](#vehicle-types)
  - [Services or Shipments](#services-or-shipments)
@@ -56,6 +57,7 @@ The general input structure is
 
 ```json
 {
+  "algorithm": {},
   "vehicles": [..],
   "vehicle_types": [..],
   "services": [..],
@@ -74,34 +76,40 @@ Full specification:
     <th>Description</th>
   </tr>
   <tr>
+      <td>algorithm<br></td>
+      <td>object</td>
+      <td><br></td>
+      <td>to configure the algorithm, e.g. problem type and objective<br></td>
+    </tr>
+  <tr>
     <td>vehicles<br></td>
-    <td>object</td>
+    <td>array</td>
     <td>true<br></td>
     <td>array of the vehicles available<br></td>
   </tr>
   <tr>
     <td>vehicle_types<br></td>
-    <td>object<br></td>
+    <td>array<br></td>
     <td><br></td>
     <td>array of vehicle types available<br></td>
   </tr>
   <tr>
     <td>services<br></td>
-    <td>object</td>
+    <td>array</td>
     <td></td>
-    <td>services involve one location<br></td>
+    <td>array of services (involving one location)<br></td>
   </tr>
   <tr>
     <td>shipments</td>
-    <td>object</td>
+    <td>array</td>
     <td></td>
-    <td>shipments involve two location, i.e. pickup and delivery location<br></td>
+    <td>array of shipments (involving two location, i.e. pickup and delivery location)<br></td>
   </tr>
   <tr>
       <td>relations</td>
-      <td>object</td>
+      <td>array</td>
       <td></td>
-      <td>relations between and among services and shipments<br></td>
+      <td>array of relations between and among services and shipments<br></td>
     </tr>
 </table>
 
@@ -112,7 +120,96 @@ This specification need to be posted to:
 `
 "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]"
 `
+### Algorithm
 
+This gives you limited access to the algorithm. Currently, you can here specify whether you want to minimize `transport_time` or `completion_time`.
+In contrary to the minimization of `transport_time`, `completion_time` takes waiting times at customer sites into account.
+Instead of just waiting at customer sites, it seeks to serve other customers to reduce total completion time. 
+By default, the algorithm minimizes `transport_time`. If you want to switch to `completion_time` just add this to your request:
+
+```json
+"algorithm" : {
+    "objective": "completion_time"
+}
+```
+
+Example:
+
+```json
+{
+    "algorithm" : {
+        "objective" : "completion_time"
+    },
+    "vehicles" : [
+       {
+         "vehicle_id": "my_vehicle",
+         "start_address": {
+             "location_id": "berlin",
+             "lon": 13.406,
+             "lat": 52.537
+         }
+       }
+    ],
+    "services" : [
+       {
+         "id": "hamburg",
+         "name": "visit_hamburg",
+         "address": {
+           "location_id": "hamburg",
+           "lon": 9.999,
+           "lat": 53.552
+         }
+       },
+       {
+         "id": "munich",
+         "name": "visit_munich",
+         "address": {
+           "location_id": "munich",
+           "lon": 11.570,
+           "lat": 48.145
+         }
+       },
+       {
+         "id": "cologne",
+         "name": "visit_cologne",
+         "address": {
+           "location_id": "cologne",
+           "lon": 6.957,
+           "lat": 50.936
+         }
+       },
+       {
+         "id": "frankfurt",
+         "name": "visit_frankfurt",
+         "address": {
+           "location_id": "frankfurt",
+           "lon": 8.670,
+           "lat": 50.109
+         }
+       }
+    ]
+}
+```
+
+
+#### Full specification
+
+algorithm:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>objective<br></td>
+    <td>string</td>
+    <td><br></td>
+    <td>default is 'transport_time'. You can choose between 'transport_time' and 'completion_time'</td>
+  </tr>
+</table>
 
 ### Vehicles
 
