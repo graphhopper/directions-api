@@ -2,6 +2,8 @@
 
 ## Geocoding API
 
+![Geocoding Example](./img/geocoding-example.png)
+
 Geocoding is the process to fetch a coordinate (`latitude,longitude`) for a given
 address string. Read more at [Wikipedia](http://en.wikipedia.org/wiki/Geocoding).
 
