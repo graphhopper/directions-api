@@ -1,6 +1,8 @@
 [Back to overview](./README.md#matrix-api)
 
-## Matrix API Docs
+## Matrix API
+
+![Matrix Example](./img/matrix-example.png)
 
 The Matrix API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api) and with this API you can calculate many-to-many routes a lot more efficient.
 
