@@ -1,6 +1,6 @@
 [Back to overview](./README.md#geocoding-api)
 
-## Geocoding API
+# Geocoding API
 
 ![Geocoding Example](./img/geocoding-example.png)
 
@@ -47,3 +47,7 @@ hits[0].name        | The name of the entity. Can be a boundary, POI, address, e
 hits[0].city        | The city of the address
 hits[0].country     | The country of the address
 hits[0].osm_id      | The OSM ID of the entity
+
+## Reverse Geocoding
+
+**Coming Soon**
