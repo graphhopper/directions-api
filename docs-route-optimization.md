@@ -368,6 +368,12 @@ The `capacity` in a vehicle type makes only sense if there is e.g. a `size` defi
     <td><br></td>
     <td>default is "car". you can use either "car", "bike" or "foot".<br>it determines whether which network to use for routing the vehicle.<br></td>
   </tr>
+   <tr>
+      <td>capacity<br></td>
+      <td>array<br></td>
+      <td><br></td>
+      <td>array of capacity dimension values, e.g. max. volume and weight<br></td>
+    </tr>
   <tr>
       <td>speed_factor<br></td>
       <td>double<br></td>
