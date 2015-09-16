@@ -1,6 +1,6 @@
 [Back to overview](./README.md#routing-api)
 
-## Routing API
+# Routing API
 
 ![Routing API](./img/routing-example.png)
 
