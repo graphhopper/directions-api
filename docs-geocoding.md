@@ -21,7 +21,6 @@ point       | -       | The location bias in the format 'latitude,longitude' e.g
 
 ```json
 {
-  "took": 29,
   "hits": [
     {
       "point": {
