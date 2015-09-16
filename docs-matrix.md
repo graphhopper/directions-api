@@ -1,6 +1,6 @@
 [Back to overview](./README.md#matrix-api)
 
-## Matrix API
+# Matrix API
 
 ![Matrix Example](./img/matrix-example.png)
 
