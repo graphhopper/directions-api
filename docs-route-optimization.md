@@ -372,7 +372,7 @@ The `capacity` in a vehicle type makes only sense if there is e.g. a `size` defi
       <td>capacity<br></td>
       <td>array<br></td>
       <td><br></td>
-      <td>array of capacity dimension values, e.g. max. volume and weight<br></td>
+      <td>array of capacity dimension values, e.g. max. volume and weight. default is [ 0 ]<br></td>
     </tr>
   <tr>
       <td>speed_factor<br></td>
