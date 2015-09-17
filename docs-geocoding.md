@@ -9,6 +9,8 @@ address string. Read more at [Wikipedia](http://en.wikipedia.org/wiki/Geocoding)
 
 The URL path to obtain the coordinate  is `/geocode`
 
+## URL parameters
+
 Parameter   | Default | Description
 :-----------|:--------|:-----------
 q           | -       | Specify an address
@@ -48,6 +50,15 @@ hits[0].city        | The city of the address
 hits[0].country     | The country of the address
 hits[0].osm_id      | The OSM ID of the entity
 
-## Reverse Geocoding
+# Reverse Geocoding
 
-**Coming Soon**
+The reverse geocoding has exactly the same response but requires an additional URL parameter `reverse=true`
+
+## URL parameters
+
+Parameter   | Default | Description
+:-----------|:--------|:-----------
+reverse     | true    | Required for reverse geocoding
+point       | -       | The location to find amenities, cities etc. In the same format as the (forward) geocoding.
+locale      | en      | Display the search results for the specified locale. Currently French (fr), English (en), German (de) and Italian (it) are supported. If the locale wasn't found the default (en) is used.
+debug       | `false` | If `true`, the output will be formated.
