@@ -4,7 +4,7 @@
 
 ![Matrix Example](./img/matrix-example.png)
 
-The Matrix API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api) and with this API you can calculate many-to-many routes a lot more efficient.
+The Matrix API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api) and with this API you can calculate many-to-many distances, times or routes a lot more efficient.
 
 ## API Clients and Examples
 
