@@ -746,6 +746,10 @@ or your job is finished and a solution is available. Then you get back this:
     "costs" : 62180,
     "distance" : 1875953,
     "time" : 62180,
+    "transport_time" : 62180,
+    "completion_time" : 62180,
+    "waiting_time" : 0,
+    "no_vehicles" : 1,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -862,8 +866,32 @@ solution:
       <td>time<br></td>
       <td>long</td>
       <td><br></td>
-      <td>overall time travelled in seconds<br></td>
+      <td>deprecated: use transport_time instead<br></td>
     </tr>
+    <tr>
+          <td>transport_time<br></td>
+          <td>long</td>
+          <td><br></td>
+          <td>overall time travelled in seconds<br></td>
+        </tr>
+<tr>
+          <td>completion_time<br></td>
+          <td>long</td>
+          <td><br></td>
+          <td>overall completion time in seconds, i.e. the sum of each route's operation time<br></td>
+        </tr>
+<tr>
+          <td>waiting_time<br></td>
+          <td>long</td>
+          <td><br></td>
+          <td>overall waiting time in seconds<br></td>
+        </tr>
+ <tr>
+           <td>no_vehicles<br></td>
+           <td>long</td>
+           <td><br></td>
+           <td>number of employed vehicles<br></td>
+         </tr>
  <tr>
        <td>no_unassigned<br></td>
        <td>integer</td>
