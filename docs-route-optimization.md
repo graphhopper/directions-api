@@ -43,7 +43,7 @@ Other clients can be relative easily created via [swagger-codegen](https://githu
 
 The fastest way to understand the API is by looking at the [live examples](https://graphhopper.com/api/1/examples/#optimization) and playing around with the [route editor](#route-editor). Finally you should read this documentation with extensive examples described below.
 
-If you just need an optimal reordering of the locations for one vehicle, ie. solving a traveling salesman problem then you can also have a look into our [Routing API](./docs-routing.md) which now supports `optimize=true`.
+If you just need an optimal reordering of the locations for one vehicle, ie. solving a traveling salesman problem then you can also have a look into our [Routing API](./docs-routing.md) which supports `optimize=true`.
  
 ### Route Editor
 
