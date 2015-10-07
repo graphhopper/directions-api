@@ -209,6 +209,32 @@ If you want to let <b>GraphHopper</b> decide at which customer the vehicle shoul
 
 The ```type_id``` refers to the vehicle type of your vehicle. It is optional and only required if you need to specify your own type.
 
+If your driver needs a break, you need to specify it as follows:
+
+```json
+{
+    "vehicle_id": "your-vehicle-id",
+    "start_address": {
+        "location_id": "your-start-location-id",
+        "lon": 11.028771,
+        "lat": 50.977723
+    },
+    "return_to_depot": false,
+    "type_id": "your-vehicle-type-id",
+    "break" : {
+        "earliest" : 10000,
+        "latest" : 13600,
+        "duration" : 1800
+    }
+}
+```
+
+And then the algorithm seeks to find the "best" place to make the break. Breaks can only be made at a customer site, i.e. at any service
+or shipment location <b>before</b> or <b>after</b> servicing the customer. The algorithm evaluates whether the break
+is actually necessary or not. If not, it ends up in the unassigned break list. Generally, if the driver can manage to be
+at its end location before `break.latest`, the break is regarded to be redundant. <b>Please note</b>, that if you specified a break,
+you need to define your algorithm objective to be 'completion_time' (see algorithm spec above) otherwise you are getting an exception.
+
 #### Full specification
 
 vehicle:
@@ -268,6 +294,12 @@ vehicle:
          <td></td>
          <td>array of skills, i.e. array of string (not case sensitive)</td>
        </tr>
+  <tr>
+           <td>break</td>
+           <td>object</td>
+           <td></td>
+           <td>the driver break</td>
+         </tr>     
 </table>
 
 address:
@@ -297,6 +329,35 @@ address:
       <td>true<br></td>
       <td>latitude of address location</td>
     </tr>
+</table>
+
+break:
+
+<table>
+  <tr>
+    <th>Name<br></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>earliest<br></td>
+    <td>long</td>
+    <td>true<br></td>
+    <td>earliest start time of break</td>
+  </tr>
+  <tr>
+      <td>latest<br></td>
+      <td>long</td>
+      <td>true<br></td>
+      <td>latest start time of break</td>
+    </tr>
+  <tr>
+        <td>duration<br></td>
+        <td>long</td>
+        <td>true<br></td>
+        <td>duration of break</td>
+      </tr>
 </table>
 
 ### Vehicle Types
