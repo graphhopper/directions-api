@@ -229,7 +229,7 @@ If your driver needs a break, you need to specify it as follows:
 }
 ```
 
-And then the algorithm seeks to find the "best" place to make the break. Breaks can only be made at a customer site, i.e. at any service
+And then the algorithm seeks to find the "best" position in the route to make the break. Breaks can only be made at a customer site, i.e. at any service
 or shipment location <b>before</b> or <b>after</b> servicing the customer. The algorithm evaluates whether the break
 is actually necessary or not. If not, it ends up in the unassigned break list. Generally, if the driver can manage to be
 at its end location before `break.latest`, the break is regarded to be redundant. <b>Please note</b>, that if you specified a break,
