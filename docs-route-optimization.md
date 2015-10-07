@@ -233,7 +233,7 @@ And then the algorithm seeks to find the "best" position in the route to make th
 or shipment location <b>before</b> or <b>after</b> servicing the customer. The algorithm evaluates whether the break
 is actually necessary or not. If not, it ends up in the unassigned break list. Generally, if the driver can manage to be
 at its end location before `break.latest`, the break is regarded to be redundant. <b>Please note</b>, that if you specified a break,
-you need to define your algorithm objective to be 'completion_time' (see algorithm spec above) otherwise you are getting an exception.
+you need to define your algorithm objective to be `completion_time (see [algorithm spec above](#algorithm)) otherwise you are getting an exception.
 
 #### Full specification
 
