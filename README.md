@@ -44,7 +44,7 @@ Where you need to replace the key with your own
 
 [![Vehicle Routing Example](./img/vrp-example.png)](./docs-route-optimization.md)
 
-The Route Optimization API is documented [here](./docs-route-optimization.md). **Please note the [alpha status](https://github.com/graphhopper/directions-api/issues/6)**
+The Route Optimization API is documented [here](./docs-route-optimization.md).
 
 The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
