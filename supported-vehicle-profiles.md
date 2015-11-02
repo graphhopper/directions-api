@@ -17,3 +17,5 @@ racing bike| Bike preferring roads | bike access         | ![racingbike image](h
 <!-- MAN https://de.wikipedia.org/wiki/Datei:MAN_TGS_26.480_dump_truck.JPG -->
 <!-- MAN https://de.wikipedia.org/wiki/Lastkraftwagen#/media/File:MAN_M2000_Pritschenwagen.jpg -->
 **Please not that currently none of the vehicles accounts for turn restrictions.**
+
+You can try the route results for every profile with [GraphHopper Maps](https://graphhopper.com/maps/)
