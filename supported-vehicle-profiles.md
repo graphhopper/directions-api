@@ -1,6 +1,6 @@
 # Supported Vehicles
 
-The Routing, Matrix and Route Optimization API supports the following vehicles:
+The Routing, Matrix and Route Optimization APIs support the following vehicles:
 
 name       | description           | Restrictions              | Icon                                                     | Real life image
 -----------|:----------------------|:--------------------------|:---------------------------------------------------------|:------------------
