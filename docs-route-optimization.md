@@ -43,7 +43,7 @@ Other clients can be relative easily created via [swagger-codegen](https://githu
 
 The fastest way to understand the API is by looking at the [live examples](https://graphhopper.com/api/1/examples/#optimization) and playing around with the [route editor](#route-editor). Finally you should read this documentation with extensive examples described below.
 
-If you just need an optimal reordering of the locations for one vehicle, ie. solving a traveling salesman problem then you can also have a look into our [Routing API](./docs-routing.md) which supports `optimize=true`.
+If you just need an optimal reordering of the locations for one vehicle and without constraints like time windows, ie. solving a traveling salesman problem then you can also have a look into our [Routing API](./docs-routing.md) which supports `optimize=true`.
  
 ### Route Editor
 
@@ -376,8 +376,9 @@ The default type is
 ```
 
 
-In the vehicle type you can specify three important features of your vehicles: profile, capacity and speed factor. The profile indicates whether your vehicle is actually is person moving by ```foot```, 
-whether it is a ```bike```, a ```car```, a ```motorcycle```, a ```mtb``` or a ```racingbike```.
+In the vehicle type you can specify three important features of your vehicles: profile, capacity and speed factor. The profile indicates whether your vehicle is actually an person moving by `foot`, 
+whether it is a `car`, a `motorcycle`, a `bike`, a `mtb`, a `racingbike`, a `small_truck`, a `bus` or a `truck`. See [here](./supported-vehicle-profiles.md) for the details about the vehicle profiles.
+
 The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below. 
  With the speed factor you can make your vehicles slower or even faster. The default value here is 1.0 which is in line with the travel
  time you get from Graphhopper Routing API. However, in several cases in turned out that the resulting travel times were too optimistic. 
