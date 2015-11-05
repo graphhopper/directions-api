@@ -691,7 +691,21 @@ as follows:
 }
 ``` 
 
-This enforces service i to be in the same route as service j.
+This enforces service i to be in the same route as service j. If a specific vehicle (driver) is required to conduct this, just add
+ a `vehicle_id` like this:
+ 
+ ```json
+ {
+     "type": "in_same_route",
+     "ids": ["service_i_id","service_j_id"],
+     "vehicle_id": "vehicle1"
+ }
+ ```
+ 
+ This not only enforce service i and j to be in the same route, but also makes sure that both services are in the route of "vehicle1".
+ 
+ <b>Tip</b>: This way initial loads and vehicle routes can be modelled. For example, if your vehicles are already on the road and new
+ orders come in, then vehicles can still be rescheduled subject to the orders that have already been assigned to these vehicles.
 
 #### in_sequence
 
