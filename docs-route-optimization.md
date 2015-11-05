@@ -691,7 +691,7 @@ as follows:
 }
 ``` 
 
-This enforces service i to be in the same route as service j. If a specific vehicle (driver) is required to conduct this, just add
+This enforces service i to be in the same route as service j no matter which vehicle will be employed. If a specific vehicle (driver) is required to conduct this, just add
  a `vehicle_id` like this:
  
  ```json
