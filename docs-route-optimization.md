@@ -707,6 +707,7 @@ This enforces service i to be in the same route as service j no matter which veh
  <b>Tip</b>: This way initial loads and vehicle routes can be modelled. For example, if your vehicles are already on the road and new
  orders come in, then vehicles can still be rescheduled subject to the orders that have already been assigned to these vehicles.
 
+
 #### in_sequence
 
 The 'in_sequence' relation type enforces n jobs to be in sequence. It can be specified as
@@ -718,7 +719,8 @@ The 'in_sequence' relation type enforces n jobs to be in sequence. It can be spe
 }
 ```
 
-which means that service j need to be in the same route as service i AND it needs to occur somewhere after service i.
+which means that service j need to be in the same route as service i AND it needs to occur somewhere after service i. As described above
+if a specific vehicle needs to conduct this, just add `vehicle_id`.
 
 #### in_direct_sequence
 
@@ -731,7 +733,8 @@ This enforces n services or shipments to be in direct sequence. It can be specif
  }
  ```
  
-yielding service j to occur directly after service i, and service k to occur directly after j (i.e. in strong order).
+yielding service j to occur directly after service i, and service k to occur directly after j (i.e. in strong order). Again, a vehicle can
+be assigned a priori by adding a `vehicle_id` to the relation.
 
 <b>NOTE</b>: If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries
 of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword 'pickup' or 'delivery'. For example, to
@@ -768,6 +771,12 @@ relation:
        <td>String</td>
        <td>true<br></td>
        <td>array of ids<br></td>
+     </tr>
+  <tr>
+       <td>vehicle_id<br></td>
+       <td>String</td>
+       <td>false<br></td>
+       <td>id of pre assigned vehicle<br></td>
      </tr>
  </table>
 
