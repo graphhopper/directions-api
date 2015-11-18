@@ -125,16 +125,39 @@ This specification need to be posted to:
 `
 ### Algorithm
 
-This gives you limited access to the algorithm. Currently, you can here specify whether you want to minimize `transport_time` or `completion_time`.
-In contrary to the minimization of `transport_time`, `completion_time` takes waiting times at customer sites into account.
+This gives you limited access to the algorithm. Currently, you can specify two things: the problem type and the objective. 
+When it comes to the problem type, you have two options, `min` and `min-max`. The objective specifies whether 
+you want to just consider `transport_time` or `completion_time`. In contrary to `transport_time`, `completion_time` takes waiting times at customer sites into account.
 Instead of just waiting at customer sites, it seeks to serve other customers to reduce total completion time. 
-By default, the algorithm minimizes `transport_time`. If you want to switch to `completion_time` just add this to your request:
+By default, the algorithm minimizes `transport_time` thus it corresponds to: 
 
 ```json
 "algorithm" : {
+    "problem_type": "min",
+    "objective": "transport_time"
+}
+```
+
+This minimizes the sum of your vehicle routes' transport times. 
+If you want to switch to `completion_time` just change this to:
+
+```json
+"algorithm" : {
+    "problem_type": "min",
     "objective": "completion_time"
 }
 ```
+
+As outlined above, this minimizes the sum of your vehicle routes' completion time, i.e. it takes waiting times into account also. If you want
+to minimize the maximum of your vehicle routes' completion time, i.e. minimize the overall makespan then change the algorithm object to:
+ 
+```json
+"algorithm" : {
+    "problem_type": "min-max",
+    "objective": "completion_time"
+}
+```
+
 
 #### Full specification
 
@@ -147,6 +170,12 @@ algorithm:
     <th>Required</th>
     <th>Description</th>
   </tr>
+  <tr>
+    <td>problem_type<br></td>
+    <td>string</td>
+    <td><br></td>
+    <td>default is 'min'. You can choose between 'min' and 'min-max'</td>
+  </tr>  
   <tr>
     <td>objective<br></td>
     <td>string</td>
