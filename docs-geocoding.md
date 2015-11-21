@@ -1,5 +1,3 @@
-[Back to overview](./README.md#geocoding-api)
-
 # Geocoding API
 
 ![Geocoding Example](./img/geocoding-example.png)

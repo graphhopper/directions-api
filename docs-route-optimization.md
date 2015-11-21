@@ -1,5 +1,3 @@
-[Back to overview](./README.md#route-optimization-api)
-
 # Route Optimization API
 
 ![Route Editor Overview](./img/route-editor-overview.png)

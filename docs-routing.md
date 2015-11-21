@@ -1,5 +1,3 @@
-[Back to overview](./README.md#routing-api)
-
 # Routing API
 
 ![Routing API](./img/routing-example.png)
@@ -8,7 +6,7 @@ The Routing API is part of the [GraphHopper Directions API](https://graphhopper.
 
 ## API Clients and Examples
 
-See the [clients](./README.md) section in the main document.
+See the [clients](./index.md) section in the main document.
 
 ## Parameters
 

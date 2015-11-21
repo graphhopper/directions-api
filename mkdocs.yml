@@ -1,0 +1,12 @@
+site_name: GraphHopper
+site_description: GraphHopper Directions API Documentation
+docs_dir: .
+pages:
+- Home: index.md
+- Routing API: docs-routing.md
+- Route Optimization API: docs-route-optimization.md
+- Geocoding API: docs-geocoding.md
+- Matrix API: docs-matrix.md
+- Vehicles: supported-vehicle-profiles.md
+- FAQ: FAQ.md
+theme: flatly

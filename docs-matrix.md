@@ -1,5 +1,3 @@
-[Back to overview](./README.md#matrix-api)
-
 # Matrix API
 
 ![Matrix Example](./img/matrix-example.png)
@@ -8,7 +6,7 @@ The Matrix API is part of the [GraphHopper Directions API](https://graphhopper.c
 
 ## API Clients and Examples
 
-See the [clients](./README.md) section in the main document.
+See the [clients](./index.md) section in the main document.
 
 ### Introduction
 
@@ -148,5 +146,5 @@ If an error occured while calculation the JSON will contain directly the error m
 
 ## HTTP Error codes
 
-See more details in the [overview](README.md#http-error-codes)
+See more details in the [overview](index.md#http-error-codes)
 

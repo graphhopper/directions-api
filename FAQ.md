@@ -1,5 +1,3 @@
-[Go to overview](./README.md)
-
 ## Where can I get help?
 
 Contact us [per email](https://graphhopper.com/#contact) or use [our public forum](https://discuss.graphhopper.com/c/directions-api).
@@ -29,7 +27,7 @@ The credits are resetted after 24 hours, not on one specific 00:00 time or somet
 
 ## Where can I find the documentation or some demos?
 
-Our documentation is available [here](https://github.com/graphhopper/directions-api/blob/master/README.md) and some demos are available for [every client](https://github.com/graphhopper/directions-api/blob/master/README.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
+Our documentation is available [here](./index.md) and some demos are available for [every client](./index.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
 
 ## Where can I find the pricing?
 
