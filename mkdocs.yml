@@ -1,6 +1,7 @@
 site_name: GraphHopper
 site_description: GraphHopper Directions API Documentation
 docs_dir: .
+site_favicon: https://graphhopper.com/favicon.ico
 pages:
 - Home: index.md
 - Routing API: docs-routing.md
