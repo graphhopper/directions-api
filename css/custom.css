@@ -1,3 +1,33 @@
 .container .navbar-right {
-  display: none;
+    display: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #202d3b;
+}
+
+.navbar-default {
+    color: #202d3b;
+    border-color: white;
+    background-color: white;
+    background-image: linear-gradient(to bottom, white, #e7e7e7);
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-image: linear-gradient(to bottom, #9f9f9f, #e7e7e7);
+    color: #202d3b;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer ul {
+  margin: auto auto;
+  padding-left: 0px;
+}
+
+footer ul li {
+  padding-left: 10px;
+  display: inline;
 }
