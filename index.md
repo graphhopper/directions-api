@@ -26,11 +26,11 @@ Or search [our public forum](https://discuss.graphhopper.com/c/directions-api).
 
 Do not hesitate to share your client code with us!
 
-## [Routing API](docs-routing.md)
+## [Routing API](routing.md)
 
-[![Routing Example](./img/routing-example.png)](./docs-routing.md)
+[![Routing Example](./img/routing-example.png)](./routing.md)
 
-The Routing API is documented [here](./docs-routing.md).
+The Routing API is documented [here](./routing.md).
 
 The endpoint is `https://graphhopper.com/api/[version]/route`
 
@@ -40,11 +40,11 @@ You get an example response via:
 
 Where you need to replace the key with your own
 
-## [Route Optimization API](./docs-route-optimization.md)
+## [Route Optimization API](./route-optimization.md)
 
-[![Vehicle Routing Example](./img/vrp-example.png)](./docs-route-optimization.md)
+[![Vehicle Routing Example](./img/vrp-example.png)](./route-optimization.md)
 
-The Route Optimization API is documented [here](./docs-route-optimization.md).
+The Route Optimization API is documented [here](./route-optimization.md).
 
 The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
@@ -57,11 +57,11 @@ The Route Optimization API works in two steps
   
 For more details also about the format of the `your-vrp-problem.json` file you can use one of [the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/route-optimization-examples).
 
-## [Matrix API](./docs-matrix.md)
+## [Matrix API](./matrix.md)
 
-[![Matrix Example](./img/matrix-example.png)](./docs-matrix.md)
+[![Matrix Example](./img/matrix-example.png)](./matrix.md)
 
-The Matrix API is documented [here](./docs-matrix.md)
+The Matrix API is documented [here](./matrix.md)
 
 The endpoint is `https://graphhopper.com/api/[version]/matrix`
 
@@ -69,11 +69,11 @@ You get an example response for a 3x3 matrix looks via:
 
 `curl "https://graphhopper.com/api/1/matrix?point=49.932707%2C11.588051&point=50.241935%2C10.747375&point=50.118817%2C11.983337&type=json&vehicle=car&debug=true&out_array=weights&out_array=times&out_array=distances&key=[YOUR_KEY]"`
 
-## [Geocoding API](./docs-geocoding.md)
+## [Geocoding API](./geocoding.md)
 
-[![Geocoding Example](./img/geocoding-example.png)](./docs-geocoding.md)
+[![Geocoding Example](./img/geocoding-example.png)](./geocoding.md)
 
-The Geocoding API is not yet production grade. Please help us improve it and give us feedback! See the documentation [here](./docs-geocoding.md).
+The Geocoding API is not yet production grade. Please help us improve it and give us feedback! See the documentation [here](./geocoding.md).
 
 The endpoint is `https://graphhopper.com/api/[version]/geocode`
 

@@ -1,13 +1,18 @@
 site_name: GraphHopper
 site_description: GraphHopper Directions API Documentation
-docs_dir: .
 site_favicon: https://graphhopper.com/favicon.ico
+docs_dir: .
 pages:
-- Home: index.md
-- Routing API: docs-routing.md
-- Route Optimization API: docs-route-optimization.md
-- Geocoding API: docs-geocoding.md
-- Matrix API: docs-matrix.md
+- Overview: index.md
+- API parts:
+  - Routing API: routing.md
+  - Route Optimization API: route-optimization.md
+  - Geocoding API: geocoding.md
+  - Matrix API: matrix.md
 - Vehicles: supported-vehicle-profiles.md
 - FAQ: FAQ.md
+extra_css: 
+  - css/custom.css
+extra_javascript:
+  - js/custom.js
 theme: flatly
