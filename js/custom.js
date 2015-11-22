@@ -1,7 +1,12 @@
 // header
+
+// somehow this does not for other sites?
 $('.navbar-brand').remove();
-$('<a class="navbar-brand" href="https://graphhopper.com/"><img alt="GraphHopper" width="36px" src="./img/gh-logo.png"/></a>').appendTo($('.navbar-header'));
-$('<li><a href="https://graphhopper.com/dashboard/">Dashboard</a></li>').appendTo($('ul.nav.navbar-nav'));
+// $('<a class="navbar-brand" href="https://graphhopper.com/"><img alt="GraphHopper" width="36px" src="./img/gh-logo.png"/></a>').appendTo($('.navbar-header'));
+
+$('<li><a href="https://graphhopper.com/dashboard/">Dashboard</a></li>').appendTo($('ul.nav.navbar-nav:first'));
+$('ul.navbar-right').empty()
+$('ul.navbar-right').append("<li><a href='https://graphhopper.com'>GraphHopper.com</li>");
 
 // footer
 // $('footer.col-md-12').empty();
