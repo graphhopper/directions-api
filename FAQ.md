@@ -51,7 +51,7 @@ Please [contact us](https://graphhopper.com/#contact)
 
 ## Do I need to link or mention the use of the GraphHopper Directions API
 
-Yes. And we think it is fair to make this a requirement for all packages as we need to grow for a more healthy ecosystem and also have very permissive terms otherwise, please see [here](https://github.com/graphhopper/directions-api#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option.
+Yes. And we think it is fair to make this a requirement for all packages as we need to grow for a more healthy ecosystem and also have very permissive terms otherwise, please see [here](https://graphhopper.com/api/1/docs/#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option.
 
 
 ## What is the difference between the Directions API and the Open Source GraphHopper 'Core'?
