@@ -127,7 +127,7 @@ For GPX the [1.1 schema](http://www.topografix.com/gpx/1/1/) is used, with minor
 
 ### HTTP Error codes
 
-See the error codes and JSON structure on the [overview page](https://github.com/graphhopper/directions-api#http-error-codes)
+See the error codes and JSON structure on the [overview page](https://graphhopper.com/api/1/docs/#http-error-codes)
 
 ## Area information
 
