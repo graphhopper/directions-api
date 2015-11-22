@@ -41,7 +41,7 @@ A simple illustration for a 1x3 matrix with different start- and end-points:
 from_pointA |A->1        |A->2       |A->3
 
 
-For every route 1->2, 1-3, ... or A->1,A->2,A->3 you can return only the weight, the time, the distance and even the full route. The matrix returning full routes is only suitable for a smaller matrix (or with a big matrix and a filter). This 'route-matrix' is useful if you know in advance that you need all the full routes and want to avoid a separate query to the Routing API. Useful e.g. for letting the user choosing from several routes. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://github.com/graphhopper/web-api/blob/master/docs-routing.md).
+For every route 1->2, 1-3, ... or A->1,A->2,A->3 you can return only the weight, the time, the distance and even the full route. The matrix returning full routes is only suitable for a smaller matrix (or with a big matrix and a filter). This 'route-matrix' is useful if you know in advance that you need all the full routes and want to avoid a separate query to the Routing API. Useful e.g. for letting the user choosing from several routes. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://graphhopper.com/api/1/docs/#routing-api).
 
 ## Parameters
 
@@ -58,7 +58,7 @@ debug       | false   | If true, the output will be formated.
 
 ## Limits and Counts
 
-The cost for one request depends on the number of locations and is documented [here](https://github.com/graphhopper/directions-api/blob/master/FAQ.md).
+The cost for one request depends on the number of locations and is documented [here](https://graphhopper.com/api/1/docs/FAQ/).
 
 One request should not exceed the Matrix API location limit depending on the package, see the pricing in our dashboard. If you include out_array=paths the Matrix API location limit is currently 10 regardless of the package.
 
@@ -86,7 +86,7 @@ times                      | The time matrix for the specified points in the ord
 distances                  | The distance matrix for the specified points in the same order as the time matrix. The distances are in meters.
 weights                    | The weight matrix for the specified points in the same order as the time matrix. The weights for different vehicles can have a different unit but the weights array is perfectly suited as input for [Vehicle Routing Problems](http://en.wikipedia.org/wiki/Vehicle_routing_problem) as it is currently faster to calculate.
 info.took                  | The taken time in seconds
-info.copyrights            | Attribution according to [our documentation](https://github.com/graphhopper/web-api/#attribution) is necessary if no white-label option included.
+info.copyrights            | Attribution according to [our documentation](https://graphhopper.com/api/1/docs/#attribution) is necessary if no white-label option included.
 
 ## HTTP POST request
 
