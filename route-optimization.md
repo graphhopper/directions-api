@@ -717,13 +717,13 @@ as follows:
 This enforces service i to be in the same route as service j no matter which vehicle will be employed. If a specific vehicle (driver) is required to conduct this, just add
  a `vehicle_id` like this:
  
- ```json
- {
+```json
+{
      "type": "in_same_route",
      "ids": ["service_i_id","service_j_id"],
      "vehicle_id": "vehicle1"
- }
- ```
+}
+```
  
  This not only enforce service i and j to be in the same route, but also makes sure that both services are in the route of "vehicle1".
  
