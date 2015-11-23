@@ -26,71 +26,38 @@ Or search [our public forum](https://discuss.graphhopper.com/c/directions-api).
 
 Do not hesitate to share your client code with us!
 
-## [Routing API](routing.md)
+# [Routing API](routing.md)
 
 [![Routing Example](./img/routing-example.png)](./routing.md)
 
 The Routing API is documented [here](./routing.md).
 
-The endpoint is `https://graphhopper.com/api/[version]/route`
-
-You get an example response via:
-
-`curl "https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&debug=true&points_encoded=false&key=[YOUR_KEY]"`
-
-Where you need to replace the key with your own
-
-## [Route Optimization API](./route-optimization.md)
+# [Route Optimization API](./route-optimization.md)
 
 [![Vehicle Routing Example](./img/vrp-example.png)](./route-optimization.md)
 
 The Route Optimization API is documented [here](./route-optimization.md).
 
-The endpoint is `https://graphhopper.com/api/[version]/vrp`
-
-The Route Optimization API works in two steps
-
- 1. Publish your problem json:
-    `curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]" --data @your-vrp-problem.json`
- 2. Poll every 500ms until a solution is available:
-    `curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"`
-  
-For more details also about the format of the `your-vrp-problem.json` file you can use one of [the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/route-optimization-examples).
-
-## [Matrix API](./matrix.md)
+# [Matrix API](./matrix.md)
 
 [![Matrix Example](./img/matrix-example.png)](./matrix.md)
 
 The Matrix API is documented [here](./matrix.md)
 
-The endpoint is `https://graphhopper.com/api/[version]/matrix`
-
-You get an example response for a 3x3 matrix looks via:
-
-`curl "https://graphhopper.com/api/1/matrix?point=49.932707%2C11.588051&point=50.241935%2C10.747375&point=50.118817%2C11.983337&type=json&vehicle=car&debug=true&out_array=weights&out_array=times&out_array=distances&key=[YOUR_KEY]"`
-
-## [Geocoding API](./geocoding.md)
+# [Geocoding API](./geocoding.md)
 
 [![Geocoding Example](./img/geocoding-example.png)](./geocoding.md)
 
-The Geocoding API is not yet production grade. Please help us improve it and give us feedback! See the documentation [here](./geocoding.md).
-
-The endpoint is `https://graphhopper.com/api/[version]/geocode`
-
-You get an example response via:
-
-`curl "https://graphhopper.com/api/1/geocode?q=berlin&locale=de&debug=true&key=[YOUR_KEY]"`
-
-Append `&debug=true` for a formatted output.
+The Geocoding API is documentation [here](./geocoding.md).
 
 <!--
-## Isochrone API
+# Isochrone API
 
 Use this API to calculate reachability polygons for specific points. Please contact us for further details.
 
 ![Isochrone Illustration](https://raw.githubusercontent.com/graphhopper/directions-api/6fd1ce50a3c86b7f03823912fafa370f14ae11ec/img/isochrone-example.png)
 
-## Map Matching API
+# Map Matching API
 
 Use this API to match recorded GPS tracks with roads and associate useful information like turn instructions or speed limit, i.e. it provides a 'snap to road' functionality. Please contact us for further details.
 
@@ -98,11 +65,11 @@ Use this API to match recorded GPS tracks with roads and associate useful inform
 
 -->
 
-## [Terms of Services](https://graphhopper.com/terms.html)
+# [Terms of Services](https://graphhopper.com/terms.html)
 
 Read the [terms of services](https://graphhopper.com/terms.html) carefully and make sure your user are agreeing to be bound by GraphHopper's Terms of Use too.
 
-## Attribution
+# Attribution
 
 All packages require a prominent attribution of GraphHopper. This means you include a link to graphhopper.com in a place where you utilize the GraphHopper Directions API. It is important to note that the user has to see this only one time e.g. once per application start or at the first website access. The user must have the possibility and enough time to read and click on the link (at least 4 seconds). I.e. a short living splash screen isn't what we want, instead we ask you to place it e.g. below a search input. As a simple example have a look at [GraphHopper Maps](https://graphhopper.com/maps/)
 
@@ -121,7 +88,7 @@ For small screens (less than 190mm diagonal) it can be only the link without 'po
 
 Additionally to our attribution you need to include attribution to [OpenStreetMap](https://www.openstreetmap.org/copyright/).
 
-## HTTP Error codes
+# HTTP Error codes
 
 HTTP error code | Reason
 :---------------|:------------
@@ -133,7 +100,7 @@ HTTP error code | Reason
 501 	           | Only a special list of vehicles is supported
 
 
-### Output
+## Error Output
 ```json
 {
   "message": "Cannot find point 2: 2248.224673, 3.867187",

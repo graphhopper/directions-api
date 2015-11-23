@@ -1,14 +1,18 @@
-# Matrix API
+## Matrix API
+
+### Endpoint
+
+The endpoint is `https://graphhopper.com/api/[version]/matrix`
+
+You get an example response for a 3x3 matrix looks via:
+
+`curl "https://graphhopper.com/api/1/matrix?point=49.932707%2C11.588051&point=50.241935%2C10.747375&point=50.118817%2C11.983337&type=json&vehicle=car&debug=true&out_array=weights&out_array=times&out_array=distances&key=[YOUR_KEY]"`
+
+### Introduction
 
 ![Matrix Example](./img/matrix-example.png)
 
 The Matrix API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api) and with this API you can calculate many-to-many distances, times or routes a lot more efficient.
-
-## API Clients and Examples
-
-See the [clients](./index.md) section in the main document.
-
-### Introduction
 
 In the [Routing API](./routing.md) we support multiple points, so called 'via points', which results in one route being calculated. The Matrix API results in NxM routes being calculated but is a lot faster compared to NxM single requests. The most simple example is a pizza delivery service, delivering e.g. 4 pizzas. To find the fastest tour consisting of ALL locations one needs a two step process:
 
@@ -21,6 +25,10 @@ Some other use case scenarios for the Matrix API:
  * Calculating detours with many possible points in-between and selecting the best e.g. interesting for ridesharing or taxi applications. For this 1-to-many requests are necessary.
  * Finding the best tour for a tourist in the need to visit as many points of interests as possible.
  * ...
+
+### API Clients and Examples
+
+See the [clients](./index.md) section in the main document.
 
 ### Description
 
@@ -43,7 +51,7 @@ from_pointA |A->1        |A->2       |A->3
 
 For every route 1->2, 1-3, ... or A->1,A->2,A->3 you can return only the weight, the time, the distance and even the full route. The matrix returning full routes is only suitable for a smaller matrix (or with a big matrix and a filter). This 'route-matrix' is useful if you know in advance that you need all the full routes and want to avoid a separate query to the Routing API. Useful e.g. for letting the user choosing from several routes. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://graphhopper.com/api/1/docs/#routing-api).
 
-## Parameters
+### Parameters
 
 All official parameters are shown in the following table
 
@@ -56,13 +64,13 @@ out_array   | weights   | Specifies which arrays should be included in the respo
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot, bike, mtb, racingbike, motorcycle, small_truck, bus and truck. See [here](./supported-vehicle-profiles.md) for the details.
 debug       | false   | If true, the output will be formated.
 
-## Limits and Counts
+### Limits and Counts
 
 The cost for one request depends on the number of locations and is documented [here](https://graphhopper.com/api/1/docs/FAQ/).
 
 One request should not exceed the Matrix API location limit depending on the package, see the pricing in our dashboard. If you include out_array=paths the Matrix API location limit is currently 10 regardless of the package.
 
-## Matrix API
+### JSON Output
 
 Keep in mind that some attributes which are not documented here can be removed in the future - you should not rely on them! In the following example 4 points were specified and `out_array=distances&out_array=times&out_array=weights&debug=true`:
 
@@ -88,7 +96,7 @@ weights                    | The weight matrix for the specified points in the s
 info.took                  | The taken time in seconds
 info.copyrights            | Attribution according to [our documentation](https://graphhopper.com/api/1/docs/#attribution) is necessary if no white-label option included.
 
-## HTTP POST request
+### HTTP POST request
 
 The GET request has an URL length limitation, which hurts for many locations per request. In those cases use a HTTP POST request with JSON data as input. The only parameter in the URL will be the key which stays in the URL. Both request scenarios are identically except that all singular parameter names are named as their plural for a POST request. For example `point=10,11&point=20,22` will be converted to the following JSON `points` array:
 ```json

@@ -1,21 +1,21 @@
-# Route Optimization API
+## Route Optimization API
+
+### Endpoint
+
+The endpoint is `https://graphhopper.com/api/[version]/vrp`
+
+The Route Optimization API works in two steps
+
+ 1. Publish your problem json:
+    `curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]" --data @your-vrp-problem.json`
+ 2. Poll every 500ms until a solution is available:
+    `curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"`
+  
+For more details also about the format of the `your-vrp-problem.json` file you can use one of [the examples](https://github.com/graphhopper/directions-api-js-client/tree/master/route-optimization-examples).
+
+### Introduction
 
 ![Route Editor Overview](./img/route-editor-overview.png)
-
-- [Clients](#clients)
-- [Quick Start](#quick-start)
-- [JSON Input](#json-input)
- - [Algorithm](#algorithm)
- - [Vehicles](#vehicles)
- - [Vehicle Types](#vehicle-types)
- - [Services or Shipments](#services-or-shipments)
- - [Relations](#relations)
-- [JSON Output](#json-output)
-- [Examples](#examples)
- - [Traveling Salesman](#traveling-salesman)
- - [Vehicle Routing Problem](#vehicle-routing-problem)
- - [Relations](#relations-example)
- - [Algorithm](#algorithm-example)
 
 The Route Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
 of moving things and people. For example, every company dealing with last-mile deliveries faces a vehicle routing problem, i.e. it must find ways to
@@ -115,12 +115,8 @@ Full specification:
 </table>
 
 
+Post this problem to the [optimization endpoint](#endpoint)
 
-This specification need to be posted to:
-
-`
-"https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]"
-`
 ### Algorithm
 
 This gives you limited access to the algorithm. Currently, you can specify two things: the problem type and the objective. 

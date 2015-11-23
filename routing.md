@@ -1,14 +1,26 @@
-# Routing API
+## Routing API
+
+### Endpoint
+
+The endpoint is `https://graphhopper.com/api/[version]/route`
+
+You get an example response via:
+
+`curl "https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&debug=true&points_encoded=false&key=[YOUR_KEY]"`
+
+Where you need to replace the key with your own
+
+### Introduction
 
 ![Routing API](./img/routing-example.png)
 
 The Routing API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api). Routing is the process of finding the 'best' path(s) between two or more points, where best depends on the vehicle and use case. With our API you have a fast and solid way to find this best path.
 
-## API Clients and Examples
+### API Clients and Examples
 
 See the [clients](./index.md) section in the main document.
 
-## Parameters
+### Parameters
 
 All official parameters are shown in the following table
 
@@ -26,7 +38,7 @@ calc_points        | true    | If the points for the route should be calculated 
 type               | json    | Specifies the resulting format of the route, for json the content type will be application/json. Other possible format options: <br> jsonp you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> gpx, the content type will be application/xml
 min_path_precision | 1       | Not recommended to change. Increase this number if you want to further reduce bandwith.
 
-## Output 
+### Output 
 
 The JSON result contains the following structure:
 
@@ -129,7 +141,7 @@ For GPX the [1.1 schema](http://www.topografix.com/gpx/1/1/) is used, with minor
 
 See the error codes and JSON structure on the [overview page](https://graphhopper.com/api/1/docs/#http-error-codes)
 
-## Area information
+### Area information
 
 If you need to find out defails about the supported features e.g. which profiles and if foot supports elevation or you need to ping the routing service then use '/api/1/route/info'
 
