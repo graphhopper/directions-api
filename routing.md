@@ -37,6 +37,9 @@ debug              | false   | If true, the output will be formated.
 calc_points        | true    | If the points for the route should be calculated at all. Sometimes only the distance and time is necessary.
 type               | json    | Specifies the resulting format of the route, for json the content type will be application/json. Other possible format options: <br> jsonp you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> gpx, the content type will be application/xml
 min_path_precision | 1       | Not recommended to change. Increase this number if you want to further reduce bandwith.
+gpx.track     |	  true  |   	Include <trk> tag in gpx result. Only applicable if type=gpx is specified.
+gpx.route     | 	true 	| Include <rte> tag in gpx result. Only applicable if type=gpx is specified.
+gpx.waypoints | 	false | 	Include <wpt> tag in gpx result. Only applicable if type=gpx is specified.
 
 ### Output 
 
