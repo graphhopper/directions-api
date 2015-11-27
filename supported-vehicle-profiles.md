@@ -18,6 +18,6 @@ racing bike| Bike preferring roads | bike access         | ![racingbike image](h
 <!-- MAN https://de.wikipedia.org/wiki/Lastkraftwagen#/media/File:MAN_M2000_Pritschenwagen.jpg -->
 **Please not that currently none of the vehicles accounts for turn restrictions.**
 
-If you need a custom vehicle (different properties, different speed profiles, different access) for routes in a special geographic area or world wide [please contact us](https://graphhopper.com/#contact).
+If you need a custom vehicle (different properties, different speed profiles, different access) for routes in a special geographic area or world wide [please contact us](https://graphhopper.com/#contact). We also support turn restrictions for our flexibilty mode which we'll bring to production soon.
 
 You can try the route results for every profile with [GraphHopper Maps](https://graphhopper.com/maps/)
