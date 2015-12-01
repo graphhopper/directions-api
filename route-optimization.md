@@ -6,7 +6,7 @@ The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
 The Route Optimization API works in two steps
 
- 1. Publish your problem json:
+ 1. Post your problem json (which returns `[RETURNED_JOB_ID]):
     `curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]" --data @your-vrp-problem.json`
  2. Poll every 500ms until a solution is available:
     `curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"`
@@ -155,7 +155,7 @@ to minimize the maximum of your vehicle routes' completion time, i.e. minimize t
 
 #### Full specification
 
-algorithm:
+#### Algorithm object
 
 <table>
   <tr>
@@ -262,7 +262,7 @@ is still comparably slow when it comes to vehicle routing problems (this is goin
 
 #### Full specification
 
-vehicle:
+#### Vehicle object
 
 <table>
   <tr>
@@ -327,7 +327,7 @@ vehicle:
          </tr>     
 </table>
 
-address:
+#### Address object
 
 <table>
   <tr>
@@ -356,7 +356,7 @@ address:
     </tr>
 </table>
 
-break:
+#### Break object
 
 <table>
   <tr>
@@ -491,7 +491,9 @@ A service can be specified as:
             "earliest": 0,
             "latest": 3600
         }
-     ]
+     ],
+     "required_skills": ["drilling-machine", "water-level"],
+     "allowed_vehicles": ["technician_peter","technician_stefan"]
 }
 ```
 
@@ -529,7 +531,9 @@ A shipment can be specified as:
             }
         ]
     },
-    "size": [1] 
+    "size": [1],
+    "required_skill": ["loading-bridge"],
+    "allowed_vehicles": ["trucker_stefan"]
 }
 ``` 
 
@@ -543,7 +547,7 @@ The `size`-array limits the set of possible vehicles if a `capacity`-array is de
 
 #### Full specification
 
-service:
+#### Service object
 
 <table>
   <tr>
@@ -594,9 +598,15 @@ service:
          <td></td>
          <td>array of required skills, i.e. array of string (not case sensitive)</td>
        </tr>
+<tr>
+         <td>allowed_vehicles</td>
+         <td>array</td>
+         <td></td>
+         <td>array of allowed vehicles, i.e. you can specify specific vehicles in advance</td>
+       </tr>
 </table>
 
-shipment:
+#### Shipment object
 
 <table>
   <tr>
@@ -641,9 +651,15 @@ shipment:
          <td></td>
          <td>array of required skills, i.e. array of string (not case sensitive)</td>
        </tr>
+<tr>
+         <td>allowed_vehicles</td>
+         <td>array</td>
+         <td></td>
+         <td>array of allowed vehicles, i.e. you can specify specific vehicles in advance</td>
+       </tr>
 </table>
 
-pickup or delivery:
+#### Pickup or delivery object
 
 <table>
   <tr>
@@ -673,7 +689,7 @@ pickup or delivery:
 </table>
 
 
-time_window:
+#### Time window object
 
 <table>
   <tr>
