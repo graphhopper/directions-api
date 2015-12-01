@@ -790,7 +790,7 @@ Thus the special id of shipments is created like this: {shipmentId}_{pickup|deli
 
 #### Full specification
 
-relation:
+#### Relation object
 
  <table>
    <tr>
