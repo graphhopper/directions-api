@@ -784,7 +784,7 @@ of your shipments, you need to use a special ID, i.e. use your shipment id plus 
      "type": "in_direct_sequence",
      "ids": ["myShipment_pickup","myShipment_delivery"]
  }
- ```
+```
 
 Thus the special id of shipments is created like this: {shipmentId}_{pickup|delivery}
 
