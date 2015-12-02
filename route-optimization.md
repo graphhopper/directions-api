@@ -835,6 +835,8 @@ With the `job_id` you can fetch your solution via `https://graphhopper.com/api/1
  
 `curl -X GET  "https://graphhopper.com/api/1/vrp/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"`
  
+### Response
+
 Your job can be in three states, either your problem is still waiting in the queue then you get back this:
 
 ```json
@@ -924,6 +926,8 @@ or your job is finished and a solution is available. Then you get back this:
     }
   }
 ```
+
+### Solution
 
 As you can see, you get some general indicators of your solution like ```distance``` and ```time``` which corresponds to the travelled distance and travel time,
 and you get back an array of your routes with the ```vehicle_id``` and an array of ```activities``` which should be self-explanatory.
