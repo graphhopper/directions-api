@@ -6,7 +6,7 @@ The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
 The Route Optimization API works in two steps
 
- 1. Post your problem json (which returns `[RETURNED_JOB_ID]):
+ 1. Post your problem json (which returns `[RETURNED_JOB_ID]`):
     `curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]" --data @your-vrp-problem.json`
  2. Poll every 500ms until a solution is available:
     `curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"`
@@ -765,12 +765,12 @@ if a specific vehicle needs to conduct this, just add `vehicle_id`.
 
 This enforces n services or shipments to be in direct sequence. It can be specified as
 
- ```json
+```json
  {
      "type": "in_direct_sequence",
      "ids": ["service_i_id","service_j_id","service_k_id"]
  }
- ```
+```
  
 yielding service j to occur directly after service i, and service k to occur directly after j (i.e. in strong order). Again, a vehicle can
 be assigned a priori by adding a `vehicle_id` to the relation.
@@ -831,11 +831,9 @@ If you post your problem, you get back a job_id such as:
 { "job_id": "7ac65787-fb99-4e02-a832-2c3010c70097" }
 ```
 
-With the ```job_id``` you can fetch your solution via ```"https://graphhopper.com/api/1/vrp/solution/[job_id]?key=[YOUR_KEY]``` such as
+With the `job_id` you can fetch your solution via `https://graphhopper.com/api/1/vrp/solution/[job_id]?key=[YOUR_KEY]`  such as
  
-```
-"https://graphhopper.com/api/1/vrp/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"
-```
+`curl -X GET  "https://graphhopper.com/api/1/vrp/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"`
  
 Your job can be in three states, either your problem is still waiting in the queue then you get back this:
 
@@ -933,7 +931,7 @@ Finally, within ```unassigned``` you can find the services and shipments that co
 
 #### Full specification
 
-output/response:
+#### Response object
 
 <table>
   <tr>
@@ -974,7 +972,7 @@ output/response:
      </tr>
 </table>
 
-solution:
+#### Solution object
 
 <table>
   <tr>
@@ -1040,7 +1038,7 @@ solution:
 <tr>
 </table>
 
-route:
+#### Route object
 
 <table>
   <tr>
@@ -1064,7 +1062,7 @@ route:
 <tr>
 </table>
 
-activity:
+#### Activity object
 
 <table>
   <tr>
@@ -1111,7 +1109,7 @@ activity:
     </tr>
 </table>
 
-unassigned:
+#### Unassigned object
 
 <table>
   <tr>
