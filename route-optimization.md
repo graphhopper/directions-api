@@ -6,7 +6,7 @@ The endpoint is `https://graphhopper.com/api/[version]/vrp`
 
 The Route Optimization API works in two steps
 
- 1. Post your problem json (which returns `[RETURNED_JOB_ID]`):
+ 1. Post your problem json:
     `curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/vrp/optimize?key=[YOUR_KEY]" --data @your-vrp-problem.json`
  2. Poll every 500ms until a solution is available:
     `curl -X GET "https://graphhopper.com/api/1/vrp/solution/[RETURNED_JOB_ID]?key=[YOUR_KEY]"`
@@ -80,7 +80,7 @@ Full specification:
       <td>algorithm<br></td>
       <td>object</td>
       <td><br></td>
-      <td>to configure the algorithm, e.g. problem type and objective<br></td>
+      <td>to configur the algorithm, e.g. problem type and objective<br></td>
     </tr>
   <tr>
     <td>vehicles<br></td>
@@ -168,13 +168,13 @@ to minimize the maximum of your vehicle routes' completion time, i.e. minimize t
     <td>problem_type<br></td>
     <td>string</td>
     <td><br></td>
-    <td>default is 'min'. You can choose between 'min' and 'min-max'</td>
+    <td>default is `min`. You can choose between `min` and `min-max`</td>
   </tr>  
   <tr>
     <td>objective<br></td>
     <td>string</td>
     <td><br></td>
-    <td>default is 'transport_time'. You can choose between 'transport_time' and 'completion_time'</td>
+    <td>default is `transport_time`. You can choose between `transport_time` and `completion_time`</td>
   </tr>
 </table>
 
