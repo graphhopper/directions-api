@@ -154,8 +154,8 @@ to minimize the maximum of your vehicle routes' completion time, i.e. minimize t
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
-problem_type | string | - | `min` | You can choose between `min` and `min-max`.
-objective | string | - | `transport_time` | You can choose between `transport_time` and `completion_time`.
+problem_type | string | - | `min` | You can choose between `min` and `min-max`. `min` minimizes the sum of what is specified in `objective`, e.g. if objective is `transport_time`, it minimizes the sum of transport times. `min-max` minimizes the maximum of what is specified in `objective`.
+objective | string | - | `transport_time` | You can choose between `transport_time` and `completion_time`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
 
 ### Vehicles
 
