@@ -289,7 +289,7 @@ The `capacity` in a vehicle type makes only sense if there is e.g. a `size` defi
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 type_id | string | x | - | Specifies the id of the vehicle type. If a vehicle needs to be of this type, it should refer to this with its `type_id` attribute.
-profile | string | - | car | Specifies the profile of this type. You can use either `car`, `bike`, `mtb` for mounting bike, `motorcycle`, `racingbike` or `foot`. The profile is uesed to determine the network, speed and other physical attributes to use for routing the vehicle.
+profile | string | - | car | Specifies the profile of this type. You can use either `car`, `bike`, `mtb` for mounting bike, `motorcycle`, `racingbike`, `foot`, `truck`, `small_truck` or `bus`. The profile is uesed to determine the network, speed and other physical attributes to use for routing the vehicle.
 capacity | array | - | [ 0 ] | Specifies an array of capacity dimension values. If there are two dimensions such as volume and weight then it needs to defined as `[ 1000, 300 ]` for a max. volume of 1000 and a max. weight of 300. 
 speed_factor | double | - | 1.0 | Specifies a speed factor for this vehicle type. If the vehicle that uses this type needs to only half as fast as what is actually calculated with our routing engine then reduce the speed factor to 0.5.
 
