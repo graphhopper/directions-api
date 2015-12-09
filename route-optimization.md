@@ -67,50 +67,14 @@ The general input structure is
 }
 ```
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-      <td>algorithm<br></td>
-      <td>object</td>
-      <td><br></td>
-      <td>to configure the algorithm, e.g. problem type and objective<br></td>
-    </tr>
-  <tr>
-    <td>vehicles<br></td>
-    <td>array</td>
-    <td>true<br></td>
-    <td>array of the vehicles available<br></td>
-  </tr>
-  <tr>
-    <td>vehicle_types<br></td>
-    <td>array<br></td>
-    <td><br></td>
-    <td>array of vehicle types available<br></td>
-  </tr>
-  <tr>
-    <td>services<br></td>
-    <td>array</td>
-    <td></td>
-    <td>array of services (involving one location)<br></td>
-  </tr>
-  <tr>
-    <td>shipments</td>
-    <td>array</td>
-    <td></td>
-    <td>array of shipments (involving two location, i.e. pickup and delivery location)<br></td>
-  </tr>
-  <tr>
-      <td>relations</td>
-      <td>array</td>
-      <td></td>
-      <td>array of relations between and among services and shipments<br></td>
-    </tr>
-</table>
+Name   | Type | Required | Description
+:------|:-----|:---------|:-----------
+algorithm | object | - | This tells the algorithm what kind of problem needs to be solved, i.e. you can configure problem type and objective.
+vehicles | array | x | Specifies the available vehicles.
+vehicle_types | array | - | Specifies the available vehicle types that are referred to by the specified vehicles.
+services | array | - | Specifies the available services, i.e. pickup, delivery or any other points to be visited by vehicles. Each service only involves exactly one location.
+shipments | array | - | Specifies the available shipments, i.e. pickup AND delivery points to be visited by vehicles subsequently. Each shipment involves exactly two locations, a pickup and a delivery location.
+relations | array | - | Specifies an arbitrary number of additional relations between and among services and shipments.
 
 ### Algorithm
 
