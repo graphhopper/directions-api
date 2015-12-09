@@ -286,39 +286,12 @@ The `capacity` in a vehicle type makes only sense if there is e.g. a `size` defi
 
 #### Full specification
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>type_id<br></td>
-    <td>string</td>
-    <td>true<br></td>
-    <td><br></td>
-  </tr>
-  <tr>
-    <td>profile<br></td>
-    <td>string<br></td>
-    <td><br></td>
-    <td>default is "car". you can use either "car", "bike", "mtb" for mounting bike, "motorcycle", "racingbike" or "foot".<br>it determines whether which network to use for routing the vehicle.<br></td>
-  </tr>
-   <tr>
-      <td>capacity<br></td>
-      <td>array<br></td>
-      <td><br></td>
-      <td>array of capacity dimension values, e.g. max. volume and weight. default is [ 0 ].<br></td>
-    </tr>
-  <tr>
-      <td>speed_factor<br></td>
-      <td>double<br></td>
-      <td><br></td>
-      <td>default is 1.0
-      <br></td>
-    </tr>
-</table>
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+type_id | string | x | - | Specifies the id of the vehicle type. If a vehicle needs to be of this type, it should refer to this with its `type_id` attribute.
+profile | string | - | car | Specifies the profile of this type. You can use either `car`, `bike`, `mtb` for mounting bike, `motorcycle`, `racingbike` or `foot`. The profile is uesed to determine the network, speed and other physical attributes to use for routing the vehicle.
+capacity | array | - | [ 0 ] | Specifies an array of capacity dimension values. If there are two dimensions such as volume and weight then it needs to defined as `[ 1000, 300 ]` for a max. volume of 1000 and a max. weight of 300. 
+speed_factor | double | - | 1.0 | Specifies a speed factor for this vehicle type. If the vehicle that uses this type needs to only half as fast as what is actually calculated with our routing engine then reduce the speed factor to 0.5.
 
 ### Services or Shipments
 
