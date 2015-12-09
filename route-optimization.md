@@ -221,61 +221,19 @@ break | object | - | no break | Specifies the driver break.
 
 #### Address object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>location_id<br></td>
-    <td>string</td>
-    <td>true<br></td>
-    <td><br></td>
-  </tr>
-  <tr>
-    <td>lon<br></td>
-    <td>double<br></td>
-    <td>true<br></td>
-    <td>longitude of address location<br></td>
-  </tr>
-  <tr>
-      <td>lat<br></td>
-      <td>double<br></td>
-      <td>true<br></td>
-      <td>latitude of address location</td>
-    </tr>
-</table>
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+location_id | string | x | - | Specifies the id of the location.
+lon | double | x | - | Longitude of location. 
+lat | double | x | - | Latitude of location.
 
 #### Break object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>earliest<br></td>
-    <td>long</td>
-    <td>true<br></td>
-    <td>earliest start time of break</td>
-  </tr>
-  <tr>
-      <td>latest<br></td>
-      <td>long</td>
-      <td>true<br></td>
-      <td>latest start time of break</td>
-    </tr>
-  <tr>
-        <td>duration<br></td>
-        <td>long</td>
-        <td>true<br></td>
-        <td>duration of break</td>
-      </tr>
-</table>
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+earliest | long | x | - | Specifies the earliest start time of the break.
+latest | long | x | - | Specifies the latest start time of break.
+duration | long | x | - | Specifies the duration of the break.
 
 ### Vehicle Types
 
