@@ -28,13 +28,13 @@ Parameter   | Default | Description
 :-----------|:--------|:-----------
 point       | -       | Specifiy multiple points for which the route should be calculated. The order is important. Specify at least two points. The maximum number depends on the selected package.
 locale      | en      | The locale of the result. E.g. `pt_PT` for Portuguese or `de` for German
+optimize    | false   | If `false` the order of the locations will be identical to the order of the point parameters. If you have more than 2 points you can set this optimize parameter to `true` and the points will be sorted regarding the minimum overall time - e.g. suiteable for sightseeing tours or salesman. Keep in mind that the location limit of the [Route Optimization API](./route-optimization.md) applies and the [credit costs](FAQ.md#what-is-one-credit) are higher! Note to all customers with a self-hosted license: this parameter is only available if your package includes the Route Optimization API.
 instructions| true    | If instruction should be calculated and returned
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot, bike, mtb, racingbike, motorcycle, small_truck, bus and truck. See [here](./supported-vehicle-profiles.md) for the details.
 elevation   | false   | If `true` a third dimension - the elevation - is included in the polyline or in the GeoJson. IMPORTANT: If enabled you have to use a modified version of the decoding method or set points_encoded to `false`. See the points_encoded attribute for more details. Additionally a request can fail if the vehicle does not support elevation. See the features object for every vehicle.
-optimize    | false   | If `false` the order of the locations will be identical to the order of the point parameters. If you have more than 2 points you can set this optimize parameter to `true` and the points will be sorted regarding the minimum overall time - e.g. suiteable for sightseeing tours or salesman. Keep in mind that the location limit of the [Route Optimization API](./route-optimization.md) applies and the [credit costs](FAQ.md#what-is-one-credit) are higher! Note to all customers with a self-hosted license: this parameter is only available if your package includes the Route Optimization API.
 points_encoded     | true    | If `false` a GeoJson array in `point` is returned. If `true` the resulting route will be encoded leading to big bandwith reduction. You'll need a special handling for the decoding of this string on the client-side, see the Java or JavaScript code above. It is especially important to use our decoding methods if you set `elevation=true`!
-debug              | false   | If true, the output will be formated.
 calc_points        | true    | If the points for the route should be calculated at all. Sometimes only the distance and time is necessary.
+debug              | false   | If true, the output will be formated.
 type               | json    | Specifies the resulting format of the route, for json the content type will be application/json. Other possible format options: <br> jsonp you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> gpx, the content type will be application/xml
 min_path_precision | 1       | Not recommended to change. Increase this number if you want to further reduce bandwith.
 gpx.track     |	  true  |   	Include <trk> tag in gpx result. Only applicable if type=gpx is specified.
@@ -50,7 +50,6 @@ JSON path/attribute        | Description
 paths                      | An array of possible paths
 paths[0].distance          | The overall distance of the route, in meter
 paths[0].time              | The overall time of the route, in ms
-paths[0].points            | The polyline encoded coordinates of the path. Order is lat,lon,elelevation as it is no geoJson!
 paths[0].points_encoded    | Is true if the points are encoded, if not paths[0].points contains the geo json of the path (then order is lon,lat,elevation), which is easier to handle but consumes more bandwidth compared to encoded version
 paths[0].bbox              | The bounding box of the route, format: <br> minLon, minLat, maxLon, maxLat
 paths[0].instructions      | Contains information about the instructions for this route. The last instruction is always the Finish instruction and takes 0ms and 0meter. Keep in mind that instructions are currently under active development and can sometimes contain misleading information, so, make sure you always show an image of the map at the same time when navigating your users!
@@ -61,6 +60,7 @@ paths[0].instructions[0].interval             | An array containing the first an
 paths[0].instructions[0].sign                 | A number which specifies the sign to show e.g. for right turn etc <br>TURN_SHARP_LEFT = -3<br>TURN_LEFT = -2<br>TURN_SLIGHT_LEFT = -1<br>CONTINUE_ON_STREET = 0<br>TURN_SLIGHT_RIGHT = 1<br>TURN_RIGHT = 2<br>TURN_SHARP_RIGHT = 3<br>FINISH = 4<br>VIA_REACHED = 5<br>USE_ROUNDABOUT = 6
 paths[0].instructions[0].exit_number          | [optional] Only available for USE_ROUNDABOUT instructions. The count of exits at which the route leaves the roundabout.
 paths[0].instructions[0].turn_angle           | [optional] Only available for USE_ROUNDABOUT instructions. The radian of the route within the roundabout: 0<r<2*PI for clockwise and -2PI<r<0 for counterclockwise transit. Is null the direction of rotation is undefined.
+paths[0].points_order     | This array is only returned if the `optimize` parameter is specified and contains the used order of the input `point` parameters i.e. the start, via and end points.
 
 ### Example output for the case type=json
 
