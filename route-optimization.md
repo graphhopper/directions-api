@@ -71,10 +71,10 @@ Name   | Type | Required | Description
 :------|:-----|:---------|:-----------
 [algorithm](#algorithm) | object | - | This tells the algorithm what kind of problem needs to be solved, i.e. you can configure problem type and objective.
 [vehicles](#vehicles) | array | x | Specifies the available vehicles.
-vehicle_types | array | - | Specifies the available vehicle types that are referred to by the specified vehicles.
-services | array | - | Specifies the available services, i.e. pickup, delivery or any other points to be visited by vehicles. Each service only involves exactly one location.
-shipments | array | - | Specifies the available shipments, i.e. pickup AND delivery points to be visited by vehicles subsequently. Each shipment involves exactly two locations, a pickup and a delivery location.
-relations | array | - | Specifies an arbitrary number of additional relations between and among services and shipments.
+[vehicle_types](#vehicle-types) | array | - | Specifies the available vehicle types that are referred to by the specified vehicles.
+[services](#services-or-shipments) | array | - | Specifies the available services, i.e. pickup, delivery or any other points to be visited by vehicles. Each service only involves exactly one location.
+[shipments](#services-or-shipments) | array | - | Specifies the available shipments, i.e. pickup AND delivery points to be visited by vehicles subsequently. Each shipment involves exactly two locations, a pickup and a delivery location.
+[relations](#relations) | array | - | Specifies an arbitrary number of additional relations between and among services and shipments.
 
 ### Algorithm
 
