@@ -67,8 +67,6 @@ The general input structure is
 }
 ```
 
-Full specification: 
-
 <table>
   <tr>
     <th>Name<br></th>
@@ -113,9 +111,6 @@ Full specification:
       <td>array of relations between and among services and shipments<br></td>
     </tr>
 </table>
-
-
-Post this problem to the [optimization endpoint](#endpoint)
 
 ### Algorithm
 
