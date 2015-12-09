@@ -207,68 +207,17 @@ is still comparably slow when it comes to vehicle routing problems (this is goin
 
 #### Vehicle object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>vehicle_id<br></td>
-    <td>string</td>
-    <td>true<br></td>
-    <td><br></td>
-  </tr>
-  <tr>
-      <td>type_id</td>
-      <td>string</td>
-      <td></td>
-      <td>the type_id refers to the vehicle's vehicle type.<br>if it is omitted, the default type is used (see - [vehicle types](#vehicle-types))</td>
-    </tr>
-  <tr>
-    <td>start_address<br></td>
-    <td>object<br></td>
-    <td>true<br></td>
-    <td><br></td>
-  </tr>
-  <tr>
-      <td>end_address<br></td>
-      <td>object<br></td>
-      <td><br></td>
-      <td>If you omit end_address and if return_to_depot is true,<br>then the vehicle returns to its start_address.<br>Otherwise, see below.</td>
-    </tr>
-  <tr>
-    <td>return_to_depot<br></td>
-    <td>boolean</td>
-    <td></td>
-    <td>default value is true, i.e. the vehicle returns to its start_address.<br>if false, the optimization decides at which customer<br> location the vehicle should end</td>
-  </tr>
-  <tr>
-      <td>earliest_start</td>
-      <td>long</td>
-      <td></td>
-      <td>earliest start of vehicle in seconds</td>
-    </tr>
-   <tr>
-         <td>latest_end</td>
-         <td>long</td>
-         <td></td>
-         <td>latest end of vehicle in seconds, i.e. the time the vehicle needs to be at its end location at latest</td>
-       </tr>
-<tr>
-         <td>skills</td>
-         <td>array</td>
-         <td></td>
-         <td>array of skills, i.e. array of string (not case sensitive)</td>
-       </tr>
-  <tr>
-           <td>break</td>
-           <td>object</td>
-           <td></td>
-           <td>the driver break</td>
-         </tr>     
-</table>
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+vehicle_id | string | x | - | Specifies the id of the vehicle. Ids need to be unique, thus if there two vehicles with the same id, an exception is thrown.
+type_id | string | - | default-type | The type_id refers to specified vehicle type (see [vehicle types](#vehicle-types)). If it is omitted a default type will be used. 
+start_address | object | x | - | -
+end_address | object | - | - | If this is omitted AND `return_to_depot` is `true` then the vehicle needs to return to its `start_address`.
+return_to_depot | boolean | - | `true` | If false, the optimization determines at which customer location the vehicle should end.
+earliest_start | long | - | `0` | Earliest start of vehicle in seconds.
+latest_end | long | - | `Long.MAX_VALUE` | Latest end of vehicle in seconds, i.e. the time the vehicle needs to be at its end location at latest.
+skills | array | - | `[]` | Array of skills, i.e. array of string (not case sensitive).
+break | object | - | no break | Specifies the driver break.
 
 #### Address object
 
