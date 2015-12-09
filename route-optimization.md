@@ -80,7 +80,7 @@ Full specification:
       <td>algorithm<br></td>
       <td>object</td>
       <td><br></td>
-      <td>to configur the algorithm, e.g. problem type and objective<br></td>
+      <td>to configure the algorithm, e.g. problem type and objective<br></td>
     </tr>
   <tr>
     <td>vehicles<br></td>
