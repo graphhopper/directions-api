@@ -152,26 +152,10 @@ to minimize the maximum of your vehicle routes' completion time, i.e. minimize t
 
 #### Algorithm object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>problem_type<br></td>
-    <td>string</td>
-    <td><br></td>
-    <td>default is `min`. You can choose between `min` and `min-max`</td>
-  </tr>  
-  <tr>
-    <td>objective<br></td>
-    <td>string</td>
-    <td><br></td>
-    <td>default is `transport_time`. You can choose between `transport_time` and `completion_time`</td>
-  </tr>
-</table>
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+problem_type | string | - | `min` | You can choose between `min` and `min-max`.
+objective | string | - | `transport_time` | You can choose between `transport_time` and `completion_time`.
 
 ### Vehicles
 
