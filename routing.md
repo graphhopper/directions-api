@@ -60,7 +60,7 @@ paths[0].instructions[0].interval             | An array containing the first an
 paths[0].instructions[0].sign                 | A number which specifies the sign to show e.g. for right turn etc <br>TURN_SHARP_LEFT = -3<br>TURN_LEFT = -2<br>TURN_SLIGHT_LEFT = -1<br>CONTINUE_ON_STREET = 0<br>TURN_SLIGHT_RIGHT = 1<br>TURN_RIGHT = 2<br>TURN_SHARP_RIGHT = 3<br>FINISH = 4<br>VIA_REACHED = 5<br>USE_ROUNDABOUT = 6
 paths[0].instructions[0].exit_number          | [optional] Only available for USE_ROUNDABOUT instructions. The count of exits at which the route leaves the roundabout.
 paths[0].instructions[0].turn_angle           | [optional] Only available for USE_ROUNDABOUT instructions. The radian of the route within the roundabout: 0<r<2*PI for clockwise and -2PI<r<0 for counterclockwise transit. Is null the direction of rotation is undefined.
-paths[0].points_order     | This array is only returned if the `optimize` parameter is specified and contains the used order of the input `point` parameters i.e. the start, via and end points.
+paths[0].points_order     | This zero-based array is only returned if the `optimize` parameter is specified and contains the used order of the input `point` parameters i.e. the start, via and end points.
 
 ### Example output for the case type=json
 
