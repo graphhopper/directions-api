@@ -118,8 +118,8 @@ to minimize the maximum of your vehicle routes' completion time, i.e. minimize t
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
-problem_type | string | - | `min` | You can choose between `min` and `min-max`. `min` minimizes the sum of what is specified in `objective`, e.g. if objective is `transport_time`, it minimizes the sum of transport times. `min-max` minimizes the maximum of what is specified in `objective`.
-objective | string | - | `transport_time` | You can choose between `transport_time` and `completion_time`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
+problem_type | string | - | min | You can choose between `min` and `min-max`. `min` minimizes the sum of what is specified in `objective`, e.g. if objective is `transport_time`, it minimizes the sum of transport times. `min-max` minimizes the maximum of what is specified in `objective`.
+objective | string | - | transport_time | You can choose between `transport_time` and `completion_time`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
 
 ### Vehicles
 
@@ -213,10 +213,10 @@ vehicle_id | string | x | - | Specifies the id of the vehicle. Ids need to be un
 type_id | string | - | default-type | The type_id refers to specified vehicle type (see [vehicle types](#vehicle-types)). If it is omitted a default type will be used. 
 start_address | object | x | - | -
 end_address | object | - | - | If this is omitted AND `return_to_depot` is `true` then the vehicle needs to return to its `start_address`.
-return_to_depot | boolean | - | `true` | If false, the optimization determines at which customer location the vehicle should end.
-earliest_start | long | - | `0` | Earliest start of vehicle in seconds.
-latest_end | long | - | `Long.MAX_VALUE` | Latest end of vehicle in seconds, i.e. the time the vehicle needs to be at its end location at latest.
-skills | array | - | `[]` | Array of skills, i.e. array of string (not case sensitive).
+return_to_depot | boolean | - | true | If false, the optimization determines at which customer location the vehicle should end.
+earliest_start | long | - | 0 | Earliest start of vehicle in seconds.
+latest_end | long | - | Long.MAX_VALUE | Latest end of vehicle in seconds, i.e. the time the vehicle needs to be at its end location at latest.
+skills | array | - | no skills | Array of skills, i.e. array of string (not case sensitive).
 break | object | - | no break | Specifies the driver break.
 
 #### Address object
