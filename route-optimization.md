@@ -69,8 +69,8 @@ The general input structure is
 
 Name   | Type | Required | Description
 :------|:-----|:---------|:-----------
-algorithm | object | - | This tells the algorithm what kind of problem needs to be solved, i.e. you can configure problem type and objective.
-vehicles | array | x | Specifies the available vehicles.
+[algorithm](#algorithm) | object | - | This tells the algorithm what kind of problem needs to be solved, i.e. you can configure problem type and objective.
+[vehicles](#vehicles) | array | x | Specifies the available vehicles.
 vehicle_types | array | - | Specifies the available vehicle types that are referred to by the specified vehicles.
 services | array | - | Specifies the available services, i.e. pickup, delivery or any other points to be visited by vehicles. Each service only involves exactly one location.
 shipments | array | - | Specifies the available shipments, i.e. pickup AND delivery points to be visited by vehicles subsequently. Each shipment involves exactly two locations, a pickup and a delivery location.
