@@ -216,8 +216,8 @@ end_address | object | - | - | If this is omitted AND `return_to_depot` is `true
 return_to_depot | boolean | - | true | If false, the optimization determines at which customer location the vehicle should end.
 earliest_start | long | - | 0 | Earliest start of vehicle in seconds.
 latest_end | long | - | Long.MAX_VALUE | Latest end of vehicle in seconds, i.e. the time the vehicle needs to be at its end location at latest.
-skills | array | - | no skills | Array of skills, i.e. array of string (not case sensitive).
-break | object | - | no break | Specifies the driver break.
+skills | array | - | - | Array of skills, i.e. array of string (not case sensitive).
+break | object | - | - | Specifies the driver break.
 
 #### Address object
 
