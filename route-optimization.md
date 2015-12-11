@@ -490,34 +490,11 @@ Thus the special id of shipments is created like this: {shipmentId}_{pickup|deli
 
 #### Relation object
 
- <table>
-   <tr>
-     <th>Name<br></th>
-     <th>Type</th>
-     <th>Required</th>
-     <th>Description</th>
-   </tr>
-   <tr>
-     <td>type<br></td>
-     <td>String</td>
-     <td>true<br></td>
-     <td>either 'in_same_route', 'in_sequence' or 'in_direct_sequence'<br></td>
-   </tr>
-   <tr>
-       <td>ids<br></td>
-       <td>String</td>
-       <td>true<br></td>
-       <td>array of ids<br></td>
-     </tr>
-  <tr>
-       <td>vehicle_id<br></td>
-       <td>String</td>
-       <td>false<br></td>
-       <td>id of pre assigned vehicle<br></td>
-     </tr>
- </table>
-
-
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+type | String | x | - | Specifies the type of relation. It must be either of type `in_same_route`, `in_sequence` or `in_direct_sequence`.
+ids | array | - | - | Specifies an array of shipment and/or service ids that are in relation. If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword 'pickup' or 'delivery'. For example, to ensure that the pickup and delivery of the shipment with the id 'myShipment' are direct neighbors, you need the following specification: `[ "myShipment_pickup", "myShipment_delivery"]`
+vehicle_id | String | - | - | Id of pre-assigned vehicle, i.e. the vehicle id that is determined to conduct the services and shipments in this relation.
 
 Learn more about it in the [live API docs](https://graphhopper.com/api/1/vrp/documentation/).
 
