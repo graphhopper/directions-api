@@ -385,56 +385,15 @@ allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. 
 
 #### Shipment object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>id<br></td>
-    <td>string</td>
-    <td>true<br></td>
-    <td><br></td>
-  </tr>
-  <tr>
-      <td>name<br></td>
-      <td>string</td>
-      <td><br></td>
-      <td>meaningful name<br></td>
-    </tr>
- <tr>
-       <td>pickup<br></td>
-       <td>object</td>
-       <td><br></td>
-       <td>your pickup specification. see below.<br></td>
-     </tr>
- <tr>
-        <td>delivery<br></td>
-        <td>object</td>
-        <td><br></td>
-        <td>your delivery specification. see below.<br></td>
-      </tr>
-    <tr>
-        <td>size<br></td>
-        <td>array</td>
-        <td><br></td>
-        <td>size of shipment. it can have multiple dimensions,<br> e.g. [ 2, 1, 40 ] to specify three dimension. default is [ 0 ]<br></td>
-      </tr>
-<tr>
-         <td>required_skills</td>
-         <td>array</td>
-         <td></td>
-         <td>array of required skills, i.e. array of string (not case sensitive)</td>
-       </tr>
-<tr>
-         <td>allowed_vehicles</td>
-         <td>array</td>
-         <td></td>
-         <td>array of allowed vehicles, i.e. you can specify specific vehicles in advance</td>
-       </tr>
-</table>
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+id | string | x | - | Specifies the id of the shipment. Ids need to be unique so there must not be two services/shipments with the same id.
+name | string | - | - | Meaningful name for service, e.g. `delivery pizza`.
+pickup | object | x | - | Specifies pickup (see pickup object below).
+delivery | object | x | - | Specifies delivery (see delivery object below).
+size | array | - | [0] | Size can have multiple dimensions and should be in line with the capacity dimension array of the vehicle type. For example, if the item that needs to be delivered has two size dimension, volume and weight, then specify it as follow `[ 20, 5 ]` assuming a volume of 20 and a weight of 5.
+required_skills | array | - | - | Specifies an array of required skills, i.e. array of string (not case sensitive). For example, if this service needs to be conducted by a technician having a `drilling_machine` and a `screw_driver` then specify the array as follows: `["drilling_machine","screw_driver"]`. This means that the service can only be done by a vehicle (technician) that has the skills `drilling_machine` AND `screw_driver` in its skill array. Otherwise it remains unassigned.
+allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids. For example, if this service can only be conducted EITHER by `technician_peter` OR `technician_stefan` specify this as follows: `["technician_peter","technician_stefan"]`.
 
 #### Pickup or delivery object
 
