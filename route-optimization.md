@@ -375,7 +375,7 @@ The `size`-array limits the set of possible vehicles if a `capacity`-array is de
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 id | string | x | - | Specifies the id of the service. Ids need to be unique so there must not be two services/shipments with the same id.
-name | string | - | no_name | Meaningful name for service, e.g. `delivery pizza`.
+name | string | - | - | Meaningful name for service, e.g. `delivery pizza`.
 address | object | x | - | Specifies service address.
 duration | long | - | 0 | Specifies the duration of the service, i.e. how long it takes at the customer site.  
 size | array | - | [0] | Size can have multiple dimensions and should be in line with the capacity dimension array of the vehicle type. For example, if the item that needs to be delivered has two size dimension, volume and weight, then specify it as follow `[ 20, 5 ]` assuming a volume of 20 and a weight of 5.
