@@ -397,56 +397,18 @@ allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. 
 
 #### Pickup or delivery object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>address<br></td>
-    <td>object</td>
-    <td>true<br></td>
-    <td>see address spec above<br></td>
-  </tr>
-  <tr>
-      <td>duration<br></td>
-      <td>long</td>
-      <td><br></td>
-      <td>duration of pickup or delivery in seconds<br></td>
-    </tr>
- <tr>
-       <td>time_windows<br></td>
-       <td>array</td>
-       <td><br></td>
-       <td>array of time windows. currently only one time window is supported. see spec above<br></td>
-     </tr>
-</table>
-
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+address | string | x | - | Specifies pickup or delivery address.
+duration | string | - | 0 | Specifies the duration of the pickup or delivery, e.g. how long it takes unload items at the customer site.
+time_windows | object | - | - | Specifies an array of time window objects (see time window object below). Currently, only one time window is supported. For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
 
 #### Time window object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>earliest<br></td>
-    <td>long</td>
-    <td>true<br></td>
-    <td>earliest operation start time in seconds<br></td>
-  </tr>
-  <tr>
-      <td>latest<br></td>
-      <td>long</td>
-      <td>true<br></td>
-      <td>latest operation start time in seconds<br></td>
-    </tr>
-</table>
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+earliest | long | - | 0 | Specifies the opening time of the time window, i.e. the earliest time the service can start.
+latest | long | - | Long.MAX_VALUE | Specifies the closing time of the time window, i.e. the latest time the service can start.
 
 ### Relations
 Beyond shipments there are three additional relations you can use to establish a relationship between services and shipments:
