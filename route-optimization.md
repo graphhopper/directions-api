@@ -372,62 +372,16 @@ The `size`-array limits the set of possible vehicles if a `capacity`-array is de
 
 #### Service object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>id<br></td>
-    <td>string</td>
-    <td>true<br></td>
-    <td><br></td>
-  </tr>
-  <tr>
-    <td>name<br></td>
-    <td>string<br></td>
-    <td><br></td>
-    <td>meaningful name, e.g. "visit museum"<br></td>
-  </tr>
-  <tr>
-      <td>address<br></td>
-      <td>object<br></td>
-      <td>true<br></td>
-      <td></td>
-    </tr>
-   <tr>
-         <td>duration<br></td>
-         <td>long<br></td>
-         <td><br></td>
-         <td>duration of service in seconds. default is 0.</td>
-       </tr>
-    <tr>
-      <td>size<br></td>
-      <td>array<br></td>
-      <td><br></td>
-      <td>size of service. it can have multiple dimensions,<br> e.g. [ 2, 1, 40 ] to specify three dimension. default is [ 0 ]</td>
-    </tr>
-    <tr>
-      <td>time_windows<br></td>
-      <td>array<br></td>
-      <td><br></td>
-      <td>array of time_windows. currently, only one time window is supported</td>
-    </tr>
-<tr>
-         <td>required_skills</td>
-         <td>array</td>
-         <td></td>
-         <td>array of required skills, i.e. array of string (not case sensitive)</td>
-       </tr>
-<tr>
-         <td>allowed_vehicles</td>
-         <td>array</td>
-         <td></td>
-         <td>array of allowed vehicles, i.e. you can specify specific vehicles in advance</td>
-       </tr>
-</table>
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+id | string | x | - | Specifies the id of the service. Ids need to be unique so there must not be two services/shipments with the same id.
+name | string | - | no_name | Meaningful name for service, e.g. `delivery pizza`.
+address | object | x | - | Specifies service address.
+duration | long | - | 0 | Specifies the duration of the service, i.e. how long it takes at the customer site.  
+size | array | - | [0] | Size can have multiple dimensions and should be in line with the capacity dimension array of the vehicle type. For example, if the item that needs to be delivered has two size dimension, volume and weight, then specify it as follow [ 20, 5 ] assuming a volume of 20 and a weight of 5.
+time_windows | array | - | no_time_window | Specifies an array of time_windows. Currently, only one time window is supported.
+required_skills | array | - | no_skills | Specifies an array of required skills, i.e. array of string (not case sensitive). For example, if this service needs to be conducted by technician that have a `drilling_machine` and a `screw_driver` then specify the array as follows: `["drilling_machine","screw_driver"]`. This means that the service can only be done by vehicle (technician) that has `drilling_machine` AND a `screw_driver` in its skill array. Otherwise it remains unassigned.
+allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids. For example, if this service can only be conducted either by `technician_peter` OR `technician_stefan` specify: `["technician_peter","technician_stefan"]`.
 
 #### Shipment object
 
