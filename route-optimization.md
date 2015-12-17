@@ -471,7 +471,23 @@ This enforces n services or shipments to be in direct sequence. It can be specif
 ```
  
 yielding service j to occur directly after service i, and service k to occur directly after j (i.e. in strong order). Again, a vehicle can
-be assigned a priori by adding a `vehicle_id` to the relation.
+be assigned a priori by adding a `vehicle_id` to the relation. If you want service i to be the first in the route, use the special ID `start` as follows:
+
+```json
+ {
+     "type": "in_direct_sequence",
+     "ids": ["start","service_i_id","service_j_id","service_k_id"]
+ }
+```
+
+Latter enforces the direct sequence of i, j and k at the beginning of the route. If this sequence needs to be at the end of the route, use the special ID `end` like this:
+
+```json
+ {
+     "type": "in_direct_sequence",
+     "ids": ["service_i_id","service_j_id","service_k_id","end"]
+ }
+```
 
 <b>NOTE</b>: If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries
 of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword 'pickup' or 'delivery'. For example, to
@@ -493,7 +509,7 @@ Thus the special id of shipments is created like this: {shipmentId}_{pickup|deli
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 type | String | x | - | Specifies the type of relation. It must be either of type `in_same_route`, `in_sequence` or `in_direct_sequence`.
-ids | array | - | - | Specifies an array of shipment and/or service ids that are in relation. If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword 'pickup' or 'delivery'. For example, to ensure that the pickup and delivery of the shipment with the id 'myShipment' are in relation, you need the following specification: `[ "myShipment_pickup", "myShipment_delivery"]`
+ids | array | - | - | Specifies an array of shipment and/or service ids that are in relation. If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword 'pickup' or 'delivery' (see example above). If you want to place a service or shipment activity at the beginning of your route, use the special ID `start`. In turn, use `end` to place it at the end of the route.
 vehicle_id | String | - | - | Id of pre-assigned vehicle, i.e. the vehicle id that is determined to conduct the services and shipments in this relation.
 
 Learn more about it in the [live API docs](https://graphhopper.com/api/1/vrp/documentation/).
