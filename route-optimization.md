@@ -313,6 +313,10 @@ A service can be specified as:
         {
             "earliest": 0,
             "latest": 3600
+        },
+        {
+            "earliest": 7200,
+            "latest": 10800
         }
      ],
      "required_skills": ["drilling-machine", "water-level"],
@@ -379,7 +383,7 @@ name | string | - | - | Meaningful name for service, e.g. `delivery pizza`.
 address | object | x | - | Specifies service address.
 duration | long | - | 0 | Specifies the duration of the service, i.e. how long it takes at the customer site.  
 size | array | - | [0] | Size can have multiple dimensions and should be in line with the capacity dimension array of the vehicle type. For example, if the item that needs to be delivered has two size dimension, volume and weight, then specify it as follow `[ 20, 5 ]` assuming a volume of 20 and a weight of 5.
-time_windows | array | - | - | Specifies an array of time window objects (see time window object below). Currently, only one time window is supported. For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
+time_windows | array | - | - | Specifies an array of time window objects (see time window object below). For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
 required_skills | array | - | - | Specifies an array of required skills, i.e. array of string (not case sensitive). For example, if this service needs to be conducted by a technician having a `drilling_machine` and a `screw_driver` then specify the array as follows: `["drilling_machine","screw_driver"]`. This means that the service can only be done by a vehicle (technician) that has the skills `drilling_machine` AND `screw_driver` in its skill array. Otherwise it remains unassigned.
 allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids. For example, if this service can only be conducted EITHER by `technician_peter` OR `technician_stefan` specify this as follows: `["technician_peter","technician_stefan"]`.
 
@@ -401,7 +405,7 @@ Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 address | string | x | - | Specifies pickup or delivery address.
 duration | string | - | 0 | Specifies the duration of the pickup or delivery, e.g. how long it takes unload items at the customer site.
-time_windows | object | - | - | Specifies an array of time window objects (see time window object below). Currently, only one time window is supported. For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
+time_windows | object | - | - | Specifies an array of time window objects (see time window object below). For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
 
 #### Time window object
 
