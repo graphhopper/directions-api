@@ -36,7 +36,7 @@ The Matrix API calculates the well known distance-matrix for a set of points, i.
 
 A simple illustration for a 3x3 matrix with identical from and to points:
 
-            |to_point1|to_point2|to_point3
+ -          |to_point1|to_point2|to_point3
 :-----------|:--------|:--------|:--------
 from_point1 |0        |1->2     | 1->3
 from_point2 |2->1     |0        | 2->3
@@ -44,7 +44,7 @@ from_point3 |3->1     |3->2     | 0
 
 A simple illustration for a 1x3 matrix with different start- and end-points:
 
-            |to_point1   | to_point2 | t_point3
+ -          | to_point1  | to_point2 | t_point3
 :-----------|:-----------|:----------|:--------
 from_pointA |A->1        |A->2       |A->3
 
