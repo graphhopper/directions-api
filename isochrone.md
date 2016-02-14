@@ -1,5 +1,7 @@
 ## Isochrone API
 
+*Alpha status notice*: Currently this API is available only for selected developers and the underlying API is subject to change. Watch the progress [here](https://github.com/graphhopper/directions-api/issues/4) and [ask us](https://graphhopper.com/#contact) to take part.
+
 Calculating an isochrone of a coordinate (`latitude,longitude`) means to calculate
 "a line connecting points at which a vehicle arrives at the same time", 
 see [Wikipedia](http://en.wikipedia.org/wiki/Isochrone_map).
