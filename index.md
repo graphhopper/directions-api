@@ -19,6 +19,10 @@ If you have problems or questions please see the [FAQ.md](FAQ.md) or [contact us
 
 Or search [our public forum](https://discuss.graphhopper.com/c/directions-api).
 
+## Pricing
+
+The public pricing is available [here](https://graphhopper.com/#pricing) or with all details [in the dashboard](https://graphhopper.com/dashboard/).
+
 ## API Clients and Examples
 
  * [JavaScript](https://github.com/graphhopper/directions-api-js-client) - try the [live examples](https://graphhopper.com/api/1/examples/)
