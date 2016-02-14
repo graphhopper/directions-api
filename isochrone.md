@@ -1,4 +1,4 @@
-## Isochrone Web API Docs
+## Isochrone API
 
 Calculating an isochrone of a coordinate (`latitude,longitude`) means to calculate
 "a line connecting points at which a vehicle arrives at the same time", 
