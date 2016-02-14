@@ -9,6 +9,7 @@ pages:
   - Route Optimization API: route-optimization.md
   - Geocoding API: geocoding.md
   - Matrix API: matrix.md
+  - Isochrone API: isochrone.md
 - Vehicles: supported-vehicle-profiles.md
 - FAQ: FAQ.md
 extra_css: 
