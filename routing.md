@@ -146,7 +146,7 @@ See the error codes and JSON structure on the [overview page](https://graphhoppe
 
 ### Area information
 
-If you need to find out defails about the supported features e.g. which profiles and if foot supports elevation or you need to ping the routing service then use '/api/1/route/info'
+If you need to find out details about the supported features e.g. which profiles and if foot supports elevation or you need to ping the routing service then use '/api/1/route/info'
 
 
 ### Example output:

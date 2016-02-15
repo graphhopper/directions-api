@@ -2,13 +2,29 @@
 
 *Alpha status notice*: Currently this API is available only for selected developers and the underlying API is subject to change. Watch the progress [here](https://github.com/graphhopper/directions-api/issues/4) and [ask us](https://graphhopper.com/#contact) to take part.
 
+### Endpoint
+
+The endpoint is `https://graphhopper.com/api/[version]/isochrone`
+
+You get an example response via:
+
+`curl "https://graphhopper.com/api/1/isochrone?point=51.131108%2C12.414551&key=[YOUR_KEY]"`
+
+Where you need to replace the key with your own
+
+### Introduction
+
 Calculating an isochrone of a coordinate (`latitude,longitude`) means to calculate
 "a line connecting points at which a vehicle arrives at the same time", 
 see [Wikipedia](http://en.wikipedia.org/wiki/Isochrone_map).
 
-In our case the line is a polygon, the vehicle and time is configurable.
+### API Clients and Examples
 
-The URL path to obtain the coordinate  is `/isochrone`
+See the [clients](./index.md) section in the main document.
+
+### Parameters
+
+All official parameters are shown in the following table
 
 Parameter   | Default | Description
 :-----------|:--------|:-----------
@@ -45,40 +61,3 @@ polygons             | The list of polygons
 polygons[0]          | One polygon in [GeoJson format](http://en.wikipedia.org/wiki/GeoJSON) can be directly used e.g. in JavaScript framework Leaflet via `L.geoJson(json.polygons).addTo(map)`
 polygons[n - 1]      | The number of polygon is identical to the specified buckets in the query. Every polygon contains the bucket number in the properties section of the GeoJson.
 
-
-## jQuery/Leaflet Example
-
-```javascript
-function getReach(lat, lng) {
-    var buckets = 5;
-    var timeLimitInSeconds = 20 * 60;
-    var vehicle = "car";
-    var url = "http://graphhopper.com/api/1/isochrone?"
-            + "point=" + lat + "," + lng
-            + "&limit=" + timeLimitInSeconds
-            + "&vehicle=" + vehicle
-            + "&buckets=" + buckets            
-            + "&key=" + your_key;
-
-    return $.ajax({
-        url: url,
-        type: "GET",
-        dataType: "json",
-        timeout: 5000
-    }).fail(function(err) {
-        console.log(err);
-    }).pipe(function(json) {
-        if (reachLayer)
-            reachLayer.clearLayers();
-
-        reachLayer = L.geoJson(json.polygons, {
-            style: function(feature) {
-                var num = feature.properties.bucket;
-                var color = (num % 2 === 0) ? "#00cc33" : "blue";
-                return {color: color, "weight": num + 2, "opacity": 0.6};
-            }
-        });
-        map.addLayer(reachLayer);
-    });
-}
-```
