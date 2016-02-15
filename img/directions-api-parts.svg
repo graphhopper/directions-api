@@ -11,7 +11,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="637.79529"
-   height="336.61417"
+   height="283.46457"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -41,7 +41,7 @@
        x2="764.47723"
        y2="218.79076"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.74193461,0,0,0.83513896,66.221501,702.63701)" />
+       gradientTransform="matrix(0.74193461,0,0,0.7024117,66.221501,757.74794)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -51,7 +51,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="264.3077"
+     inkscape:cx="140.02199"
      inkscape:cy="222.62775"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -86,47 +86,15 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-715.74754)">
+     transform="translate(0,-768.89715)">
     <rect
-       style="fill:url(#linearGradient3793);fill-opacity:1;stroke:none"
+       style="fill:url(#linearGradient3793);fill-opacity:1;stroke:#bbbbbb;stroke-opacity:1"
        id="rect3017"
        width="627.46472"
-       height="328.09033"
+       height="275.94748"
        x="5.8068271"
-       y="721.31256"
+       y="773.45544"
        ry="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:29.67820549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="86.767235"
-       y="773.99091"
-       id="text2985"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2987"
-         x="86.767235"
-         y="773.99091"
-         style="font-weight:bold;-inkscape-font-specification:Sans Bold">GraphHopper Directions API</tspan><tspan
-         sodipodi:role="line"
-         x="86.767235"
-         y="811.08868"
-         id="tspan2989" /><tspan
-         sodipodi:role="line"
-         x="86.767235"
-         y="848.1864"
-         id="tspan2995" /><tspan
-         sodipodi:role="line"
-         x="86.767235"
-         y="885.28418"
-         id="tspan2997" /><tspan
-         sodipodi:role="line"
-         x="86.767235"
-         y="922.38196"
-         id="tspan2991" /><tspan
-         sodipodi:role="line"
-         x="86.767235"
-         y="959.47968"
-         id="tspan2993" /></text>
     <text
        xml:space="preserve"
        style="font-size:29.67820549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -139,7 +107,7 @@
          x="28.827637"
          y="1026.647">Geocoding API</tspan></text>
     <rect
-       style="fill:none;fill-opacity:1;stroke:#5b5b5b;stroke-opacity:1"
+       style="fill:none;stroke:#5b5b5b;stroke-opacity:1"
        id="rect3795"
        width="373.57144"
        height="130.71428"
@@ -179,12 +147,6 @@
          id="tspan3013"
          x="210.0309"
          y="923.07568">Routing API</tspan></text>
-    <path
-       style="fill:none;stroke:#3c3c3c;stroke-width:0.89081979000000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 33.667903,795.63599 561.216477,0"
-       id="path3795"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-size:29.67820549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -197,7 +159,7 @@
          x="30.050945"
          y="981.28302">Isochrone API</tspan></text>
     <rect
-       style="fill:none;stroke:#8b8888;stroke-width:0.71413314000000006;stroke-opacity:1"
+       style="fill:none;stroke:#8b8888;stroke-width:0.71413314;stroke-opacity:1"
        id="rect3795-1-4"
        width="289.57162"
        height="86.000153"
@@ -205,7 +167,7 @@
        y="849.36163"
        ry="7.9401317" />
     <rect
-       style="fill:none;stroke:#bbbbbb;stroke-width:0.39586565000000001;stroke-opacity:1"
+       style="fill:none;stroke:#bbbbbb;stroke-width:0.39586565;stroke-opacity:1"
        id="rect3795-1-4-8"
        width="188.46132"
        height="40.604137"
