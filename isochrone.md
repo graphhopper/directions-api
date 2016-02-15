@@ -32,7 +32,7 @@ All official parameters are shown in the following table
 Parameter   | Default | Description
 :-----------|:--------|:-----------
 point       | -       | Specify the start coordinate
-reach       | 600     | Specify which time the vehicle should travel. In seconds. The maximum depends on the subscribed package.
+time_limit  | 600     | Specify which time the vehicle should travel. In seconds. The maximum depends on the subscribed package.
 vehicle     | car     | Other possible vehicles are: bike, car, foot and [more](./supported-vehicle-profiles.md)
 buckets     | 1       | For how many sub intervals an additional polygon should be calculated.
 type        | json    | Specifies the resulting format of the route, for json the content type will be application/json. Or use `jsonp`, additionally you'll need to provide the callback function via the `callback` parameter. The content type will be application/javascript
