@@ -1,6 +1,6 @@
 ## Isochrone API
 
-*Alpha status notice*: Currently this API is available only for selected developers and the underlying API is subject to change. Watch the progress [here](https://github.com/graphhopper/directions-api/issues/4) and [ask us](https://graphhopper.com/#contact) to take part.
+**Alpha status notice**: Currently this API is available only for selected developers and the underlying API is subject to change. Watch the progress [here](https://github.com/graphhopper/directions-api/issues/4) and [ask us](https://graphhopper.com/#contact) to take part.
 
 ### Endpoint
 
@@ -14,9 +14,12 @@ Where you need to replace the key with your own
 
 ### Introduction
 
-Calculating an isochrone of a coordinate (`latitude,longitude`) means to calculate
+![Isochrone API](./img/isochrone-example.png)
+
+Calculating an isochrone of a locations means to calculate
 "a line connecting points at which a vehicle arrives at the same time", 
-see [Wikipedia](http://en.wikipedia.org/wiki/Isochrone_map).
+see [Wikipedia](http://en.wikipedia.org/wiki/Isochrone_map). 
+It is also called **reachability** or **walkability**.
 
 ### API Clients and Examples
 
