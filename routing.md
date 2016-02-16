@@ -18,7 +18,7 @@ The Routing API is part of the [GraphHopper Directions API](https://graphhopper.
 
 ### API Clients and Examples
 
-See the [clients](./index.md) section in the main document.
+See the [clients](./index.md#api-clients-and-examples) section in the main document and [live examples](https://graphhopper.com/api/1/examples/#routing).
 
 ### Parameters
 

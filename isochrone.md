@@ -23,7 +23,7 @@ It is also called **reachability** or **walkability**.
 
 ### API Clients and Examples
 
-See the [clients](./index.md) section in the main document.
+See the [clients](./index.md#api-clients-and-examples) section in the main document and [live examples](https://graphhopper.com/api/1/examples/#isochrone).
 
 ### Parameters
 

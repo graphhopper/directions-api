@@ -15,7 +15,11 @@ You get an example response via:
 Geocoding is the process to fetch a coordinate (`latitude,longitude`) for a given
 address string. Read more at [Wikipedia](http://en.wikipedia.org/wiki/Geocoding).
 
-### URL parameters
+### API Clients and Examples
+
+See the [clients](./index.md#api-clients-and-examples) section in the main document and [live examples](https://graphhopper.com/api/1/examples/#matrix).
+
+### Parameters
 
 Parameter   | Default | Description
 :-----------|:--------|:-----------
