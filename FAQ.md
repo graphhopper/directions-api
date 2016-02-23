@@ -22,17 +22,13 @@ The API credit limits are listed in the dashboard and depend on the selected pac
 
 Your API key will not stop working. If this happens frequently, we'll contact you to discuss.
 
-## My credits do not reset, even after 24 hours. What is wrong?
-
-The credits are resetted after 24 hours, not on one specific 00:00 time or something. But the reset will only happen, if a new request comes in. So just ask the API or read the `X-RateLimit-Reset` header which gives you the number of seconds to wait. Also only the free package will be blocked after exceeding the limits, other packages don't have this strict policy.
-
 ## Where can I find the documentation or some demos?
 
 Our documentation is available [here](./index.md) and some demos are available for [every client](./index.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
 
 ## Where can I find the pricing?
 
-You can find the detailed pricing in the dashboard. For individual requirements we offer custom packages. Additionally we offer support contracts and a completely self-hosted Directions API, see [here](https://graphhopper.com/#enterprise) for more details.
+You can find the detailed pricing in the dashboard. For individual requirements we offer custom packages. Additionally we offer support contracts and a self-hosted Directions API, see [here](https://graphhopper.com/#enterprise) for more details.
 
 
 ## Can I pay on demand?
@@ -52,25 +48,25 @@ Please [contact us](https://graphhopper.com/#contact)
 
 ## Do I need to link or mention the use of the GraphHopper Directions API
 
-Yes. And we think it is fair to make this a requirement for all packages as we need to grow for a more healthy ecosystem and also have very permissive terms otherwise, please see [here](https://graphhopper.com/api/1/docs/#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option.
+Yes, please see [here](https://graphhopper.com/api/1/docs/#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option or need to use it for an in-house application where the attribution.
 
 
-## What is the difference between the Directions API and the Open Source GraphHopper 'Core'?
+## What is the difference between the GraphHopper Directions API and the open source GraphHopper routing engine?
 
 The GraphHopper Directions API is a collection of routing related APIs: the Routing API, the Matrix API, the Route Optimization API and the Geocoding API. This entire set is also available for self-hosting.
 
-The Routing API is based on the [open source GraphHopper](https://github.com/graphhopper/graphhopper/) and is nearly 100% identical to it, e.g. currently only the optimize=true parameter is not supported in the open source package.
+The Routing API is based on the [open source GraphHopper](https://github.com/graphhopper/graphhopper/) and is nearly identical to it, e.g. the optimize=true parameter and the truck profiles are not part of the open source version.
 
 Also the hosted Routing API is very easy to use, no configuration hassle, maintenance or even buying hardware is necessary.
 
 ## What is the difference between the Route Optimization API and jsprit?
 
-We use jsprit to implement our Route Optimization API, it is our open source vehicle route optimization project. The Route Optimization API is an efficient way to consume jsprit: properly configured for a lot of use cases, with a proper distance/time matrix calculated from GraphHopper, with a simple JSON API and more.
+We use jsprit to implement our Route Optimization API, it is our open source vehicle route optimization project. The Route Optimization API is an efficient way to consume jsprit: properly configured for a lot of use cases, with a proper distance/time matrix calculated from GraphHopper, with a simple JSON API and some advanced featured not in jsprit.
 
 ## Is the Matrix API available as open source?
 
-We have released nearly all of our code as open source and strongly support a prosper community around each of our projects. But we have decided to keep the Matrix API closed source, see [graphhopper#131](https://github.com/graphhopper/graphhopper/issues/131)
+But we have decided to keep the Matrix API closed source, see [graphhopper#131](https://github.com/graphhopper/graphhopper/issues/131)
 
 ## Is it possible to use the GraphHopper Directions API with a custom GraphHopper or jsprit version?
 
-Yes, we host custom and recent GraphHopper and jsprit versions. This way you'll be able to use our Route Optimization API and the Matrix API with your custom GraphHopper version including custom vehicles, speed profiles etc. Or you can modify jsprit and change how the route optimization behaves.
+Yes, we host custom and recent versions, be it GraphHopper or jsprit. This way you'll be able to use our Route Optimization API and the Matrix API with your custom GraphHopper or jsprit version including custom vehicles, speed profiles, constraints etc.
