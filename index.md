@@ -1,8 +1,11 @@
-# GraphHopper Directions API Documentation
+# GraphHopper Directions API
 
-With the [ GraphHopper Directions API](https://graphhopper.com/#directions-api) you get a reliable and fast routing service with world wide coverage. We offer A-to-B routing via the Routing API optionally with turn instructions and elevation data as well as route optimization with various constraints like time window and capacity restrictions. Also it is possible to get all distances between all locations with our fast Matrix API.
+With the [ GraphHopper Directions API](https://graphhopper.com/#directions-api) you get reliable and fast web services for routing and more
+with world wide coverage. We offer A-to-B routing via the Routing API optionally with turn instructions and elevation data as well as 
+route optimization with various constraints like time window and capacity restrictions. Also it is possible to get all distances 
+between all locations with our fast Matrix API.
 
-The Directions API consists of the following parts:
+The GraphHopper Directions API consists of the following parts:
 
  * the [Routing API](./routing.md), 
  * the [Route Optimization API](./route-optimization.md),
@@ -26,7 +29,7 @@ Or search [our public forum](https://discuss.graphhopper.com/c/directions-api).
 
 ## Pricing
 
-The public pricing is available [here](https://graphhopper.com/#pricing) or with all details [in the dashboard](https://graphhopper.com/dashboard/).
+The pricing is available [here](https://graphhopper.com/#pricing) or with all details about monthly/annually [in the dashboard](https://graphhopper.com/dashboard/).
 
 ## API Clients and Examples
 
