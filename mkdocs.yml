@@ -1,5 +1,5 @@
-site_name: GraphHopper
-site_description: GraphHopper Directions API Documentation
+site_name: GraphHopper Directions API Documentation
+site_description: GraphHopper Directions API
 site_favicon: https://graphhopper.com/favicon.ico
 docs_dir: .
 pages:
