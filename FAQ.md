@@ -12,7 +12,7 @@ If you need an better estimate contact us or read through the following steps:
  * 5 Geocoding API requests cost 1 credit
  * one Matrix API request with some start locations and some destinations costs `starts * destinations / 2` credits if `starts` or `destinations` are less than 20. For bigger matrices we use the cheaper formular `MAX_OF(starts, destinations) * 10`. For example you have 2 start locations and 10 destinations the charged credits are `2 * 10 / 2 = 10`. If you have 30 start and 40 destinations it is `40 * 10 = 400`. If you have one-to-N matrices like 1-to-100 then always the `starts*destinations/2` formula applies.
  * the costs for one Optimization API request depends on the number of vehicles and activities and is calculated as `vehicles * activities` and at least 10 credits. For custom packages a location independent credit calculation can be arranged.
- * the costs for one Isochrone API requests is one 1 credit multiplied for every minute it explores and at least 10 credits. E.g. if you set the `time_limit` to 20 minutes then this request will cost 20 credits.
+ * the costs for one Isochrone API requests is 3 credits for every minute it explores and at least 10 credits. E.g. if you set the `time_limit` to 20 minutes then this request will cost `3*20=60` credits.
   
 ## How many credits do I have?
 
