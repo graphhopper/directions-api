@@ -50,8 +50,8 @@ JSON path/attribute        | Description
 paths                      | An array of possible paths
 paths[0].distance          | The total distance of the route, in meter
 paths[0].time              | The total time of the route, in ms
-paths[0].ascend            | The total ascend (uphill) of the route
-paths[0].descend 	         | The total descend (downhill) of the route
+paths[0].ascend            | The total ascend (uphill) of the route, in meter
+paths[0].descend 	         | The total descend (downhill) of the route, in meter
 paths[0].points_encoded    | Is true if the points are encoded, if not paths[0].points contains the geo json of the path (then order is lon,lat,elevation), which is easier to handle but consumes more bandwidth compared to encoded version
 paths[0].bbox              | The bounding box of the route, format: <br> minLon, minLat, maxLon, maxLat
 paths[0].instructions      | Contains information about the instructions for this route. The last instruction is always the Finish instruction and takes 0ms and 0meter. Keep in mind that instructions are currently under active development and can sometimes contain misleading information, so, make sure you always show an image of the map at the same time when navigating your users!
@@ -70,7 +70,6 @@ Keep in mind that some attributes which are not documented here can be removed i
 
 ```json
 {
-  "info": {"took": 4},
   "paths": [{
     "bbox": [
       13.362853824187303,
