@@ -33,10 +33,18 @@ The pricing is available [here](https://graphhopper.com/#pricing) or with all de
 
 ## API Clients and Examples
 
- * [JavaScript](https://github.com/graphhopper/directions-api-js-client) - try the [live examples](https://graphhopper.com/api/1/examples/)
- * [Java](https://github.com/graphhopper/directions-api-java-client)
+ * [JavaScript client](https://github.com/graphhopper/directions-api-js-client) - try the [live examples](https://graphhopper.com/api/1/examples/)
+ * [Java client](https://github.com/graphhopper/directions-api-java-client)
+  
+### Clients from our Customers and Community
 
-Do not hesitate to share your client code with us!
+ * [C# client](https://github.com/Schuby80/WpfGraphHopper), MIT license
+
+**Examples and Applications**:
+
+ * [Use cases](https://graphhopper.com/#usecases)
+
+Do not hesitate to share your websites, apps or API clients with us!
 
 # [Routing API](./routing.md)
 
