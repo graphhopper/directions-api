@@ -21,14 +21,14 @@ See the [clients](./index.md#api-clients-and-examples) section in the main docum
 
 ### Parameters
 
-Parameter   | Default  | Description
-:-----------|:---------|:-----------
-q           | -        | Specify an address
-locale      | en       | Display the search results for the specified locale. Currently French (fr), English (en), German (de) and Italian (it) are supported. If the locale wasn't found the default (en) is used.
-limit       | 10       | Specify how many results you want
-debug       | `false`  | If `true`, the output will be formated.
-point       | -        | The location bias in the format 'latitude,longitude' e.g. point=45.93272,11.58803
-provider    | `default`| See the provider section below.
+Parameter   | Default   | Description
+:-----------|:----------|:-----------
+q           | -         | Specify an address
+locale      | en        | Display the search results for the specified locale. Currently French (fr), English (en), German (de) and Italian (it) are supported. If the locale wasn't found the default (en) is used.
+limit       | 10        | Specify how many results you want
+debug       | `false`   | If `true`, the output will be formated.
+point       | -         | The location bias in the format 'latitude,longitude' e.g. point=45.93272,11.58803
+provider    | `default` | See the provider section below.
 
 ### Example output for the case type=json
 
@@ -74,15 +74,15 @@ point       | -       | The location to find amenities, cities etc. In the same 
 locale      | en      | Display the search results for the specified locale. Currently French (fr), English (en), German (de) and Italian (it) are supported. If the locale wasn't found the default (en) is used.
 debug       | `false` | If `true`, the output will be formated.
 
-## Provider
+## External Providers
 
-The provider parameter is currently under development and can fall back to 'default' at any time. 
+The provider parameter is currently under development and can fall back to `default` at any time. 
 The intend is to provide alternatives to our default geocoder.
 To try it append the parameter to the URL like `&provider=nominatim`, 
 the result structure should be identical in all cases - if not, please report this back to us.
-Still some providers do e.g. support `osm_id` and `osm_type` and some not.
+But keep in mind that some providers do e.g. support `osm_id` and `osm_type` and some not.
 
-Keep in mind that all providers can cost more credits than the default provider - see [here](./FAQ.md#what-is-one-credit) 
+The credit costs can be different for all providers - see [here](./FAQ.md#what-is-one-credit) 
 for more information about it. 
 
 Also currently only the default provider supports autocompletion of partial search strings.
