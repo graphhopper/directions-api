@@ -572,7 +572,6 @@ or your job is finished and a solution is available. Then you get back this:
   "solution" : {
     "costs" : 62180,
     "distance" : 1875953,
-    "time" : 62180,
     "transport_time" : 62180,
     "completion_time" : 62180,
     "max_operation_time" : 62180,
@@ -641,7 +640,7 @@ or your job is finished and a solution is available. Then you get back this:
 
 ### Solution
 
-As you can see, you get some general indicators of your solution like ```distance``` and ```time``` which corresponds to the travelled distance and travel time,
+As you can see, you get some general indicators of your solution like ```distance``` and ```transport_time``` which corresponds to the travelled distance and travel time,
 and you get back an array of your routes with the ```vehicle_id``` and an array of ```activities``` which should be self-explanatory.
 Finally, within ```unassigned``` you can find the services and shipments that could not be assigned to any route.
 
@@ -688,7 +687,7 @@ arr_time | long | Arrival time at corresponding location
 end_time | long | End time at corresponding location
 distance | long | Cumulated distance in meter at activity (starts with 0 at start activity)
 load_before | array | Array with size/capacity dimensions. If activity is of type `start`, `load_before` does not exist.
-load_after | array | Array with size/capacity dimensions. If activity is of type `end`, `load_after` does not exist.
+load_after | array | Array with size/capacity dimensions. If activity is of type `end, `load_after` does not exist.
 
 
 #### Unassigned object
