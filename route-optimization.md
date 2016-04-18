@@ -687,8 +687,8 @@ location_id | string | The reference to the location id of either the address of
 arr_time | long | Arrival time at corresponding location
 end_time | long | End time at corresponding location
 distance | long | Cumulated distance in meter at activity (starts with 0 at start activity)
-load_before | array | Array with size/capacity dimensions. If activity is of type "start", `load_before` does not exist.
-load_after | array | Array with size/capacity dimensions. If activity is of type "end", `load_after` does not exist.
+load_before | array | Array with size/capacity dimensions. If activity is of type `start`, `load_before` does not exist.
+load_after | array | Array with size/capacity dimensions. If activity is of type `end`, `load_after` does not exist.
 
 
 #### Unassigned object
