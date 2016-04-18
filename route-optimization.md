@@ -1020,8 +1020,8 @@ This will force your vehicle to visit Frankfurt first and result in the followin
   "processing_time" : 256,
   "solution" : {
     "costs" : 73795,
-    "transport_time" : 2218473,
-    "time" : 73795,
+    "distance" : 2218473,
+    "transport_time" : 73795,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
