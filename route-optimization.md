@@ -798,7 +798,7 @@ If the solution is available, the response looks like this:
   "solution" : {
     "costs" : 62180,
     "distance" : 1875953,
-    "time" : 62180,
+    "transport_time" : 62180,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -866,7 +866,7 @@ to your vehicle specification. This results in:
   "solution" : {
     "costs" : 43140,
     "distance" : 1289258,
-    "time" : 43140,
+    "transport_time" : 43140,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -936,7 +936,7 @@ to your vehicle specification. This gives you the following solution:
   "solution" : {
     "costs" : 54828,
     "distance" : 1640434,
-    "time" : 54828,
+    "transport_time" : 54828,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -1020,7 +1020,7 @@ This will force your vehicle to visit Frankfurt first and result in the followin
   "processing_time" : 256,
   "solution" : {
     "costs" : 73795,
-    "distance" : 2218473,
+    "transport_time" : 2218473,
     "time" : 73795,
     "no_unassigned" : 0,
     "routes" : [ {
@@ -1090,7 +1090,8 @@ Frankfurt then definitely ends up in the unassigned service list:
 ```json
  "unassigned" : {
       "services" : [ frankfurt ],
-      "shipments" : [ ]
+      "shipments" : [ ],
+      "breaks" : [ ]
 }
 ```
 
@@ -1121,7 +1122,7 @@ and you get
   "solution" : {
     "costs" : 62180,
     "distance" : 1875953,
-    "time" : 62180,
+    "transport_time" : 62180,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -1212,7 +1213,7 @@ The solution of your bike round trip indicates that it takes you more than 5 day
   "solution" : {
     "costs" : 449358,
     "distance" : 1975897,
-    "time" : 449358,
+    "transport_time" : 449358,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "my_vehicle",
@@ -1344,7 +1345,7 @@ Corresponding response
   "solution" : {
     "costs" : 54788,
     "distance" : 1689017,
-    "time" : 54788,
+    "transport_time" : 54788,
     "no_unassigned" : 0,
     "routes" : [ {
       "vehicle_id" : "vehicle1",
