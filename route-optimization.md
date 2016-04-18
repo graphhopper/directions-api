@@ -281,7 +281,8 @@ If you want it to have multiple capacity dimensions, e.g. weight and volume, and
     "type_id": "your-vehicle-type-id",
     "profile": "car",
     "capacity": [100,1000],
-    "speed_factor": 0.8
+    "speed_factor": 0.8,
+    "service_time_factor": 1.0
 }
 ```
 
@@ -294,7 +295,8 @@ Name   | Type | Required | Default | Description
 type_id | string | x | - | Specifies the id of the vehicle type. If a vehicle needs to be of this type, it should refer to this with its `type_id` attribute.
 profile | string | - | car | Specifies the profile of this type. You can use either `car`, `bike`, `mtb` for mounting bike, `motorcycle`, `racingbike`, `foot`, `truck`, `small_truck` or `bus`. The profile is used to determine the network, speed and other physical attributes to use for routing the vehicle.
 capacity | array | - | [ 0 ] | Specifies an array of capacity dimension values which need to be `int` values. For example, if there are two dimensions such as volume and weight then it needs to be defined as `[ 1000, 300 ]` assuming a maximum volume of 1000 and a maximum weight of 300.
-speed_factor | double | - | 1.0 | Specifies a speed factor for this vehicle type. If the vehicle that uses this type needs to be only half as fast as what is actually calculated with our routing engine then reduce the speed factor to 0.5.
+speed_factor | double | - | 1.0 | Specifies a speed factor for this vehicle type. If the vehicle that uses this type needs to be only half as fast as what is actually calculated with our routing engine then set the speed factor to 0.5.
+service_time_factor | double | - | 1.0 | Specifies a service time factor for this vehicle type. If the vehicle/driver that uses this type is able to conduct the service as double as fast as it is determined in the corresponding service or shipment then set it to 0.5.
 
 ### Services or Shipments
 
@@ -573,6 +575,7 @@ or your job is finished and a solution is available. Then you get back this:
     "time" : 62180,
     "transport_time" : 62180,
     "completion_time" : 62180,
+    "max_operation_time" : 62180,
     "waiting_time" : 0,
     "no_vehicles" : 1,
     "no_unassigned" : 0,
@@ -582,45 +585,56 @@ or your job is finished and a solution is available. Then you get back this:
         "type" : "start",
         "location_id" : "berlin",
         "end_time" : 0,
-        "distance" : 0
+        "distance" : 0,
+        "load_after" : [ 0 ]
       }, {
         "type" : "service",
         "id" : "hamburg",
         "location_id" : "hamburg",
         "arr_time" : 9972,
         "end_time" : 9972,
-        "distance" : 287064
+        "distance" : 287064,
+        "load_before" : [ 0 ],
+        "load_after" : [ 0 ]
       }, {
         "type" : "service",
         "id" : "cologne",
         "location_id" : "cologne",
         "arr_time" : 23512,
         "end_time" : 23512,
-        "distance" : 709133
+        "distance" : 709133,
+        "load_before" : [ 0 ],
+        "load_after" : [ 0 ]
       }, {
         "type" : "service",
         "id" : "frankfurt",
         "location_id" : "frankfurt",
         "arr_time" : 29851,
         "end_time" : 29851,
-        "distance" : 897614
+        "distance" : 897614,
+        "load_before" : [ 0 ],
+        "load_after" : [ 0 ]
       }, {
         "type" : "service",
         "id" : "munich",
         "location_id" : "munich",
         "arr_time" : 43140,
         "end_time" : 43140,
-        "distance" : 1289258
+        "distance" : 1289258,
+        "load_before" : [ 0 ],
+        "load_after" : [ 0 ]
       }, {
         "type" : "end",
         "location_id" : "berlin",
         "arr_time" : 62180,
-        "distance" : 1875953
+        "distance" : 1875953,
+        "load_before" : [ 0 ]
       } ]
     } ],
     "unassigned" : {
       "services" : [ ],
-      "shipments" : [ ]
+      "shipments" : [ ],
+      "breaks" : [ ]
     }
   }
 ```
@@ -635,206 +649,55 @@ Finally, within ```unassigned``` you can find the services and shipments that co
 
 #### Response object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>job_id<br></td>
-    <td>(uuid) string</td>
-    <td><br></td>
-    <td>the job_id used to fetch solution<br></td>
-  </tr>
-  <tr>
-      <td>status<br></td>
-      <td>string</td>
-      <td><br></td>
-      <td>status of your job. can either be "waiting", "processing" or "finished"<br></td>
-    </tr>
- <tr>
-       <td>waiting_time_in_queue<br></td>
-       <td>long</td>
-       <td><br></td>
-       <td>in milliseconds<br></td>
-     </tr>
-<tr>
-       <td>processing_time<br></td>
-       <td>long</td>
-       <td><br></td>
-       <td>in milliseconds<br></td>
-     </tr>
-<tr>
-       <td>solution<br></td>
-       <td>object</td>
-       <td><br></td>
-       <td>see below<br></td>
-     </tr>
-</table>
+Name   | Type | Description
+:------|:-----|:---------
+job_id | (uuid) string | Specifies the job_id used to fetch solution.
+status | string | Indicates the status of your job. It can either be `waiting`, `processing` or `finished`.
+waiting_time_in_queue | long | in milliseconds
+solution | object | see below
 
 #### Solution object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>distance<br></td>
-    <td>long</td>
-    <td><br></td>
-    <td>overall distance travelled in meter<br></td>
-  </tr>
-  <tr>
-      <td>time<br></td>
-      <td>long</td>
-      <td><br></td>
-      <td>deprecated: use transport_time instead<br></td>
-    </tr>
-    <tr>
-          <td>transport_time<br></td>
-          <td>long</td>
-          <td><br></td>
-          <td>overall time travelled in seconds<br></td>
-        </tr>
-<tr>
-          <td>completion_time<br></td>
-          <td>long</td>
-          <td><br></td>
-          <td>overall completion time in seconds, i.e. the sum of each route's operation time<br></td>
-        </tr>
-<tr>
-          <td>waiting_time<br></td>
-          <td>long</td>
-          <td><br></td>
-          <td>overall waiting time in seconds<br></td>
-        </tr>
- <tr>
-           <td>no_vehicles<br></td>
-           <td>long</td>
-           <td><br></td>
-           <td>number of employed vehicles<br></td>
-         </tr>
- <tr>
-       <td>no_unassigned<br></td>
-       <td>integer</td>
-       <td><br></td>
-       <td>number of unassigned services and shipments<br></td>
-     </tr>
-<tr>
-       <td>routes<br></td>
-       <td>array</td>
-       <td><br></td>
-       <td>array of routes. see below.<br></td>
-     </tr>
-<tr>
-       <td>unassigned<br></td>
-       <td>object</td>
-       <td><br></td>
-       <td>unassigned services and shipments. see spec below.<br></td>
-     </tr>
-<tr>
-</table>
+Name   | Type | Description
+:------|:-----|:---------
+distance | long | Overall distance travelled in meter
+transport_time | long | Overall time travelled in seconds
+completion_time | long | Overall completion time in seconds, i.e. the sum of each route's operation time
+max_operation_time | long | Operation time of longest route in seconds
+waiting_time | long | Overall waiting time in seconds
+no_vehicles | integer | Number of employed vehicles
+no_unassigned | integer | Number of unassigned services and shipments
+routes | array | Array of routes. see below
+unassigned | object | Unassigned services and shipments. see spec below
 
 #### Route object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>vehicle_id<br></td>
-    <td>string</td>
-    <td><br></td>
-    <td>id of vehicle operating the route<br></td>
-  </tr>
-  <tr>
-      <td>activities<br></td>
-      <td>array</td>
-      <td><br></td>
-      <td>array of activities. see spec below.<br></td>
-    </tr>
-<tr>
-</table>
+Name   | Type | Description
+:------|:-----|:---------
+vehicle_id | string | Id of vehicle operating the route
+activities | array | Array of activities. see spec below.
 
 #### Activity object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>type<br></td>
-    <td>string</td>
-    <td><br></td>
-    <td>type of activity. can either be "service", "pickupShipment" or "deliverShipment"<br></td>
-  </tr>
-  <tr>
-      <td>id<br></td>
-      <td>string</td>
-      <td><br></td>
-      <td>the reference to either the service or the shipment, i.e. corresponds to either service.id or shipment.id<br></td>
-    </tr>
-<tr>
-      <td>location_id<br></td>
-      <td>string</td>
-      <td><br></td>
-      <td>the reference to the location id of either the address of the service or the address of shipment.pickup or shipment.delivery<br></td>
-    </tr>
-<tr>
-      <td>arr_time<br></td>
-      <td>long</td>
-      <td><br></td>
-      <td>arrival time at corresponding location<br></td>
-    </tr>
-<tr>
-      <td>end_time<br></td>
-      <td>long</td>
-      <td><br></td>
-      <td>end time at corresponding location<br></td>
-    </tr>
-<tr>
-      <td>distance<br></td>
-      <td>long</td>
-      <td><br></td>
-      <td>cumulated distance in meter at activity (starts with 0 at start activity)<br></td>
-    </tr>
-</table>
+Name   | Type | Description
+:------|:-----|:---------
+type | string | Specifies the type of activity. It can either be `start`, `end`, `service`, `pickupShipment` or `deliverShipment`
+id | string | The reference to either the service or the shipment, i.e. corresponds to either service.id or shipment.id
+location_id | string | The reference to the location id of either the address of the service or the address of shipment.pickup or shipment.delivery
+arr_time | long | Arrival time at corresponding location
+end_time | long | End time at corresponding location
+distance | long | Cumulated distance in meter at activity (starts with 0 at start activity)
+load_before | array | Array with size/capacity dimensions. If activity is of type "start", `load_before` does not exist.
+load_after | array | Array with size/capacity dimensions. If activity is of type "end", `load_after` does not exist.
+
 
 #### Unassigned object
 
-<table>
-  <tr>
-    <th>Name<br></th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>services<br></td>
-    <td>array</td>
-    <td><br></td>
-    <td>array of service.id that could not be assigned to any route,<br> e.g. [ "service1", "service2" ]<br></td>
-  </tr>
-  <tr>
-      <td>shipments<br></td>
-      <td>array</td>
-      <td><br></td>
-      <td>array of shipment.id that could not be assigned to any route,<br> e.g. [ "shipment1", "shipment2" ]<br></td>
-    </tr>
-</table>
-
-
+Name   | Type | Description
+:------|:-----|:---------
+services | array | array of service.id that could not be assigned to any route, e.g. [ "service1", "service2" ]
+shipments | array | array of shipment.id that could not be assigned to any route, e.g. [ "shipment1", "shipment2" ]
+breaks | array | array of break.id that has not been assigned to its corresponding route
 
 ## Examples
 
