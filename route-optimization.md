@@ -84,7 +84,6 @@ Name   | Type | Required | Description
 This gives you limited access to the algorithm. Currently, you can specify two things: the problem type and the objective. 
 When it comes to the problem type, you have two options, `min` and `min-max`. The objective specifies whether 
 you want to just consider `transport_time` or `completion_time`. In contrary to `transport_time`, `completion_time` takes waiting times at customer sites into account.
-Instead of just waiting at customer sites, it seeks to serve other customers to reduce total completion time. 
 By default, the algorithm minimizes `transport_time` thus it corresponds to: 
 
 ```json
@@ -114,6 +113,11 @@ to minimize the maximum of your vehicle routes' completion time, i.e. minimize t
 }
 ```
 
+Latter only makes sense if you have more than one vehicle. In case of one vehicle, switching from `min` to `min-max` should not have any significant impact.
+If you have more than one vehicle, then the algorithm tries to move stops from one vehicle to another such that 
+the completion time of longest vehicle route can be further reduced. For example, if you have one vehicle that takes 8 hours
+to serve all customers, adding another vehicle (and using `min-max`) might reduce the duration to 4 hours. However,
+ this usually comes with higher transport costs.
 
 #### Full specification
 
