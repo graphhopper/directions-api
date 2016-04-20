@@ -114,7 +114,7 @@ to minimize the maximum of your vehicle routes' completion time, i.e. minimize t
 ```
 
 Latter only makes sense if you have more than one vehicle. In case of one vehicle, switching from `min` to `min-max` should not have any significant impact.
-If you have more than one vehicle, then the algorithm tries to move stops from one vehicle to another such that 
+If you have more than one vehicle, then the algorithm tries to constantly move stops from one vehicle to another such that
 the completion time of longest vehicle route can be further reduced. For example, if you have one vehicle that takes 8 hours
 to serve all customers, adding another vehicle (and using `min-max`) might halve the time to serve all customers to 4 hours. However,
  this usually comes with higher transport costs.
