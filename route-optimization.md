@@ -251,7 +251,8 @@ The default type is
     "type_id": "default_type",
     "profile": "car",
     "capacity": [ 0 ],
-    "speed_factor": 1.0
+    "speed_factor": 1.0,
+    "service_time_factor": 1.0
 }
 ```
 
