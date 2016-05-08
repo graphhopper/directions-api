@@ -1,7 +1,5 @@
 ## Isochrone API
 
-**Alpha status notice**: Currently this API is available only for selected developers and the underlying API is subject to change. Watch the progress [here](https://github.com/graphhopper/directions-api/issues/4) and [ask us](https://graphhopper.com/#contact) to take part.
-
 ### Endpoint
 
 The endpoint is `https://graphhopper.com/api/[version]/isochrone`
