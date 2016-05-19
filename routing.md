@@ -28,18 +28,43 @@ Parameter   | Default | Description
 :-----------|:--------|:-----------
 point       | -       | Specifiy multiple points for which the route should be calculated. The order is important. Specify at least two points. The maximum number depends on the selected package.
 locale      | en      | The locale of the result. E.g. `pt_PT` for Portuguese or `de` for German
-optimize    | false   | If `false` the order of the locations will be identical to the order of the point parameters. If you have more than 2 points you can set this optimize parameter to `true` and the points will be sorted regarding the minimum overall time - e.g. suiteable for sightseeing tours or salesman. Keep in mind that the location limit of the [Route Optimization API](./route-optimization.md) applies and the [credit costs](FAQ.md#what-is-one-credit) are higher! Note to all customers with a self-hosted license: this parameter is only available if your package includes the Route Optimization API.
-instructions| true    | If instruction should be calculated and returned
+optimize    | `false` | If `false` the order of the locations will be identical to the order of the point parameters. If you have more than 2 points you can set this optimize parameter to `true` and the points will be sorted regarding the minimum overall time - e.g. suiteable for sightseeing tours or salesman. Keep in mind that the location limit of the [Route Optimization API](./route-optimization.md) applies and the [credit costs](FAQ.md#what-is-one-credit) are higher! Note to all customers with a self-hosted license: this parameter is only available if your package includes the Route Optimization API.
+instructions| `true`  | If instruction should be calculated and returned
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot, bike, mtb, racingbike, motorcycle, small_truck, bus and truck. See [here](./supported-vehicle-profiles.md) for the details.
-elevation   | false   | If `true` a third dimension - the elevation - is included in the polyline or in the GeoJson. IMPORTANT: If enabled you have to use a modified version of the decoding method or set points_encoded to `false`. See the points_encoded attribute for more details. Additionally a request can fail if the vehicle does not support elevation. See the features object for every vehicle.
-points_encoded     | true    | If `false` a GeoJson array in `point` is returned. If `true` the resulting route will be encoded leading to big bandwith reduction. You'll need a special handling for the decoding of this string on the client-side, see the Java or JavaScript code above. It is especially important to use our decoding methods if you set `elevation=true`!
-calc_points        | true    | If the points for the route should be calculated at all. Sometimes only the distance and time is necessary.
-debug              | false   | If true, the output will be formated.
-type               | json    | Specifies the resulting format of the route, for json the content type will be application/json. Other possible format options: <br> jsonp you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> gpx, the content type will be application/xml
-min_path_precision | 1       | Not recommended to change. Increase this number if you want to further reduce bandwith.
-gpx.track     |	  true  |   	Include <trk> tag in gpx result. Only applicable if type=gpx is specified.
-gpx.route     | 	true 	| Include <rte> tag in gpx result. Only applicable if type=gpx is specified.
-gpx.waypoints | 	false | 	Include <wpt> tag in gpx result. Only applicable if type=gpx is specified.
+elevation   | `false` | If `true` a third dimension - the elevation - is included in the polyline or in the GeoJson. IMPORTANT: If enabled you have to use a modified version of the decoding method or set points_encoded to `false`. See the points_encoded attribute for more details. Additionally a request can fail if the vehicle does not support elevation. See the features object for every vehicle.
+points_encoded | `true`  | If `false` a GeoJson array in `point` is returned. If `true` the resulting route will be encoded leading to big bandwith reduction. You'll need a special handling for the decoding of this string on the client-side, see the Java or JavaScript client code above. It is especially important to use our decoding methods if you set `elevation=true`!
+calc_points    | `true`  | If the points for the route should be calculated at all. Sometimes only the distance and time is necessary.
+debug          | `false` | If true, the output will be formated.
+type           | `json`  | Specifies the resulting format of the route, for `json` the content type will be application/json. Other possible format options: <br> `jsonp` you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> `gpx`, the content type will be application/gpx+xml, see below for more parameters.
+
+#### GPX
+
+Create a GPX output via `type=gpx` and use the following additional parameters
+
+Parameter     | Default | Description
+:-------------|:--------|:-----------
+gpx.track     |	`true`  | Include the `<trk>` tag in gpx result
+gpx.route     | `true`  | Include the `<rte>` tag in gpx result
+gpx.waypoints | `false` | Include the `<wpt>` tag in gpx result
+
+#### Flexible
+
+Unlock certain flexible features via `ch.disable=true`
+
+Parameter        | Default    | Description
+:----------------|:-----------|:-----------
+ch.disable       |`false`     | Always use `ch.disable=true` in combination with one or more parameters of this table
+weighting        |`fastest`   | Which kind of 'best' route calculation you need. Other option is `shortest` (e.g. for foot and bike) and `curvature` (only for motorcycle)
+edge_traversal   |`false`     | Use `true` if you want to consider turn restrictions for bike and motor vehicles. Keep in mind that the response time is roughly 2 times slower.
+algorithm        |`dijkstrabi`| The algorithm to calculate the route. Other options are `dijkstra`, `astar`, `astarbi`, `alternative_route` and `round_trip`
+heading          | NaN        | Favour a heading direction for a certain point. Specify either one heading for the start point or as many as there are points. In this case headings are associated by their order to the specific points. Headings are given as north based clockwise angle between 0 and 360 degree.
+heading_penalty  | 120        | Penalty for omitting a specified heading. The penalty corresponds to the accepted time delay in seconds in comparison to the route without a heading.
+pass_through     |`false`     | If `true` u-turns are avoided at via-points with regard to the `heading_penalty`.
+round_trip.distance                 | 10000 | If `algorithm=round_trip` this parameter configures approximative length of the resulting round trip
+round_trip.seed                     | 0     | If `algorithm=round_trip` this parameter introduces randomness if e.g. the first try wasn't good
+alternative_route.max_paths         | 2     | If `algorithm=alternative_route` this parameter sets the number of maximum paths which should be calculated. Increasing can lead to worse alternatives.
+alternative_route.max_weight_factor | 1.4   | If `algorithm=alternative_route` this parameter sets the factor by which the alternatives routes can be longer than the optimal route. Increasing can lead to worse alternatives.
+alternative_route.max_share_factor  | 0.6   | If `algorithm=alternative_route` this parameter specifies how much alternatives routes can have maximum in common with the optimal route. Increasing can lead to worse alternatives.
 
 ### Output 
 
