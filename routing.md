@@ -6,7 +6,7 @@ The endpoint is `https://graphhopper.com/api/[version]/route`
 
 You get an example response via:
 
-`curl "https://graphhopper.com/api/1/route?point=51.131108%2C12.414551&point=48.224673%2C3.867187&vehicle=car&locale=de&debug=true&points_encoded=false&key=[YOUR_KEY]"`
+`curl "https://graphhopper.com/api/1/route?point=51.131%2C12.414&point=48.224%2C3.867&vehicle=car&locale=de&key=[YOUR_KEY]"`
 
 Where you need to replace the key with your own
 
