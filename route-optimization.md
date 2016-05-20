@@ -311,7 +311,7 @@ A service can be specified as:
 ```json
 {
      "id": "service-id",
-     "type": "pickup"
+     "type": "pickup",
      "name": "meaningful-name", 
      "address": {
        "location_id": "service-location-id",
