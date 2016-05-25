@@ -390,7 +390,7 @@ The `size`-array limits the set of possible vehicles if a `capacity`-array is de
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 id | string | x | - | Specifies the id of the service. Ids need to be unique so there must not be two services/shipments with the same id.
-type | string | - | pickup | Specifies whether a service is a `pickup` or a `delivery`. This makes a difference if items are loaded or unloaded. If it is a `pickup`, it is loaded and will stay in the vehicle for the rest of the route (and thus consumes capacity for the rest of the route). If it is a `delivery`, items are implicitly loaded at the beginning of the route and will stay in the route until `delivery` (and thus releases capacity for the rest of the route).
+type | string | - | service | Specifies whether a service is a general `service`, a `pickup` or a `delivery`. This makes a difference if items are loaded or unloaded, i.e. size > 0. If it is specified as `service` or `pickup`, items are loaded and will stay in the vehicle for the rest of the route (and thus consumes capacity for the rest of the route). If it is a `delivery`, items are implicitly loaded at the beginning of the route and will stay in the route until `delivery` (and thus releases capacity for the rest of the route).
 name | string | - | - | Meaningful name for service, e.g. `delivery pizza`.
 address | object | x | - | Specifies service address.
 duration | long | - | 0 | Specifies the duration of the service, i.e. how long it takes at the customer site.  
@@ -687,7 +687,7 @@ activities | array | Array of activities. see spec below.
 
 Name   | Type | Description
 :------|:-----|:---------
-type | string | Specifies the type of activity. It can either be `start`, `end`, `service`, `pickupShipment` or `deliverShipment`
+type | string | Specifies the type of activity. It can either be `start`, `end`, `service`, `pickup`, `delivery`, `pickupShipment` or `deliverShipment`
 id | string | The reference to either the service or the shipment, i.e. corresponds to either service.id or shipment.id
 location_id | string | The reference to the location id of either the address of the service or the address of shipment.pickup or shipment.delivery
 arr_time | long | Arrival time at corresponding location
