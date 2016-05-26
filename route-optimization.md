@@ -202,7 +202,7 @@ If your driver needs a break, you need to specify it as follows:
 }
 ```
 
-And then the algorithm seeks to find the "best" position in the route to make the break. Breaks can only be made at a customer site, i.e. at any service
+The algorithm then seeks to find the "best" position in the route to make the break. Breaks can only be made at a customer site, i.e. at any service
 or shipment location <b>before</b> or <b>after</b> servicing the customer. The algorithm evaluates whether the break
 is actually necessary or not. If not, it ends up in the unassigned break list. Generally, if the driver can manage to be
 at its end location before `break.latest`, the break is regarded to be redundant. <b>Please note</b>, that if you specified a break,
@@ -255,7 +255,7 @@ The default type is
 ```
 
 
-In the vehicle type you can specify three important features of your vehicles: profile, capacity and speed factor. The profile indicates whether your vehicle is actually an person moving by `foot`, 
+In the vehicle type you can specify four important features of your vehicles: profile, capacity, speed factor and service time factor. The profile indicates whether your vehicle is actually an person moving by `foot`,
 whether it is a `car`, a `motorcycle`, a `bike`, a `mtb`, a `racingbike`, a `small_truck`, a `bus` or a `truck`. See [here](./supported-vehicle-profiles.md) for the details about the vehicle profiles.
 
 The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below. 
