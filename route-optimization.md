@@ -261,8 +261,8 @@ whether it is a `car`, a `motorcycle`, a `bike`, a `mtb`, a `racingbike`, a `sma
 The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below. 
  With the speed factor you can make your vehicles slower or even faster. The default value here is 1.0 which is in line with the travel
  time you get from [Graphhopper Routing API](https://graphhopper.com/api/1/docs/routing/). However, in several cases it turned out that the resulting travel times were too optimistic.
- To make your plan more robust against traffic conditions, you can make your vehicle way slower (e.g. ```"speed_factor" : 0.5``` which is basically
- new_travel_time = raw_travel_time / 0.5).
+ To make your plan more robust against traffic conditions, you can make your vehicle way slower (e.g. ```"speed_factor" : 0.5``` which corresponds to
+ new_travel_time = original_travel_time / 0.5).
  
  
 
