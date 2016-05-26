@@ -391,7 +391,7 @@ Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 id | string | x | - | Specifies the id of the service. Ids need to be unique so there must not be two services/shipments with the same id.
 type | string | - | service | Specifies whether a service is a general `service`, a `pickup` or a `delivery`. This makes a difference if items are loaded or unloaded, i.e. if one of the size dimensions > 0. If it is specified as `service` or `pickup`, items are loaded and will stay in the vehicle for the rest of the route (and thus consumes capacity for the rest of the route). If it is a `delivery`, items are implicitly loaded at the beginning of the route and will stay in the route until `delivery` (and thus releases capacity for the rest of the route).
-name | string | - | - | Meaningful name for service, e.g. `delivery pizza`.
+name | string | - | - | Meaningful name for service, e.g. `deliver pizza`.
 address | object | x | - | Specifies service address.
 duration | long | - | 0 | Specifies the duration of the service, i.e. how long it takes at the customer site.  
 size | array | - | [0] | Size can have multiple dimensions and should be in line with the capacity dimension array of the vehicle type. For example, if the item that needs to be delivered has two size dimension, volume and weight, then specify it as follow `[ 20, 5 ]` assuming a volume of 20 and a weight of 5.
