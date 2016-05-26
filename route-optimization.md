@@ -207,8 +207,6 @@ or shipment location <b>before</b> or <b>after</b> servicing the customer. The a
 is actually necessary or not. If not, it ends up in the unassigned break list. Generally, if the driver can manage to be
 at its end location before `break.latest`, the break is regarded to be redundant. <b>Please note</b>, that if you specified a break,
 you need to define your algorithm objective to be `completion_time` (see [algorithm spec above](#algorithm)) otherwise you are getting an exception.
-<b>Please note also</b> that this feature is still experimental. To be precise, it works well with traveling salesman problems, but it
-is still comparably slow when it comes to vehicle routing problems (this is going to change soon).
 
 #### Full specification
 
