@@ -255,7 +255,7 @@ The default type is
 ```
 
 
-In the vehicle type you can specify four important features of your vehicles: profile, capacity, speed factor and service time factor. The profile indicates whether your vehicle is actually an person moving by `foot`,
+In the vehicle type you can specify four important features of your vehicles: profile, capacity, speed factor and service time factor. The profile indicates whether your vehicle is actually a person moving by `foot`,
 whether it is a `car`, a `motorcycle`, a `bike`, a `mtb`, a `racingbike`, a `small_truck`, a `bus` or a `truck`. See [here](./supported-vehicle-profiles.md) for the details about the vehicle profiles.
 
 The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below. 
