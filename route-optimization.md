@@ -267,7 +267,7 @@ The capacity indicates how much freight can be loaded into the vehicle. You can 
  
 
 <!-- do you mean instead of 'to use specific roads' or possibility to pickup items? Or where is this restriction taken into account - just for the location, right? -->
-For example, if you want your vehicles to use roads with a single capacity dimension of maximum 100 units (e.g. 100 kilogram), specify it like this:
+For example, if your vehicle is a car that can load up to 100 units of something, specify it like this:
 
 ```json
 {
@@ -277,7 +277,7 @@ For example, if you want your vehicles to use roads with a single capacity dimen
 }
 ```
 
-If you want it to have multiple capacity dimensions, e.g. weight and volume, and to be slower then specify it like this:
+If you want your car to have multiple capacity dimensions, e.g. weight and volume, and to be slower then specify it like this:
 
 ```json
 {
@@ -289,7 +289,7 @@ If you want it to have multiple capacity dimensions, e.g. weight and volume, and
 }
 ```
 
-The `capacity` in a vehicle type makes only sense if there is e.g. a `size` defined in a service.
+The `capacity` in a vehicle type only makes sense if there is a `size` defined in your services and shipments.
 
 #### Full specification
 
