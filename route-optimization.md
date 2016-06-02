@@ -33,6 +33,8 @@ You need to calculate travel times and distances on large (road) networks, you n
 
 Find some live examples [here](https://graphhopper.com/api/1/examples/#optimization).
 
+Also have a look at [this series of tutorials](https://discuss.graphhopper.com/t/route-optimization-api-tutorials/760).
+
 The official clients are:
 
  * [JavaScript](https://github.com/graphhopper/directions-api-js-client/)
@@ -42,7 +44,7 @@ Other clients can be created via [swagger-codegen](https://github.com/swagger-ap
 
 ### Quick Start
 
-The fastest way to understand the API is by looking at the [live examples](https://graphhopper.com/api/1/examples/#optimization) and playing around with the [route editor](#route-editor). Finally you should read this documentation with extensive examples described below.
+The fastest way to understand the API is by looking at the [live examples](https://graphhopper.com/api/1/examples/#optimization) and playing around with the [route editor](#route-editor). Finally you should read this documentation with extensive examples described below and the [tutorials](https://discuss.graphhopper.com/t/route-optimization-api-tutorials/760).
 
 If you just need an optimal reordering of the locations for one vehicle and without constraints like time windows, ie. solving a traveling salesman problem then you can also have a look into our [Routing API](./routing.md) which supports `optimize=true`.
  
@@ -119,9 +121,7 @@ the completion time of longest vehicle route can be further reduced. For example
 to serve all customers, adding another vehicle (and using `min-max`) might halve the time to serve all customers to 4 hours. However,
  this usually comes with higher transport costs.
 
-#### Full specification
-
-#### Algorithm object
+#### Full specification of the algorithm object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
@@ -208,9 +208,7 @@ is actually necessary or not. If not, it ends up in the unassigned break list. G
 at its end location before `break.latest`, the break is regarded to be redundant. <b>Please note</b>, that if you specified a break,
 you need to define your algorithm objective to be `completion_time` (see [algorithm spec above](#algorithm)) otherwise you are getting an exception.
 
-#### Full specification
-
-#### Vehicle object
+#### Full specification of a vehicle object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
@@ -224,7 +222,7 @@ latest_end | long | - | Long.MAX_VALUE | Latest end of vehicle in seconds, i.e. 
 skills | array | - | - | Array of skills, i.e. array of string (not case sensitive).
 break | object | - | - | Specifies the driver break.
 
-#### Address object
+#### Full specification of a address object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
@@ -232,7 +230,7 @@ location_id | string | x | - | Specifies the id of the location.
 lon | double | x | - | Longitude of location. 
 lat | double | x | - | Latitude of location.
 
-#### Break object
+#### Full specification of a break object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
@@ -242,7 +240,7 @@ duration | long | x | - | Specifies the duration of the break.
 
 ### Vehicle Types
 
-The default type is 
+The default vehicle type is 
 
 ```json
 {
@@ -254,17 +252,14 @@ The default type is
 }
 ```
 
-
 In the vehicle type you can specify four important features of your vehicles: profile, capacity, speed factor and service time factor. The profile indicates whether your vehicle is actually a person moving by `foot`,
 whether it is a `car`, a `motorcycle`, a `bike`, a `mtb`, a `racingbike`, a `small_truck`, a `bus` or a `truck`. See [here](./supported-vehicle-profiles.md) for the details about the vehicle profiles.
 
 The capacity indicates how much freight can be loaded into the vehicle. You can specify multiple capacity dimensions as shown below. 
  With the speed factor you can make your vehicles slower or even faster. The default value here is 1.0 which is in line with the travel
  time you get from [Graphhopper Routing API](https://graphhopper.com/api/1/docs/routing/). However, in several cases it turned out that the resulting travel times were too optimistic.
- To make your plan more robust against traffic conditions, you can make your vehicle way slower (e.g. ```"speed_factor" : 0.5``` which corresponds to
- new_travel_time = original_travel_time / 0.5).
- 
- 
+ To make your plan more robust against traffic conditions, you can make your vehicle way slower (e.g. `"speed_factor" : 0.5` which corresponds to `new_travel_time = original_travel_time / 0.5`).
+
 
 <!-- do you mean instead of 'to use specific roads' or possibility to pickup items? Or where is this restriction taken into account - just for the location, right? -->
 For example, if your vehicle is a car that can load up to 100 units of something, specify it like this:
@@ -291,7 +286,7 @@ If you want your car to have multiple capacity dimensions, e.g. weight and volum
 
 The `capacity` in a vehicle type only makes sense if there is a `size` defined in your services and shipments.
 
-#### Full specification
+#### Full specification of a Vehicle Type object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
@@ -383,9 +378,7 @@ Both Service and Shipment can be specified with multiple capacity dimensions as 
 
 The `size`-array limits the set of possible vehicles if a `capacity`-array is defined in its vehicle type. If no `size`-array is specified the default of 0 is assumed. See [vehicle types](#vehicle-types).
 
-#### Full specification
-
-#### Service object
+#### Full specification of a service object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
@@ -400,7 +393,7 @@ required_skills | array | - | - | Specifies an array of required skills, i.e. ar
 allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids. For example, if this service can only be conducted EITHER by `technician_peter` OR `technician_stefan` specify this as follows: `["technician_peter","technician_stefan"]`.
 priority | int | - | 2 | Specifies the priority. Can be 1 = high priority, 2 = normal (default) or 3 = low priority. Often there are more services/shipments than the available vehicle fleet can handle. Then you could assign priorities to differentiate high priority tasks from those that can be served later or omitted at all.
 
-#### Shipment object
+#### Full specification of a shipment object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
@@ -413,7 +406,7 @@ required_skills | array | - | - | Specifies an array of required skills, i.e. ar
 allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids. For example, if this service can only be conducted EITHER by `technician_peter` OR `technician_stefan` specify this as follows: `["technician_peter","technician_stefan"]`.
 priority | int | - | 2 | Specifies the priority. Can be 1 = high priority, 2 = normal (default) or 3 = low priority. Often there are more services/shipments than the available vehicle fleet can handle. Then you could assign priorities to differentiate high priority tasks from those that can be served later or omitted at all.
 
-#### Pickup or delivery object
+#### Full specification of a pickup or delivery object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
@@ -421,14 +414,17 @@ address | string | x | - | Specifies pickup or delivery address.
 duration | string | - | 0 | Specifies the duration of the pickup or delivery, e.g. how long it takes unload items at the customer site.
 time_windows | object | - | - | Specifies an array of time window objects (see time window object below). For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
 
-#### Time window object
+#### Full specification of a time window object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 earliest | long | - | 0 | Specifies the opening time of the time window, i.e. the earliest time the service can start.
 latest | long | - | Long.MAX_VALUE | Specifies the closing time of the time window, i.e. the latest time the service can start.
 
+
+
 ### Relations
+
 Beyond shipments there are three additional relations you can use to establish a relationship between services and shipments:
 
 - "in_same_route"
@@ -436,6 +432,7 @@ Beyond shipments there are three additional relations you can use to establish a
 - "in_direct_sequence"
 
 #### in_same_route
+
 As the name suggest, it enforces the specified services or shipments to be in the same route. It can be specified
 as follows:
 
@@ -457,9 +454,9 @@ This enforces service i to be in the same route as service j no matter which veh
 }
 ```
  
- This not only enforce service i and j to be in the same route, but also makes sure that both services are in the route of "vehicle1".
+ This not only enforce service i and j to be in the same route, but also makes sure that both services are in the route of `vehicle1`.
  
- <b>Tip</b>: This way initial loads and vehicle routes can be modelled. For example, if your vehicles are already on the road and new
+ *Tip*: This way initial loads and vehicle routes can be modelled. For example, if your vehicles are already on the road and new
  orders come in, then vehicles can still be rescheduled subject to the orders that have already been assigned to these vehicles.
 
 
@@ -488,8 +485,11 @@ This enforces n services or shipments to be in direct sequence. It can be specif
  }
 ```
  
-yielding service j to occur directly after service i, and service k to occur directly after j (i.e. in strong order). Again, a vehicle can
-be assigned a priori by adding a `vehicle_id` to the relation. If you want service i to be the first in the route, use the special ID `start` as follows:
+yielding service j to occur directly after service i, and service k to occur directly after service j i.e. in strong order. Again, a vehicle can be assigned a priority by adding a `vehicle_id` to the relation.
+
+#### Special IDs
+
+If you look at the previous example and you want service i to be the first in the route, use the special ID `start` as follows:
 
 ```json
  {
@@ -498,7 +498,7 @@ be assigned a priori by adding a `vehicle_id` to the relation. If you want servi
  }
 ```
 
-Latter enforces the direct sequence of i, j and k at the beginning of the route. If this sequence needs to be at the end of the route, use the special ID `end` like this:
+Latter enforces the direct sequence of i, j and k at the beginning of the route. If this sequence should be bound to the end of the route, use the special ID `end` like this:
 
 ```json
  {
@@ -507,27 +507,23 @@ Latter enforces the direct sequence of i, j and k at the beginning of the route.
  }
 ```
 
-<b>NOTE</b>: If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries
-of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword 'pickup' or 'delivery'. For example, to
- ensure that the pickup and delivery of the shipment with the id 'myShipment' are direct neighbors, you need the following specification:
+If you deal with services then you need to use the 'id' of your services in the field 'ids'. To also consider sequences of the pickups and deliveries
+of your shipments, you need to use a special ID, i.e. use the shipment id plus the keyword `_pickup` or `_delivery`. For example, to
+ ensure that the pickup and delivery of the shipment with the id 'my_shipment' are direct neighbors, you need the following specification:
  
 ```json
  {
      "type": "in_direct_sequence",
-     "ids": ["myShipment_pickup","myShipment_delivery"]
+     "ids": ["my_shipment_pickup","my_shipment_delivery"]
  }
 ```
 
-Thus the special id of shipments is created like this: {shipmentId}_{pickup|delivery}
-
-#### Full specification
-
-#### Relation object
+#### Full specification of a relation object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 type | String | x | - | Specifies the type of relation. It must be either of type `in_same_route`, `in_sequence` or `in_direct_sequence`.
-ids | array | - | - | Specifies an array of shipment and/or service ids that are in relation. If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword 'pickup' or 'delivery' (see example above). If you want to place a service or shipment activity at the beginning of your route, use the special ID `start`. In turn, use `end` to place it at the end of the route.
+ids | array | - | - | Specifies an array of shipment and/or service ids that are in relation. If you deal with services then you need to use the 'id' of your services in 'ids'. To also consider sequences of the pickups and deliveries of your shipments, you need to use a special ID, i.e. use your shipment id plus the keyword `_pickup` or `_delivery` (see example above). If you want to place a service or shipment activity at the beginning of your route, use the special ID `start`. In turn, use `end` to place it at the end of the route.
 vehicle_id | String | - | - | Id of pre-assigned vehicle, i.e. the vehicle id that is determined to conduct the services and shipments in this relation.
 
 Learn more about it in the [live API docs](https://graphhopper.com/api/1/vrp/documentation/).
@@ -653,9 +649,7 @@ As you can see, you get some general indicators of your solution like ```distanc
 and you get back an array of your routes with the ```vehicle_id``` and an array of ```activities``` which should be self-explanatory.
 Finally, within ```unassigned``` you can find the services and shipments that could not be assigned to any route.
 
-#### Full specification
-
-#### Response object
+#### Full specification of the `response` object
 
 Name   | Type | Description
 :------|:-----|:---------
@@ -664,7 +658,7 @@ status | string | Indicates the status of your job. It can either be `waiting`, 
 waiting_time_in_queue | long | in milliseconds
 solution | object | see below
 
-#### Solution object
+#### `solution` object
 
 Name   | Type | Description
 :------|:-----|:---------
@@ -1098,7 +1092,7 @@ Frankfurt then definitely ends up in the unassigned service list:
 
 ```json
  "unassigned" : {
-      "services" : [ frankfurt ],
+      "services" : [ "frankfurt" ],
       "shipments" : [ ],
       "breaks" : [ ]
 }
@@ -1183,13 +1177,13 @@ and you get
 }
 ```
 
-Naturally the arrival time ```arr_time``` in Munich does not equal the end time ```end_time``` anymore.
+Naturally the arrival time `arr_time` in Munich does not equal the end time `end_time` anymore.
 
 Let us now assume that you want to make this round trip a bit more exciting and challenging, 
 thus you decide to switch from boring car to bike (you will definitely
 be a hero if you manage the round trip by bike). Here, you
 cannot use the default vehicle type anymore, but you need to define your bike yourself. This requires two changes, first define 
-a vehicle type in ```vehicle_types``` and second make a reference to the specified type in your vehicle with ```type_id```:
+a vehicle type in `vehicle_types` and second make a reference to the specified type in your vehicle with `type_id`:
 
 ```json
 "vehicles" : [
