@@ -32,8 +32,8 @@ optimize    | `false` | If `false` the order of the locations will be identical 
 instructions| `true`  | If instruction should be calculated and returned
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicles are foot, bike, mtb, racingbike, motorcycle, small_truck, bus and truck. See [here](./supported-vehicle-profiles.md) for the details.
 elevation   | `false` | If `true` a third dimension - the elevation - is included in the polyline or in the GeoJson. IMPORTANT: If enabled you have to use a modified version of the decoding method or set points_encoded to `false`. See the points_encoded attribute for more details. Additionally a request can fail if the vehicle does not support elevation. See the features object for every vehicle.
-points_encoded | `true`  | If `false` a GeoJson array in `point` is returned. If `true` the resulting route will be encoded leading to big bandwith reduction. You'll need a special handling for the decoding of this string on the client-side, see the Java or JavaScript client code above. It is especially important to use our decoding methods if you set `elevation=true`!
-calc_points    | `true`  | If the points for the route should be calculated at all. Sometimes only the distance and time is necessary.
+points_encoded     | true    | If `false` the coordinates in `point` and `snapped_waypoints` are returned as array using the order [lon,lat,elevation] for every point. If `true` the coordinates will be encoded as string leading to less bandwith usage. You'll need a special handling for the decoding of this string on the client-side. We provide open source code code in Java and JavaScript, see the clients section. It is especially important to use our official client or code if you set `elevation=true`!
+calc_points    | `true`  | If the points for the route should be calculated at all printing out only distance and time.
 debug          | `false` | If true, the output will be formated.
 type           | `json`  | Specifies the resulting format of the route, for `json` the content type will be application/json. Other possible format options: <br> `jsonp` you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> `gpx`, the content type will be application/gpx+xml, see below for more parameters.
 
@@ -55,7 +55,7 @@ Parameter        | Default    | Description
 :----------------|:-----------|:-----------
 ch.disable       |`false`     | Always use `ch.disable=true` in combination with one or more parameters of this table
 weighting        |`fastest`   | Which kind of 'best' route calculation you need. Other option is `shortest` (e.g. for foot and bike) and `curvature` (only for motorcycle)
-edge_traversal   |`false`     | Use `true` if you want to consider turn restrictions for bike and motor vehicles. Keep in mind that the response time is roughly 2 times slower.
+<!-- edge_traversal   |`false`     | Use `true` if you want to consider turn restrictions for bike and motor vehicles. Keep in mind that the response time is roughly 2 times slower. -->
 algorithm        |`dijkstrabi`| The algorithm to calculate the route. Other options are `dijkstra`, `astar`, `astarbi`, `alternative_route` and `round_trip`
 heading          | NaN        | Favour a heading direction for a certain point. Specify either one heading for the start point or as many as there are points. In this case headings are associated by their order to the specific points. Headings are given as north based clockwise angle between 0 and 360 degree.
 heading_penalty  | 120        | Penalty for omitting a specified heading. The penalty corresponds to the accepted time delay in seconds in comparison to the route without a heading.
@@ -77,9 +77,10 @@ paths[0].distance          | The total distance of the route, in meter
 paths[0].time              | The total time of the route, in ms
 paths[0].ascend            | The total ascend (uphill) of the route, in meter
 paths[0].descend 	         | The total descend (downhill) of the route, in meter
-paths[0].points_encoded    | Is true if the points are encoded, if not paths[0].points contains the geo json of the path (then order is lon,lat,elevation), which is easier to handle but consumes more bandwidth compared to encoded version
+paths[0].points            | This value contains the coordinates of the path. If `points_encoded=true` or no `points_encoded` specified an encoded string will be returned, otherwise an array with order [lon,lat,elevation] is returned. See the parameter `points_encoded` for more information.
+paths[0].points_encoded    | Is `true` if the points are encoded. Is `false` then paths[0].points contains the geo json of the path, which is easier to handle but consumes more bandwidth compared to the encoded version
 paths[0].bbox              | The bounding box of the route, format: <br> minLon, minLat, maxLon, maxLat
-paths[0].snapped_waypoints | An array of the snapped input points (order is lon,lat,elevation)
+paths[0].snapped_waypoints | This value contains the snapped input points. If `points_encoded=true` or no `points_encoded` parameter was specified then an encoded string will be returned, otherwise an array with order [lon,lat,elevation] is returned. See the parameter `points_encoded` for more information.
 paths[0].instructions      | Contains information about the instructions for this route. The last instruction is always the Finish instruction and takes 0ms and 0meter. Keep in mind that instructions are currently under active development and can sometimes contain misleading information, so, make sure you always show an image of the map at the same time when navigating your users!
 paths[0].instructions[0].text                 | A description what the user has to do in order to follow the route. The language depends on the locale parameter.
 paths[0].instructions[0].distance             | The distance for this instruction, in meter
