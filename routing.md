@@ -49,7 +49,7 @@ gpx.waypoints | `false` | Include the `<wpt>` tag in gpx result
 
 #### Flexible
 
-Unlock certain flexible features via `ch.disable=true`
+Unlock certain flexible features via `ch.disable=true` and prefer where possible `algorithm=astarbi` for faster response times.
 
 <!-- edge_traversal   |`false`     | Use `true` if you want to consider turn restrictions for bike and motor vehicles. Keep in mind that the response time is roughly 2 times slower. -->
 
