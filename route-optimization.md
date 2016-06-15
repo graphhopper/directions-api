@@ -666,9 +666,9 @@ solution | object | see below
 
 Name   | Type | Description
 :------|:-----|:---------
-distance | long | Overall distance travelled in meter
-transport_time | long | Overall time travelled in seconds
-completion_time | long | Overall completion time in seconds, i.e. the sum of each route's operation time
+distance | long | Overall distance travelled in meter, i.e. the sum of each route's transport distance
+transport_time | long | Overall time travelled in seconds, i.e. the sum of each route's transport time
+completion_time | long | Overall completion time in seconds (completion_time = transport_time + sum(waiting_time) + sum(duration)), i.e. the sum of each route's/driver's operation time.
 max_operation_time | long | Operation time of longest route in seconds
 waiting_time | long | Overall waiting time in seconds
 no_vehicles | integer | Number of employed vehicles
