@@ -89,7 +89,7 @@ you want to just consider `transport_time` or `completion_time`. The objective v
 your drivers spend on the road, i.e. transport time. In contrary to `transport_time`, `completion_time` also takes waiting times at customer sites into account.
 The `completion_time` of a route is defined as the time from starting to ending the route, 
 i.e. the route's transport time, the sum of waiting times plus the sum of activity durations. 
-Note, that choosing `transport_time` or `completion_time` only makes a difference if you specified time windows for your services/shipments since only in
+Note that choosing `transport_time` or `completion_time` only makes a difference if you specified time windows for your services/shipments since only in
 scenarios with time windows waiting times can occur. By default, the algorithm minimizes `transport_time` thus it corresponds to:
 
 ```json
