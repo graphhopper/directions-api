@@ -85,8 +85,12 @@ Name   | Type | Required | Description
 
 This gives you limited access to the algorithm. Currently, you can specify two things: the problem type and the objective. 
 When it comes to the problem type, you have two options, `min` and `min-max`. The objective specifies whether 
-you want to just consider `transport_time` or `completion_time`. In contrary to `transport_time`, `completion_time` takes waiting times at customer sites into account.
-By default, the algorithm minimizes `transport_time` thus it corresponds to: 
+you want to just consider `transport_time` or `completion_time`. The objective value `transport_time` solely considers the time
+your drivers spend on the road, i.e. transport time. In contrary to `transport_time`, `completion_time` also takes waiting times at customer sites into account.
+The `completion_time` of a route is defined as the time from starting to ending the route, 
+i.e. the route's transport time, the sum of waiting times plus the sum of activity durations. 
+Note, that choosing `transport_time` or `completion_time only makes a difference if you specified time windows for your services/shipments since only in
+scenarios with time windows waiting times can occur. By default, the algorithm minimizes `transport_time` thus it corresponds to:
 
 ```json
 "algorithm" : {
