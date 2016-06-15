@@ -681,6 +681,10 @@ unassigned | object | Unassigned services and shipments. see spec below
 Name   | Type | Description
 :------|:-----|:---------
 vehicle_id | string | Id of vehicle operating the route
+distance | long | travel distance of this route (in meter)
+transport_time | long | travel time of this route (in seconds)
+completion_time | long | completion time of this route (in seconds)
+waiting_time | long | Overall waiting time in route (in seconds)
 activities | array | Array of activities. see spec below.
 
 #### Activity object
