@@ -51,22 +51,22 @@ Please [contact us](https://graphhopper.com/#contact)
 Yes, please see [here](https://graphhopper.com/api/1/docs/#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option or need to use it for an in-house application where the attribution.
 
 
-## What is the difference between the GraphHopper Directions API and the open source GraphHopper routing engine?
+## What is the difference between the GraphHopper Directions API and the open source projects like the GraphHopper routing engine and the optimization engine jsprit?
 
-The GraphHopper Directions API is a collection of routing related APIs: the Routing API, the Matrix API, the Route Optimization API and the Geocoding API. This entire set is also available for self-hosting.
+The GraphHopper Directions API is a collection of routing related APIs: the Routing API, the Matrix API, the Route Optimization API and the Geocoding API. 
+This entire set is also available for self-hosting.
 
-The Routing API is based on the [open source GraphHopper](https://github.com/graphhopper/graphhopper/) and is nearly identical to it, e.g. the optimize=true parameter and the truck profiles are not part of the open source version.
+We use jsprit to implement our Route Optimization API, it is our open source vehicle route optimization project. 
+The Route Optimization API is an efficient way to consume jsprit: properly configured for a lot of use cases, 
+with a proper distance/time matrix calculated from GraphHopper, with a simple JSON API and some advanced featured not in jsprit.
 
-Also the hosted Routing API is very easy to use, no configuration hassle, maintenance or even buying hardware is necessary.
+The Routing API is based on the [open source GraphHopper](https://github.com/graphhopper/graphhopper/) and is nearly identical to it.
 
-## What is the difference between the Route Optimization API and jsprit?
+We have decided to keep the Matrix API closed source, see [graphhopper#131](https://github.com/graphhopper/graphhopper/issues/131)
 
-We use jsprit to implement our Route Optimization API, it is our open source vehicle route optimization project. The Route Optimization API is an efficient way to consume jsprit: properly configured for a lot of use cases, with a proper distance/time matrix calculated from GraphHopper, with a simple JSON API and some advanced featured not in jsprit.
-
-## Is the Matrix API available as open source?
-
-But we have decided to keep the Matrix API closed source, see [graphhopper#131](https://github.com/graphhopper/graphhopper/issues/131)
+See [here](https://graphhopper.com/#os-comparison) for a more detailed comparison.
 
 ## Is it possible to use the GraphHopper Directions API with a custom GraphHopper or jsprit version?
 
-Yes, we host custom and recent versions, be it GraphHopper or jsprit. This way you'll be able to use our Route Optimization API and the Matrix API with your custom GraphHopper or jsprit version including custom vehicles, speed profiles, constraints etc.
+Yes, we host custom and recent versions, be it GraphHopper or jsprit. This way you'll be able to use our Route Optimization API and the 
+Matrix API with your custom GraphHopper or jsprit version including custom vehicles, speed profiles, constraints etc.
