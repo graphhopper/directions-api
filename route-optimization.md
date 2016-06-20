@@ -63,7 +63,7 @@ The general input structure is
 
 ```json
 {
-  "algorithm": {},
+  "objectives": [..],
   "vehicles": [..],
   "vehicle_types": [..],
   "services": [..],
@@ -74,18 +74,18 @@ The general input structure is
 
 Name   | Type | Required | Description
 :------|:-----|:---------|:-----------
-[algorithm](#algorithm) | object | - | This tells the algorithm what kind of problem needs to be solved, i.e. you can configure problem type and objective.
+[objectives](#objectives) | object | - | This tells the algorithm what kind of problem needs to be solved, i.e. you can configure problem type and objective.
 [vehicles](#vehicles) | array | x | Specifies the available vehicles.
 [vehicle_types](#vehicle-types) | array | - | Specifies the available vehicle types that are referred to by the specified vehicles.
 [services](#services-or-shipments) | array | - | Specifies the available services, i.e. pickup, delivery or any other points to be visited by vehicles. Each service only involves exactly one location.
 [shipments](#services-or-shipments) | array | - | Specifies the available shipments, i.e. pickup AND delivery points to be visited by vehicles subsequently. Each shipment involves exactly two locations, a pickup and a delivery location.
 [relations](#relations) | array | - | Specifies an arbitrary number of additional relations between and among services and shipments.
 
-### Algorithm
+### Objectives
 
-This gives you limited access to the algorithm. Currently, you can specify two things: the problem type and the objective. 
-When it comes to the problem type, you have two options, `min` and `min-max`. The objective specifies whether 
-you want to just consider `transport_time` or `completion_time`. The objective value `transport_time` solely considers the time
+This lets you specify the objectives of your optimization. Currently, you can specify one objective function. It requires two things: the type and the value to be optimized. 
+When it comes to the objective type, you have two options, `min` and `min-max`. The objective value specifies whether 
+you want to just optimize `transport_time` or `completion_time`. The objective value `transport_time` solely considers the time
 your drivers spend on the road, i.e. transport time. In contrary to `transport_time`, `completion_time` also takes waiting times at customer sites into account.
 The `completion_time` of a route is defined as the time from starting to ending the route, 
 i.e. the route's transport time, the sum of waiting times plus the sum of activity durations. 
@@ -93,30 +93,33 @@ Note that choosing `transport_time` or `completion_time` only makes a difference
 scenarios with time windows waiting times can occur. By default, the algorithm minimizes `transport_time` thus it corresponds to:
 
 ```json
-"algorithm" : {
-    "problem_type": "min",
-    "objective": "transport_time"
-}
+"objectives" : [
+   {
+      "type": "min",
+      "value": "transport_time"
+   }
 ```
 
 This minimizes the sum of your vehicle routes' transport times. 
 If you want to switch to `completion_time` just change this to:
 
 ```json
-"algorithm" : {
-    "problem_type": "min",
-    "objective": "completion_time"
-}
+"objectives" : [
+   {
+      "type": "min",
+      "value": "completion_time"
+   }
 ```
 
 As outlined above, this minimizes the sum of your vehicle routes' completion time, i.e. it takes waiting times into account also. If you want
 to minimize the maximum of your vehicle routes' completion time, i.e. minimize the overall makespan then change the algorithm object to:
  
 ```json
-"algorithm" : {
-    "problem_type": "min-max",
-    "objective": "completion_time"
-}
+"objectives" : [
+   {
+      "type": "min-max",
+      "value": "completion_time"
+   }
 ```
 
 Latter only makes sense if you have more than one vehicle. In case of one vehicle, switching from `min` to `min-max` should not have any significant impact.
@@ -125,12 +128,12 @@ the completion time of longest vehicle route can be further reduced. For example
 to serve all customers, adding another vehicle (and using `min-max`) might halve the time to serve all customers to 4 hours. However,
  this usually comes with higher transport costs.
 
-#### Full specification of the algorithm object
+#### Full specification of the objective object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
-problem_type | string | - | min | You can choose between `min` and `min-max`. `min` minimizes the sum of what is specified in `objective`, e.g. if objective is `transport_time`, it minimizes the sum of transport times. `min-max` minimizes the maximum of what is specified in `objective`.
-objective | string | - | transport_time | You can choose between `transport_time` and `completion_time`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
+type | string | - | min | You can choose between `min` and `min-max`. `min` minimizes the sum of what is specified in `value`, e.g. if objective value is `transport_time`, it minimizes the sum of transport times. `min-max` minimizes the maximum of what is specified in `value`.
+value | string | - | transport_time | You can choose between `transport_time` and `completion_time`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
 
 ### Vehicles
 
@@ -210,7 +213,7 @@ The algorithm then seeks to find the "best" position in the route to make the br
 or shipment location <b>before</b> or <b>after</b> servicing the customer. The algorithm evaluates whether the break
 is actually necessary or not. If not, it ends up in the unassigned break list. Generally, if the driver can manage to be
 at its end location before `break.latest`, the break is regarded to be redundant. <b>Please note</b>, that if you specified a break,
-you need to define your algorithm objective to be `completion_time` (see [algorithm spec above](#algorithm)) otherwise you are getting an exception.
+you need to define your optimization objective to be `completion_time` (see [objectives spec above](#objectives)) otherwise you are getting an exception.
 
 #### Full specification of a vehicle object
 
@@ -1477,9 +1480,10 @@ This can be modelled as
 
 ```json
 {
-    "algorithm" : {
-        "objective" : "completion_time"
-    },
+    "objectives" : [{
+        "type": "min",
+        "value" : "completion_time"
+    }],
     "vehicles" : [
        {
          "vehicle_id": "my_vehicle",
