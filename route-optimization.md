@@ -98,6 +98,7 @@ scenarios with time windows waiting times can occur. By default, the algorithm m
       "type": "min",
       "value": "transport_time"
    }
+]   
 ```
 
 This minimizes the sum of your vehicle routes' transport times. 
@@ -109,6 +110,7 @@ If you want to switch to `completion_time` just change this to:
       "type": "min",
       "value": "completion_time"
    }
+]  
 ```
 
 As outlined above, this minimizes the sum of your vehicle routes' completion time, i.e. it takes waiting times into account also. If you want
@@ -120,6 +122,7 @@ to minimize the maximum of your vehicle routes' completion time, i.e. minimize t
       "type": "min-max",
       "value": "completion_time"
    }
+]
 ```
 
 Latter only makes sense if you have more than one vehicle. In case of one vehicle, switching from `min` to `min-max` should not have any significant impact.
