@@ -58,7 +58,7 @@ Please note that these flexible requests cost more than one credit, see [the FAQ
 Parameter        | Default    | Description
 :----------------|:-----------|:-----------
 ch.disable       |`false`      | Always use `ch.disable=true` in combination with one or more parameters of this table
-weighting        |`fastest`    | Which kind of 'best' route calculation you need. Other option is `shortest` (e.g. for foot and bike) and `curvature` (only for motorcycle)
+weighting        |`fastest`    | Which kind of 'best' route calculation you need. Other option is `shortest` (e.g. for `vehicle=foot` or `bike`), `short_fastest` if time and distance is expensive (e.g. for `vehicle=truck`) and `curvature` (only for `vehicle=motorcycle`)
 algorithm        |`dijkstrabi` | The algorithm to calculate the route. Other options are `dijkstra`, `astar`, `astarbi`, `alternative_route` and `round_trip`
 heading          | NaN         | Favour a heading direction for a certain point. Specify either one heading for the start point or as many as there are points. In this case headings are associated by their order to the specific points. Headings are given as north based clockwise angle between 0 and 360 degree.
 heading_penalty  | 120         | Penalty for omitting a specified heading. The penalty corresponds to the accepted time delay in seconds in comparison to the route without a heading.
