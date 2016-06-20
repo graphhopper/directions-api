@@ -130,6 +130,10 @@ If you have more than one vehicle, then the algorithm tries to constantly move s
 the completion time of longest vehicle route can be further reduced. For example, if you have one vehicle that takes 8 hours
 to serve all customers, adding another vehicle (and using `min-max`) might halve the time to serve all customers to 4 hours. However,
  this usually comes with higher transport costs.
+ 
+#### Further Reading
+
+ * [What is difference between min transport_time and min completion_time?](https://graphhopper.com/blog/2016/06/20/what-is-the-difference-between-the-minimization-of-completion-time-and-minimizing-transport-time/?preview_id=5212&preview_nonce=1c18e31580&post_format=standard&preview=true)
 
 #### Full specification of the objective object
 
