@@ -133,7 +133,7 @@ to serve all customers, adding another vehicle (and using `min-max`) might halve
  
 #### Further Reading
 
- * [What is difference between min transport_time and min completion_time?](https://graphhopper.com/blog/2016/06/20/what-is-the-difference-between-the-minimization-of-completion-time-and-minimizing-transport-time/?preview_id=5212&preview_nonce=1c18e31580&post_format=standard&preview=true)
+ * [What is the difference between min transport_time and min completion_time?](https://graphhopper.com/blog/2016/06/20/what-is-the-difference-between-the-minimization-of-completion-time-and-minimizing-transport-time/)
 
 #### Full specification of the objective object
 
