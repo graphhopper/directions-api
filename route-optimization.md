@@ -74,7 +74,7 @@ The general input structure is
 
 Name   | Type | Required | Description
 :------|:-----|:---------|:-----------
-[objectives](#objectives) | object | - | This tells the algorithm what kind of problem needs to be solved, i.e. you can configure problem type and objective.
+[objectives](#objectives) | array | - | Specifies an array of objective functions. This tells the algorithm the objective of the optimization. 
 [vehicles](#vehicles) | array | x | Specifies the available vehicles.
 [vehicle_types](#vehicle-types) | array | - | Specifies the available vehicle types that are referred to by the specified vehicles.
 [services](#services-or-shipments) | array | - | Specifies the available services, i.e. pickup, delivery or any other points to be visited by vehicles. Each service only involves exactly one location.
