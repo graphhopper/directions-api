@@ -31,16 +31,7 @@ You need to calculate travel times and distances on large (road) networks, you n
 
 ### API Clients and Examples
 
-Find some live examples [here](https://graphhopper.com/api/1/examples/#optimization).
-
-Also have a look at [this series of tutorials](https://discuss.graphhopper.com/t/route-optimization-api-tutorials/760).
-
-The official clients are:
-
- * [JavaScript](https://github.com/graphhopper/directions-api-js-client/)
- * [Java](https://github.com/karussell/directions-api-vrp-java-client/)
-  
-Other clients can be created via [swagger-codegen](https://github.com/swagger-api/swagger-codegen) and the swagger specification for the Route Optimization API which is located [here](https://graphhopper.com/api/1/vrp/swagger.json). Please [let us know](https://graphhopper.com/#contact) which further programming language or environment you need for your integration!
+See the [clients](./index.md#api-clients-and-examples) section in the main document and [live examples](https://graphhopper.com/api/1/examples/#route-optimization).
 
 ### Quick Start
 
