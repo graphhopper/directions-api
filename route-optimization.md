@@ -662,7 +662,8 @@ Name   | Type | Description
 :------|:-----|:---------
 job_id | (uuid) string | Specifies the job_id used to fetch solution.
 status | string | Indicates the status of your job. It can either be `waiting`, `processing` or `finished`.
-waiting_time_in_queue | long | in milliseconds
+waiting_time_in_queue | long | time the job waits in queue to be processed in milliseconds
+processing_time | long | processing time in milliseconds.
 solution | object | see below
 
 #### `solution` object
