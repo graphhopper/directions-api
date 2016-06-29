@@ -604,6 +604,7 @@ or your job is finished and a solution is available. Then you get back this:
         "location_id" : "hamburg",
         "arr_time" : 9972,
         "end_time" : 9972,
+        "waiting_time" : 0,
         "distance" : 287064,
         "load_before" : [ 0 ],
         "load_after" : [ 0 ]
@@ -613,6 +614,7 @@ or your job is finished and a solution is available. Then you get back this:
         "location_id" : "cologne",
         "arr_time" : 23512,
         "end_time" : 23512,
+        "waiting_time" : 0,
         "distance" : 709133,
         "load_before" : [ 0 ],
         "load_after" : [ 0 ]
@@ -622,6 +624,7 @@ or your job is finished and a solution is available. Then you get back this:
         "location_id" : "frankfurt",
         "arr_time" : 29851,
         "end_time" : 29851,
+        "waiting_time" : 0,
         "distance" : 897614,
         "load_before" : [ 0 ],
         "load_after" : [ 0 ]
@@ -631,6 +634,7 @@ or your job is finished and a solution is available. Then you get back this:
         "location_id" : "munich",
         "arr_time" : 43140,
         "end_time" : 43140,
+        "waiting_time" : 0,
         "distance" : 1289258,
         "load_before" : [ 0 ],
         "load_after" : [ 0 ]
@@ -700,6 +704,7 @@ id | string | The reference to either the service or the shipment, i.e. correspo
 location_id | string | The reference to the location id of either the address of the service or the address of shipment.pickup or shipment.delivery
 arr_time | long | Arrival time at corresponding location
 end_time | long | End time at corresponding location
+waiting_time | long | waiting time at activity in seconds
 distance | long | Cumulated distance in meter at activity (starts with 0 at start activity)
 load_before | array | Array with size/capacity dimensions. If activity is of type `start`, `load_before` does not exist.
 load_after | array | Array with size/capacity dimensions. If activity is of type `end, `load_after` does not exist.
