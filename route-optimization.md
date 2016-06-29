@@ -704,7 +704,7 @@ id | string | The reference to either the service or the shipment, i.e. correspo
 location_id | string | The reference to the location id of either the address of the service or the address of shipment.pickup or shipment.delivery
 arr_time | long | Arrival time at corresponding location
 end_time | long | End time at corresponding location
-waiting_time | long | waiting time at activity in seconds
+waiting_time | long | Waiting time at activity in seconds. Note that this field does not exist for `start` and `end`.
 distance | long | Cumulated distance in meter at activity (starts with 0 at start activity)
 load_before | array | Array with size/capacity dimensions. If activity is of type `start`, `load_before` does not exist.
 load_after | array | Array with size/capacity dimensions. If activity is of type `end, `load_after` does not exist.
