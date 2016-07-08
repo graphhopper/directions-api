@@ -55,6 +55,7 @@ The general input structure is
 ```json
 {
   "objectives": [..],
+  "cost_matrices": [..],
   "vehicles": [..],
   "vehicle_types": [..],
   "services": [..],
@@ -66,6 +67,7 @@ The general input structure is
 Name   | Type | Required | Description
 :------|:-----|:---------|:-----------
 [objectives](#objectives) | array | - | Specifies an array of objective functions. This tells the algorithm the objective of the optimization. 
+[cost_matrices](#cost-matrices) | array | - | Specifies an array of cost matrix objects. This is used if you want to provide custom distance and/or time matrix values e.g. for time-dependent or indoor routing like for warehouses.
 [vehicles](#vehicles) | array | x | Specifies the available vehicles.
 [vehicle_types](#vehicle-types) | array | - | Specifies the available vehicle types that are referred to by the specified vehicles.
 [services](#services-or-shipments) | array | - | Specifies the available services, i.e. pickup, delivery or any other points to be visited by vehicles. Each service only involves exactly one location.
@@ -132,6 +134,34 @@ Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 type | string | - | min | You can choose between `min` and `min-max`. `min` minimizes the sum of what is specified in `value`, e.g. if objective value is `transport_time`, it minimizes the sum of transport times. `min-max` minimizes the maximum of what is specified in `value`.
 value | string | - | transport_time | You can choose between `transport_time` and `completion_time`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
+
+### Cost Matrices
+
+This lets you specify custom distance or time matrices for specific vehicle profiles.
+
+See the following example:
+
+```json
+ "cost_matrices": [{
+  "profile": "bike",
+  "url": "https://graphhopper.com/api/1/matrix",
+  "type": "default"
+ }, {
+  "url": "https://custom-proxy.com/graphhopper_matrix",
+  "type": "google"
+ }]
+```
+
+With this the bike profile is used from GraphHopper and all other vehicles are using the custom proxy. 
+
+There are two requirements for the custom matrix provider:
+
+ * you need to return the distance and time matrix either in GraphHopper (`type=default`) or Google (`type=google`) format
+ * you have to use a GraphHopper Matrix API URL or an URL ending with `graphhopper_matrix`, a direct usage of an external Matrix API provider is not possible as it would have practical and legal disadvantages.
+
+To make the usage of external providers still easy for you, you can use our [node.js proxy](https://github.com/karussell/graphhopper-matrix-api-proxy/), which currently implements a pipe for Google Matrix API.
+
+Integrating new Matrix API providers is also easy, just create a pull request for our [Java Matrix client](https://github.com/graphhopper/directions-api-java-client/) or let us know your requirements.
 
 ### Vehicles
 
