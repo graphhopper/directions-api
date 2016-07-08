@@ -49,6 +49,10 @@ Let us know your language requirements!
 
 Do not hesitate to share your websites, apps or API clients with us!
 
+## Keep up-to-date
+
+To get informed about the newest features and development follow us at [twitter](https://twitter.com/graphhopper/) or our [blog](https://graphhopper.com/blog/). Furthermore you can watch [this git repository](https://github.com/graphhopper/directions-api) of this documentation, sign up at our [dashboard](https://graphhopper.com/dashboard/) to get the newsletter or sign up at [our forum](https://discuss.graphhopper.com/c/directions-api). Pick the channel you like most.
+
 # [Routing API](./routing.md)
 
 [![Routing Example](./img/routing-example.png)](./routing.md)
