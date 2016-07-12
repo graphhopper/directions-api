@@ -2,5 +2,6 @@
 
 # GraphHopper Directions API for Business
 
-With the [ GraphHopper Directions API](https://graphhopper.com/#directions-api) you get a reliable and fast routing service with world wide coverage. 
+With the [ GraphHopper Directions API](https://graphhopper.com/#directions-api) you get a reliable
+ and fast routing service with world wide coverage. 
 

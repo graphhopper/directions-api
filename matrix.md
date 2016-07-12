@@ -12,12 +12,16 @@ You get an example response for a 3x3 matrix looks via:
 
 ![Matrix Example](./img/matrix-example.png)
 
-The Matrix API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api) and with this API you can calculate many-to-many distances, times or routes a lot more efficient.
+The Matrix API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api) and with 
+this API you can calculate many-to-many distances, times or routes a lot more efficient than calling the 
+Routing API multiple times.
 
-In the [Routing API](./routing.md) we support multiple points, so called 'via points', which results in one route being calculated. The Matrix API results in NxM routes being calculated but is a lot faster compared to NxM single requests. The most simple example is a pizza delivery service, delivering e.g. 4 pizzas. To find the fastest tour consisting of ALL locations one needs a two step process:
-
- 1. Find all distances (or times) between all locations using the Matrix API. For the 4 pizzas you'll need 4*4-4 routes: A-B, A-C, A-D, B-A, B-C, B-D, ... The routes A-A, B-B, C-C and D-D are 0 and therefor the "minus 4".
- 2. Optimize the **order** of the locations to find the overall best tour. I.e. calculate the total time for the tour "A-B-C-D", then "A-C-B-D" and so on. This can be done with an external software or our Route Optimization API.
+In the [Routing API](./routing.md) we support multiple points, so called 'via points', which results in one 
+route being calculated. The Matrix API results in NxM routes or more precise NxM weights, distances or times being calculated 
+but is a lot faster compared to NxM single requests. The most simple example is a tourist trying to decide
+which pizza is close to him instead of using beeline distance she can calculate a 1x4 matrix. Or a delivery service in the
+need of often big NxN matrices to solve vehicle routing problems. E.g. the [GraphHopper Route Optimization API](https://graphhopper.com/api/1/docs/route-optimization/)
+uses the Matrix API under the hood to achieve this.
 
 Some other use case scenarios for the Matrix API:
 

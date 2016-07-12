@@ -10,6 +10,7 @@ The GraphHopper Directions API consists of the following parts:
  * the [Routing API](./routing.md), 
  * the [Route Optimization API](./route-optimization.md),
  * the [Isochrone API](./isochrone.md),
+ * the [Map Matching API](./map-matching.md),
  * the [Matrix API](./matrix.md) and 
  * the [Geocoding API](./geocoding.md).
 
@@ -70,6 +71,12 @@ The Route Optimization API is documented [here](./route-optimization.md).
 [![Isochrone Example](./img/isochrone-example.png)](./isochrone.md)
 
 The Isochrone API is documented [here](./isochrone.md)
+
+# [Map Matching API](./map-matching.md)
+
+[![Map Matching Example](./img/map-matching-example.png)](./map-matching.md)
+
+The Map Matching API is documented [here](./map-matching.md)
 
 # [Matrix API](./matrix.md)
 
