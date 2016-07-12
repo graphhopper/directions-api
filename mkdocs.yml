@@ -6,10 +6,11 @@ pages:
 - Overview: index.md
 - API parts:
   - Routing API: routing.md
-  - Route Optimization API: route-optimization.md
+  - Route Optimization API: route-optimization.md  
   - Geocoding API: geocoding.md
-  - Matrix API: matrix.md
+  - Map Matching API: map-matching.md
   - Isochrone API: isochrone.md
+  - Matrix API: matrix.md
 - Vehicles: supported-vehicle-profiles.md
 - FAQ: FAQ.md
 extra_css: 

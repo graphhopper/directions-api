@@ -6,7 +6,7 @@ The endpoint is `https://graphhopper.com/api/[version]/match`
 
 You get an example response for a GPX via:
 
-`curl -XPOST -H "Content-Type: application/gpx+xml" "https://graphhopper.com/api/1/match?vehicle=car&key=[YOUR_KEY]" --data @/path/to/some.gpx
+`curl -XPOST -H "Content-Type: application/gpx+xml" "https://graphhopper.com/api/1/match?vehicle=car&key=[YOUR_KEY]" --data @/path/to/some.gpx`
 
 ### Introduction
 
@@ -30,7 +30,7 @@ to the digital road network to clean up this data or attach data to it.
 
 ### Input format
 
-The only support input format is currently GPX tracks (application/gpx+xml). A json format is under work.
+The supported input format is [GPX 1.1](http://www.topografix.com/GPX/1/1/) (application/gpx+xml). A json format is under work.
 
 ### Parameters
 
@@ -44,20 +44,18 @@ locale      | en      | The locale of the resulting instructions
 type        | json    | The output format, can be gpx or json.
 debug       | false   | If true, the output will be formated.
 
-Further parameters from the [Routing API](routing.md) do apply here too.
+Further parameters from the [Routing API](routing.md#parameters) do apply here too.
 
 ### Limits and Counts
 
-The cost for one request depends on the number of GPS location and is documented [here](https://graphhopper.com/api/1/docs/FAQ/).
+The cost for one request depends on the number of GPS location and is documented [here](FAQ.md).
 
 One request should not exceed the Map Matching API location limit depending on the package, 
 see the pricing in our dashboard.
 
 ### JSON Output
 
-Keep in mind that some attributes which are not documented here can be removed in the future - 
-you should not rely on them!
-The output is currently nearly identical to the [Routing API](routing.md).
+The output is currently the one of the [Routing API](routing.md#output).
 
 ## HTTP Error codes
 
