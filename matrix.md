@@ -49,7 +49,7 @@ A simple illustration for a 1x3 matrix with different start- and end-points:
 from_pointA |A->1        |A->2       |A->3
 
 
-For every route 1->2, 1-3, ... or A->1,A->2,A->3 you can return only the weight, the time, the distance and even the full route. The matrix returning full routes is only suitable for a smaller matrix (or with a big matrix and a filter). This 'route-matrix' is useful if you know in advance that you need all the full routes and want to avoid a separate query to the Routing API. Useful e.g. for letting the user choosing from several routes. Routes itself can have several other parameters which are documented in our [Routing API documentation](https://graphhopper.com/api/1/docs/#routing-api).
+For every route 1->2, 1-3, ... or A->1,A->2,A->3 you can return only the weight, the time and the distance. To calculate full routes you can use the [Routing API](https://graphhopper.com/api/1/docs/#routing-api) which also has a lot of different parameters.
 
 ### Parameters
 
