@@ -90,16 +90,6 @@ The Matrix API is documented [here](./matrix.md)
 
 The Geocoding API is documentation [here](./geocoding.md).
 
-<!--
-
-# Map Matching API
-
-Use this API to match recorded GPS tracks with roads and associate useful information like turn instructions or speed limit, i.e. it provides a 'snap to road' functionality. Please contact us for further details.
-
-![Map Matching Illustration](https://karussell.files.wordpress.com/2014/07/map-matching.png?w=242)
-
--->
-
 # [Terms of Services](https://graphhopper.com/terms.html)
 
 Read the [terms of services](https://graphhopper.com/terms.html) carefully and make sure your user are agreeing to be bound by GraphHopper's Terms of Use too.
