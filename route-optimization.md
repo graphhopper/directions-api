@@ -142,14 +142,17 @@ This lets you specify custom distance or time matrices for specific vehicle prof
 See the following example:
 
 ```json
- "cost_matrices": [{
-  "profile": "bike",
-  "url": "https://graphhopper.com/api/1/matrix",
-  "type": "default"
- }, {
-  "url": "https://custom-proxy.com/graphhopper_matrix",
-  "type": "google"
- }]
+"cost_matrices": [
+   {
+      "profile": "bike",
+      "url": "https://graphhopper.com/api/1/matrix",
+      "type": "default"
+   }, 
+   {
+      "url": "https://custom-proxy.com/graphhopper_matrix",
+      "type": "google"
+   }
+]
 ```
 
 With this the bike profile is used from GraphHopper and all other vehicles are using the custom proxy. 
