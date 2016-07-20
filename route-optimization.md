@@ -155,7 +155,7 @@ See the following example:
 ]
 ```
 
-With this the bike profile is used from GraphHopper and all other vehicles are using the custom proxy. 
+The example above shows that the bike profile is used from GraphHopper and all other vehicles use the custom proxy.
 
 There are two requirements for the custom matrix provider:
 
