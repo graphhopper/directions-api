@@ -38,7 +38,7 @@ All parameters are shown in the following table:
 
 Parameter   | Default | Description
 :-----------|:--------|:-----------
-gps_accuracy| 50      | The precision of the GPS locations
+gps_accuracy| 50      | The precision of the GPS locations in meters, from minimum of 5 to maximum 100.
 vehicle     | car     | The vehicle for which the route should be snapped. See [here](./supported-vehicle-profiles.md) for all options.
 locale      | en      | The locale of the resulting instructions
 type        | json    | The output format, can be gpx or json.
@@ -55,7 +55,20 @@ see the pricing in our dashboard.
 
 ### JSON Output
 
-The output is currently the one of the [Routing API](routing.md#output).
+The output is currently the one of the [Routing API](routing.md#output), plus the `map_matching` entry.
+See here the most important entries:
+
+JSON path/attribute        | Description
+:--------------------------|:------------
+paths                      | An array of possible paths
+paths[0].distance          | The total distance of the route, in meter
+paths[0].time              | The total time of the route, in ms
+paths[0].points            | This value contains the coordinates of the path. If `points_encoded=true` or no `points_encoded` specified an encoded string will be returned, otherwise an array with order [lon,lat,elevation] is returned. See the parameter `points_encoded` for more information.
+paths[0].instructions      | Contains information about the instructions for this route. The last instruction is always the Finish instruction and takes 0ms and 0meter. Keep in mind that instructions are currently under active development and can sometimes contain misleading information, so, make sure you always show an image of the map at the same time when navigating your users!
+map_matching.distance      | The distance in meter of the matched path
+map_matching.time          | The time in ms of the matched path
+map_matching.original_distance | The distance in meter of the original track
+map_matching.original_time     | The time in ms of the original track
 
 ## HTTP Error codes
 
