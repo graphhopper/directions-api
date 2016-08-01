@@ -87,6 +87,8 @@ for more information about it.
 
 Also currently only the default provider supports autocompletion of partial search strings.
 
+All providers support normal "forward" geocoding and reverse geocoding via `reverse=true`.
+
 ### `provider=default`
 
 This provider returns results of our internal geocoding engine.
