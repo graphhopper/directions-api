@@ -10,7 +10,7 @@ You get an example response for a GPX via:
 
 ### Introduction
 
-![Map Matching Example](./img/map-matching-example.png)
+![Map Matching Example](./img/map-matching-example.gif)
 
 The Map Matching API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api) and 
 with this API you can snap measured GPS points typically as GPX files to a digital road network to e.g. clean 
