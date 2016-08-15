@@ -14,7 +14,7 @@ You get an example response for a GPX via:
 
 The Map Matching API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api) and 
 with this API you can snap measured GPS points typically as GPX files to a digital road network to e.g. clean 
-data or attach certain data to it. Read more at [Wikipedia](https://en.wikipedia.org/wiki/Map_matching).
+data or attach certain data like elevation or turn instructions to it. Read more at [Wikipedia](https://en.wikipedia.org/wiki/Map_matching).
 
 In the example screenshot above and demo you see the Map Matching API in action where the black line is the GPS track and
 the green one is matched result.
