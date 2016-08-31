@@ -162,7 +162,7 @@ There are two requirements for the custom matrix provider:
  * you need to return the distance and time matrix either in GraphHopper (`type=default`) or Google (`type=google`) format
  * you have to use a GraphHopper Matrix API URL or an URL ending with `graphhopper_matrix`, a direct usage of an external Matrix API provider is not possible as it would have practical and legal disadvantages.
 
-To make the usage of external providers still easy for you, you can use our [node.js proxy](https://github.com/karussell/graphhopper-matrix-api-proxy/), which currently implements a pipe for Google Matrix API.
+To make the usage of external providers still easy for you, you can use our [node.js proxy](https://github.com/karussell/graphhopper-matrix-api-proxy/), which currently implements a pipe for Google Matrix API. Regarding the usage terms implications you need to get in touch with your local Google Maps distributor before.
 
 Integrating new Matrix API providers is also easy, just create a pull request for our [Java Matrix client](https://github.com/graphhopper/directions-api-java-client/) or let us know your requirements.
 
