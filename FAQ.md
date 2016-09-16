@@ -23,6 +23,23 @@ The API credit limits are listed in the dashboard and depend on the selected pac
 
 Your API key will not stop working. If this happens frequently, we'll contact you to discuss.
 
+## What happens if I go over the location limit?
+
+Location limits are hard limits and you'll get an error e.g. for the Routing API (max. via points), 
+the Route Optimization API (max. services/shipments), for the Matrix API (max. locations) or for the Map Matching API (max. measurements).
+
+## What are the rate limits?
+
+The default limits are outlined below. For different limits, please [contact us](https://graphhopper.com/#contact).
+
+You can send up to 100 requests per minute to an end point of the GraphHopper Directions API.
+
+The Geocoding and Routing API, as well as GET requests against the Route Optimization API 
+allow an exception with up to 600 requests per minute.
+
+The Matrix API has an additional limitation where the sum over all locations in all 
+Matrix-requests over a timespan of 5 seconds cannot exceed 300.
+
 ## Where can I find the documentation or some demos?
 
 Our documentation is available [here](./index.md) and some demos are available for [every client](./index.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
@@ -65,7 +82,7 @@ The Routing API is based on the [open source GraphHopper](https://github.com/gra
 
 We have decided to keep the Matrix API closed source, see [graphhopper#131](https://github.com/graphhopper/graphhopper/issues/131)
 
-See [here](https://graphhopper.com/#os-comparison) for a more detailed comparison.
+See [here](https://graphhopper.com/#open-source-comparison) for a more detailed comparison.
 
 ## Is it possible to use the GraphHopper Directions API with a custom GraphHopper or jsprit version?
 
