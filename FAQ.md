@@ -48,6 +48,9 @@ Our documentation is available [here](./index.md) and some demos are available f
 
 You can find the detailed pricing in the dashboard. For individual requirements we offer custom packages. Additionally we offer support contracts and a self-hosted Directions API, see [here](https://graphhopper.com/#enterprise) for more details.
 
+## Where can I change my credit card or payment data
+
+This is possible in the [overview of the dashboard](https://graphhopper.com/dashboard/#/overview), then click edit data.
 
 ## Can I pay on demand?
 
