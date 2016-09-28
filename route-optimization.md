@@ -404,7 +404,7 @@ A shipment can be specified as:
         ]
     },
     "size": [1],
-    "required_skill": ["loading-bridge"],
+    "required_skills": ["loading-bridge"],
     "allowed_vehicles": ["trucker_stefan"],
     "priority": 3
 }
