@@ -380,7 +380,7 @@ A shipment can be specified as:
     "pickup": {
         "address": {
             "location_id": "your-pickup-location-id",
-            "name": "Johann Sebastian Bach Avenue 5"
+            "name": "Johann Sebastian Bach Avenue 5",
             "lon": 12.1333333,
             "lat": 54.0833333
         },
