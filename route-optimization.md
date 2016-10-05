@@ -265,6 +265,7 @@ break | object | - | - | Specifies the driver break.
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 location_id | string | x | - | Specifies the id of the location.
+name | string | - | - | Name of location. 
 lon | double | x | - | Longitude of location. 
 lat | double | x | - | Latitude of location.
 
@@ -348,6 +349,7 @@ A service can be specified as:
      "name": "meaningful-name", 
      "address": {
        "location_id": "service-location-id",
+       "name": "Goethe Street 1",
        "lon": 9.999,
        "lat": 53.552
      },
@@ -378,6 +380,7 @@ A shipment can be specified as:
     "pickup": {
         "address": {
             "location_id": "your-pickup-location-id",
+            "name": "Johann Sebastian Bach Avenue 5"
             "lon": 12.1333333,
             "lat": 54.0833333
         },
@@ -392,6 +395,7 @@ A shipment can be specified as:
     "delivery": {
         "address": {
             "location_id": "your-delivery-location-id",
+            "name": "Thomas Mann Street 1",
             "lon": 8.3858333,
             "lat": 49.0047222
         },
@@ -615,75 +619,150 @@ or your job is finished and a solution is available. Then you get back this:
   "waiting_time_in_queue" : 0,
   "processing_time" : 267,
   "solution" : {
-    "costs" : 62180,
-    "distance" : 1875953,
-    "transport_time" : 62180,
-    "completion_time" : 62180,
-    "max_operation_time" : 62180,
-    "waiting_time" : 0,
-    "no_vehicles" : 1,
-    "no_unassigned" : 0,
-    "routes" : [ {
-      "vehicle_id" : "my_vehicle",
-      "activities" : [ {
-        "type" : "start",
-        "location_id" : "berlin",
-        "end_time" : 0,
-        "distance" : 0,
-        "load_after" : [ 0 ]
-      }, {
-        "type" : "service",
-        "id" : "hamburg",
-        "location_id" : "hamburg",
-        "arr_time" : 9972,
-        "end_time" : 9972,
-        "waiting_time" : 0,
-        "distance" : 287064,
-        "load_before" : [ 0 ],
-        "load_after" : [ 0 ]
-      }, {
-        "type" : "service",
-        "id" : "cologne",
-        "location_id" : "cologne",
-        "arr_time" : 23512,
-        "end_time" : 23512,
-        "waiting_time" : 0,
-        "distance" : 709133,
-        "load_before" : [ 0 ],
-        "load_after" : [ 0 ]
-      }, {
-        "type" : "service",
-        "id" : "frankfurt",
-        "location_id" : "frankfurt",
-        "arr_time" : 29851,
-        "end_time" : 29851,
-        "waiting_time" : 0,
-        "distance" : 897614,
-        "load_before" : [ 0 ],
-        "load_after" : [ 0 ]
-      }, {
-        "type" : "service",
-        "id" : "munich",
-        "location_id" : "munich",
-        "arr_time" : 43140,
-        "end_time" : 43140,
-        "waiting_time" : 0,
-        "distance" : 1289258,
-        "load_before" : [ 0 ],
-        "load_after" : [ 0 ]
-      }, {
-        "type" : "end",
-        "location_id" : "berlin",
-        "arr_time" : 62180,
-        "distance" : 1875953,
-        "load_before" : [ 0 ]
-      } ]
-    } ],
-    "unassigned" : {
-      "services" : [ ],
-      "shipments" : [ ],
-      "breaks" : [ ]
-    }
+     "costs": 58835,
+     "distance": 1898748,
+     "time": 58835,
+     "transport_time": 58835,
+     "completion_time": 58835,
+     "max_operation_time": 58835,
+     "waiting_time": 0,
+     "no_vehicles": 1,
+     "no_unassigned": 0,
+     "routes": [
+       {
+         "vehicle_id": "my_vehicle",
+         "distance": 1898748,
+         "transport_time": 58835,
+         "completion_time": 58835,
+         "waiting_time": 0,
+         "activities": [
+           {
+             "type": "start",
+             "location_id": "berlin",
+             "address": {
+               "location_id": "berlin",
+               "lat": 52.537,
+               "lon": 13.406
+             },
+             "end_time": 0,
+             "distance": 0,
+             "driving_time": 0,
+             "load_after": [
+               0
+             ]
+           },
+           {
+             "type": "service",
+             "id": "munich",
+             "location_id": "munich",
+             "address": {
+               "location_id": "munich",
+               "name": "Meindlstraße 11c",
+               "lat": 48.145,
+               "lon": 11.57
+             },
+             "arr_time": 17985,
+             "end_time": 17985,
+             "waiting_time": 0,
+             "distance": 587746,
+             "driving_time": 17985,
+             "load_before": [
+               0
+             ],
+             "load_after": [
+               0
+             ]
+           },
+           {
+             "type": "service",
+             "id": "frankfurt",
+             "location_id": "frankfurt",
+             "address": {
+               "location_id": "frankfurt",
+               "name": "Thomas Mann Straße 24",
+               "lat": 50.109,
+               "lon": 8.67
+             },
+             "arr_time": 30991,
+             "end_time": 30991,
+             "waiting_time": 0,
+             "distance": 1001605,
+             "driving_time": 30991,
+             "load_before": [
+               0
+             ],
+             "load_after": [
+               0
+             ]
+           },
+           {
+             "type": "service",
+             "id": "cologne",
+             "location_id": "cologne",
+             "address": {
+               "location_id": "cologne",
+               "name": "Friedrichstraße 10",
+               "lat": 50.936,
+               "lon": 6.957
+             },
+             "arr_time": 37004,
+             "end_time": 37004,
+             "waiting_time": 0,
+             "distance": 1189526,
+             "driving_time": 37004,
+             "load_before": [
+               0
+             ],
+             "load_after": [
+               0
+             ]
+           },
+           {
+             "type": "service",
+             "id": "hamburg",
+             "location_id": "hamburg",
+             "address": {
+               "location_id": "hamburg",
+               "name": "Goethestraße 1",
+               "lat": 53.552,
+               "lon": 9.999
+             },
+             "arr_time": 49575,
+             "end_time": 49575,
+             "waiting_time": 0,
+             "distance": 1612006,
+             "driving_time": 49575,
+             "load_before": [
+               0
+             ],
+             "load_after": [
+               0
+             ]
+           },
+           {
+             "type": "end",
+             "location_id": "berlin",
+             "address": {
+               "location_id": "berlin",
+               "lat": 52.537,
+               "lon": 13.406
+             },
+             "arr_time": 58835,
+             "distance": 1898748,
+             "driving_time": 58835,
+             "load_before": [
+               0
+             ]
+           }
+         ]
+       }
+     ],
+     "unassigned": {
+       "services": [],
+       "shipments": [],
+       "breaks": []
+     }
+   }
   }
 ```
 
@@ -735,6 +814,7 @@ Name   | Type | Description
 type | string | Specifies the type of activity. It can either be `start`, `end`, `service`, `pickup`, `delivery`, `pickupShipment` or `deliverShipment`
 id | string | The reference to either the service or the shipment, i.e. corresponds to either service.id or shipment.id
 location_id | string | The reference to the location id of either the address of the service or the address of shipment.pickup or shipment.delivery
+address | object | address of activity including `location_id`, `name`, `lon`, `lat` (see address object specification above)
 arr_time | long | Arrival time at corresponding location
 end_time | long | End time at corresponding location
 waiting_time | long | Waiting time at activity in seconds. Note that this field does not exist for `start` and `end`.
