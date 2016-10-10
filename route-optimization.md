@@ -31,7 +31,7 @@ You need to calculate travel times and distances on large (road) networks, you n
 
 ### API Clients and Examples
 
-See the [clients](./index.md#api-clients-and-examples) section in the main document and [live examples](https://graphhopper.com/api/1/examples/#route-optimization).
+See the [clients](./index.md#api-clients-and-examples) section in the main document and [live examples](https://graphhopper.com/api/1/examples/#optimization).
 
 ### Quick Start
 
