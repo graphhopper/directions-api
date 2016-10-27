@@ -54,6 +54,7 @@ The general input structure is
 
 ```json
 {
+  "configuration": {..},
   "objectives": [..],
   "cost_matrices": [..],
   "vehicles": [..],
@@ -66,6 +67,7 @@ The general input structure is
 
 Name   | Type | Required | Description
 :------|:-----|:---------|:-----------
+[configuration](#configuration) | obj | - | Specifies general configurations.
 [objectives](#objectives) | array | - | Specifies an array of objective functions. This tells the algorithm the objective of the optimization. 
 [cost_matrices](#cost-matrices) | array | - | Specifies an array of cost matrix objects. This is used if you want to provide custom distance and/or time matrix values e.g. for time-dependent or indoor routing like for warehouses.
 [vehicles](#vehicles) | array | x | Specifies the available vehicles.
@@ -73,6 +75,33 @@ Name   | Type | Required | Description
 [services](#services-or-shipments) | array | - | Specifies the available services, i.e. pickup, delivery or any other points to be visited by vehicles. Each service only involves exactly one location.
 [shipments](#services-or-shipments) | array | - | Specifies the available shipments, i.e. pickup AND delivery points to be visited by vehicles subsequently. Each shipment involves exactly two locations, a pickup and a delivery location.
 [relations](#relations) | array | - | Specifies an arbitrary number of additional relations between and among services and shipments.
+
+### Configuration
+
+This lets you specify whether you the API should provide you with route geometries for vehicle routes or not. 
+Thus, you do not need to do extra routing to get the polyline for each route. By default, 
+the Optimization API does not include it. You can enable this by adding
+
+```json
+"configuration": {
+   "routing": {
+      "calc_points": true;
+   }
+}
+```
+
+#### Full specification of the configuration object
+
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+routing | object | - | - |
+ 
+#### Full specification of the routing object
+ 
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+calc_points | boolean | - | false | specifies whether route geometries should be calculated or not
+
 
 ### Objectives
 
@@ -821,6 +850,7 @@ distance | long | travel distance of this route (in meter)
 transport_time | long | travel time of this route (in seconds)
 completion_time | long | completion time of this route (in seconds)
 waiting_time | long | Overall waiting time in route (in seconds)
+points | array | Array of [Geojson object for the route geometries](https://discuss.graphhopper.com/t/optimization-response-with-route-geometries/1133) of each leg in the vehicle route.  
 activities | array | Array of activities. see spec below.
 
 #### Activity object
