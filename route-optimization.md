@@ -78,7 +78,7 @@ Name   | Type | Required | Description
 
 This lets you specify the objectives of your optimization. Currently, you can specify one objective function. It requires two things: the type and the value to be optimized. 
 When it comes to the objective type, you have two options, `min` and `min-max`. The objective value specifies whether 
-you want to just optimize `transport_time` or `completion_time`. The objective value `transport_time` solely considers the time
+you want to just optimize `vehicles`, `transport_time` or `completion_time`. The objective value `transport_time` solely considers the time
 your drivers spend on the road, i.e. transport time. In contrary to `transport_time`, `completion_time` also takes waiting times at customer sites into account.
 The `completion_time` of a route is defined as the time from starting to ending the route, 
 i.e. the route's transport time, the sum of waiting times plus the sum of activity durations. 
@@ -123,6 +123,21 @@ If you have more than one vehicle, then the algorithm tries to constantly move s
 the completion time of longest vehicle route can be further reduced. For example, if you have one vehicle that takes 8 hours
 to serve all customers, adding another vehicle (and using `min-max`) might halve the time to serve all customers to 4 hours. However,
  this usually comes with higher transport costs.
+If you want to minimize `vehicles` first and, second, `completion_time`, you can also combine different objectives like this:
+
+```json
+"objectives" : [
+   {
+      "type": "min",
+      "value": "vehicles"
+   },
+   {
+      "type": "min",
+      "value": "completion_time"
+   }
+]  
+```
+ 
  
 #### Further Reading
 
