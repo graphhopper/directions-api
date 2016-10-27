@@ -94,7 +94,7 @@ the Optimization API does not include it. You can enable this by adding
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
-routing | object | - | - |
+routing | object | - | - | - 
  
 #### Full specification of the routing object
  
