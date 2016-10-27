@@ -90,12 +90,6 @@ the Optimization API does not include it. You can enable this by adding
 }
 ```
 
-#### Full specification of the configuration object
-
-Name   | Type | Required | Default | Description
-:------|:-----|:---------|:--------|:-----------
-routing | object | - | - | - 
- 
 #### Full specification of the routing object
  
 Name   | Type | Required | Default | Description
