@@ -69,7 +69,7 @@ Please [contact us](https://graphhopper.com/#contact)
 
 ## Do I need to link or mention the use of the GraphHopper Directions API
 
-Yes, please see [here](https://graphhopper.com/api/1/docs/#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option or need to use it for an in-house application where the attribution.
+Yes, please see [here](https://graphhopper.com/api/1/docs/#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option or need to use it for an in-house application.
 
 
 ## What is the difference between the GraphHopper Directions API and the open source projects like the GraphHopper routing engine and the optimization engine jsprit?
