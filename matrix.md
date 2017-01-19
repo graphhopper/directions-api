@@ -84,8 +84,7 @@ Keep in mind that some attributes which are not documented here can be removed i
   "times" : [ [ 0, 5831, 3873, 8610 ], [ 5808, 0, 3766, 7043 ], [ 3800, 3681, 0, 5869 ], [ 8541, 6972, 5859, 0 ] ],
   "distances" : [ [ 0, 119124, 79156, 199907 ], [ 108691, 0, 63641, 142487 ], [ 79044, 71409, 0, 132215 ], [ 198852, 141322, 131953, 0 ] ],
   "info" : {
-    "copyrights" : [ "GraphHopper", "OpenStreetMap contributors" ],
-    "took" : 0.024203006
+    "copyrights" : [ "GraphHopper", "OpenStreetMap contributors" ]
   }
 }
 ```
@@ -97,7 +96,6 @@ JSON path/attribute        | Description
 times                      | The time matrix for the specified points in the order [[from1->to1, from1->to2, ...], [from2->to1, from2->to2, ...], ...]. The times are in seconds.
 distances                  | The distance matrix for the specified points in the same order as the time matrix. The distances are in meters.
 weights                    | The weight matrix for the specified points in the same order as the time matrix. The weights for different vehicles can have a different unit but the weights array is perfectly suited as input for [Vehicle Routing Problems](http://en.wikipedia.org/wiki/Vehicle_routing_problem) as it is currently faster to calculate.
-info.took                  | The taken time in seconds
 info.copyrights            | Attribution according to [our documentation](https://graphhopper.com/api/1/docs/#attribution) is necessary if no white-label option included.
 
 ### HTTP POST request
@@ -123,7 +121,7 @@ JSON response:
     [847.615,0.0,807.13,927.05],
     [561.073,777.362,0.0,660.521],
     [1102.726,905.626,662.717,0.0]],
-"info":{"took":0.056749515,"copyrights":["GraphHopper","OpenStreetMap contributors"]}
+"info":{"copyrights":["GraphHopper","OpenStreetMap contributors"]}
 }
 ```
 
