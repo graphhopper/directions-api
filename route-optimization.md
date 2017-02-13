@@ -613,7 +613,7 @@ Learn more about it in the [live API docs](https://graphhopper.com/api/1/vrp/doc
 
 ## JSON Output
 
-If you post your problem, you get back a job_id such as:
+If you post your problem, you either get back a job_id or an error. The job id looks like following: 
 
 ```json
 { "job_id": "7ac65787-fb99-4e02-a832-2c3010c70097" }
@@ -622,6 +622,28 @@ If you post your problem, you get back a job_id such as:
 With the `job_id` you can fetch your solution via `https://graphhopper.com/api/1/vrp/solution/[job_id]?key=[YOUR_KEY]`  such as
  
 `curl -X GET  "https://graphhopper.com/api/1/vrp/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"`
+ 
+ If you get an error, you should always get a detailed description of the error like this:
+  
+```json
+{
+  "message": "Bad Request",
+  "hints": [
+    {
+      "message": "Unsupported json property [vehice_id]. Allowed properties: [vehicle_id, type_id, start_address, end_address, break, return_to_depot, earliest_start, latest_end, skills, max_distance]",
+      "details": "class java.lang.IllegalArgumentException"
+    }
+  ]
+}
+```
+
+We use the following error codes being in line with http status codes:
+
+Code   | Type | Description
+:------|:-----|:---------
+400 | Bad Request | Your json request is not valid. The `message` contains a detailed error message to fix this fast.
+404 | Not Found | The solution with the id you used cannot be found.
+500 | Internal Server Error | Our team will get this error as well and we analyse this asap.
  
 ### Response
 
