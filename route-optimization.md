@@ -821,7 +821,8 @@ or your job is finished and a solution is available. Then you get back this:
      "unassigned": {
        "services": [],
        "shipments": [],
-       "breaks": []
+       "breaks": [],
+       "details": []
      }
    }
   }
@@ -892,6 +893,51 @@ Name   | Type | Description
 services | array | array of service.id that could not be assigned to any route, e.g. [ "service1", "service2" ]
 shipments | array | array of shipment.id that could not be assigned to any route, e.g. [ "shipment1", "shipment2" ]
 breaks | array | array of break.id that has not been assigned to its corresponding route
+details | array | array with reasons why services/shipments end up being unassigned
+
+Example:
+
+```json
+"unassigned": {
+    "services": [
+      "visit_munich",
+      "visit_hamburg"
+    ],
+    "shipments": [],
+    "breaks": [],
+    "details": [
+      {
+        "id": "visit_munich",
+        "code": 2,
+        "reason": "cannot be visited within time window"
+      },
+      {
+        "id": "visit_hamburg",
+        "code": 3,
+        "reason": "does not fit into any vehicle due to capacity"
+      }
+    ]
+}
+``` 
+
+#### Detail object
+
+Name   | Type | Description
+:------|:-----|:---------
+id | string | id of service, shipment or break
+code | int | reason code
+reason | string | description of reason
+
+#### Reasons
+
+Code   |  Reason
+:------|:---------
+1 | cannot serve required skill
+2 | cannot be visited within time window
+3 | does not fit into any vehicle due to capacity
+4 | cannot be assigned due to max distance constraint of vehicles
+21 | could not be assigned due to relation constraint
+22 | could not be assigned due to allowed vehicle constraint
 
 ## Examples
 
