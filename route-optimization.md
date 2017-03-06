@@ -298,7 +298,7 @@ earliest_start | long | - | 0 | Earliest start of vehicle in seconds.
 latest_end | long | - | Long.MAX_VALUE | Latest end of vehicle in seconds, i.e. the time the vehicle needs to be at its end location at latest.
 skills | array | - | - | Array of skills, i.e. array of string (not case sensitive).
 break | object | - | - | Specifies the driver break.
-max_distance | int | - | - | Specifies the maximum distance a vehicle can go.
+max_distance | int | - | Int.MAX_VALUE | Specifies the maximum distance a vehicle can go.
 
 #### Full specification of a address object
 
