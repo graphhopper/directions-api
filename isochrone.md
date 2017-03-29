@@ -34,7 +34,6 @@ time_limit  | 600     | Specify which time the vehicle should travel. In seconds
 vehicle     | car     | Possible vehicles are bike, car, foot and [more](./supported-vehicle-profiles.md)
 buckets     | 1       | For how many sub intervals an additional polygon should be calculated.
 reverse_flow| false   | If `false` the flow goes from point to the polygon, if `true` the flow goes from the polygon "inside" to the point. Example usage for `false`: *How many potential customer can be reached within 30min travel time from your store* vs. `true`: *How many customers can reach your store within 30min travel time.*
-type        | json    | Specifies the resulting format of the route, for json the content type will be application/json. Or use `jsonp`, additionally you'll need to provide the callback function via the `callback` parameter. The content type will be application/javascript
 debug       | `false` | If `true`, the output will be formated.
 
 ## Example output for the case type=json

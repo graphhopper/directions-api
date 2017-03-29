@@ -35,7 +35,7 @@ elevation   | `false` | If `true` a third dimension - the elevation - is include
 points_encoded     | true    | If `false` the coordinates in `point` and `snapped_waypoints` are returned as array using the order [lon,lat,elevation] for every point. If `true` the coordinates will be encoded as string leading to less bandwith usage. You'll need a special handling for the decoding of this string on the client-side. We provide open source code code in Java and JavaScript, see the clients section. It is especially important to use our official client or code if you set `elevation=true`!
 calc_points    | `true`  | If the points for the route should be calculated at all printing out only distance and time.
 debug          | `false` | If true, the output will be formated.
-type           | `json`  | Specifies the resulting format of the route, for `json` the content type will be application/json. Other possible format options: <br> `jsonp` you'll need to provide the callback function via the callback parameter. The content type will be application/javascript<br> `gpx`, the content type will be application/gpx+xml, see below for more parameters.
+type           | `json`  | Specifies the resulting format of the route, for `json` the content type will be application/json. Or use `gpx`, the content type will be application/gpx+xml, see below for more parameters.
 point_hint     | -       | Optional parameter. Specifies a hint for each `point` parameter to prefer a certain street for the closest location lookup. E.g. if there is an address or house with two or more neighboring streets you can control for which street the closest location is looked up.
 
 #### GPX
