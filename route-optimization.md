@@ -169,14 +169,15 @@ If you want to minimize `vehicles` first and, second, `completion_time`, you can
 
 #### Full specification of the objective object
 
-Name   | Type | Required | Default | Description
-:------|:-----|:---------|:--------|:-----------
-type | string | - | min | You can choose between `min` and `min-max`. `min` minimizes the sum of what is specified in `value`, e.g. if objective value is `transport_time`, it minimizes the sum of transport times. `min-max` minimizes the maximum of what is specified in `value`.
-value | string | - | transport_time | You can choose between `transport_time` and `completion_time`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
+Name   | Type   | Required | Default | Description
+:------|:-------|:---------|:--------|:-----------
+type   | string | -        | min     | You can choose between `min` and `min-max`. `min` minimizes the sum of what is specified in `value`, e.g. if objective value is `transport_time`, it minimizes the sum of transport times. `min-max` minimizes the maximum of what is specified in `value`.
+value  | string | -        | transport_time | You can choose between `transport_time` and `completion_time`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
 
 ### Cost Matrices
 
-This lets you specify custom distance or time matrices for specific vehicle profiles.
+This lets you specify custom distance or time matrices for specific vehicle profiles
+inside the route optimization request.
 
 See the following example:
 
@@ -184,26 +185,37 @@ See the following example:
 "cost_matrices": [
    {
       "profile": "bike",
-      "url": "https://graphhopper.com/api/1/matrix",
       "type": "default"
-   }, 
+   },
    {
-      "url": "https://custom-proxy.com/graphhopper_matrix",
-      "type": "google"
+      "profile": "car",
+      "location_ids": ["gera",  "erfurt", "berlin"],
+      "data": {
+          "times":     [ [ 0,     5000,  4000 ], 
+                         [ 5000,     0,  1000 ], 
+                         [ 4000,  1000,     0 ] 
+                       ],
+          "distances": [ [ 0,    55000, 34000 ], 
+                         [ 45000,    0, 11000 ],
+                         [ 34000,11000,     0 ] ]
+      }
    }
 ]
 ```
 
-The example above shows that the bike profile is used from GraphHopper and all other vehicles use the custom proxy.
+The example above shows that for the vehicle profile `bike` the time (in ms) and distance (in meter) information is
+fetched via the GraphHopper Matrix API and for `car` the provided matrix is used.
 
-There are two requirements for the custom matrix provider:
+The tricky part is to associate the time and distance values to the correct location pair. This is done with 
+the `locations_ids` array. With the time matrix from above the time it takes from gera (index 0) to erfurt (index 1)
+is retrieved via looking in row 0 (gera) of the `times` matrix and use element 1 (erfurt), i.e. 5000ms. 
+Or from berlin to gera you look in row 2 and pick element 0, i.e. 4000ms. So the order of the `locations_ids`
+array must be in sync with the order of the provided matrix.
 
- * you need to return the distance and time matrix either in GraphHopper (`type=default`) or Google (`type=google`) format
- * you have to use a GraphHopper Matrix API URL or an URL ending with `graphhopper_matrix`, a direct usage of an external Matrix API provider is not possible as it would have practical and legal disadvantages.
-
-To make the usage of external providers still easy for you, you can use our [node.js proxy](https://github.com/karussell/graphhopper-matrix-api-proxy/), which currently implements a pipe for Google Matrix API. Regarding the usage terms implications you need to get in touch with your local Google Maps distributor before.
-
-Integrating new Matrix API providers is also easy, just create a pull request for our [Java Matrix client](https://github.com/graphhopper/directions-api-java-client/) or let us know your requirements.
+Currently we only support the format of the [GraphHopper Matrix API](./matrix.md) and if you use a customized
+GraphHopper installation you can directly use the JSON result for the `data`
+JSON entry above. If you are able to define your preferred format via
+[swagger](http://swagger.io/), then we can try to integrate this in our system, please contact us.
 
 ### Vehicles
 
