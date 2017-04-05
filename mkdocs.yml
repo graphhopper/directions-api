@@ -11,6 +11,7 @@ pages:
   - Map Matching API: map-matching.md
   - Isochrone API: isochrone.md
   - Matrix API: matrix.md
+- Attribution: attribution.md
 - Vehicles: supported-vehicle-profiles.md
 - FAQ: FAQ.md
 extra_css: 

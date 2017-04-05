@@ -15,13 +15,14 @@ If you need an better estimate contact us or read through the following steps:
  * the costs of one **Matrix API** request are calculated as follows: If either the number of `origins` or the number of `destinations` is less than 20, it costs `origins * destinations / 2` credits. For bigger matrices we use a more favourable formular: `MAX_OF(origins, destinations) * 10`. In both cases at least 1 credit is charged. For example, if you have 2 origins and 10 destinations, `2 * 10 / 2 = 10` credits will be charged. If you have 30 origins and 40 destinations, the required credits amount to `40 * 10 = 400`. If you have one-to-N matrices like 1-to-100, then always the `origins*destinations/2` formula applies.
  * the costs for one **Isochrone API** request is 5 credits for every minute it explores and at least 10 credits. E.g. if you set the `time_limit` to 20 minutes then this request will cost `5*20=100` credits.
   
-## How many credits do I have?
+## How many daily credits do I have?
 
-The API credit limits are listed in the dashboard and depend on the selected package. 
+The daily credit limits for the Directions API are listed in the dashboard and depend on the selected package. 
 
 ## What happens if I go over the credit limit?
 
-Your API key will not stop working. If this happens frequently, we'll contact you to discuss.
+Your API key will not stop working. If this happens frequently, we'll contact you to discuss
+this.
 
 ## What happens if I go over the location limit?
 
@@ -44,9 +45,16 @@ Matrix-requests over a timespan of 5 seconds cannot exceed 300.
 
 Our documentation is available [here](./index.md) and some demos are available for [every client](./index.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
 
-## Where can I find the pricing?
+## What if the packages do not fit my needs?
 
-You can find the detailed pricing in the dashboard. For individual requirements we offer custom packages. Additionally we offer support contracts and a self-hosted Directions API, see [here](https://graphhopper.com/#enterprise) for more details.
+For individual requirements we offer custom packages and support contracts.
+For very large volume or intense calculations we also offer hardware-only
+limited setups.
+
+## Do you offer a discount for an annual contract?
+
+Yes, please see the pricing page in the dashboard to see the different
+options.
 
 ## Where can I change my credit card or payment data
 
@@ -54,38 +62,31 @@ This is possible in the [overview of the dashboard](https://graphhopper.com/dash
 
 ## Can I pay on demand?
 
-It is possible to pay online e.g. per month for a specific amount of credits/requests. If you exceed this you currently do not need to pay for and the requests won't be blocked but we ask you to upgrade if that happens frequently. Please [let us know](https://graphhopper.com/#contact) of your needs and we find a solution.
+It is possible to pay online e.g. per month for a specific amount of credits/requests. If you exceed this you currently do not 
+need to pay for and the requests won't be blocked but we ask you to upgrade if that happens frequently.
+Please [let us know](https://graphhopper.com/#contact) of your needs and we find a solution.
 
 
-## Do you offer discounts?
+## How to cancel, upgrade or downgrade my package?
 
-Yes, you get a discount if you sign up for an annually contract. Also [follow us on Twitter](https://twitter.com/graphhopper) to get the latest campaign.
-
-
-## How to cancel, upgrade or downgrad my package?
-
-Please [contact us](https://graphhopper.com/#contact)
+You can do this in the dashboard on the pricing page.
 
 
 ## Do I need to link or mention the use of the GraphHopper Directions API
 
-Yes, please see [here](https://graphhopper.com/api/1/docs/#attribution) for more details about it. Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for the extra white-label option or need to use it for an in-house application.
+Yes, please see [here](https://graphhopper.com/api/1/docs/#attribution) for more details about it. 
+Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for 
+the extra white-label option or need to use it for an in-house application.
 
 
 ## What is the difference between the GraphHopper Directions API and the open source projects like the GraphHopper routing engine and the optimization engine jsprit?
 
-The GraphHopper Directions API is a collection of routing related APIs: the Routing API, the Matrix API, the Route Optimization API and the Geocoding API. 
-This entire set is also available for self-hosting.
+The GraphHopper Directions API is a collection of routing related APIs: like the Routing API, the Matrix API, the Route Optimization API and the Geocoding API. 
 
-We use jsprit to implement our Route Optimization API, it is our open source vehicle route optimization project. 
-The Route Optimization API is an efficient way to consume jsprit: properly configured for a lot of use cases, 
+See [here](https://www.graphhopper.com/open-source/) for a more detailed comparison.
+
+E.g. the Route Optimization API is an efficient way to consume jsprit: properly configured for a lot of use cases, 
 with a proper distance/time matrix calculated from GraphHopper, with a simple JSON API and some advanced featured not in jsprit.
-
-The Routing API is based on the [open source GraphHopper](https://github.com/graphhopper/graphhopper/) and is nearly identical to it.
-
-We have decided to keep the Matrix API closed source, see [graphhopper#131](https://github.com/graphhopper/graphhopper/issues/131)
-
-See [here](https://graphhopper.com/#open-source-comparison) for a more detailed comparison.
 
 ## Is it possible to use the GraphHopper Directions API with a custom GraphHopper or jsprit version?
 
