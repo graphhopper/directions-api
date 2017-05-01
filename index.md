@@ -99,7 +99,7 @@ Directions API [here](./attribution).
 
 HTTP header key | 	Description
 :---------------|:-------------
-X-RateLimit 	   | Your current daily credit limit
+X-RateLimit-Limit 	   | Your current daily credit limit
 X-RateLimit-Remaining | 	Your remaining credits until the reset
 X-RateLimit-Reset 	   | The number of seconds that you have to wait before a reset of the credit count is done
 X-RateLimit-Credits 	 | The credit costs for this request. Note, it could be a decimal and even negative number, e.g. when an async request failed.
