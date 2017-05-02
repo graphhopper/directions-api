@@ -85,7 +85,7 @@ the Optimization API does not include it. You can enable this by adding
 ```json
 "configuration": {
    "routing": {
-      "calc_points": true;
+      "calc_points": true
    }
 }
 ```
