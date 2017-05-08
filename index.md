@@ -43,7 +43,7 @@ Let us know your language requirements!
 **Examples and Applications and Community supported clients**:
 
  * [Showcases](https://www.graphhopper.com/showcases/) from our customers
- * A special [Geocoding API Client](https://github.com/rmnblm/GraphHopperGeocoder) for Swift
+ * A community developed Swift client for the [Geocoding API](https://github.com/rmnblm/GraphHopperGeocoder) and [Routing API](https://github.com/rmnblm/GraphHopperRouting)
 
 Do not hesitate to share your websites, apps or API clients with us!
 
