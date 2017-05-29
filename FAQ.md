@@ -8,7 +8,8 @@ You can use [the estimator in the dashboard](https://graphhopper.com/dashboard/#
 
 If you need an better estimate contact us or read through the following steps:
 
- * one **Routing API** request costs 1 credit. Every 10 via-points cost 1 more credit. E.g. 11 via-points cost 2 credits, 21 via-points costs 3 credits and so on. And if you specify `optimize=true` the credits will be multiplied by 10 i.e. one requests costs 10 credits for 1 to 10 locations, 20 credits for 11 to 20 locations and so on. Using the parameter `ch.disable=true` to unlock certain features costs additionally 2 credits, i.e. calculating the route between two points costs 1+2=3 credits.
+ * one **Routing API** request costs 1 credit. Every 10 via-points cost 1 more credit. E.g. 11 via-points cost 2 credits, 21 via-points costs 3 credits and so on. And if you specify `optimize=true` the credits will be multiplied by 10 i.e. one requests costs 10 credits for 1 to 10 locations, 20 credits for 11 to 20 locations and so on.
+   Changing the parameter `algorithm` costs additionally 2 credits, i.e. calculating the alternative route between two points costs 1+2=3 credits.
  * Ten **Geocoding API** requests for the default provider cost 3 credits. For other providers ten Geocoding requests costs 15 credits.
  * the costs for one **Route Optimization API** request depends on the number of vehicles and activities and is calculated as `vehicles * activities` and at least 10 credits. For custom packages a location independent credit calculation can be arranged.
  * the costs of one **Map Matching API** request costs certain credits calculated by the formula `input_locations / 100`.
