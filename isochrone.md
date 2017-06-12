@@ -30,7 +30,8 @@ All official parameters are shown in the following table
 Parameter   | Default | Description
 :-----------|:--------|:-----------
 point       | -       | Specify the start coordinate
-time_limit  | 600     | Specify which time the vehicle should travel. In seconds. The maximum depends on the subscribed package.
+time_limit  | 600     | Specify which time the vehicle should travel. In seconds.
+distance_limit | -    | Instead of `time_limit` you can also specify the distance the vehicle should travel. In meter.
 vehicle     | car     | Possible vehicles are bike, car, foot and [more](./supported-vehicle-profiles.md)
 buckets     | 1       | For how many sub intervals an additional polygon should be calculated.
 reverse_flow| false   | If `false` the flow goes from point to the polygon, if `true` the flow goes from the polygon "inside" to the point. Example usage for `false`: *How many potential customer can be reached within 30min travel time from your store* vs. `true`: *How many customers can reach your store within 30min travel time.*
