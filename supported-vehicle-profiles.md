@@ -19,6 +19,6 @@ racing bike| Bike preferring roads | bike access         | ![racingbike image](h
 -->
 **Please note, that currently none of the vehicles accounts for turn restrictions except for `ch.disable=true`.**
 
-We also provide a sophisticated `motorcycle` profile powered by the API from [kurviger](https://kurviger.de/). And if you need a custom vehicle (different properties, different speed profiles, different access) for routes in a special geographic area or a dedicated setup nearly without limits [please contact us](https://www.graphhopper.com/contact-form/).
+We also provide a sophisticated `motorcycle` profile powered by the Routing API from [kurviger](https://kurviger.de/). And if you need a custom vehicle (different properties, different speed profiles, different access) for routes in a special geographic area or a dedicated setup nearly without limits [please contact us](https://www.graphhopper.com/contact-form/).
 
 You can try the route results for every profile with [GraphHopper Maps](https://graphhopper.com/maps/)
