@@ -19,6 +19,9 @@ Calculating an isochrone of a locations means to calculate
 see [Wikipedia](http://en.wikipedia.org/wiki/Isochrone_map). 
 It is also called **reachability** or **walkability**.
 
+With the same API you can also calculate isodistances, just use
+the parameter `distance_limit` instead of time_limit`.
+
 ### API Clients and Examples
 
 See the [clients](./index.md#api-clients-and-examples) section in the main document and [live examples](https://graphhopper.com/api/1/examples/#isochrone).
