@@ -46,6 +46,18 @@ Matrix-requests over a timespan of 5 seconds cannot exceed 300.
 
 Our documentation is available [here](./index.md) and some demos are available for [every client](./index.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
 
+## A route is wrong or takes too long. How can I fix this?
+
+We are using [OpenStreetMap](https://www.openstreetmap.org) data and rely on the provided information there.
+The nice thing is: if there is a street missing or a barrier is passable, you can edit this data when you have local knowledge at
+openstreetmap.org or put a note there so that others fix or investigate it for you.
+
+## How long does it take after I updated the data on OpenStreetMap.org?
+
+A change of the data at openstreetmap.org will be considered in our APIs roughly after 1 to 2
+days. Except for the Geocoding API: the default provider can take up to 7
+weeks and the nominatim provider should be updated within one week.
+
 ## What if the packages do not fit my needs?
 
 For individual requirements we offer custom packages and support contracts.
