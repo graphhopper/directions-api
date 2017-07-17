@@ -40,9 +40,10 @@ The pricing is available [here](https://graphhopper.com/#pricing) or with all de
 
 Let us know your language requirements!
   
-**Examples and Applications**:
+**Examples and Applications and Community supported clients**:
 
  * [Showcases](https://www.graphhopper.com/showcases/) from our customers
+ * A community developed Swift client for the [Geocoding API](https://github.com/rmnblm/GraphHopperGeocoder) and [Routing API](https://github.com/rmnblm/GraphHopperRouting)
 
 Do not hesitate to share your websites, apps or API clients with us!
 
