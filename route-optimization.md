@@ -297,6 +297,30 @@ is actually necessary or not. If not, it ends up in the unassigned break list. G
 at its end location before `break.latest`, the break is regarded to be redundant. <b>Please note</b>, that if you specified a break,
 you need to define your optimization objective to be `completion_time` (see [objectives spec above](#objectives)) otherwise you are getting an exception.
 
+You can also specify drive time dependent breaks like this:
+
+```json
+{
+    "vehicle_id": "your-vehicle-id",
+    "start_address": {
+        "location_id": "your-start-location-id",
+        "lon": 11.028771,
+        "lat": 50.977723
+    },
+    "return_to_depot": false,
+    "type_id": "your-vehicle-type-id",
+    "break" : {
+        "max_driving_time": 16200,
+        "duration": 2700,
+        "possible_split": [900, 1800]
+    }
+}
+```
+
+It says that your driver can only drive 4.5 hours in a row. It then needs a break of 45min. 
+However, 45min can be split into two breaks of 15min and 30min (which is here in line with European driving break rules).
+It is illustrated [here](https://discuss.graphhopper.com/t/driving-time-dependent-break-scheduling-beta-release/862).
+
 #### Full specification of a vehicle object
 
 Name   | Type | Required | Default | Description
@@ -328,6 +352,9 @@ Name   | Type | Required | Default | Description
 earliest | long | x | - | Specifies the earliest start time of the break.
 latest | long | x | - | Specifies the latest start time of break.
 duration | long | x | - | Specifies the duration of the break.
+max_driving_time | long | - | - | Specifies the max driving time (in a row) without break.
+possible_split | Array | - | - | Array specifying how a break duration can be split into several smaller breaks
+initial_driving_time | long | - | - | Specifies the initial (current) driving time of a driver to allow dynamic adaptations
 
 ### Vehicle Types
 
