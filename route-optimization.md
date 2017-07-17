@@ -419,7 +419,8 @@ A service can be specified as:
      ],
      "required_skills": ["drilling-machine", "water-level"],
      "allowed_vehicles": ["technician_peter","technician_stefan"],
-     "priority": 1
+     "priority": 1,
+     "preparation_time": 900
 }
 ```
 
@@ -442,7 +443,8 @@ A shipment can be specified as:
                 "earliest": 0.0,
                 "latest": 1000.0
             } 
-        ]
+        ],
+        "preparation_time": 900
     },
     "delivery": {
         "address": {
@@ -488,6 +490,7 @@ time_windows | array | - | - | Specifies an array of time window objects (see ti
 required_skills | array | - | - | Specifies an array of required skills, i.e. array of string (not case sensitive). For example, if this service needs to be conducted by a technician having a `drilling_machine` and a `screw_driver` then specify the array as follows: `["drilling_machine","screw_driver"]`. This means that the service can only be done by a vehicle (technician) that has the skills `drilling_machine` AND `screw_driver` in its skill array. Otherwise it remains unassigned.
 allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids. For example, if this service can only be conducted EITHER by `technician_peter` OR `technician_stefan` specify this as follows: `["technician_peter","technician_stefan"]`.
 priority | int | - | 2 | Specifies the priority. Can be 1 = high priority to 10 = low priority. Often there are more services/shipments than the available vehicle fleet can handle. Then you could assign priorities to differentiate high priority tasks from those that can be served later or omitted at all.
+preparation_time | long | - | 0 | Specifies the preparation time. It can be used to model parking lot search time since if you have 3 identical locations in a row, it only falls due once.
 
 #### Full specification of a shipment object
 
@@ -509,6 +512,7 @@ Name   | Type | Required | Default | Description
 address | string | x | - | Specifies pickup or delivery address.
 duration | string | - | 0 | Specifies the duration of the pickup or delivery, e.g. how long it takes unload items at the customer site.
 time_windows | object | - | - | Specifies an array of time window objects (see time window object below). For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
+preparation_time | long | - | 0 | Specifies the preparation time. It can be used to model parking lot search time since if you have 3 identical locations in a row, it only falls due once.
 
 #### Full specification of a time window object
 
