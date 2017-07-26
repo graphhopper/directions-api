@@ -17,8 +17,13 @@ racing bike| Bike preferring roads | bike access         | ![racingbike image](h
      MAN https://de.wikipedia.org/wiki/Lastkraftwagen#/media/File:MAN_M2000_Pritschenwagen.jpg 
      coach https://commons.wikimedia.org/wiki/File:MAZ-251-Reisebus_in_M%C3%BCnchen_-_Seitenansicht.jpg
 -->
-**Please note, that currently none of the vehicles accounts for turn restrictions except for `ch.disable=true`.**
 
-We also provide a sophisticated `motorcycle` profile powered by the Routing API from [kurviger](https://kurviger.de/). And if you need a custom vehicle (different properties, different speed profiles, different access) for routes in a special geographic area or a dedicated setup nearly without limits [please contact us](https://www.graphhopper.com/contact-form/).
+**Please note, that turn restrictions are considered only with `ch.disable=true`
+and for the free package you can only choose from `car`, `bike` or `foot`.**
+
+If you buy a special add on we can also provide a sophisticated `motorcycle` profile powered by the Routing API from [kurviger](https://kurviger.de/). 
+
+If you need a custom vehicle e.g. with different properties, different speed profiles
+or different access options [please contact us](https://www.graphhopper.com/contact-form/).
 
 You can try the route results for every profile with [GraphHopper Maps](https://graphhopper.com/maps/)

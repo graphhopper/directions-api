@@ -50,11 +50,11 @@ gpx.waypoints | `false` | Include the `<wpt>` tag in gpx result
 
 #### Flexible
 
-Unlock certain flexible features via `ch.disable=true` and prefer where possible `algorithm=astarbi` for faster response times.
+Enable turn restrictions and unlock further flexible features via `ch.disable=true`.
 
-Please note that these flexible requests cost more than one credit, see [the FAQ](./FAQ.md) for more details.
+Please note that changing the algorithm costs more than one credit, see [the FAQ](./FAQ.md) for more details.
 
-<!-- edge_traversal   |`false`     | Use `true` if you want to consider turn restrictions for bike and motor vehicles. Keep in mind that the response time is roughly 2 times slower. -->
+Furthermore `optimize=true` is not yet possible in combination with `ch.disable=true`
 
 Parameter        | Default    | Description
 :----------------|:-----------|:-----------
