@@ -19,15 +19,27 @@ For more details also about the format of the `your-vrp-problem.json` file you c
 
 The Route Optimization API can be used to solve traveling salesman or vehicle routing problems. These problems occur almost everywhere in the world 
 of moving things and people. For example, every company dealing with last-mile deliveries faces a vehicle routing problem, i.e. it must find ways to
-efficiently service its customers given a variety of requirements: customer requirements (e.g. time windows), 
-the product's transport requirements (e.g. refrigerated, must be picked up first), driver skills, vehicles/capacities available etc..
+efficiently service its customers given a variety of requirements: customer requirements like time windows, 
+the product's transport requirements e.g. that refrigerated, must be picked up first, driver skills, vehicles/capacities available
+and more.
 
 Even these problems are relatively easy to understand, finding reasonable solutions is way more difficult. 
-You need to calculate travel times and distances on large (road) networks, you need to formalize your vehicle routing problem and to specify
+You need to calculate travel times and distances on large road networks, you need to formalize your vehicle routing problem and to specify
  your manifold business constraints, you need fast and efficient algorithms and quite a significant amount of computational power.
   
- This is where <b>GraphHopper Route Optimization</b> comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and <b>GraphHopper</b> will do the heavy work.
- To make it even easier for you, we provide you with the following clients.
+This is where <b>GraphHopper Route Optimization API</b> comes into play. Just learn how to put your problem into our easy-to-understand json format, post it and
+our services will do the heavy work. To make it even easier for you, we provide you with API clients for the different programming languages.
+
+### Use Cases
+
+Our Route Optimization API can be used for pre-planning stage, on-demand or
+next day delivery in the following areas:
+
+ * goods delivery: parcels, moving boxes, furniture, pharmacy, flowers, ...
+ * food delivery: bakery, pizza, meal, ..
+ * waste management
+ * ride sharing
+ * field services or house calls
 
 ### API Clients and Examples
 

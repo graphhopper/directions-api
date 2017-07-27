@@ -22,6 +22,18 @@ It is also called **reachability** or **walkability**.
 With the same API you can also calculate isodistances, just use
 the parameter `distance_limit` instead of time_limit`.
 
+### Use Cases
+
+Our Isochrone API can be used in the following areas:
+
+ * real estate analysis
+ * realtors
+ * vehicle scheduling
+ * geomarketing
+ * reach of electric vehicles
+ * transport planning
+ * logistics (distribution and retail network planning)
+
 ### API Clients and Examples
 
 See the [clients](./index.md#api-clients-and-examples) section in the main document and [live examples](https://graphhopper.com/api/1/examples/#isochrone).
