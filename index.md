@@ -36,7 +36,7 @@ The pricing is available [here](https://graphhopper.com/#pricing) or with all de
 
  * [JavaScript client](https://github.com/graphhopper/directions-api-js-client) - try the [live examples](https://graphhopper.com/api/1/examples/)
  * [Java client](https://github.com/graphhopper/directions-api-java-client)
- * [Others](https://github.com/graphhopper/directions-api-clients-route-optimization) like C#, Ruby, PHP, Python, ... automatically created for the Route Optimization API with our [swagger spec](https://graphhopper.com/api/1/vrp/swagger.json).
+ * [Others](https://github.com/graphhopper/directions-api-clients-route-optimization) like C#, Ruby, PHP, Python, ... automatically created for the Route Optimization API with our [swagger spec](https://graphhopper.com/api/1/swagger.json).
 
 Let us know your language requirements!
   

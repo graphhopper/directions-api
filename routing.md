@@ -78,7 +78,7 @@ JSON path/attribute        | Description
 :--------------------------|:------------
 paths                      | An array of possible paths
 paths[0].distance          | The total distance of the route, in meter
-paths[0].time              | The total time of the route, in ms
+paths[0].time              | The total time of the route, in milliseconds (ms)
 paths[0].ascend            | The total ascend (uphill) of the route, in meter
 paths[0].descend 	         | The total descend (downhill) of the route, in meter
 paths[0].points            | This value contains the coordinates of the path. If `points_encoded=true` or no `points_encoded` specified an encoded string will be returned, otherwise an array with order [lon,lat,elevation] is returned. See the parameter `points_encoded` for more information.
