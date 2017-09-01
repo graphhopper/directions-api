@@ -382,8 +382,8 @@ The default vehicle type is
 }
 ```
 
-In the vehicle type you can specify four important features of your vehicles: profile, capacity, speed factor and service time factor. The profile indicates whether your vehicle is actually a person moving by `foot`,
-whether it is a `car`, a `motorcycle`, a `bike`, a `mtb`, a `racingbike`, a `small_truck`, a `bus` or a `truck`. See [here](./supported-vehicle-profiles.md) for the details about the vehicle profiles.
+In the vehicle type you can specify four important features of your vehicles: profile, capacity, speed factor and service time factor. The profile indicates whether your vehicle is actually a person moving by `foot`
+or a `car` and other. See [here](./supported-vehicle-profiles.md) for the details about the vehicle profiles.
 Note that currently you are allowed to specify an arbitrary number of vehicle types, however, you are
 only allowed to specify two different profiles for the entire set of types, e.g. `bike` and `foot`.
 
@@ -423,7 +423,7 @@ The `capacity` in a vehicle type only makes sense if there is a `size` defined i
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 type_id | string | x | - | Specifies the id of the vehicle type. If a vehicle needs to be of this type, it should refer to this with its `type_id` attribute.
-profile | string | - | car | Specifies the profile of this type. You can use either `car`, `bike`, `mtb` for mounting bike, `motorcycle`, `racingbike`, `foot`, `truck`, `small_truck` or `bus`. The profile is used to determine the network, speed and other physical attributes to use for routing the vehicle.
+profile | string | - | car | Specifies the vehicle profile of this type, see [here](./supported-vehicle-profiles.md) for more options. The profile is used to determine the network, speed and other physical attributes to use for routing the vehicle.
 capacity | array | - | [ 0 ] | Specifies an array of capacity dimension values which need to be `int` values. For example, if there are two dimensions such as volume and weight then it needs to be defined as `[ 1000, 300 ]` assuming a maximum volume of 1000 and a maximum weight of 300.
 speed_factor | double | - | 1.0 | Specifies a speed factor for this vehicle type. If the vehicle that uses this type needs to be only half as fast as what is actually calculated with our routing engine then set the speed factor to 0.5.
 service_time_factor | double | - | 1.0 | Specifies a service time factor for this vehicle type. If the vehicle/driver that uses this type is able to conduct the service as double as fast as it is determined in the corresponding service or shipment then set it to 0.5.
