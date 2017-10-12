@@ -23,8 +23,7 @@ and for the free package you can only choose from `car`, `bike` or `foot`.**
 
 We also offer a sophisticated `motorcycle` profile powered by the [Kurviger](https://kurviger.de/en) Routing API. 
 Kurviger favors curves and slopes while avoiding cities and highways. 
-Kurviger makes it possible to create good motorcycle routes with a low amount of waypoints, which makes it ideal for motorcycle route planning and navigation scenarios.
-The motorcycle extension is available as a custom package, [please contact us](https://www.graphhopper.com/contact-form/) for more details and for purchasing the motorcycle custom package.
+[Please contact us](https://www.graphhopper.com/contact-form/) for more details.
 
 If you need a custom vehicle e.g. with different properties, different speed profiles
 or different access options [please contact us](https://www.graphhopper.com/contact-form/).
