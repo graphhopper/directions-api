@@ -21,7 +21,9 @@ racingbike| Bike preferring roads | bike access         | ![racingbike image](ht
 **Please note, that turn restrictions are considered only with `ch.disable=true`
 and for the free package you can only choose from `car`, `bike` or `foot`.**
 
-If you buy a special add on we can also provide a sophisticated `motorcycle` profile powered by the Routing API from [kurviger](https://kurviger.de/). 
+We also offer a sophisticated `motorcycle` profile powered by the [Kurviger](https://kurviger.de/en) Routing API. 
+Kurviger favors curves and slopes while avoiding cities and highways. 
+[Please contact us](https://www.graphhopper.com/contact-form/) for more details.
 
 If you need a custom vehicle e.g. with different properties, different speed profiles
 or different access options [please contact us](https://www.graphhopper.com/contact-form/).
