@@ -33,10 +33,11 @@ instructions| `true`  | If instruction should be calculated and returned
 vehicle     | car     | The vehicle for which the route should be calculated. Other vehicle profiles are listed [here](./supported-vehicle-profiles.md).
 elevation   | `false` | If `true` a third dimension - the elevation - is included in the polyline or in the GeoJson. IMPORTANT: If enabled you have to use a modified version of the decoding method or set points_encoded to `false`. See the points_encoded attribute for more details. Additionally a request can fail if the vehicle does not support elevation. See the features object for every vehicle.
 points_encoded     | true    | If `false` the coordinates in `point` and `snapped_waypoints` are returned as array using the order [lon,lat,elevation] for every point. If `true` the coordinates will be encoded as string leading to less bandwith usage. You'll need a special handling for the decoding of this string on the client-side. We provide open source code code in Java and JavaScript, see the clients section. It is especially important to use our official client or code if you set `elevation=true`!
-calc_points    | `true`  | If the points for the route should be calculated at all printing out only distance and time.
-debug          | `false` | If true, the output will be formated.
-type           | `json`  | Specifies the resulting format of the route, for `json` the content type will be application/json. Or use `gpx`, the content type will be application/gpx+xml, see below for more parameters.
-point_hint     | -       | Optional parameter. Specifies a hint for each `point` parameter to prefer a certain street for the closest location lookup. E.g. if there is an address or house with two or more neighboring streets you can control for which street the closest location is looked up.
+calc_points | `true`  | If the points for the route should be calculated at all printing out only distance and time.
+debug       | `false` | If true, the output will be formated.
+type        | `json`  | Specifies the resulting format of the route, for `json` the content type will be application/json. Or use `gpx`, the content type will be application/gpx+xml, see below for more parameters.
+point_hint  | -       | Optional parameter. Specifies a hint for each `point` parameter to prefer a certain street for the closest location lookup. E.g. if there is an address or house with two or more neighboring streets you can control for which street the closest location is looked up.
+details     | -       | Optional parameter. You can request additional details for the route: `street_name` and `time`. For all motor vehicles we additionally support `max_speed`, `toll` (no, all, hgv), `road_class` (motorway, primary, ...), `road_environment`, surface.  The returned format for one details is `[fromRef, toRef, value]`. The `ref` references the points of the response.
 
 #### GPX
 
@@ -63,7 +64,8 @@ weighting        |`fastest`    | Which kind of 'best' route calculation you need
 heading          | NaN         | Favour a heading direction for a certain point. Specify either one heading for the start point or as many as there are points. In this case headings are associated by their order to the specific points. Headings are given as north based clockwise angle between 0 and 360 degree.
 heading_penalty  | 120         | Penalty for omitting a specified heading. The penalty corresponds to the accepted time delay in seconds in comparison to the route without a heading.
 pass_through     |`false`      | If `true` u-turns are avoided at via-points with regard to the `heading_penalty`.
-block_area       | -           | Block road access via a point with the format `latitude,longitude` or an area defined by a circle `lat,lon,radius` or a rectangle `lat1,lon1,lat2,lon2`. Separate multiple areas with a semicolon `;`.
+block_area       | -           | Optional comma separated parameter. Block road access via a point with the format `latitude,longitude` or an area defined by a circle `lat,lon,radius` or a rectangle `lat1,lon1,lat2,lon2`. Separate multiple areas with a semicolon `;`.
+avoid            | -           | Optional comma separated parameter. Specify which road classes you would like to avoid (currently only supported for motor vehicles like `car`). Possible values are `ferry`, `motorway`, `toll`, `tunnel` and `ford`.
 round_trip.distance                 | 10000 | If `algorithm=round_trip` this parameter configures approximative length of the resulting round trip
 round_trip.seed                     | 0     | If `algorithm=round_trip` this parameter introduces randomness if e.g. the first try wasn't good
 alternative_route.max_paths         | 2     | If `algorithm=alternative_route` this parameter sets the number of maximum paths which should be calculated. Increasing can lead to worse alternatives.
@@ -163,6 +165,11 @@ Keep in mind that some attributes which are not documented here can be removed i
     ],
     "points": "oxg_Iy|ppAl@wCdE}LfFsN|@_Ej@eEtAaMh@sGVuDNcDb@{PFyGdAi]FoC?q@sXQ_@?",
     "points_encoded": true,
+    "details":{
+        "street_name":[[0,1,"Rue Principale"],[1,13,"D19E"],[13,18,"D19"],..],
+	"toll":[[0,25,"no"],[25,146,"all"],[146,158,"no"],[158,204,"all"],..],
+	"max_speed":[[0,25,-1.0],[25,98,130.0],[98,113,90.0],[113,140,130.0],[140,143,110.0],..]
+    },
     "time": 129290
   }]
 }
