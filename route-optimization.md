@@ -287,7 +287,7 @@ If you want to let <b>GraphHopper</b> decide at which customer the vehicle shoul
 The ```type_id``` refers to the vehicle type of your vehicle. It is optional and only required if you need to specify your own type.
 
 In the examples above, we define an ```earliest_start``` for the vehicle. It is recommended to use the [unix timestamp](https://www.unixtimestamp.com/), i.e. the number of seconds between your particular departure time and
-the Unix Epoch (January 1st, 1970 at UTC). In this way, you can easily switch to time-dependent route optimization.
+the Unix Epoch (January 1st, 1970 at UTC). In this way you can easily switch to time-dependent route optimization later on.
 
 If your driver needs a break, you need to specify it as follows:
 
