@@ -243,7 +243,8 @@ If you want your vehicle to come back, specify it like this:
         "lon": 11.028771,
         "lat": 50.977723
     },
-    "type_id": "your-vehicle-type-id"
+    "type_id": "your-vehicle-type-id",
+    "earliest_start": 1511252407
 }
 ```
 
@@ -262,7 +263,8 @@ If you want your vehicle to end at a specified end-location which is not equal t
          "lon": 12.028771,
          "lat": 54.977723
     },
-    "type_id": "your-vehicle-type-id"
+    "type_id": "your-vehicle-type-id",
+    "earliest_start": 1511252407
 }
 ```
 
@@ -277,11 +279,15 @@ If you want to let <b>GraphHopper</b> decide at which customer the vehicle shoul
         "lat": 50.977723
     },
     "return_to_depot": false,
-    "type_id": "your-vehicle-type-id"
+    "type_id": "your-vehicle-type-id",
+    "earliest_start": 1511252407
 }
 ```
 
 The ```type_id``` refers to the vehicle type of your vehicle. It is optional and only required if you need to specify your own type.
+
+In the examples above, we define an ```earliest_start``` for the vehicle. It is recommended to use the unix timestamp, i.e. the number of seconds between your particular departure time and
+the Unix Epoch (January 1st, 1970 at UTC). In this way, you can easily switch to time-dependent route optimization.
 
 If your driver needs a break, you need to specify it as follows:
 
@@ -295,9 +301,10 @@ If your driver needs a break, you need to specify it as follows:
     },
     "return_to_depot": false,
     "type_id": "your-vehicle-type-id",
+    "earliest_start": 1511252407,
     "break" : {
-        "earliest" : 10000,
-        "latest" : 13600,
+        "earliest" : 1511262407,
+        "latest" : 1511265407,
         "duration" : 1800
     }
 }
@@ -321,6 +328,7 @@ You can also specify drive time dependent breaks like this:
     },
     "return_to_depot": false,
     "type_id": "your-vehicle-type-id",
+    "earliest_start": 1511252407,
     "break" : {
         "max_driving_time": 16200,
         "duration": 2700,
