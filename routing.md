@@ -37,7 +37,7 @@ calc_points | `true`  | If the points for the route should be calculated at all 
 debug       | `false` | If true, the output will be formated.
 type        | `json`  | Specifies the resulting format of the route, for `json` the content type will be application/json. Or use `gpx`, the content type will be application/gpx+xml, see below for more parameters.
 point_hint  | -       | Optional parameter. Specifies a hint for each `point` parameter to prefer a certain street for the closest location lookup. E.g. if there is an address or house with two or more neighboring streets you can control for which street the closest location is looked up.
-details     | -       | Optional parameter. You can request additional details for the route: `street_name` and `time`. For all motor vehicles we additionally support `max_speed`, `toll` (no, all, hgv), `road_class` (motorway, primary, ...), `road_environment`, surface.  The returned format for one details is `[fromRef, toRef, value]`. The `ref` references the points of the response.
+details     | -       | Optional parameter. You can request additional details for the route: `street_name` and `time`. For all motor vehicles we additionally support `max_speed`, `toll` (no, all, hgv), `road_class` (motorway, primary, ...), `road_environment`, and `surface`.  The returned format for one details is `[fromRef, toRef, value]`. The `ref` references the points of the response.
 
 #### GPX
 
