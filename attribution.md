@@ -30,6 +30,6 @@ When using the OpenStreetMap road network we use [Hole-filled elevation data](ht
 
 ## Open Source
 
-The GraphHopper Directions API uses open source projects under the hood from [GraphHopper GmbH](https://github.com/graphhopper/), [komoot GmbH](https://github.com/komoot/), [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Nominatim) and many more, often under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). For example [jsprit](https://github.com/graphhopper/jsprit/blob/master/NOTICE.md) or [the routing engine](https://github.com/graphhopper/graphhopper/blob/master/NOTICE.md) that themselves uses other open source components.
+The GraphHopper Directions API uses open source projects under the hood from [GraphHopper GmbH](https://github.com/graphhopper/), [komoot GmbH](https://github.com/komoot/), [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Nominatim) and many more, often under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). For example [jsprit](https://github.com/graphhopper/jsprit/blob/master/NOTICE.md) or [the routing engine](https://github.com/graphhopper/graphhopper/blob/master/NOTICE.md), that themselves uses other open source components.
 
 Our entire infrastructure is built on top of open source using Debian linux, nginx, bash, python, PostgreSQL, Java and many more open source projects without GraphHopper would not be possible. Thanks a lot!
