@@ -691,8 +691,8 @@ If you post your problem, you either get back a job_id or an error. The job id l
 With the `job_id` you can fetch your solution via `https://graphhopper.com/api/1/vrp/solution/[job_id]?key=[YOUR_KEY]`  such as
  
 `curl -X GET  "https://graphhopper.com/api/1/vrp/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]"`
- 
- If you get an error, you should always get a detailed description of the error like this:
+
+See the error codes and JSON structure on the [overview page](https://graphhopper.com/api/1/docs/#http-error-codes). For example:
   
 ```json
 {
@@ -706,14 +706,6 @@ With the `job_id` you can fetch your solution via `https://graphhopper.com/api/1
 }
 ```
 
-We use the following error codes being in line with http status codes:
-
-Code   | Type | Description
-:------|:-----|:---------
-400 | Bad Request | Your json request is not valid. The `message` contains a detailed error message to fix this fast.
-404 | Not Found | The solution with the id you used cannot be found.
-500 | Internal Server Error | Our team will get this error as well and we analyse this asap.
- 
 ### Response
 
 Your job can be in three states, either your problem is still waiting in the queue then you get back this:
