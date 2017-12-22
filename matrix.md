@@ -149,7 +149,7 @@ $ curl -X GET "https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-
 {"solution":{"weights":[[0.0,470.453,945.414],[503.793,0.0,580.871],[970.49,569.511,0.0]],"info":{"copyrights":["GraphHopper","OpenStreetMap contributors"]}},"status":"finished"}
 ```
 
-If an error occured while calculation the JSON will contain directly the error message e.g.:
+Please note, if an error occured while calculation the JSON will not have a status but contain directly the error message e.g.:
 ```json
 {"message":"Cannot find from_points: 1","hints":[{...}]}
 ```
