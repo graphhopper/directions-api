@@ -37,7 +37,7 @@ calc_points | `true`  | If the points for the route should be calculated at all 
 debug       | `false` | If true, the output will be formated.
 type        | `json`  | Specifies the resulting format of the route, for `json` the content type will be application/json. Or use `gpx`, the content type will be application/gpx+xml, see below for more parameters.
 point_hint  | -       | Optional parameter. Specifies a hint for each `point` parameter to prefer a certain street for the closest location lookup. E.g. if there is an address or house with two or more neighboring streets you can control for which street the closest location is looked up.
-details     | -       | Optional parameter. You can request additional details for the route: `street_name` and `time`. For all motor vehicles we additionally support `max_speed`, `toll` (no, all, hgv), `road_class` (motorway, primary, ...), `road_environment`, surface.  The returned format for one details is `[fromRef, toRef, value]`. The `ref` references the points of the response.
+details     | -       | Optional parameter to retrieve path details. You can request additional details for the route: `street_name` and `time`. For all motor vehicles we additionally support `max_speed`, `toll` (no, all, hgv), `road_class` (motorway, primary, ...), `road_environment`, and `surface`.  The returned format for one details is `[fromRef, toRef, value]`. The `ref` references the points of the response. Multiple details are possible via multiple key value pairs `details=time&details=toll`.
 
 #### GPX
 
@@ -64,8 +64,8 @@ weighting        |`fastest`    | Which kind of 'best' route calculation you need
 heading          | NaN         | Favour a heading direction for a certain point. Specify either one heading for the start point or as many as there are points. In this case headings are associated by their order to the specific points. Headings are given as north based clockwise angle between 0 and 360 degree.
 heading_penalty  | 120         | Penalty for omitting a specified heading. The penalty corresponds to the accepted time delay in seconds in comparison to the route without a heading.
 pass_through     |`false`      | If `true` u-turns are avoided at via-points with regard to the `heading_penalty`.
-block_area       | -           | Optional comma separated parameter. Block road access via a point with the format `latitude,longitude` or an area defined by a circle `lat,lon,radius` or a rectangle `lat1,lon1,lat2,lon2`. Separate multiple areas with a semicolon `;`.
-avoid            | -           | Optional comma separated parameter. Specify which road classes you would like to avoid (currently only supported for motor vehicles like `car`). Possible values are `ferry`, `motorway`, `toll`, `tunnel` and `ford`.
+block_area       | -           | Optional semicolon separated parameter. Block road access via a point with the format `latitude,longitude` or an area defined by a circle `lat,lon,radius` or a rectangle `lat1,lon1,lat2,lon2`.
+avoid            | -           | Optional semicolon separated parameter. Specify which road classes you would like to avoid (currently only supported for motor vehicles like `car`). Possible values are `ferry`, `motorway`, `toll`, `tunnel` and `ford`.
 round_trip.distance                 | 10000 | If `algorithm=round_trip` this parameter configures approximative length of the resulting round trip
 round_trip.seed                     | 0     | If `algorithm=round_trip` this parameter introduces randomness if e.g. the first try wasn't good
 alternative_route.max_paths         | 2     | If `algorithm=alternative_route` this parameter sets the number of maximum paths which should be calculated. Increasing can lead to worse alternatives.
