@@ -740,7 +740,7 @@ or your job is being processed but not yet finished then you get back this:
 }
 ```
 
-or your job is finished and a solution is available. Then you get back this:
+or your job has an error (see above) or has a solution. Then you get back this:
 
 ```json
 {
