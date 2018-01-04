@@ -6,7 +6,7 @@ The endpoint is `https://graphhopper.com/api/[version]/isochrone`
 
 You get an example response via:
 
-`curl "https://graphhopper.com/api/1/isochrone?point=51.131108%2C12.414551&key=[YOUR_KEY]"`
+`curl "https://graphhopper.com/api/1/isochrone?point=51.131108,12.414551&key=[YOUR_KEY]"`
 
 Where you need to replace the key with your own
 
