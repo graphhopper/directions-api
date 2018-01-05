@@ -489,8 +489,8 @@ A shipment can be specified as:
         "duration": 1000,
         "time_windows": [ 
             {
-                "earliest": 0.0,
-                "latest": 1000.0
+                "earliest": 0,
+                "latest": 1000
             } 
         ],
         "preparation_time": 900
@@ -505,8 +505,8 @@ A shipment can be specified as:
         "duration": 1000,
         "time_windows": [ 
             {
-                "earliest": 10000.0,
-                "latest": 20000.0
+                "earliest": 10000,
+                "latest": 20000
             }
         ]
     },
