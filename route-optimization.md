@@ -370,12 +370,12 @@ lat | double | x | - | Latitude of location.
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
-earliest | long | x | - | Specifies the earliest start time of the break.
-latest | long | x | - | Specifies the latest start time of break.
-duration | long | x | - | Specifies the duration of the break.
-max_driving_time | long | - | - | Specifies the max driving time (in a row) without break.
-possible_split | Array | - | - | Array specifying how a break duration can be split into several smaller breaks
-initial_driving_time | long | - | - | Specifies the initial (current) driving time of a driver to allow dynamic adaptations
+earliest | long | x | - | Specifies the earliest start time of the break in seconds.
+latest | long | x | - | Specifies the latest start time of break in seconds.
+duration | long | x | - | Specifies the duration of the break in seconds.
+max_driving_time | long | - | - | Specifies the max driving time (in a row) without break in seconds.
+possible_split | Array | - | - | Array specifying how a break duration (in seconds) can be split into several smaller breaks
+initial_driving_time | long | - | - | Specifies the initial (current) driving time of a driver to allow dynamic adaptations in seconds.
 
 ### Vehicle Types
 
@@ -534,14 +534,14 @@ id | string | x | - | Specifies the id of the service. Ids need to be unique so 
 type | string | - | service | Specifies whether a service is a general `service`, a `pickup` or a `delivery`. This makes a difference if items are loaded or unloaded, i.e. if one of the size dimensions > 0. If it is specified as `service` or `pickup`, items are loaded and will stay in the vehicle for the rest of the route (and thus consumes capacity for the rest of the route). If it is a `delivery`, items are implicitly loaded at the beginning of the route and will stay in the route until `delivery` (and thus releases capacity for the rest of the route).
 name | string | - | - | Meaningful name for service, e.g. `deliver pizza`.
 address | object | x | - | Specifies service address.
-duration | long | - | 0 | Specifies the duration of the service, i.e. how long it takes at the customer site.  
+duration | long | - | 0 | Specifies the duration of the service in seconds, i.e. how long it takes at the customer site.
 size | array | - | [0] | Size can have multiple dimensions and should be in line with the capacity dimension array of the vehicle type. For example, if the item that needs to be delivered has two size dimension, volume and weight, then specify it as follow `[ 20, 5 ]` assuming a volume of 20 and a weight of 5.
 time_windows | array | - | - | Specifies an array of time window objects (see time_window object below). Specify the time either with the recommended [Unix time stamp](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number) (the number of seconds since 1970-01-01) or you can also count the seconds relative to Monday morning 00:00 and define the whole week in seconds. For example, Monday 9am is then represented by <code>9hour * 3600sec/hour = 32400</code>. In turn, Wednesday 1pm corresponds to <code>2day * 24hour/day * 3600sec/hour + 1day * 13hour/day * 3600sec/hour = 219600</code>. See [this tutorial](https://www.graphhopper.com/blog/2016/05/30/how-to-solve-a-traveling-salesman-problem-with-a-week-planning-horizon/) for more information.
 required_skills | array | - | - | Specifies an array of required skills, i.e. array of string (not case sensitive). For example, if this service needs to be conducted by a technician having a `drilling_machine` and a `screw_driver` then specify the array as follows: `["drilling_machine","screw_driver"]`. This means that the service can only be done by a vehicle (technician) that has the skills `drilling_machine` AND `screw_driver` in its skill array. Otherwise it remains unassigned.
 allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids. For example, if this service can only be conducted EITHER by `technician_peter` OR `technician_stefan` specify this as follows: `["technician_peter","technician_stefan"]`.
 disallowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids.
 priority | int | - | 2 | Specifies the priority. Can be 1 = high priority to 10 = low priority. Often there are more services/shipments than the available vehicle fleet can handle. Then you could assign priorities to differentiate high priority tasks from those that can be served later or omitted at all.
-preparation_time | long | - | 0 | Specifies the preparation time. It can be used to model parking lot search time since if you have 3 identical locations in a row, it only falls due once.
+preparation_time | long | - | 0 | Specifies the preparation time in seconds. It can be used to model parking lot search time since if you have 3 identical locations in a row, it only falls due once.
 
 #### Full specification of a shipment object
 
@@ -562,16 +562,16 @@ priority | int | - | 2 | Specifies the priority. Can be 1 = high priority, 2 = n
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 address | string | x | - | Specifies pickup or delivery address.
-duration | long | - | 0 | Specifies the duration of the pickup or delivery, e.g. how long it takes unload items at the customer site.
+duration | long | - | 0 | Specifies the duration of the pickup or delivery in seconds, e.g. how long it takes unload items at the customer site.
 time_windows | object | - | - | Specifies an array of time window objects (see time window object below). For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
-preparation_time | long | - | 0 | Specifies the preparation time. It can be used to model parking lot search time since if you have 3 identical locations in a row, it only falls due once.
+preparation_time | long | - | 0 | Specifies the preparation time in seconds. It can be used to model parking lot search time since if you have 3 identical locations in a row, it only falls due once.
 
 #### Full specification of a time_window object
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
-earliest | long | - | 0 | Specifies the opening time of the time window, i.e. the earliest time the service can start.
-latest | long | - | Long.MAX_VALUE | Specifies the closing time of the time window, i.e. the latest time the service can start.
+earliest | long | - | 0 | Specifies the opening time of the time window in seconds, i.e. the earliest time the service can start.
+latest | long | - | Long.MAX_VALUE | Specifies the closing time of the time window in seconds, i.e. the latest time the service can start.
 
 
 
