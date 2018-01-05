@@ -562,7 +562,7 @@ priority | int | - | 2 | Specifies the priority. Can be 1 = high priority, 2 = n
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 address | string | x | - | Specifies pickup or delivery address.
-duration | string | - | 0 | Specifies the duration of the pickup or delivery, e.g. how long it takes unload items at the customer site.
+duration | long | - | 0 | Specifies the duration of the pickup or delivery, e.g. how long it takes unload items at the customer site.
 time_windows | object | - | - | Specifies an array of time window objects (see time window object below). For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
 preparation_time | long | - | 0 | Specifies the preparation time. It can be used to model parking lot search time since if you have 3 identical locations in a row, it only falls due once.
 
