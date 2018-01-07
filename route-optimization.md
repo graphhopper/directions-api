@@ -354,7 +354,7 @@ earliest_start | long | - | 0 | Earliest start of vehicle in seconds. It is reco
 latest_end | long | - | Long.MAX_VALUE | Latest end of vehicle in seconds, i.e. the time the vehicle needs to be at its end location at latest.
 skills | array | - | - | Array of skills, i.e. array of string (not case sensitive).
 break | object | - | - | Specifies the driver break.
-max_distance | int | - | Int.MAX_VALUE | Specifies the maximum distance a vehicle can go.
+max_distance | long | - | Long.MAX_VALUE | Specifies the maximum distance a vehicle can go.
 max_driving_time | long | - | Long.MAX_VALUE | Specifies the maximum drive time a vehicle/driver can go, i.e. the maximum time on the road (service and waiting times are not included here)
 
 #### Full specification of a address object
@@ -370,8 +370,8 @@ lat | double | x | - | Latitude of location.
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
-earliest | long | x | - | Specifies the earliest start time of the break in seconds.
-latest | long | x | - | Specifies the latest start time of break in seconds.
+earliest | long | - | - | Specifies the earliest start time of the break in seconds.
+latest | long | - | - | Specifies the latest start time of break in seconds.
 duration | long | x | - | Specifies the duration of the break in seconds.
 max_driving_time | long | - | - | Specifies the max driving time (in a row) without break in seconds.
 possible_split | Array | - | - | Array specifying how a break duration (in seconds) can be split into several smaller breaks
