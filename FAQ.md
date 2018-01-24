@@ -42,6 +42,10 @@ allow an exception with up to 600 requests per minute.
 The Matrix API has an additional limitation where the sum over all locations in all 
 Matrix-requests over a timespan of 5 seconds cannot exceed 300.
 
+## Why is there no Map Tiles API?
+
+We concentrate on routing tools only and recommend the following providers for (vector) tiles: [Omniscale](https://omniscale.com/), [TileHosting](https://www.tilehosting.com/) and [Thunderforest](http://thunderforest.com/).
+
 ## Where can I find the documentation or some demos?
 
 Our documentation is available [here](./index.md) and some demos are available for [every client](./index.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
