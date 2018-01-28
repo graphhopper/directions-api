@@ -1,3 +1,7 @@
+p {
+    font-family: Helvetica,sans-serif;
+}
+
 .navbar-default .navbar-nav > li > a {
     color: #417900;
 }

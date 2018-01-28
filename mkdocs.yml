@@ -15,9 +15,9 @@ pages:
 - Vehicles: supported-vehicle-profiles.md
 - FAQ: FAQ.md
 extra_css: 
-  - css/custom.css
   - https://www.graphhopper.com/wp-content/themes/graphhopper/css/uikit.min.css
   - https://www.graphhopper.com/wp-content/themes/graphhopper/css/gh.css
+  - css/custom.css
 extra_javascript:
   - js/custom.js
 theme: flatly
