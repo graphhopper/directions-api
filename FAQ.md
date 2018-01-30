@@ -12,7 +12,7 @@ If you need an better estimate contact us or read through the following steps:
    Changing the parameter `algorithm` costs additionally 2 credits, i.e. calculating the alternative route between two points costs 1+2=3 credits.
  * Ten **Geocoding API** requests for the default provider cost 3 credits. For other providers ten Geocoding requests costs 15 credits.
  * the costs for one **Route Optimization API** request depends on the number of vehicles and activities and is calculated as `vehicles * activities` and at least 10 credits. For custom packages a location independent credit calculation can be arranged.
- * the costs of one **Map Matching API** request costs certain credits calculated by the formula `input_locations / 100`.
+ * the costs of one **Map Matching API** request costs certain credits calculated by the formula `input_locations / 100` but at least 1 credit.
  * the costs of one **Matrix API** request are calculated as follows: If either the number of `origins` or the number of `destinations` is less than 20, it costs `origins * destinations / 2` credits. For bigger matrices we use a more favourable formular: `MAX_OF(origins, destinations) * 10`. In both cases at least 1 credit is charged. For example, if you have 2 origins and 10 destinations, `2 * 10 / 2 = 10` credits will be charged. If you have 30 origins and 40 destinations, the required credits amount to `40 * 10 = 400`. If you have one-to-N matrices like 1-to-100, then always the `origins*destinations/2` formula applies.
  * the costs for one **Isochrone API** request is 5 credits for every minute it explores and at least 10 credits. E.g. if you set the `time_limit` to 20 minutes then this request will cost `5*20=100` credits.
   
