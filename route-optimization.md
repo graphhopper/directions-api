@@ -514,7 +514,8 @@ A shipment can be specified as:
     "required_skills": ["loading-bridge"],
     "allowed_vehicles": ["trucker_stefan"],
     "disallowed_vehicles": ["trucker_peter","trucker_michael"],
-    "priority": 3
+    "priority": 3,
+    "max_time_in_vehicle": 1800
 }
 ``` 
 
@@ -542,6 +543,7 @@ allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. 
 disallowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids.
 priority | int | - | 2 | Specifies the priority. Can be 1 = high priority to 10 = low priority. Often there are more services/shipments than the available vehicle fleet can handle. Then you could assign priorities to differentiate high priority tasks from those that can be served later or omitted at all.
 preparation_time | long | - | 0 | Specifies the preparation time in seconds. It can be used to model parking lot search time since if you have 3 identical locations in a row, it only falls due once.
+max_time_in_vehicle | long | - | 0 | Specifies the maximum time in seconds a delivery can stay in the vehicle. Currently, it only works with services of `"type":"delivery"`.
 
 #### Full specification of a shipment object
 
@@ -556,6 +558,7 @@ required_skills | array | - | - | Specifies an array of required skills, i.e. ar
 allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids. For example, if this service can only be conducted EITHER by `technician_peter` OR `technician_stefan` specify this as follows: `["technician_peter","technician_stefan"]`.
 disallowed_vehicles | array | - | - | Specifies an array of disallowed vehicles, i.e. array of vehicle ids.
 priority | int | - | 2 | Specifies the priority. Can be 1 = high priority, 2 = normal (default) or 3 = low priority. Often there are more services/shipments than the available vehicle fleet can handle. Then you could assign priorities to differentiate high priority tasks from those that can be served later or omitted at all.
+max_time_in_vehicle | long | - | 0 | Specifies the maximum time in seconds a shipment can stay in the vehicle.
 
 #### Full specification of a pickup or delivery object
 
