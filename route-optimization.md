@@ -23,7 +23,7 @@ efficiently service its customers given a variety of requirements: customer requ
 the product's transport requirements e.g. that refrigerated, must be picked up first, driver skills, vehicles/capacities available
 and more.
 
-Even these problems are relatively easy to understand, finding reasonable solutions is way more difficult. 
+Even though these problems are relatively easy to understand, finding reasonable solutions is way more difficult. 
 You need to calculate travel times and distances on large road networks, you need to formalize your vehicle routing problem and to specify
  your manifold business constraints, you need fast and efficient algorithms and quite a significant amount of computational power.
   
