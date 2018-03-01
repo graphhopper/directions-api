@@ -38,25 +38,25 @@ provider    | `default` | See the [external providers](#external-providers) sec
 {
   "hits": [
     {
-      osm_id: 120456814,
-      osm_type: "W",
-      extent: [
+      "osm_id": 120456814,
+      "osm_type": "W",
+      "extent": [
         13.3906703,
         52.5200704,
         13.3948782,
         52.5174944,
       ],
-      country: "Deutschland",
-      osm_key: "amenity",
-      city: "Berlin",
-      street: "Dorotheenstraße",
-      osm_value: "university",
-      postcode: "10117",
-      name: "Humboldt-Universität zu Berlin",
-      state: "Berlin",
-      point: {
-        lng: 13.393560634296435,
-        lat: 52.51875095,
+      "country": "Deutschland",
+      "osm_key": "amenity",
+      "city": "Berlin",
+      "street": "Dorotheenstraße",
+      "osm_value": "university",
+      "postcode": "10117",
+      "name": "Humboldt-Universität zu Berlin",
+      "state": "Berlin",
+      "point": {
+        "lng": 13.393560634296435,
+        "lat": 52.51875095,
       },
     {...
     }]
@@ -87,12 +87,13 @@ The reverse geocoding has exactly the same response but requires an additional U
 
 ### URL parameters
 
-Parameter   | Default | Description
-:-----------|:--------|:-----------
-reverse     | true    | Required for reverse geocoding
-point       | -       | The location to find amenities, cities etc. In the same format as the (forward) geocoding.
-locale      | en      | Display the search results for the specified locale. Currently French (fr), English (en), German (de) and Italian (it) are supported. If the locale isn't found the default (en) is used.
-debug       | `false` | If `true`, the output will be formated.
+Parameter   | Default   | Description
+:-----------|:----------|:-----------
+reverse     | true      | Required for reverse geocoding
+point       | -         | The location to find amenities, cities etc. In the same format as the (forward) geocoding.
+locale      | en        | Display the search results for the specified locale. Currently French (fr), English (en), German (de) and Italian (it) are supported. If the locale isn't found the default (en) is used.
+debug       | `false`   | If `true`, the output will be formated.
+provider    | `default` | See the [external providers](#external-providers) section below.
 
 ## External Providers
 
