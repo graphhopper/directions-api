@@ -63,17 +63,19 @@ provider    | `default` | See the [external providers](#external-providers) sec
 }
 ```
 
-The JSON result contains the following properties (some properties can be missing for some results):
+The JSON result contains the following properties. Not all results necessarily contain all these properties, some may only contain a subset of these properties:
 
 JSON path/attribute | Description
 :-------------------|:------------
 hits                | The list of matching locations
 hits[0].point       | The position of the address (containing an object with `lat` and `lng` properties).
 hits[0].name        | The name of the entity. Can be a boundary, POI, address, etc
-hits[0].city        | The city of the address
-hits[0].country     | The country of the address
+hits[0].housenumber | The housenumber of the address
 hits[0].street      | The street of the address
-hits[0].street      | The state of the address
+hits[0].city        | The city of the address
+hits[0].postcode    | The postcode of the address
+hits[0].state       | The state of the address
+hits[0].country     | The country of the address
 hits[0].osm_id      | The OSM ID of the entity
 hits[0].osm_key     | The OSM key of the entity
 hits[0].osm_value   | The OSM value of the entity
@@ -136,7 +138,7 @@ In addition to the above documented parameters OpenCage Data allows to use the f
 
 ### Gisgraphy `provider=gisgraphy`
 
-This provider returns results from the Gisgraphy geocoder which you can try [here](https://services.gisgraphy.com/static/leaflet/index.html). Gisgraphy does not return tags from OSM. 
+This provider returns results from the Gisgraphy geocoder which you can try [here](https://services.gisgraphy.com/static/leaflet/index.html). Gisgraphy does not return tags from OSM nor an extent. 
 
 Gisgraphy has a special autocomplete API, which you can use by adding `autocomplete=true` (does not work with `reverse=true`). The autocomplete API is optimized on predicting text input, but returns less information.
 
