@@ -138,7 +138,9 @@ In addition to the above documented parameters OpenCage Data allows to use the f
 
 ### Gisgraphy (`provider=gisgraphy`)
 
-This provider returns results from the Gisgraphy geocoder which you can try [here](https://services.gisgraphy.com/static/leaflet/index.html). Gisgraphy does not return tags from OSM nor an extent. 
+This provider returns results from the Gisgraphy geocoder which you can try [here](https://services.gisgraphy.com/static/leaflet/index.html). 
+
+**Lmitations:** Gisgraphy does not return tags from OSM nor an extent. The locale parameter is currently not supported for Gisgraphy.
 
 Gisgraphy has a special autocomplete API, which you can use by adding `autocomplete=true` (does not work with `reverse=true`). The autocomplete API is optimized on predicting text input, but returns less information.
 
