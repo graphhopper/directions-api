@@ -128,7 +128,7 @@ In addition to the above documented parameters Nominatim allows to use the follo
 - viewboxlbrt
 - bounded
 
-### OpenCage Data `provider=opencagedata`
+### OpenCage Data (`provider=opencagedata`)
 
 This provider returns results from the OpenCageData geocoder which you can try [here](https://geocoder.opencagedata.com/demo).
 
@@ -136,7 +136,7 @@ In addition to the above documented parameters OpenCage Data allows to use the f
 - countrycode
 - bounds
 
-### Gisgraphy `provider=gisgraphy`
+### Gisgraphy (`provider=gisgraphy`)
 
 This provider returns results from the Gisgraphy geocoder which you can try [here](https://services.gisgraphy.com/static/leaflet/index.html). Gisgraphy does not return tags from OSM nor an extent. 
 
