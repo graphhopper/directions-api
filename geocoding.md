@@ -124,17 +124,17 @@ The Nominatim provider uses a commercially hosted Nominatim Geocoder that does *
 You can try this provider [here](https://nominatim.openstreetmap.org/).
 
 In addition to the above documented parameters Nominatim allows to use the following parameters, which can be used as documented [here](https://wiki.openstreetmap.org/wiki/Nominatim#Parameters):
-- viewbox
-- viewboxlbrt
-- bounded
+* viewbox
+* viewboxlbrt
+* bounded
 
 ### OpenCage Data (`provider=opencagedata`)
 
 This provider returns results from the OpenCageData geocoder which you can try [here](https://geocoder.opencagedata.com/demo).
 
 In addition to the above documented parameters OpenCage Data allows to use the following parameters, which can be used as documented [here](https://geocoder.opencagedata.com/api#forward-opt):
-- countrycode
-- bounds
+* countrycode
+* bounds
 
 ### Gisgraphy (`provider=gisgraphy`)
 
@@ -145,5 +145,5 @@ This provider returns results from the Gisgraphy geocoder which you can try [her
 Gisgraphy has a special autocomplete API, which you can use by adding `autocomplete=true` (does not work with `reverse=true`). The autocomplete API is optimized on predicting text input, but returns less information.
 
 In addition to the above documented parameters Gisgraphy allows to use the following parameters, which can be used as documented [here](http://www.gisgraphy.com/documentation/user-guide.php):
-- radius
-- country
+* radius
+* country
