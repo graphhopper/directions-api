@@ -356,6 +356,8 @@ skills | array | - | - | Array of skills, i.e. array of string (not case sensiti
 break | object | - | - | Specifies the driver break.
 max_distance | long | - | Long.MAX_VALUE | Specifies the maximum distance a vehicle can go.
 max_driving_time | long | - | Long.MAX_VALUE | Specifies the maximum drive time a vehicle/driver can go, i.e. the maximum time on the road (service and waiting times are not included here)
+max_jobs | int | - | Integer.MAX_VALUE | Specifies the maximum number of jobs a vehicle can load.
+max_activities | int | - | Integer.MAX_VALUE | Specifies the maximum number of activities a vehicle can conduct.
 
 #### Full specification of a address object
 
