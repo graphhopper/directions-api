@@ -1586,8 +1586,6 @@ you have visited Cologne. This might be enforced with time windows, however some
 
 ### Vehicle Routing Problem
 
-in progress
-
 Example json-request with Shipments
 
 ```json
