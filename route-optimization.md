@@ -119,8 +119,8 @@ historical traffic information or not. Currently, we offer the following provide
 
 By default, "openstreetmap" is used. If you want to use "tomtom", please contact us for more information.
 Note when using "tomtom", the optimization requires to know the exact time of the day when your vehicles
-start, i.e. every time information you use to model your vehicle routing problem such as vehicle start times and time windows.
-Time information need to be specified as Unix timestamp. Further information about time dependent optimization
+start, i.e. every time information you use to model your vehicle routing problem such as vehicle start times and time windows
+need to be specified as Unix timestamp. Further information about time dependent optimization
 can be found in [this article](https://www.graphhopper.com/blog/2017/11/06/time-dependent-optimization/) and [here](https://discuss.graphhopper.com/t/traffic-and-time-dependent-optimization/2456).
 
 Sometimes there are locations that cannot be accessed by any vehicle over the road network.
