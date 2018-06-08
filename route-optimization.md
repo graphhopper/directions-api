@@ -90,8 +90,10 @@ Name   | Type | Required | Description
 
 ### Configuration
 
-This lets you specify whether the API should provide you with route geometries for vehicle routes or not.
-Thus, you do not need to do extra routing to get the polyline for each route. By default, 
+Here you can specify general configurations of the API.
+
+"calc_points" lets you specify whether the API should provide you with route geometries for vehicle routes or not.
+Thus, you do not need to do extra routing to get the polyline for each route. By default,
 the Optimization API does not include it. You can enable this by adding
 
 ```json
