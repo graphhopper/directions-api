@@ -139,6 +139,12 @@ this specific location, specify it as follows:
 
 For more information about excluding "bad" locations, we recommend you to read [this concise thread](https://discuss.graphhopper.com/t/new-feature-exclude-bad-locations/2685).
 
+#### Further Reading
+
+ * [Traffic and time dependent route optimization](https://www.graphhopper.com/blog/2017/11/06/time-dependent-optimization/)
+ * [How to enable time dependent route optimization?](https://discuss.graphhopper.com/t/traffic-and-time-dependent-optimization/2456)
+ * [How to exclude "bad" location and solve the vrp without it?](https://discuss.graphhopper.com/t/new-feature-exclude-bad-locations/2685)
+ 
 #### Full specification of the routing object
  
 Name   | Type | Required | Default | Description
@@ -213,11 +219,28 @@ If you want to minimize `vehicles` first and, second, `completion_time`, you can
    }
 ]  
 ```
- 
+
+If you want balance activities or the number of stops among all employed drivers, you need to specify it as follows:
+
+```json
+"objectives" : [
+   {
+      "type": "min-max",
+      "value": "completion_time"
+   },
+   {
+      "type": "min-max",
+      "value": "activities"
+   }
+]
+```
+
+Here we recommend you to read [this article](https://www.graphhopper.com/blog/2018/04/11/balance-load-among-all-vehicles/).
  
 #### Further Reading
 
  * [What is the difference between min transport_time and min completion_time?](https://graphhopper.com/blog/2016/06/20/what-is-the-difference-between-the-minimization-of-completion-time-and-minimizing-transport-time/)
+ * [How to balance load among all vehicles?](https://www.graphhopper.com/blog/2018/04/11/balance-load-among-all-vehicles/)
 
 #### Full specification of the objective object
 
