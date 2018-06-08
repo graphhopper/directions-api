@@ -622,7 +622,7 @@ size | array | - | [0] | Size can have multiple dimensions and should be in line
 required_skills | array | - | - | Specifies an array of required skills, i.e. array of string (not case sensitive). For example, if this service needs to be conducted by a technician having a `drilling_machine` and a `screw_driver` then specify the array as follows: `["drilling_machine","screw_driver"]`. This means that the service can only be done by a vehicle (technician) that has the skills `drilling_machine` AND `screw_driver` in its skill array. Otherwise it remains unassigned.
 allowed_vehicles | array | - | - | Specifies an array of allowed vehicles, i.e. array of vehicle ids. For example, if this service can only be conducted EITHER by `technician_peter` OR `technician_stefan` specify this as follows: `["technician_peter","technician_stefan"]`.
 disallowed_vehicles | array | - | - | Specifies an array of disallowed vehicles, i.e. array of vehicle ids.
-priority | int | - | 2 | Specifies the priority. Can be 1 = high priority, 2 = normal (default) or 3 = low priority. Often there are more services/shipments than the available vehicle fleet can handle. Then you could assign priorities to differentiate high priority tasks from those that can be served later or omitted at all.
+priority | int | - | 2 | Specifies the priority. Can be 1 = high priority to 10 = low priority. Often there are more services/shipments than the available vehicle fleet can handle. Then you could assign priorities to differentiate high priority tasks from those that can be served later or omitted at all.
 max_time_in_vehicle | long | - | Long.MAX_VALUE | Specifies the maximum time in seconds a shipment can stay in the vehicle.
 
 #### Full specification of a pickup or delivery object
