@@ -130,7 +130,7 @@ this specific location, specify it as follows:
 ```json
 "configuration": {
    "routing": {
-      "fail_fast": true
+      "fail_fast": false
    }
 }
 ```
