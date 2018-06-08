@@ -123,7 +123,7 @@ can be found in [this article](https://www.graphhopper.com/blog/2017/11/06/time-
 
 Sometimes there are locations that cannot be accessed by any vehicle over the road network.
 By default, the API fails to solve the involved vehicle routing problem and responds with an error
-saying that it cannot find the specified location. We say that GraphHopper fails fast. If you want
+saying that it cannot find the specified location. In this case, we say that GraphHopper fails fast. If you want
 GraphHopper to exclude the "bad" location and solve the underlying vehicle routing problem without
 this specific location, specify it as follows:
 
