@@ -144,7 +144,7 @@ For more information about excluding "bad" locations, we recommend you to read [
  * [Traffic and time dependent route optimization](https://www.graphhopper.com/blog/2017/11/06/time-dependent-optimization/)
  * [How to enable time dependent route optimization?](https://discuss.graphhopper.com/t/traffic-and-time-dependent-optimization/2456)
  * [How to exclude "bad" location and solve the vrp without it?](https://discuss.graphhopper.com/t/new-feature-exclude-bad-locations/2685)
- 
+
 #### Full specification of the routing object
  
 Name   | Type | Required | Default | Description
@@ -247,7 +247,7 @@ Here we recommend you to read [this article](https://www.graphhopper.com/blog/20
 Name   | Type   | Required | Default | Description
 :------|:-------|:---------|:--------|:-----------
 type   | string | -        | min     | You can choose between `min` and `min-max`. `min` minimizes the sum of what is specified in `value`, e.g. if objective value is `transport_time`, it minimizes the sum of transport times. `min-max` minimizes the maximum of what is specified in `value`.
-value  | string | -        | transport_time | You can choose between `transport_time` and `completion_time`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
+value  | string | -        | transport_time | You can choose between `transport_time` and `completion_time`, `vehicles` and `activities`. When choosing `transport_time` only the time spent on the road is considered. When choosing `completion_time` also waiting times are considered during optimization, i.e. the algorithm seeks to minimize both transport and waiting times.
 
 ### Cost Matrices
 
