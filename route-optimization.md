@@ -128,7 +128,7 @@ Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 calc_points | boolean | - | false | specifies whether route geometries should be calculated or not
 network_data_provider | string | - | "openstreetmap" | specifies network data provider. either use "openstreetmap" or "tomtom".
-consider_traffic | boolean | - | false | specifies whether traffic should be considered. we do not yet have traffic data for "openstreetmap", thus, setting this true has no effect at all
+consider_traffic | boolean | - | false | specifies whether traffic should be considered. if "tomtom" is used, this is false, free flow travel times are calculated. if this is true, historical traffic info are used. we do not yet have traffic data for "openstreetmap", thus, setting this true has no effect at all
 
 
 ### Objectives
