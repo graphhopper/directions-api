@@ -90,7 +90,7 @@ Name   | Type | Required | Description
 
 ### Configuration
 
-This lets you specify whether you the API should provide you with route geometries for vehicle routes or not. 
+This lets you specify whether the API should provide you with route geometries for vehicle routes or not.
 Thus, you do not need to do extra routing to get the polyline for each route. By default, 
 the Optimization API does not include it. You can enable this by adding
 
@@ -102,11 +102,30 @@ the Optimization API does not include it. You can enable this by adding
 }
 ```
 
+Furthermore, you can specify the network data provider as well as whether you want to consider
+historical traffic information or not. Currently, we offer the following providers: "openstreetmap" and "tomtom".
+
+```json
+"configuration": {
+   "routing": {
+      "network_data_provider": "tomtom",
+      "consider_traffic": true,
+      "calc_points": true
+   }
+}
+```
+
+By default, "openstreetmap" is used. If you want to use "tomtom", please contact us for more information.
+
+
+
 #### Full specification of the routing object
  
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 calc_points | boolean | - | false | specifies whether route geometries should be calculated or not
+network_data_provider | string | - | "openstreetmap" | specifies network data provider. either use "openstreetmap" or "tomtom".
+consider_traffic | boolean | - | false | specifies whether traffic should be considered. we do not yet have traffic data for "openstreetmap", thus, setting this true has no effect at all
 
 
 ### Objectives
