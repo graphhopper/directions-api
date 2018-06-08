@@ -144,7 +144,7 @@ Name   | Type | Required | Default | Description
 calc_points | boolean | - | false | specifies whether route geometries should be calculated or not
 network_data_provider | string | - | "openstreetmap" | specifies network data provider. either use "openstreetmap" or "tomtom".
 consider_traffic | boolean | - | false | specifies whether traffic should be considered. if "tomtom" is used and this is false, free flow travel times from "tomtom" are calculated. if this is true, historical traffic info are used. we do not yet have traffic data for "openstreetmap", thus, setting this true has no effect at all
-fail_fast | boolean | - | true | specifies whether "bad" locations yield an immediate (true) or whether "bad" location should be excluded and the vehicle routing problem should be solved without it.
+fail_fast | boolean | - | true | specifies whether "bad" locations yield an immediate error (true) or whether "bad" location should be excluded and the vehicle routing problem should be solved without it.
 
 
 ### Objectives
