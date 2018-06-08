@@ -121,6 +121,21 @@ start, i.e. every time information you use to model your vehicle routing problem
 Time information need to be specified as Unix timestamp. Further information about time dependent optimization
 can be found in [this article](https://www.graphhopper.com/blog/2017/11/06/time-dependent-optimization/) and [here](https://discuss.graphhopper.com/t/traffic-and-time-dependent-optimization/2456).
 
+Sometimes there are locations that cannot be accessed by any vehicle over the road network.
+By default, the API fails to solve the involved vehicle routing problem and responds with an error
+saying that it cannot find the specified location. We say that GraphHopper fails fast. If you want
+GraphHopper to exclude the "bad" location and solve the underlying vehicle routing problem without
+this specific location, specify it as follows:
+
+```json
+"configuration": {
+   "routing": {
+      "fail_fast": true
+   }
+}
+```
+
+For more information about excluding "bad" locations, we recommend you to read [this concise thread](https://discuss.graphhopper.com/t/new-feature-exclude-bad-locations/2685).
 
 #### Full specification of the routing object
  
@@ -129,6 +144,7 @@ Name   | Type | Required | Default | Description
 calc_points | boolean | - | false | specifies whether route geometries should be calculated or not
 network_data_provider | string | - | "openstreetmap" | specifies network data provider. either use "openstreetmap" or "tomtom".
 consider_traffic | boolean | - | false | specifies whether traffic should be considered. if "tomtom" is used and this is false, free flow travel times from "tomtom" are calculated. if this is true, historical traffic info are used. we do not yet have traffic data for "openstreetmap", thus, setting this true has no effect at all
+fail_fast | boolean | - | true | specifies whether "bad" locations yield an immediate (true) or whether "bad" location should be excluded and the vehicle routing problem should be solved without it.
 
 
 ### Objectives
