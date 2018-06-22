@@ -516,7 +516,8 @@ A service can be specified as:
        "location_id": "service-location-id",
        "name": "Goethe Street 1",
        "lon": 9.999,
-       "lat": 53.552
+       "lat": 53.552,
+       "street_hint": "Goethe"
      },
      "duration": 3600,
      "size": [ 1 ], 
@@ -549,7 +550,8 @@ A shipment can be specified as:
             "location_id": "your-pickup-location-id",
             "name": "Johann Sebastian Bach Avenue 5",
             "lon": 12.1333333,
-            "lat": 54.0833333
+            "lat": 54.0833333,
+            "street_hint": "Johann Sebastian Bach"
         },
         "duration": 1000,
         "time_windows": [ 
@@ -565,7 +567,8 @@ A shipment can be specified as:
             "location_id": "your-delivery-location-id",
             "name": "Thomas Mann Street 1",
             "lon": 8.3858333,
-            "lat": 49.0047222
+            "lat": 49.0047222,
+            "street_hint": "Thomas Mann Street"
         },
         "duration": 1000,
         "time_windows": [ 
@@ -591,6 +594,10 @@ Both Service and Shipment can be specified with multiple capacity dimensions as 
 ```
 
 The `size`-array limits the set of possible vehicles if a `capacity`-array is defined in its vehicle type. If no `size`-array is specified the default of 0 is assumed. See [vehicle types](#vehicle-types).
+
+#### Further Reading
+
+ * [How can street_hint be used to improve the assignment of geo locations to road network?](https://www.graphhopper.com/blog/2018/06/22/assign-geo-locations-to-roads-and-its-impacts-on-route-optimization/)
 
 #### Full specification of a service object
 
@@ -629,10 +636,20 @@ max_time_in_vehicle | long | - | Long.MAX_VALUE | Specifies the maximum time in 
 
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
-address | string | x | - | Specifies pickup or delivery address.
+address | object | x | - | Specifies pickup or delivery address.
 duration | long | - | 0 | Specifies the duration of the pickup or delivery in seconds, e.g. how long it takes unload items at the customer site.
 time_windows | object | - | - | Specifies an array of time window objects (see time window object below). For example, if an item needs to be delivered between 7am and 10am then specify the array as follows: `[ { "earliest": 25200, "latest" : 32400 } ]` (starting the day from 0 in seconds).
 preparation_time | long | - | 0 | Specifies the preparation time in seconds. It can be used to model parking lot search time since if you have 3 identical locations in a row, it only falls due once.
+
+#### Full specification of address object
+
+Name   | Type | Required | Default | Description
+:------|:-----|:---------|:--------|:-----------
+location_id | string | x | - | Specifies id of location.
+lon | double | x | - | Longitude.
+lat | long | x | - | Latitude.
+name | string | - | - | Name of location.
+street_hint | string | - | - | Specifies a street hint which is used when assigning this geo locations to the road network.
 
 #### Full specification of a time_window object
 
