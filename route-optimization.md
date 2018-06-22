@@ -647,7 +647,7 @@ Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 location_id | string | x | - | Specifies id of location.
 lon | double | x | - | Longitude.
-lat | long | x | - | Latitude.
+lat | double | x | - | Latitude.
 name | string | - | - | Name of location.
 street_hint | string | - | - | Specifies a street hint which is used when assigning this geo locations to the road network.
 
