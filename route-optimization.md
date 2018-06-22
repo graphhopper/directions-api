@@ -387,7 +387,8 @@ You can also specify drive time dependent breaks like this:
     "start_address": {
         "location_id": "your-start-location-id",
         "lon": 11.028771,
-        "lat": 50.977723
+        "lat": 50.977723,
+        "street_hint": "your street name"
     },
     "return_to_depot": false,
     "type_id": "your-vehicle-type-id",
@@ -430,6 +431,7 @@ location_id | string | x | - | Specifies the id of the location.
 name | string | - | - | Name of location. 
 lon | double | x | - | Longitude of location. 
 lat | double | x | - | Latitude of location.
+street_hint | string | - | - | Specifies a street hint which is used when assigning this geo locations to the road network.
 
 #### Full specification of a break object
 
