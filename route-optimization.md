@@ -882,72 +882,7 @@ or your job has an error (see above) or has a solution. Then you get back this:
                0
              ]
            },
-           {
-             "type": "service",
-             "id": "frankfurt",
-             "location_id": "frankfurt",
-             "address": {
-               "location_id": "frankfurt",
-               "name": "Thomas Mann Straße 24",
-               "lat": 50.109,
-               "lon": 8.67
-             },
-             "arr_time": 30991,
-             "end_time": 30991,
-             "waiting_time": 0,
-             "distance": 1001605,
-             "driving_time": 30991,
-             "load_before": [
-               0
-             ],
-             "load_after": [
-               0
-             ]
-           },
-           {
-             "type": "service",
-             "id": "cologne",
-             "location_id": "cologne",
-             "address": {
-               "location_id": "cologne",
-               "name": "Friedrichstraße 10",
-               "lat": 50.936,
-               "lon": 6.957
-             },
-             "arr_time": 37004,
-             "end_time": 37004,
-             "waiting_time": 0,
-             "distance": 1189526,
-             "driving_time": 37004,
-             "load_before": [
-               0
-             ],
-             "load_after": [
-               0
-             ]
-           },
-           {
-             "type": "service",
-             "id": "hamburg",
-             "location_id": "hamburg",
-             "address": {
-               "location_id": "hamburg",
-               "name": "Goethestraße 1",
-               "lat": 53.552,
-               "lon": 9.999
-             },
-             "arr_time": 49575,
-             "end_time": 49575,
-             "waiting_time": 0,
-             "distance": 1612006,
-             "driving_time": 49575,
-             "load_before": [
-               0
-             ],
-             "load_after": [
-               0
-             ]
-           },
+           ...,
            {
              "type": "end",
              "location_id": "berlin",
