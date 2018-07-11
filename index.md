@@ -109,13 +109,13 @@ X-RateLimit-Credits 	 | The credit costs for this request. Note, it could be a d
 
 HTTP error code | Reason
 :---------------|:------------
-400             | Something was wrong in your request. Too few or too many points. ..
+400             | Your request is not valid. For example, you specified too few or too many points.
 401             | Authentication necessary
 404             | Not Found. You receive 404 if the job_id cannot be found. Either this job has never been submitted or it has already been removed.
-413             | Too many parameters in the URL, you'll have to use the JSON format and POST requests
-429             | API limit reached, you'll also get an email about this, and the header properties will give you more information. See the section about 'HTTP Headers'.
-500             | Internal server error. We get automatically a notification and will try to fix this fast.
-501 	           | Only a special list of vehicles is supported
+413             | Too many parameters in the URL. You then have to use the JSON format and POST requests.
+429             | API limit reached. You also get an email with this information. You can find additional information in the header (see the section about 'HTTP Headers').
+500             | Internal server error. Alarm bells start ringing and we get notified automatically. We try to fix this fast.
+501 	           | Only a special list of vehicles is supported.
 
 
 ## Error Output
