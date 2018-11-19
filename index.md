@@ -47,6 +47,15 @@ Let us know your language requirements!
 
 Do not hesitate to share your websites, apps or API clients with us!
 
+### Bandwidth reduction
+
+If you create your own client make sure it supports http/2 and gzipped
+responses. 
+
+For the Matrix and Route Optimization API the bandwidth can be further reduced especially for larger problems
+if you [gzip the POST request](https://gist.github.com/karussell/82851e303ea7b3459b2dea01f18949f4)
+too and specify the header `Content-Encoding: gzip` for those requests.
+
 ## Keep up-to-date
 
 To get informed about the newest features and development follow us at [twitter](https://twitter.com/graphhopper/) or our [blog](https://graphhopper.com/blog/). Furthermore you can watch [this git repository](https://github.com/graphhopper/directions-api) of this documentation, sign up at our [dashboard](https://graphhopper.com/dashboard/) to get the newsletter or sign up at [our forum](https://discuss.graphhopper.com/c/directions-api). Pick the channel you like most.
