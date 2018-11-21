@@ -347,6 +347,9 @@ If you want to let <b>GraphHopper</b> decide at which customer the vehicle shoul
 }
 ```
 
+To summarize if ```return_to_depot``` is false, the algorithm decides where to end the vehicle route. It ends in one of your customers' locations. The end is chosen such that it contributes to the overall objective function, e.g. min transport_time.
+If ```return_to_depot``` is true, you can either specify a specific end location (which is then regarded as end depot) or you can leave it and the driver returns to its start location.
+
 The ```type_id``` refers to the vehicle type of your vehicle. It is optional and only required if you need to specify your own type.
 
 In the examples above, we define an ```earliest_start``` for the vehicle. It is recommended to use the [unix timestamp](https://www.unixtimestamp.com/), i.e. the number of seconds between your particular departure time and
