@@ -10,8 +10,8 @@ If you need an better estimate contact us or read through the following steps:
 
  * one **Routing API** request costs 1 credit. Every 10 via-points cost 1 more credit. E.g. 11 via-points cost 2 credits, 21 via-points costs 3 credits and so on. And if you specify `optimize=true` the credits will be multiplied by 10 i.e. one requests costs 10 credits for 1 to 10 locations, 20 credits for 11 to 20 locations and so on.
    Changing the parameter `algorithm` costs additionally 2 credits, i.e. calculating the alternative route between two points costs 1+2=3 credits.
- * one **Geocoding API** request for the default provider costs 0.3 credits. One request with an external provider like `nominatim` costs 1.5 credits.
- * the costs for one **Route Optimization API** request depends on the number of vehicles and activities and is calculated as `vehicles * activities` and at least 10 credits. For custom packages a location independent credit calculation can be arranged. Please note that GET requests to fetch the solution have a tiny cost of 0.05 credits per request to reduce heavy polling.
+ * one **Geocoding API** request for the providers `default` and `gisgraphy` costs 0.3 credits. For the providers `nominatim` and `opencagedata` it costs 0.9 credits. This might change in the future if the external providers change their pricing.
+ * the costs for one **Route Optimization API** request depends on the number of vehicles and unique locations and is calculated as `vehicles * locations` and is at least 10 credits. For custom packages a location independent credit calculation can be arranged. Please note that GET requests to fetch the solution have a tiny cost of 0.05 credits per request to reduce heavy polling.
  * the costs of one **Map Matching API** request costs certain credits calculated by the formula `input_locations / 100` but at least 1 credit.
  * the costs of one **Matrix API** request are calculated as follows: If either the number of `origins` or the number of `destinations` is less than 20, it costs `origins * destinations / 2` credits. For bigger matrices we use a more favourable formular: `MAX_OF(origins, destinations) * 10`. In both cases at least 1 credit is charged. For example, if you have 2 origins and 10 destinations, `2 * 10 / 2 = 10` credits will be charged. If you have 30 origins and 40 destinations, the required credits amount to `40 * 10 = 400`. If you have one-to-N matrices like 1-to-100, then always the `origins*destinations/2` formula applies.
  * the costs for one **Isochrone API** request is 5 credits for every minute it explores and at least 10 credits. E.g. if you set the `time_limit` to 20 minutes then this request will cost `5*20=100` credits.
@@ -32,23 +32,18 @@ the Route Optimization API (max. services/shipments), for the Matrix API (max. l
 
 ## What are the rate limits?
 
-The default limits are outlined below. For different limits, please [contact us](https://graphhopper.com/#contact).
-
-You can send up to 100 requests per minute to an end point of the GraphHopper Directions API.
-
-The Geocoding and Routing API, as well as GET requests against the Route Optimization API 
-allow an exception with up to 600 requests per minute.
-
-The Matrix API has an additional limitation where the sum over all locations in all 
-Matrix-requests over a timespan of 5 seconds cannot exceed 300.
+The request limit depend on the package and are listed in the footnotes
+[here](https://www.graphhopper.com/pricing/).
 
 ## Why is there no Map Tiles API?
 
-We concentrate on routing tools only and recommend the following providers for (vector) tiles: [Omniscale](https://omniscale.com/), [TileHosting](https://www.tilehosting.com/) and [Thunderforest](http://thunderforest.com/).
+We concentrate on routing tools only and recommend the following providers for (vector) tiles: [Omniscale](https://omniscale.com/), 
+[TileHosting](https://www.tilehosting.com/) and [Thunderforest](http://thunderforest.com/).
 
 ## Where can I find the documentation or some demos?
 
-Our documentation is available [here](./index.md) and some demos are available for [every client](./index.md#api-clients-and-examples). Or have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
+Our documentation is available [here](./index.md) and some demos are available for [every client](./index.md#api-clients-and-examples).
+And have a look into [our references](https://graphhopper.com/#usecases) or at [GraphHopper Maps](https://graphhopper.com/maps/) for more advanced examples.
 
 ## A route is wrong or takes too long. How can I fix this?
 
@@ -58,28 +53,26 @@ openstreetmap.org or put a note there so that others fix or investigate it for y
 
 ## How long does it take after I updated the data on OpenStreetMap.org?
 
-A change of the data at openstreetmap.org will be considered in our APIs roughly after 1 to 2
-days. Except for the Geocoding API: the default provider can take up to 7
+A change of the data at openstreetmap.org will be considered in our APIs usually after 2 days 
+and at least every week. Except for the Geocoding API: the default provider can take up to 7
 weeks and the nominatim provider should be updated within one week.
 
 ## What if the packages do not fit my needs?
 
 For individual requirements we offer custom packages and support contracts.
-For very large volume or intense calculations we also offer hardware-only
-limited setups.
 
 ## Do you offer a discount for an annual contract?
 
-Yes, please see the pricing page in the dashboard to see the different
-options.
+Yes, please see the pricing page to see the different options.
 
 ## Where can I change my credit card or payment data
 
-This is possible in the [overview of the dashboard](https://graphhopper.com/dashboard/#/overview), then click edit data.
+This is possible in the [overview of the dashboard](https://graphhopper.com/dashboard/#/overview), then click edit
+contract and payment.
 
 ## Can I pay on demand?
 
-It is possible to pay online e.g. per month for a specific amount of credits/requests. If you exceed this you currently do not 
+It is possible to pay online e.g. per month for a specific amount of credits or requests. If you exceed this you currently do not 
 need to pay for and the requests won't be blocked but we ask you to upgrade if that happens frequently.
 Please [let us know](https://graphhopper.com/#contact) of your needs and we find a solution.
 
@@ -91,9 +84,10 @@ You can do this in the dashboard on the pricing page.
 
 ## Do I need to link or mention the use of the GraphHopper Directions API
 
-Yes, please see [here](https://graphhopper.com/api/1/docs/#attribution) for more details about it. 
-Of course, you can also get rid of this (but not of the OpenStreetMap attribution) if you pay for 
-the extra white-label option or need to use it for an in-house application.
+All paid packages include the white label options and you are not required
+to link to us. But you can and all users of the free package are required, please see
+[the attribution site](https://graphhopper.com/api/1/docs/#attribution) for more details about it. 
+Regardless of the GraphHopper attribution you always have to attribtute OpenStreetMap.
 
 
 ## What is the difference between the GraphHopper Directions API and the open source projects like the GraphHopper routing engine and the optimization engine jsprit?
@@ -102,15 +96,15 @@ The GraphHopper Directions API is a collection of routing related APIs: like the
 
 See [here](https://www.graphhopper.com/open-source/) for a more detailed comparison.
 
-E.g. the Route Optimization API is an efficient way to consume jsprit: properly configured for a lot of use cases, 
+For example: the Route Optimization API is an efficient way to consume jsprit: properly configured for a lot of use cases, 
 with a proper distance/time matrix calculated from GraphHopper, with a simple JSON API and some advanced featured not in jsprit.
 
 ## Is it possible to use the GraphHopper Directions API with a custom GraphHopper or jsprit version?
 
-Yes, we host custom and recent versions, be it GraphHopper or jsprit. This way you'll be able to use our Route Optimization API and the 
-Matrix API with your custom GraphHopper or jsprit version including custom vehicles, speed profiles, constraints etc.
+We offer custom setups where it is possible to change vehicle and speed profiles and choose between
+OpenStreetMap and other data sources.
 
 ## Can I model a specific vehicle routing problem with your API and if yes, how?
 
-You can get yourself easily familiar with our Route Optimization API using the documentation. But of course we provide every customer 
-support and help to get there vehicle routing problems modeled and solved.
+You can get yourself easily familiar with our Route Optimization API using the documentation.
+We provide every customer support and help to get there vehicle routing problems modeled and solved.

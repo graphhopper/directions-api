@@ -15,7 +15,6 @@ Powered by <a href="https://www.graphhopper.com/">GraphHopper API</a>
 ```
 
 For small screens (less than 190mm diagonal) it can be only the link without 'powered by'. 
-If you want to use the GraphHopper Directions API for an in-house or via a white-label solution please contact us.
 
 Additionally to our attribution you always need to include 
 attribution to [OpenStreetMap](https://www.openstreetmap.org/copyright/), regardless of

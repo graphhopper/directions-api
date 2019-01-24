@@ -158,12 +158,12 @@ fail_fast | boolean | - | true | specifies whether "bad" locations yield an imme
 ### Objectives
 
 This lets you specify the objectives of your optimization. Currently, you can specify one objective function. It requires two things: the type and the value to be optimized. 
-When it comes to the objective type, you have two options, `min` and `min-max`. The objective value specifies whether 
-you want to just optimize `vehicles`, `transport_time` or `completion_time`. The objective value `vehicles` can only be used along with `min` and minimizes vehicles. 
+When it comes to the objective type, you have two options, `min` and `min-max`. The objective value specifies whether
+you want to just optimize `vehicles`, `activities`, `transport_time` or `completion_time`. The objective value `vehicles` can only be used along with `min` and minimizes vehicles.
 The objective value `transport_time` solely considers the time
 your drivers spend on the road, i.e. transport time. In contrary to `transport_time`, `completion_time` also takes waiting times at customer sites into account.
-The `completion_time` of a route is defined as the time from starting to ending the route, 
-i.e. the route's transport time, the sum of waiting times plus the sum of activity durations. 
+The `completion_time` of a route is defined as the time from starting to ending the route,
+i.e. the route's transport time, the sum of waiting times plus the sum of activity durations.
 Note that choosing `transport_time` or `completion_time` only makes a difference if you specified time windows for your services/shipments since only in
 scenarios with time windows waiting times can occur. By default, the algorithm minimizes `transport_time` thus it corresponds to:
 

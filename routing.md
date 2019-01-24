@@ -16,6 +16,11 @@ Where you need to replace the key with your own
 
 The Routing API is part of the [GraphHopper Directions API](https://graphhopper.com/#directions-api). Routing is the process of finding the 'best' path(s) between two or more points, where best depends on the vehicle and use case. With our API you have a fast and solid way to find this best path.
 
+### Navigation
+
+If you plan to use the Routing API for navigation, have a look into 
+[our open source demo navigation application](https://github.com/graphhopper/graphhopper-navigation-example) and adapt it to your needs.
+
 ### API Clients and Examples
 
 See the [clients](./index.md#api-clients-and-examples) section in the main document and [live examples](https://graphhopper.com/api/1/examples/#routing).
@@ -85,6 +90,7 @@ paths[0].ascend            | The total ascend (uphill) of the route, in meter
 paths[0].descend 	         | The total descend (downhill) of the route, in meter
 paths[0].points            | This value contains the coordinates of the path. If `points_encoded=true` or no `points_encoded` specified an encoded string will be returned, otherwise an array with order [lon,lat,elevation] is returned. See the parameter `points_encoded` for more information.
 paths[0].points_encoded    | Is `true` if the points are encoded. Is `false` then paths[0].points contains the geo json of the path, which is easier to handle but consumes more bandwidth compared to the encoded version
+paths[0].details           | Is a JSON object containing previously requested path details as array. E.g. `"details":{"street_name": ...}` and the array could be `[[0,2,"Frankfurter Straße"],[2,6,"Zollweg"]]` i.e. the route goes over two streets, the first "Frankfurter Straße" has array indices from 0 to 2 (linking to the `points` array). See [here](https://discuss.graphhopper.com/t/2539) for the discussion.
 paths[0].bbox              | The bounding box of the route, format: <br> minLon, minLat, maxLon, maxLat
 paths[0].snapped_waypoints | This value contains the snapped input points. If `points_encoded=true` or no `points_encoded` parameter was specified then an encoded string will be returned, otherwise an array with order [lon,lat,elevation] is returned. See the parameter `points_encoded` for more information.
 paths[0].instructions      | Contains information about the instructions for this route. The last instruction is always the Finish instruction and takes 0ms and 0meter. Keep in mind that instructions are currently under active development and can sometimes contain misleading information, so, make sure you always show an image of the map at the same time when navigating your users!
