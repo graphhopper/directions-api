@@ -457,7 +457,9 @@ The default vehicle type is
     "profile": "car",
     "capacity": [ 0 ],
     "speed_factor": 1.0,
-    "service_time_factor": 1.0
+    "service_time_factor": 1.0,
+    "network_data_provider": "tomtom",
+    "consider_traffic": true
 }
 ```
 
@@ -502,10 +504,12 @@ The `capacity` in a vehicle type only makes sense if there is a `size` defined i
 Name   | Type | Required | Default | Description
 :------|:-----|:---------|:--------|:-----------
 type_id | string | x | - | Specifies the id of the vehicle type. If a vehicle needs to be of this type, it should refer to this with its `type_id` attribute.
-profile | string | - | car | Specifies the vehicle profile of this type, see [here](./supported-vehicle-profiles.md) for more options. The profile is used to determine the network, speed and other physical attributes to use for routing the vehicle.
+profile | string | - | "car" | Specifies the vehicle profile of this type, see [here](./supported-vehicle-profiles.md) for more options. The profile is used to determine the network, speed and other physical attributes to use for routing the vehicle.
 capacity | array | - | [ 0 ] | Specifies an array of capacity dimension values which need to be `int` values. For example, if there are two dimensions such as volume and weight then it needs to be defined as `[ 1000, 300 ]` assuming a maximum volume of 1000 and a maximum weight of 300.
 speed_factor | double | - | 1.0 | Specifies a speed factor for this vehicle type. If the vehicle that uses this type needs to be only half as fast as what is actually calculated with our routing engine then set the speed factor to 0.5.
 service_time_factor | double | - | 1.0 | Specifies a service time factor for this vehicle type. If the vehicle/driver that uses this type is able to conduct the service as double as fast as it is determined in the corresponding service or shipment then set it to 0.5.
+network_data_provider | string | - | "openstreetmap" | Specifies network data provider. Either use "openstreetmap" or "tomtom".
+consider_traffic | double | - | false | Specifies whether traffic should be considered. if "tomtom" is used and this is false, free flow travel times from "tomtom" are calculated. If this is true, historical traffic info are used. We do not yet have traffic data for "openstreetmap", thus, setting this true has no effect at all.
 
 ### Services or Shipments
 
