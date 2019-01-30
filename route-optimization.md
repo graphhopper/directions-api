@@ -220,7 +220,7 @@ If you want to minimize `vehicles` first and, second, `completion_time`, you can
 ]  
 ```
 
-If you want balance activities or the number of stops among all employed drivers, you need to specify it as follows:
+If you want to balance activities or the number of stops among all employed drivers, you need to specify it as follows:
 
 ```json
 "objectives" : [
