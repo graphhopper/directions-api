@@ -499,6 +499,10 @@ If you want your car to have multiple capacity dimensions, e.g. weight and volum
 
 The `capacity` in a vehicle type only makes sense if there is a `size` defined in your services and shipments.
 
+#### Further Reading
+
+ * [Vehicle routing with cargo bikes and small trucks](https://www.graphhopper.com/blog/2019/01/30/vehicle-routing-with-cargo-bikes-and-small-trucks/)
+
 #### Full specification of a Vehicle Type object
 
 Name   | Type | Required | Default | Description
