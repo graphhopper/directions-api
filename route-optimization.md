@@ -458,8 +458,8 @@ The default vehicle type is
     "capacity": [ 0 ],
     "speed_factor": 1.0,
     "service_time_factor": 1.0,
-    "network_data_provider": "tomtom",
-    "consider_traffic": true
+    "network_data_provider": "openstreetmap",
+    "consider_traffic": false
 }
 ```
 
