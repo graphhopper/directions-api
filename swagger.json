@@ -1119,7 +1119,7 @@
                 },
                 "return_to_depot": {
                     "type": "boolean",
-                    "description": "If return_to_depot is false, the algorithm decides where to end the vehicle route. It ends in one of your customers' locations. The end is chosen such that it contributes to the overall objective function, e.g. min transport_time. If return_to_depot is true, you can either specify a specific end location (which is then regarded as end depot) or you can leave it and the driver returns to its start location.",
+                    "description": "If it is false, the algorithm decides where to end the vehicle route. It ends in one of your customers' locations. The end is chosen such that it contributes to the overall objective function, e.g. min transport_time. If it is true, you can either specify a specific end location (which is then regarded as end depot) or you can leave it and the driver returns to its start location.",
                     "default": true
                 },
                 "earliest_start": {
