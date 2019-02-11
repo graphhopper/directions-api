@@ -523,6 +523,10 @@
                 "summary": "Solves vehicle routing and traveling salesman problems",
                 "description": "This is the endpoint for solving vehicle routing or traveling salesman problems.",
                 "operationId": "postVrp",
+                "externalDocs": {
+                    "description": "Find more info here",
+                    "url": "https://graphhopper.com/api/1/docs/route-optimization/"
+                },
                 "consumes": [
                     "application/json"
                 ],
@@ -1212,13 +1216,7 @@
                     "description": "Optional parameter. Specifies a hint for each address to better snap the coordinates (lon,lat) to road network. E.g. if there is an address or house with two or more neighboring streets you can control for which street the closest location is looked up."
                 }
             },
-            "required":["location_id", "lon", "lat"],
-            "examples": {
-                "user" : {
-                    "summary": "User Example",
-                    "externalValue": "http://foo.bar/examples/user-example.json"
-                }
-            }
+            "required":["location_id", "lon", "lat"]
         },
         "Break": {
             "type": "object",
