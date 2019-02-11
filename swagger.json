@@ -1116,19 +1116,19 @@
                 "return_to_depot": {
                     "type": "boolean",
                     "description": "Indicates whether vehicle should return to start address or not. If not, it can end at any service activity.",
-                    "default": "true"
+                    "default": true
                 },
                 "earliest_start": {
                     "type": "integer",
                     "format": "int64",
                     "description": "earliest start of vehicle at its start location",
-                    "default": "0"
+                    "default": 0
                 },
                 "latest_end": {
                     "type": "integer",
                     "format": "int64",
                     "description": "latest end of vehicle at its end location",
-                    "default": "9,223,372,036,854,775,807 (inclusive)"
+                    "default": 9223372036854775807
                 },
                 "skills": {
                     "type": "array",
