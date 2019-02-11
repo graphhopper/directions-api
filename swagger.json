@@ -594,7 +594,7 @@
                     }
                 ],
                 "tags": [
-                    "solution"
+                    "Route Optimization API"
                 ],
                 "responses": {
                     "200": {
