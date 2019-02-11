@@ -1092,6 +1092,7 @@
                     }
                 },
                 "configuration": {
+                    "description":"Here you can specify general configurations of the API.",
                     "$ref": "#/definitions/Configuration"
                 }
             }
@@ -1541,11 +1542,13 @@
             "properties": {
                 "calc_points": {
                     "type": "boolean",
-                    "description": "indicates whether solution should come with route geometries"
+                    "description": "It lets you specify whether the API should provide you with route geometries for vehicle routes or not. Thus, you do not need to do extra routing to get the polyline for each route.",
+                    "default":false
                 },
                 "consider_traffic": {
                     "type": "boolean",
-                    "description": "indicates whether historical traffic information should be considered"
+                    "description": "indicates whether historical traffic information should be considered",
+                    "default":false
                 },
                 "network_data_provider": {
                     "type": "string",
@@ -1553,11 +1556,13 @@
                     "enum": [
                         "openstreetmap",
                         "tomtom"
-                    ]
+                    ],
+                    "default":"openstreetmap"
                 },
                 "fail_fast": {
                     "type": "boolean",
-                    "description": "indicates whether matrix calculation should fail fast when points cannot be connected"
+                    "description": "indicates whether matrix calculation should fail fast when points cannot be connected",
+                    "default":true
                 }
             }
         },
