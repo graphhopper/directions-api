@@ -1139,7 +1139,13 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "array of skills"
+                    "description": "array of skills",
+                    "examples":{
+                        "skills":{
+                            "summary": "A foo example",
+                            "value": {"foo": "bar"}
+                        }
+                    }
                 },
                 "max_distance": {
                     "type": "integer",
