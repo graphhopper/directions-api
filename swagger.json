@@ -1101,7 +1101,8 @@
                 },
                 "type_id": {
                     "type": "string",
-                    "description": "Unique identifier referring to the available vehicle types"
+                    "description": "Unique identifier referring to the available vehicle types",
+                    "default": "default-type"
                 },
                 "start_address": {
                     "$ref": "#/definitions/Address"
@@ -1114,17 +1115,20 @@
                 },
                 "return_to_depot": {
                     "type": "boolean",
-                    "description": "Indicates whether vehicle should return to start address or not. If not, it can end at any service activity."
+                    "description": "Indicates whether vehicle should return to start address or not. If not, it can end at any service activity.",
+                    "default": "true"
                 },
                 "earliest_start": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "earliest start of vehicle at its start location"
+                    "description": "earliest start of vehicle at its start location",
+                    "default": "0"
                 },
                 "latest_end": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "latest end of vehicle at its end location"
+                    "description": "latest end of vehicle at its end location",
+                    "default": "9,223,372,036,854,775,807 (inclusive)"
                 },
                 "skills": {
                     "type": "array",
