@@ -1160,6 +1160,7 @@
             }
         },
         "Algorithm": {
+            "deprecated": true,
             "type": "object",
             "properties": {
                 "problem_type": {
