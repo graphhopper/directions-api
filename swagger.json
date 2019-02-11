@@ -1041,7 +1041,7 @@
             "properties": {
                 "vehicles": {
                     "type": "array",
-                    "description": "An array of vehicles that can be employed",
+                    "description": "Define one or more vehicles that can be employed to deliver items.",
                     "items": {
                         "$ref": "#/definitions/Vehicle"
                     }
