@@ -1092,7 +1092,6 @@
                     }
                 },
                 "configuration": {
-                    "description":"Here you can specify general configurations of the API.",
                     "$ref": "#/definitions/Configuration"
                 }
             }
@@ -1531,6 +1530,7 @@
         },
         "Configuration": {
             "type": "object",
+            "description":"Here you can specify general configurations of the API.",
             "properties": {
                 "routing": {
                     "$ref": "#/definitions/Routing"
