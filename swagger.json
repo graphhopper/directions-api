@@ -1157,7 +1157,10 @@
                     "type": "boolean",
                     "description": "Indicates whether a vehicle should be moved even though it has not been assigned any jobs."
                 }
-            }
+            },
+            "required": [
+                "vehicle_id", "start_address"
+            ]
         },
         "Algorithm": {
             "deprecated": true,
