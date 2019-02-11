@@ -16,16 +16,16 @@
             "description": "Everything about route optimization"
         },
         {
-            "name": "store",
-            "description": "Access to Petstore orders"
+            "name": "Routing API",
+            "description": "Everything about routing"
         },
         {
-            "name": "user",
-            "description": "Operations about user",
-            "externalDocs": {
-                "description": "Find out more about our store",
-                "url": "http://swagger.io"
-            }
+            "name": "Matrix API",
+            "description": "Everything about matrix"
+        },
+        {
+            "name": "Geocoding API",
+            "description": "Everything about geocoding"
         }
     ],
     "produces": [
@@ -206,7 +206,7 @@
                     }
                 ],
                 "tags": [
-                    "Routing"
+                    "Routing API"
                 ],
                 "responses": {
                     "200": {
@@ -406,7 +406,7 @@
                     }
                 ],
                 "tags": [
-                    "Matrix"
+                    "Matrix API"
                 ],
                 "responses": {
                     "200": {
@@ -443,7 +443,7 @@
                     }
                 ],
                 "tags": [
-                    "Matrix"
+                    "Matrix API"
                 ],
                 "responses": {
                     "200": {
