@@ -520,8 +520,8 @@
         },
         "/vrp/optimize": {
             "post": {
-                "summary": "Solves vehicle routing problems",
-                "description": "This endpoint for solving vehicle routing problems, i.e. traveling salesman or vehicle routing problems, and returns the solution.",
+                "summary": "Solves vehicle routing and traveling salesman problems",
+                "description": "This is the endpoint for solving vehicle routing or traveling salesman problems.",
                 "operationId": "postVrp",
                 "consumes": [
                     "application/json"
@@ -533,7 +533,7 @@
                     {
                         "in": "query",
                         "name": "key",
-                        "description": "your API key",
+                        "description": "Your API key",
                         "required": true,
                         "type": "string"
                     },
@@ -552,7 +552,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "A jobId you can use to retrieve your solution from server - see solution endpoint.",
+                        "description": "A jobId you can use to retrieve your solution from the server - see solution endpoint.",
                         "schema": {
                             "$ref": "#/definitions/JobId"
                         }
@@ -569,7 +569,7 @@
         "/vrp/solution/{jobId}": {
             "get": {
                 "summary": "Return the solution associated to the jobId",
-                "description": "This endpoint returns the solution of a large problems. You can fetch it with the job_id, you have been sent.\n",
+                "description": "This endpoint returns the solution of posted vehicle routing or traveling salesman problems. You can fetch it with the job_id, you have been sent.\n",
                 "operationId": "getSolution",
                 "consumes": [
                     "application/json"
@@ -581,7 +581,7 @@
                     {
                         "in": "query",
                         "name": "key",
-                        "description": "your API key",
+                        "description": "Your API key",
                         "required": true,
                         "type": "string"
                     },
