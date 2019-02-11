@@ -1212,7 +1212,13 @@
                     "description": "Optional parameter. Specifies a hint for each address to better snap the coordinates (lon,lat) to road network. E.g. if there is an address or house with two or more neighboring streets you can control for which street the closest location is looked up."
                 }
             },
-            "required":["location_id", "lon", "lat"]
+            "required":["location_id", "lon", "lat"],
+            "examples":{
+                "foo": {
+                    "summary":"Simple example",
+                    "value": {"foo": "bar"}
+                }
+            }
         },
         "Break": {
             "type": "object",
