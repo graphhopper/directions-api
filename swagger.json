@@ -548,7 +548,7 @@
                     }
                 ],
                 "tags": [
-                    "vrp"
+                    "Route Optimization API"
                 ],
                 "responses": {
                     "200": {
