@@ -10,6 +10,24 @@
         "https"
     ],
     "basePath": "/api/1",
+    "tags": [
+        {
+            "name": "Route Optimization API",
+            "description": "Everything about route optimization"
+        },
+        {
+            "name": "store",
+            "description": "Access to Petstore orders"
+        },
+        {
+            "name": "user",
+            "description": "Operations about user",
+            "externalDocs": {
+                "description": "Find out more about our store",
+                "url": "http://swagger.io"
+            }
+        }
+    ],
     "produces": [
         "application/json"
     ],
@@ -552,7 +570,7 @@
                     }
                 ],
                 "tags": [
-                    "Route Optimization"
+                    "Route Optimization API"
                 ],
                 "responses": {
                     "200": {
@@ -598,7 +616,7 @@
                     }
                 ],
                 "tags": [
-                    "Route Optimization Solution"
+                    "Route Optimization API"
                 ],
                 "responses": {
                     "200": {
