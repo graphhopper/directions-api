@@ -1168,7 +1168,8 @@
             },
             "required": [
                 "vehicle_id", "start_address"
-            ]
+            ],
+            "minItems":1
         },
         "Algorithm": {
             "deprecated": true,
